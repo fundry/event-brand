@@ -47,16 +47,20 @@ const Banner = props => {
     <Contain>
       <Header auth={auth} />
 
-      <img
-        src={Drawing}
-        alt="illustration"
-        style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
-      />
+      <Flex justifyCenter>
+        <img
+          src={Drawing}
+          alt="illustration"
+          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
+        />
+      </Flex>
 
       <div>
+        <Motto style={{ textAlign: "center" }}>
+          {" "}
+          Organize your conferences{" "}
+        </Motto>
         <Flex justifyCenter>
-          <Motto> Organize your conferences </Motto>
-
           <Flex justifyAround>
             <Btn1> View Demo </Btn1>
             <Btn1> View Conferences </Btn1>
