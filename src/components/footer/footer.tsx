@@ -154,9 +154,7 @@ const Footer = () => {
           <div style={{ padding: "2%" }}>
             <Flex justifyAround>
               <div>
-                <h5 style={{ marginTop: "1em", color: "#fff" }}>
-                  Remotify.Inc
-                </h5>
+                <h5 style={{ marginTop: "1em", color: "#fff" }}>Event.Inc</h5>
 
                 <Flex justifyAround>
                   <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />
@@ -189,9 +187,7 @@ const Footer = () => {
           <div style={{ padding: "0.5%" }}>
             <Flex justifyCenter>
               <div>
-                <h5 style={{ marginTop: "1em", color: "#fff" }}>
-                  Remotify.Inc
-                </h5>
+                <h5 style={{ marginTop: "1em", color: "#fff" }}>Event.Inc</h5>
 
                 <Flex justifyAround>
                   <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />

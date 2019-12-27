@@ -35,19 +35,34 @@ const Banner = props => {
   }, 1000)
 
   const { auth } = props
+
+  const Btn1 = styled.button({
+    padding: "0.5em",
+    border: "1px solid black",
+    borderRadius: "3px",
+    background: "transparent",
+    color: "white",
+  })
   return (
     <Contain>
       <Header auth={auth} />
 
-      <Flex>
-        <img
-          src={Drawing}
-          alt="illustration"
-          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
-        />
+      <img
+        src={Drawing}
+        alt="illustration"
+        style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
+      />
 
-        <Motto> Organize your conferences </Motto>
-      </Flex>
+      <div>
+        <Flex justifyCenter>
+          <Motto> Organize your conferences </Motto>
+
+          <Flex justifyAround>
+            <Btn1> View Demo </Btn1>
+            <Btn1> View Conferences </Btn1>
+          </Flex>
+        </Flex>
+      </div>
     </Contain>
   )
 }
