@@ -110,16 +110,11 @@ const Header = ({ style, auth }: Props) => {
                         }
                       />
                       <Link to="/">
-                        <Brand>Remotify</Brand>
+                        <Brand>Event</Brand>
                       </Link>
                     </Flex>
                   </NameDiv>
                   <Flex>
-                    <div style={{ paddingRight: "20px" }}>
-                      <Link to="/">
-                        <Title> Team </Title>
-                      </Link>
-                    </div>
                     <div style={{ paddingRight: "20px" }}>
                       <Link to="/">
                         <Title> Resources </Title>
@@ -141,16 +136,11 @@ const Header = ({ style, auth }: Props) => {
                         }
                       />
                       <Link to="/">
-                        <Brand>Remotify</Brand>
+                        <Brand>Event</Brand>
                       </Link>
                     </Flex>
                   </NameDiv>
                   <Flex>
-                    <div style={{ paddingRight: "30px" }}>
-                      <Link to="/">
-                        <Title> Team </Title>
-                      </Link>
-                    </div>
                     <div style={{ paddingRight: "30px" }}>
                       <Link to="/">
                         <Title> Resources </Title>
