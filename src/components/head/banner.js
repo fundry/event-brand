@@ -3,6 +3,7 @@ import media from "styled-media-query"
 import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
 import Flex from "styled-flex-component"
+import { FiPlay } from "react-icons/fi"
 
 import Header from "./header"
 import Drawing from "../../assets/svg/banner.svg"
@@ -62,11 +63,19 @@ const Banner = props => {
         </Motto>
         <Flex justifyCenter>
           <Flex justifyAround>
-            <Btn1> View Demo </Btn1>
+            <Btn1>
+              {" "}
+              <Flex>
+                {" "}
+                <FiPlay style={{ fontSize: "1.5em" }} /> View Demo{" "}
+              </Flex>{" "}
+            </Btn1>
             <Btn1> View Conferences </Btn1>
           </Flex>
         </Flex>
       </div>
+
+      <br />
     </Contain>
   )
 }

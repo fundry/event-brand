@@ -6,14 +6,14 @@ const Body = styled.div`
   padding: 1em;
 `
 
-const Title = styled.h3`
-  color: #OB33A2;
+const Title = styled.h4`
+  color: blue;
 `
 
 const Speakers = () => {
   return (
     <Body>
-      <Title style={{ textAlign: "left", paddingLeft: "10px" }}>
+      <Title style={{ textAlign: "right", paddingLeft: "10px" }}>
         {" "}
         Event for Speakers{" "}
       </Title>
