@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Flex from "styled-flex-compoent"
+import Flex from "styled-flex-component"
 
 const Body = styled.div`
   padding: 1em;
