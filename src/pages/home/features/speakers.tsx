@@ -24,10 +24,10 @@ const Speakers = () => {
         Event for Speakers{" "}
       </Title>
 
-      <Flex justifyAround>
+      <Flex justifyBetween>
         <img
           alt="ipad"
-          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          style={{ maxHeight: "55%", maxWidth: "60%", paddingTop: "1%" }}
           src={Ipad}
         />
 

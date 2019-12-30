@@ -24,10 +24,10 @@ const Attendees = () => {
         Event for Attendees{" "}
       </Title>
 
-      <Flex justifyAround>
+      <Flex justifyBetween>
         <img
           alt="android"
-          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          style={{ maxHeight: "60%", maxWidth: "65%", paddingTop: "1%" }}
           src={Android}
         />
 

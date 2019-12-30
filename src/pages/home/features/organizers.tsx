@@ -26,7 +26,7 @@ const Organizers = () => {
       <Flex justifyBetween>
         <img
           src={Safari}
-          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          style={{ maxHeight: "60%", maxWidth: "60%", paddingTop: "1%" }}
           alt="ipad"
         />
 

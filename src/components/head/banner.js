@@ -54,26 +54,26 @@ const Banner = props => {
           alt="illustration"
           style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
         />
-      </Flex>
 
-      <div>
-        <Motto style={{ textAlign: "center" }}>
-          {" "}
-          Organize your conferences{" "}
-        </Motto>
-        <Flex justifyCenter>
-          <Flex justifyAround>
-            <Btn1>
-              {" "}
-              <Flex>
+        <div>
+          <Motto style={{ textAlign: "center" }}>
+            {" "}
+            Organize your conferences{" "}
+          </Motto>
+
+          <Flex justifyCenter>
+            <Flex justifyAround>
+              <Btn1>
                 {" "}
-                <FiPlay style={{ fontSize: "1.5em" }} /> View Demo{" "}
-              </Flex>{" "}
-            </Btn1>
-            <Btn1> View Conferences </Btn1>
+                <Flex>
+                  {" "}
+                  <FiPlay style={{ fontSize: "1.5em" }} /> View Demo{" "}
+                </Flex>{" "}
+              </Btn1>
+            </Flex>
           </Flex>
-        </Flex>
-      </div>
+        </div>
+      </Flex>
 
       <br />
     </Contain>
