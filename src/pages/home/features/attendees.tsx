@@ -29,7 +29,7 @@ const Attendees = () => {
           <img
             alt="android"
             style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
-            src={Anderoid}
+            src={Android}
           />
 
           <Title style={{ fontSize: "1.1em" }}> View Event Schedules </Title>
