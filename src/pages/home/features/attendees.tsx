@@ -21,20 +21,20 @@ const Attendees = () => {
     <Body>
       <Title style={{ textAlign: "left", paddingLeft: "10px" }}>
         {" "}
-        Event for Attendee s{" "}
+        Event for Attendees{" "}
       </Title>
 
       <Flex justifyAround>
-        <Contain>
-          <img
-            alt="android"
-            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
-            src={Android}
-          />
+        <img
+          alt="android"
+          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          src={Android}
+        />
 
-          <Title style={{ fontSize: "1.1em" }}> View Event Schedules </Title>
-          <Title style={{ fontSize: "1.1em" }}> Get Event Details </Title>
-          <Title style={{ fontSize: "1.1em" }}>
+        <Contain>
+          <Title style={{ fontSize: "1.2em" }}> View Event Schedules </Title>
+          <Title style={{ fontSize: "1.2em" }}> Get Event Details </Title>
+          <Title style={{ fontSize: "1.2em" }}>
             {" "}
             Improve Event Networking{" "}
           </Title>

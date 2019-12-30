@@ -25,20 +25,20 @@ const Speakers = () => {
       </Title>
 
       <Flex justifyAround>
+        <img
+          alt="ipad"
+          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          src={Ipad}
+        />
+
         <Contain>
-          <img
-            alt="ipad"
-            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
-            src={Ipad}
-          />
+          <Title style={{ fontSize: "1.2em" }}>Create Awesome talks</Title>
 
-          <Title style={{ fontSize: "1.1em" }}>Create Awesome talks</Title>
-
-          <Title style={{ fontSize: "1.1em" }}>
+          <Title style={{ fontSize: "1.2em" }}>
             {" "}
             Get Instant review on talk drafts
           </Title>
-          <Title style={{ fontSize: "1.1em" }}>
+          <Title style={{ fontSize: "1.2em" }}>
             {" "}
             Use premade templates and animations{" "}
           </Title>

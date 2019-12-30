@@ -20,38 +20,38 @@ const Organizers = () => {
   return (
     <Body>
       <Title style={{ textAlign: "left", paddingLeft: "10px" }}>
-        {" "}
         Event for Organizers{" "}
-        <Flex justifyBetween>
-          <img
-            src={Safari}
-            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
-            alt="ipad"
-          />
-
-          <Contain style={{ paddingRight: "20px" }}>
-            <Flex column>
-              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
-                {" "}
-                Create and Manage Events
-              </Title>
-              <br />
-
-              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
-                {" "}
-                Store and Manage Event Assets{" "}
-              </Title>
-              <br />
-
-              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
-                {" "}
-                Co-ordinate Collaborators{" "}
-              </Title>
-              <br />
-            </Flex>
-          </Contain>
-        </Flex>
       </Title>
+
+      <Flex justifyBetween>
+        <img
+          src={Safari}
+          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+          alt="ipad"
+        />
+
+        <Contain style={{ paddingRight: "20px" }}>
+          <Flex column>
+            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              {" "}
+              Create and Manage Events
+            </Title>
+            <br />
+
+            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              {" "}
+              Store and Manage Event Assets{" "}
+            </Title>
+            <br />
+
+            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              {" "}
+              Co-ordinate Collaborators{" "}
+            </Title>
+            <br />
+          </Flex>
+        </Contain>
+      </Flex>
     </Body>
   )
 }
