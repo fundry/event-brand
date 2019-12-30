@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 
+import Safari from "../../../assets/safari.svg"
+
 const Body = styled.div`
   padding: 1em;
 `
@@ -21,7 +23,7 @@ const Organizers = () => {
         {" "}
         Event for Organizers{" "}
         <Flex justifyBetween>
-          <img src="../../../svg/assets/safari.svg" alt="ipad" />
+          <img src={Safari} alt="ipad" />
 
           <Contain style={{ paddingRight: "20px" }}>
             <Flex column>

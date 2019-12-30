@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 
+import Ipad from "../../../assets/svg/ipad.svg"
+
 const Body = styled.div`
   padding: 1em;
 `
@@ -24,7 +26,7 @@ const Speakers = () => {
 
       <Flex justifyAround>
         <Contain>
-          <img alt="ipad" src="../../../assets/svg/ipad.svg " />
+          <img alt="ipad" src={Ipad} />
 
           <Title style={{ fontSize: "1.1em" }}>Create Awesome talks</Title>
 

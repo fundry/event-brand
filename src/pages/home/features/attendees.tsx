@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 
+import Android from "../../../assets/svg/android.svg"
+
 const Body = styled.div`
   padding: 1em;
 `
@@ -24,7 +26,7 @@ const Attendees = () => {
 
       <Flex justifyAround>
         <Contain>
-          <img alt="android" src="../../../assets/svg/android.svg" />
+          <img alt="android" src={Anderoid} />
 
           <Title style={{ fontSize: "1.1em" }}> View Event Schedules </Title>
           <Title style={{ fontSize: "1.1em" }}> Get Event Details </Title>
