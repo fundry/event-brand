@@ -27,21 +27,46 @@ const Speakers = () => {
       <Flex justifyBetween>
         <img
           alt="ipad"
-          style={{ maxHeight: "55%", maxWidth: "60%", paddingTop: "1%" }}
+          style={{ maxHeight: "40%", maxWidth: "45%", paddingTop: "1%" }}
           src={Ipad}
         />
 
         <Contain>
-          <Title style={{ fontSize: "1.2em" }}>Create Awesome talks</Title>
+          <Title style={{ fontSize: "1.3em" }}>Create Awesome talks</Title>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
 
-          <Title style={{ fontSize: "1.2em" }}>
+          <Title style={{ fontSize: "1.3em" }}>
             {" "}
             Get Instant review on talk drafts
           </Title>
-          <Title style={{ fontSize: "1.2em" }}>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
+
+          <Title style={{ fontSize: "1.3em" }}>
             {" "}
             Use premade templates and animations{" "}
           </Title>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
         </Contain>
       </Flex>
     </Body>

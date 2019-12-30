@@ -52,10 +52,12 @@ const Banner = props => {
         <img
           src={Drawing}
           alt="illustration"
-          style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "4%" }}
+          style={{ maxHeight: "90%", maxWidth: "85%", paddingTop: "2%" }}
         />
 
         <div>
+          <br />
+          <br />
           <Motto style={{ textAlign: "center" }}>
             {" "}
             Organize your conferences{" "}

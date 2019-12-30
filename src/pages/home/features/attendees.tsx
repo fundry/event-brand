@@ -27,17 +27,43 @@ const Attendees = () => {
       <Flex justifyBetween>
         <img
           alt="android"
-          style={{ maxHeight: "60%", maxWidth: "65%", paddingTop: "1%" }}
+          style={{ maxHeight: "50%", maxWidth: "55%", paddingTop: "1%" }}
           src={Android}
         />
 
         <Contain>
-          <Title style={{ fontSize: "1.2em" }}> View Event Schedules </Title>
-          <Title style={{ fontSize: "1.2em" }}> Get Event Details </Title>
-          <Title style={{ fontSize: "1.2em" }}>
+          <Title style={{ fontSize: "1.3em" }}> View Event Schedules </Title>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
+
+          <Title style={{ fontSize: "1.3em" }}> Get Event Details </Title>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
+
+          <Title style={{ fontSize: "1.3em" }}>
             {" "}
             Improve Event Networking{" "}
           </Title>
+          <Text>
+            {" "}
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events
+          </Text>
+          <br />
         </Contain>
       </Flex>
     </Body>

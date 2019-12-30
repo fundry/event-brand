@@ -16,6 +16,10 @@ const Contain = styled.div`
   padding: 0.5em;
 `
 
+const Text = styled.p`
+  text-align: right;
+`
+
 const Organizers = () => {
   return (
     <Body>
@@ -32,22 +36,51 @@ const Organizers = () => {
 
         <Contain style={{ paddingRight: "20px" }}>
           <Flex column>
-            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+            <Title
+              style={{
+                cursor: "pointer",
+                textAlign: "right",
+                fontSize: "1.3em",
+              }}
+            >
               {" "}
               Create and Manage Events
             </Title>
+
+            <Text>
+              {" "}
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events Manage events Manage events Manage events
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events
+            </Text>
             <br />
 
-            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+            <Title style={{ textAlign: "right", fontSize: "1.3em" }}>
               {" "}
               Store and Manage Event Assets{" "}
             </Title>
+
+            <Text>
+              {" "}
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events Manage events Manage events Manage events
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events
+            </Text>
             <br />
 
-            <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+            <Title style={{ textAlign: "right", fontSize: "1.3em" }}>
               {" "}
               Co-ordinate Collaborators{" "}
             </Title>
+            <Text>
+              {" "}
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events Manage events Manage events Manage events
+              Manage events Manage events Manage events Manage events Manage
+              events Manage events
+            </Text>
             <br />
           </Flex>
         </Contain>
