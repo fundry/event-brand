@@ -6,7 +6,7 @@ const Body = styled.div`
   padding: 1em;
 `
 
-const Title = styled.h4`
+const Title = styled.h3`
   color: blue;
 `
 
@@ -21,23 +21,23 @@ const Organizers = () => {
         {" "}
         Event for Organizers{" "}
         <Flex justifyBetween>
-          <img src="../../../assets/ipad.svg" alt="ipad" />
+          <img src="../../../svg/assets/safari.svg" alt="ipad" />
 
-          <Contain>
+          <Contain style={{ paddingRight: "20px" }}>
             <Flex column>
-              <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
                 {" "}
                 Create and Manage Events
               </Title>
               <br />
 
-              <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
                 {" "}
                 Store and Manage Event Assets{" "}
               </Title>
               <br />
 
-              <Title style={{ textAlign: "right", fontSize: "1.2em" }}>
+              <Title style={{ textAlign: "right", fontSize: "1.1em" }}>
                 {" "}
                 Co-ordinate Collaborators{" "}
               </Title>

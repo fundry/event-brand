@@ -1,13 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import Flex from "styled-flex-compoent"
+import Flex from "styled-flex-component"
 
 const Body = styled.div`
   padding: 1em;
 `
 
-const Title = styled.h4`
+const Title = styled.h3`
   color: blue;
+`
+
+const Contain = styled.div`
+  padding: 0.5em;
 `
 
 const Attendees = () => {
@@ -17,6 +21,19 @@ const Attendees = () => {
         {" "}
         Event for Attendee s{" "}
       </Title>
+
+      <Flex justifyAround>
+        <Contain>
+          <img alt="android" src="../../../assets/svg/android.svg" />
+
+          <Title style={{ fontSize: "1.1em" }}> View Event Schedules </Title>
+          <Title style={{ fontSize: "1.1em" }}> Get Event Details </Title>
+          <Title style={{ fontSize: "1.1em" }}>
+            {" "}
+            Improve Event Networking{" "}
+          </Title>
+        </Contain>
+      </Flex>
     </Body>
   )
 }
