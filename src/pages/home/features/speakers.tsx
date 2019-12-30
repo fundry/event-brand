@@ -16,6 +16,8 @@ const Contain = styled.div`
   padding: 0.5em;
 `
 
+const Text = styled.p``
+
 const Speakers = () => {
   return (
     <Body>
