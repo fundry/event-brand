@@ -26,7 +26,11 @@ const Attendees = () => {
 
       <Flex justifyAround>
         <Contain>
-          <img alt="android" src={Anderoid} />
+          <img
+            alt="android"
+            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+            src={Anderoid}
+          />
 
           <Title style={{ fontSize: "1.1em" }}> View Event Schedules </Title>
           <Title style={{ fontSize: "1.1em" }}> Get Event Details </Title>

@@ -26,7 +26,11 @@ const Speakers = () => {
 
       <Flex justifyAround>
         <Contain>
-          <img alt="ipad" src={Ipad} />
+          <img
+            alt="ipad"
+            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+            src={Ipad}
+          />
 
           <Title style={{ fontSize: "1.1em" }}>Create Awesome talks</Title>
 

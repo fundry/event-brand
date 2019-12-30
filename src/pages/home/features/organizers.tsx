@@ -23,7 +23,11 @@ const Organizers = () => {
         {" "}
         Event for Organizers{" "}
         <Flex justifyBetween>
-          <img src={Safari} alt="ipad" />
+          <img
+            src={Safari}
+            style={{ maxHeight: "70%", maxWidth: "75%", paddingTop: "1%" }}
+            alt="ipad"
+          />
 
           <Contain style={{ paddingRight: "20px" }}>
             <Flex column>
