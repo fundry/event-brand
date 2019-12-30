@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 
-import Safari from "../../../assets/safari.svg"
+import Safari from "../../../assets/svg/safari.svg"
 
 const Body = styled.div`
   padding: 1em;
