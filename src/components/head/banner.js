@@ -30,14 +30,12 @@ const Banner = props => {
   `
 
   const [Width, setWidth] = useState(null)
-
   setTimeout(function() {
     setWidth(window.innerWidth)
   }, 1000)
-
   const { auth } = props
 
-  const Btn1 = styled.button({
+  const Btan1 = styled.button({
     padding: "1em",
     border: "1px solid #fff",
     borderRadius: "2px",
@@ -49,6 +47,27 @@ const Banner = props => {
     width: "15em",
   })
 
+  const Btn1 = styled.button`
+    background: #fff;
+    text-align: center;
+    border-radius: 3px;
+    height: 47px;
+    border: 1px solid #ff21c1;
+    color: #401364;
+    margin: 0 1em;
+    padding: 0.25em 1.5em;
+    font-size: 1.2em;
+    &:hover {
+      color: #fff;
+      background: transparent;
+    }
+    ${media.lessThan("medium")`
+      margin: 0 0.25em;
+      padding: 0.25em 1.2em;
+      height: 30px;
+  `};
+  `
+
   return (
     <Contain>
       <Header auth={auth} />
@@ -59,7 +78,7 @@ const Banner = props => {
           <br />
           <h5 style={{ textAlign: "center" }}> EVENTFUL </h5>
           <Motto style={{ textAlign: "center", margin: "0.5em" }}>
-            Create , Manage and Organize your conferences{" "}
+            Create, Manage and Organize your conferences{" "}
           </Motto>
 
           <Flex justifyCenter>

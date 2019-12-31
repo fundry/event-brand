@@ -18,7 +18,7 @@ const Header = ({ style, auth }: Props) => {
     padding: "1em",
     paddingTop: "1em",
     backgroundColor: style == "download" ? "#f2f5ff" : "transparent",
-    boxShadow: "0px 7px 7px #D87E2C",
+    boxShadow: "0px 4px 5px grey",
   }
 
   const Head = {
@@ -29,7 +29,7 @@ const Header = ({ style, auth }: Props) => {
   }
 
   const Brand = styled.p`
-    color: #0b33a2;
+    color: #ff21c1;
     text-decoration#: none;
     font-size: 25px;
     font-family: comic sans ms;
@@ -41,7 +41,7 @@ const Header = ({ style, auth }: Props) => {
 
   const Title = styled.a`
     font-size: 17px;
-    color: #0b33a2;
+    color: #fff;
     ${media.lessThan("medium")`
     font-size: 15px
     padding-top : 10px
