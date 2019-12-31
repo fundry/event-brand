@@ -39,8 +39,6 @@ const Speakers = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
 
@@ -52,8 +50,6 @@ const Speakers = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
 
@@ -65,8 +61,6 @@ const Speakers = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
         </Contain>

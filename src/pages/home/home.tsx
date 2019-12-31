@@ -25,7 +25,9 @@ const Body = styled.div`
 
 const Title = styled.h4``
 
-const Text = styled.p``
+const Text = styled.p`
+  font-size: 1.1em;
+`
 
 const data = [
   {
@@ -56,9 +58,9 @@ const Home = (): JSX.Element => {
         <BgTitle>Better way to manage Events</BgTitle>
 
         <Text>
-          Conferences are hard to organize , we know!. <br /> Eventful helps you
-          automate somethings . From creating teams to reviewing Speakers
-          slides. From creating teams to reviewing Speakers slides.
+          Conferences are hard to organize , we know!. <br /> <br /> Eventful
+          helps you automate somethings . From creating teams to reviewing
+          Speakers slides. From creating teams to reviewing Speakers slides.
         </Text>
 
         <Flex justifyAround>

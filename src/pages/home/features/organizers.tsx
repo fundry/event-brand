@@ -51,8 +51,6 @@ const Organizers = () => {
               {" "}
               Manage events Manage events Manage events Manage events Manage
               events Manage events Manage events Manage events Manage events
-              Manage events Manage events Manage events Manage events Manage
-              events Manage events
             </Text>
             <br />
 
@@ -65,8 +63,6 @@ const Organizers = () => {
               {" "}
               Manage events Manage events Manage events Manage events Manage
               events Manage events Manage events Manage events Manage events
-              Manage events Manage events Manage events Manage events Manage
-              events Manage events
             </Text>
             <br />
 
@@ -78,8 +74,6 @@ const Organizers = () => {
               {" "}
               Manage events Manage events Manage events Manage events Manage
               events Manage events Manage events Manage events Manage events
-              Manage events Manage events Manage events Manage events Manage
-              events Manage events
             </Text>
             <br />
           </Flex>

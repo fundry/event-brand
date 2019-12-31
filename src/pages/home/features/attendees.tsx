@@ -39,8 +39,6 @@ const Attendees = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
 
@@ -49,8 +47,6 @@ const Attendees = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
 
@@ -62,8 +58,6 @@ const Attendees = () => {
             {" "}
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
-            Manage events Manage events Manage events Manage events Manage
-            events Manage events
           </Text>
           <br />
         </Contain>
