@@ -40,7 +40,7 @@ const Banner = props => {
     text-align: center;
     border-radius: 3px;
     height: 45px;
-width : 14em
+    width: 14em;
     border: 2px solid #ff21c1;
     color: #401364;
     margin: 0 1em;
