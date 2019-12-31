@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { Card } from "react-bootstrap"
+
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
@@ -12,6 +14,26 @@ const Body = styled.div`
   padding: 0.5em;
 `
 
+const Title = styled.h4``
+
+const Text = styled.p``
+
+const data = [
+  {
+    id: 1,
+    title: " Conferences ",
+    desc:
+      " Create conferences make confernces make conferences confernces make conferences make easky ",
+  },
+
+  {
+    id: 2,
+    title: "Meetups",
+    desc:
+      "Create conferences make confernces make confernces make confernces make confernces",
+  },
+]
+
 const Home = (): JSX.Element => {
   return (
     <Layout>
@@ -19,10 +41,18 @@ const Home = (): JSX.Element => {
       <Banner />
 
       <Body>
-        <p style={{ textAlign: "center" }}>
-          {" "}
-          Top home component here ... would contain descriptions{" "}
-        </p>
+        <Flex justifyAround>
+          {data.map(({ title, desc, id }) => {
+            return (
+              <Card style={{ padding: "0.5em" }} key={id}>
+                <Title> {title} </Title>
+
+                <Text> {desc} </Text>
+              </Card>
+            )
+          })}
+        </Flex>
+
         <br />
 
         <div>
