@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Card } from "react-bootstrap"
 import Flex from "styled-flex-component"
+import { IoIosArrowForward } from " react-icons/io"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -58,7 +59,7 @@ const Home = (): JSX.Element => {
             return (
               <Card
                 style={{
-                  margin: "0.5em",
+                  margin: "1em",
                   padding: "1em",
                   width: "35em",
                   boxShadow: "0px 3px 4px grey",
@@ -89,6 +90,13 @@ const Home = (): JSX.Element => {
           Event organizers upload all photos to their alllocated storage and we
           help them deliver the photos to users whose images are in the photo.
         </Text>
+        <Flex>
+          {" "}
+          <p> Learn More </p>
+          <IoIosArrowForward
+            style={{ fontSize: "1.5em", paddingLeft: "5px" }}
+          />
+        </Flex>
 
         <br />
         <div>
