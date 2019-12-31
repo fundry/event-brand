@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Card } from "react-bootstrap"
+import Flex from "styled-flex-component"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -22,17 +23,19 @@ const data = [
   {
     id: 1,
     title: " Conferences ",
-    desc:
-      " Create conferences make confernces make conferences confernces make conferences make easky ",
+    desc: " Create conferences for a shorter duration ",
   },
 
   {
     id: 2,
     title: "Meetups",
-    desc:
-      "Create conferences make confernces make confernces make confernces make confernces",
+    desc: "Create meetups that lasts for a specified duration ",
   },
 ]
+
+const BgTitle = styled.h3`
+  font-weight: bold;
+`
 
 const Home = (): JSX.Element => {
   return (
@@ -41,6 +44,15 @@ const Home = (): JSX.Element => {
       <Banner />
 
       <Body>
+        <BgTitle style={{ color: "#fff" }}>
+          Better way to manage Events{" "}
+        </BgTitle>
+        <Text>
+          Conferences are hard to organize , we know!. Eventful helps you
+          automate somethings . From creating teams to reviewing Speakers
+          slides. From creating teams to reviewing Speakers slides.
+        </Text>
+
         <Flex justifyAround>
           {data.map(({ title, desc, id }) => {
             return (
