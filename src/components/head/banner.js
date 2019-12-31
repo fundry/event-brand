@@ -39,12 +39,14 @@ const Banner = props => {
 
   const Btn1 = styled.button({
     padding: "1em",
-    border: "1px solid black",
-    borderRadius: "3px",
-    background: "transparent",
-    color: "white",
+    border: "1px solid #fff",
+    borderRadius: "2px",
+    background: "#fff",
+    textAlign: "center",
+    fontSize: "1.1em",
+    color: "#401364",
     height: "45px",
-    width: "17em",
+    width: "15em",
   })
 
   return (
@@ -52,11 +54,11 @@ const Banner = props => {
       <Header auth={auth} />
 
       <Flex justifyCenter>
-        <div style={{ color: "#fff" }}>
+        <div style={{ color: "#fff", padding: "2em" }}>
           <br />
           <br />
-          <h4 style={{ textAlign: "center" }}> EVENTFUL </h4>
-          <Motto style={{ textAlign: "center" }}>
+          <h5 style={{ textAlign: "center" }}> EVENTFUL </h5>
+          <Motto style={{ textAlign: "center", margin: "0.5em" }}>
             Create , Manage and Organize your conferences{" "}
           </Motto>
 
