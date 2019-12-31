@@ -44,7 +44,14 @@ const Home = (): JSX.Element => {
         <Flex justifyAround>
           {data.map(({ title, desc, id }) => {
             return (
-              <Card style={{ padding: "0.5em" }} key={id}>
+              <Card
+                style={{
+                  padding: "0.5em",
+                  width: "45em",
+                  boxShadow: "0px 4px 5px grey",
+                }}
+                key={id}
+              >
                 <Title style={{ textAlign: "center" }}> {title} </Title>
 
                 <Text style={{ textAlign: "center" }}> {desc} </Text>
