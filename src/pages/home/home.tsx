@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Card } from "react-bootstrap"
 import Flex from "styled-flex-component"
-import { IoIosArrowForward } from " react-icons/io"
+import { IoIosArrowForward } from "react-icons/io"
 import media from "styled-media-query"
 
 import Banner from "../../components/head/banner"
