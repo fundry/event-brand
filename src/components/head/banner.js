@@ -38,8 +38,8 @@ const Banner = props => {
   const Btn1 = styled.button`
     background: #fff;
     text-align: center;
-    border-radius: 3px;
-    height: 45px;
+    border-radius: 5px;
+    height: 48px;
     width: 14em;
     border: 2px solid #ff21c1;
     color: #401364;
@@ -58,7 +58,7 @@ const Banner = props => {
   `
 
   const Text = styled.p`
-    font-size: 1.15em;
+    font-size: 1.2em;
   `
 
   return (
@@ -79,10 +79,7 @@ const Banner = props => {
           </Text>
           <Flex justifyCenter>
             <Flex justifyAround>
-              <Btn1>
-                {" "}
-                <Flex> Get Started </Flex>{" "}
-              </Btn1>
+              <Btn1>Get Started</Btn1>
             </Flex>
           </Flex>
         </div>
