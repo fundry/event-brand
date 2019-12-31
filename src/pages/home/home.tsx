@@ -43,10 +43,9 @@ const Home = (): JSX.Element => {
       <Seo title="Home" />
       <Banner />
 
-      <Body>
-        <BgTitle style={{ color: "#fff" }}>
-          Better way to manage Events{" "}
-        </BgTitle>
+      <Body style={{ color: "#401364" }}>
+        <BgTitle>Better way to manage Events</BgTitle>
+
         <Text>
           Conferences are hard to organize , we know!. Eventful helps you
           automate somethings . From creating teams to reviewing Speakers
@@ -58,9 +57,9 @@ const Home = (): JSX.Element => {
             return (
               <Card
                 style={{
-                  padding: "0.5em",
-                  width: "45em",
-                  boxShadow: "0px 4px 5px grey",
+                  padding: "1em",
+                  width: "35em",
+                  boxShadow: "0px 3px 4px grey",
                 }}
                 key={id}
               >
