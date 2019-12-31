@@ -68,9 +68,12 @@ const Banner = props => {
         <div style={{ color: "#fff", padding: "2em" }}>
           <br />
           <br />
-          <h5 style={{ textAlign: "center" }}> EVENTFUL </h5>
+          <h5 style={{ textAlign: "center", wordSpacing: "10px" }}>
+            {" "}
+            EVENTFUL{" "}
+          </h5>
           <Motto style={{ textAlign: "center", margin: "0.5em" }}>
-            Create, Manage and Organize you events{" "}
+            Create, Manage and Organize your events.{" "}
           </Motto>
 
           <Text style={{ textAlign: "center", width: "50em", color: "#fff" }}>
