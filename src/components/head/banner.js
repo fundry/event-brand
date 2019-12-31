@@ -10,12 +10,12 @@ import Drawing from "../../assets/svg/banner.svg"
 
 const Banner = props => {
   const Contain = styled.div`
-    background: #f9db93;
+    background: #6c3eef;
   `
 
   const Motto = styled.h2`
     ${media.lessThan("medium")`
-    font-size: 1.6em
+    font-size: 1.8em
   `};
     font-weight: bold;
   `
@@ -38,39 +38,33 @@ const Banner = props => {
   const { auth } = props
 
   const Btn1 = styled.button({
-    padding: "0.5em",
+    padding: "1em",
     border: "1px solid black",
     borderRadius: "3px",
     background: "transparent",
     color: "white",
+    height: "45px",
+    width: "17em",
   })
+
   return (
     <Contain>
       <Header auth={auth} />
 
       <Flex justifyCenter>
-        <img
-          src={Drawing}
-          alt="illustration"
-          style={{ maxHeight: "90%", maxWidth: "85%", paddingTop: "2%" }}
-        />
-
-        <div>
+        <div style={{ color: "#fff" }}>
           <br />
           <br />
+          <h4 style={{ textAlign: "center" }}> EVENTFUL </h4>
           <Motto style={{ textAlign: "center" }}>
-            {" "}
-            Organize your conferences{" "}
+            Create , Manage and Organize your conferences{" "}
           </Motto>
 
           <Flex justifyCenter>
             <Flex justifyAround>
               <Btn1>
                 {" "}
-                <Flex>
-                  {" "}
-                  <FiPlay style={{ fontSize: "1.5em" }} /> View Demo{" "}
-                </Flex>{" "}
+                <Flex> Get Started </Flex>{" "}
               </Btn1>
             </Flex>
           </Flex>
