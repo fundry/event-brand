@@ -44,6 +44,7 @@ const Home = (): JSX.Element => {
       <Banner />
 
       <Body style={{ color: "#401364" }}>
+        <br />
         <BgTitle>Better way to manage Events</BgTitle>
 
         <Text>
@@ -57,6 +58,7 @@ const Home = (): JSX.Element => {
             return (
               <Card
                 style={{
+                  margin: "0.5em",
                   padding: "1em",
                   width: "35em",
                   boxShadow: "0px 3px 4px grey",
@@ -79,8 +81,10 @@ const Home = (): JSX.Element => {
 
         <Text>
           You love photos , we know!. <br />
+          <br />
           Eventful allocates each user a cloud storage to store files from
           confernces .
+          <br />
           <br />
           Event organizers upload all photos to their alllocated storage and we
           help them deliver the photos to users whose images are in the photo.
