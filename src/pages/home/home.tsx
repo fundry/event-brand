@@ -45,9 +45,9 @@ const Home = (): JSX.Element => {
           {data.map(({ title, desc, id }) => {
             return (
               <Card style={{ padding: "0.5em" }} key={id}>
-                <Title> {title} </Title>
+                <Title style={{ textAlign: "center" }}> {title} </Title>
 
-                <Text> {desc} </Text>
+                <Text style={{ textAlign: "center" }}> {desc} </Text>
               </Card>
             )
           })}
