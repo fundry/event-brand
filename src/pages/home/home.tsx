@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Card } from "react-bootstrap"
 import Flex from "styled-flex-component"
 import { IoIosArrowForward } from " react-icons/io"
+import media from "styled-media-query"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -13,7 +14,13 @@ import Speakers from "./features/speakers"
 import Organizers from "./features/organizers"
 
 const Body = styled.div`
-  padding: 0.5em;
+  padding: 3em;
+  ${media.lessThan("medium")`
+    padding : 1.5em
+  `};
+  ${media.lessThan("small")`
+    padding : 0.8em
+  `};
 `
 
 const Title = styled.h4``

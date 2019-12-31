@@ -52,7 +52,6 @@ const Banner = props => {
     }
     ${media.lessThan("medium")`
       margin: 0 0.25em;
-      height: 30px;
   `};
   `
 
