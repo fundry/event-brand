@@ -47,7 +47,7 @@ const Home = (): JSX.Element => {
         <BgTitle>Better way to manage Events</BgTitle>
 
         <Text>
-          Conferences are hard to organize , we know!. Eventful helps you
+          Conferences are hard to organize , we know!. <br /> Eventful helps you
           automate somethings . From creating teams to reviewing Speakers
           slides. From creating teams to reviewing Speakers slides.
         </Text>
@@ -63,9 +63,11 @@ const Home = (): JSX.Element => {
                 }}
                 key={id}
               >
+                {" "}
+                <br /> <br />
                 <Title style={{ textAlign: "center" }}> {title} </Title>
-
                 <Text style={{ textAlign: "center" }}> {desc} </Text>
+                <br /> <br />
               </Card>
             )
           })}
@@ -73,6 +75,18 @@ const Home = (): JSX.Element => {
 
         <br />
 
+        <BgTitle>All your files, managed for you</BgTitle>
+
+        <Text>
+          You love photos , we know!. <br />
+          Eventful allocates each user a cloud storage to store files from
+          confernces .
+          <br />
+          Event organizers upload all photos to their alllocated storage and we
+          help them deliver the photos to users whose images are in the photo.
+        </Text>
+
+        <br />
         <div>
           <Organizers />
           <Speakers />

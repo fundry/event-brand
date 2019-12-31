@@ -36,7 +36,7 @@ const Banner = props => {
   const { auth } = props
 
   const Btn1 = styled.button`
-    background: #fff;
+    background: transparent;
     text-align: center;
     border-radius: 5px;
     height: 48px;
@@ -47,12 +47,11 @@ const Banner = props => {
     padding: 0.25em 1.5em;
     font-size: 1.2em;
     &:hover {
-      color: #fff;
-      background: transparent;
+      color: #401364
+      background: #fff;
     }
     ${media.lessThan("medium")`
       margin: 0 0.25em;
-      padding: 0.25em 1.2em;
       height: 30px;
   `};
   `
