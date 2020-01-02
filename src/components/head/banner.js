@@ -15,7 +15,7 @@ const Banner = props => {
 
   const Motto = styled.h1`
     ${media.lessThan("medium")`
-    font-size: 2em
+    font-size: 3em
   `};
     font-weight: bold;
   `
@@ -77,7 +77,9 @@ const Banner = props => {
           </Text>
           <Flex justifyCenter>
             <Flex justifyAround>
-              <Btn1>Get Started</Btn1>
+              <Btn1>Create Account </Btn1>
+              <br />
+              <Btn1> Download App </Btn1>
             </Flex>
           </Flex>
         </div>
