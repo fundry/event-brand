@@ -18,7 +18,6 @@ const Header = ({ style, auth }: Props) => {
     padding: "1em",
     paddingTop: "1em",
     backgroundColor: style == "download" ? "#f2f5ff" : "transparent",
-    boxShadow: "0px 4px 5px grey",
   }
 
   const Head = {
@@ -223,6 +222,8 @@ const Header = ({ style, auth }: Props) => {
           )}{" "}
         </div>
       )}
+
+      <hr />
     </div>
   )
 }

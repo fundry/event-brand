@@ -10,7 +10,7 @@ import Drawing from "../../assets/svg/banner.svg"
 
 const Banner = props => {
   const Contain = styled.div`
-    background: #6c3eef;
+    background: transparent;
   `
 
   const Motto = styled.h2`
@@ -56,7 +56,7 @@ const Banner = props => {
   `
 
   const Text = styled.p`
-    font-size: 1.2em;
+    font-size: 1.4em;
   `
 
   return (
@@ -67,15 +67,12 @@ const Banner = props => {
         <div style={{ color: "#fff", padding: "2em" }}>
           <br />
           <br />
-          <h5 style={{ textAlign: "center", wordSpacing: "10px" }}>
-            {" "}
-            EVENTFUL{" "}
-          </h5>
+          <br />
           <Motto style={{ textAlign: "center", margin: "0.5em" }}>
             Create, Manage and Organize your events.{" "}
           </Motto>
 
-          <Text style={{ textAlign: "center", width: "50em", color: "#fff" }}>
+          <Text style={{ textAlign: "center", width: "50em" }}>
             Create your conferences and let's do the management!{" "}
           </Text>
           <Flex justifyCenter>
@@ -86,6 +83,7 @@ const Banner = props => {
         </div>
       </Flex>
 
+      <br />
       <br />
     </Contain>
   )
