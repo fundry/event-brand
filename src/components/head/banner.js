@@ -15,7 +15,7 @@ const Banner = props => {
 
   const Motto = styled.h1`
     ${media.lessThan("medium")`
-    font-size: 3em
+    font-size: 2.5em
   `};
     font-weight: bold;
   `
