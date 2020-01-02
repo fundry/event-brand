@@ -13,9 +13,9 @@ const Banner = props => {
     background: transparent;
   `
 
-  const Motto = styled.h2`
+  const Motto = styled.h1`
     ${media.lessThan("medium")`
-    font-size: 1.8em
+    font-size: 2em
   `};
     font-weight: bold;
   `
@@ -64,12 +64,12 @@ const Banner = props => {
       <Header auth={auth} />
 
       <Flex justifyCenter>
-        <div style={{ color: "#fff", padding: "2em" }}>
+        <div style={{ padding: "2em" }}>
           <br />
           <br />
           <br />
           <Motto style={{ textAlign: "center", margin: "0.5em" }}>
-            Create, Manage and Organize your events.{" "}
+            Create, Manage and Organize <br /> your events.{" "}
           </Motto>
 
           <Text style={{ textAlign: "center", width: "50em" }}>
