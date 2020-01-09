@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
 import Flex from "styled-flex-component"
 import { FiPlay } from "react-icons/fi"
+import { DiAppstore } from "react-icons/di"
+import { FaGooglePlay } from "react-icons/fa"
 
 import Header from "./header"
 import Drawing from "../../assets/svg/banner.svg"
@@ -36,16 +38,16 @@ const Banner = props => {
   const { auth } = props
 
   const Btn1 = styled.button`
-    background: transparent;
+    background: ${props => (props.download ? "#ff21c1" : "transparent")};
     text-align: center;
     border-radius: 5px;
-    height: 48px;
-    width: 14em;
+    height:  60px;
+    width: ${props => (props.one ? "20em" : "17em")};
     border: 2px solid #ff21c1;
-    color: #401364;
+    color: ${props => (props.download ? "#fff" : "#401364")};
     margin: 0 1em;
     padding: 0.25em 1.5em;
-    font-size: 1.2em;
+    font-size: 1.3em;
     &:hover {
       color: #401364
       background: #fff;
@@ -56,7 +58,7 @@ const Banner = props => {
   `
 
   const Text = styled.p`
-    font-size: 1.4em;
+    font-size: 1.5em;
   `
 
   return (
@@ -76,10 +78,32 @@ const Banner = props => {
             Create your conferences and let's do the management!{" "}
           </Text>
           <Flex justifyCenter>
-            <Flex justifyAround>
-              <Btn1>Create Account </Btn1>
+            <Flex column>
+              <div style={{ textAlign: "center" }}>
+                <Btn1 style={{ textAlign: "center" }} one>
+                  Web Management Console
+                </Btn1>
+              </div>
               <br />
-              <Btn1> Download App </Btn1>
+
+              <Flex>
+                <Btn1 download two>
+                  <Flex>
+                    <DiAppstore style={{ fontSize: "1.7em" }} />
+                  </Flex>
+                  Apple Store
+                </Btn1>
+
+                <br />
+                <div style={{ textAlign: "center" }}>
+                  <Btn1 download three style={{ width: "15em" }}>
+                    <Flex>
+                      <FaGooglePlay style={{ fontSize: "1.7em" }} />
+                    </Flex>
+                    Play Store
+                  </Btn1>
+                </div>
+              </Flex>
             </Flex>
           </Flex>
         </div>
