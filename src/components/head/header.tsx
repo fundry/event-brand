@@ -154,7 +154,7 @@ const Header = ({ style, auth }: Props) => {
                         </div>
 
                         <Link to="/download/download">
-                          <Button> Download </Button>
+                          <Button> Create Account </Button>
                         </Link>
                       </Flex>
                     ) : (
@@ -208,13 +208,13 @@ const Header = ({ style, auth }: Props) => {
                         }
                       />
                       <Link to="/">
-                        <Brand>Remotify</Brand>
+                        <Brand>Event</Brand>
                       </Link>
                     </Flex>
                   </NameDiv>
 
                   <Link to="/download/download">
-                    <Button> Download </Button>
+                    <Button> Create Account </Button>
                   </Link>
                 </Flex>
               </nav>

@@ -5,6 +5,7 @@ import Flex from "styled-flex-component"
 import { IoIosArrowForward } from "react-icons/io"
 import media from "styled-media-query"
 import posed from "react-pose"
+import { Link } from "gatsby"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -16,12 +17,19 @@ import Speakers from "./features/speakers"
 import Organizers from "./features/organizers"
 
 const Body = styled.div`
-  padding: 3em;
+  padding-left: 8em;
+  padding-right: 8em;
+  ${media.lessThan("large")`
+  padding-left: 4em;
+  padding-right: 4em;
+  `};
   ${media.lessThan("medium")`
-    padding : 1.5em
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   `};
   ${media.lessThan("small")`
-    padding : 0.8em
+  padding-left: 0.4em;
+  padding-right: 0.4em;
   `};
 `
 
@@ -31,7 +39,7 @@ const Title = styled.h4`
 `
 
 const Text = styled.p`
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-align: ${props => (props.features ? "center" : null)};
 `
 
@@ -51,6 +59,15 @@ const data = [
 
 const BgTitle = styled.h1`
   font-weight: bold;
+  ${media.lessThan("medium")`
+    font-size : 2.2em
+  `};
+  ${media.lessThan("large")`
+    font-size : 2.3em
+  `};
+  ${media.lessThan("small")`
+      font-size : 2em
+    `};
 `
 
 const Contain = styled.div``
@@ -149,23 +166,23 @@ const Home = (): JSX.Element => {
 
                   <Text features>{text}</Text>
 
-                  <Flex justifyCenter>
-                    <p> Learn More </p>
-                    <IoIosArrowForward
-                      style={{ fontSize: "1.5em", paddingLeft: "5px" }}
-                    />
-                  </Flex>
+                  <Link to="">
+                    <Flex justifyCenter>
+                      <p> Learn More </p>
+                      <IoIosArrowForward
+                        style={{ fontSize: "1.5em", paddingLeft: "5px" }}
+                      />
+                    </Flex>
+                  </Link>
                 </Contain>
               </div>
             )
           })}
         </Items>
         <br />
-        <div>
-          <Organizers />
-          <Speakers />
-          <Attendees />
-        </div>
+        <Organizers />
+        <Speakers />
+        <Attendees />
 
         <Security />
       </Body>

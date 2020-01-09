@@ -30,20 +30,6 @@ const Footer = () => {
     color: "#fff",
   })
 
-  const Input = styled.input({
-    padding: "1em",
-    paddingLeft: "2em",
-    width: "26em",
-    border: "0px",
-    background: "transparent",
-  })
-
-  const Box = styled.div({
-    border: "1px solid #361f94 ",
-    borderRadius: "0px 15px 15px 0px",
-    height: "7vh",
-  })
-
   const Button = styled.button`
     background: #5919ab;
     border: 1px solid #0e2f5a;
@@ -52,20 +38,6 @@ const Footer = () => {
     height: 7.1vh,
     margin: 0 1em;
     padding: 0.50em 1.5em;
-    :hover {
-      border: 2px solid #0e2f5a;
-      font-size: 1em;
-    }
-  `
-
-  const ModalButton = styled.button`
-    background: #5919ab;
-    border: 1px solid #0e2f5a;
-    border-radius: 0px 15px 15px 0px  ;
-    color: #fff;
-    height: 7.1vh,
-    margin: 0 1em;
-    padding: 1.25em 1.7em;
     :hover {
       border: 2px solid #0e2f5a;
       font-size: 1em;
@@ -113,7 +85,7 @@ const Footer = () => {
       <Testing>
         <Flex justifyBetween>
           <Test style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}>
-            Join the Remotify beta testing program !
+            Join the Event beta testing program !
           </Test>
 
           {Width >= 470 ? (

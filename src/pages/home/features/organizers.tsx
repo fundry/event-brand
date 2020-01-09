@@ -43,7 +43,6 @@ const Organizers = () => {
                 fontSize: "1.3em",
               }}
             >
-              {" "}
               Create and Manage Events
             </Title>
 
