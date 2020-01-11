@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import media from "styled-media-query"
 import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
@@ -9,12 +9,18 @@ import { FaGooglePlay } from "react-icons/fa"
 import { IoIosDesktop } from "react-icons/io"
 
 import Header from "./header"
-import Drawing from "../../assets/svg/banner.svg"
+import Illustration from "../../assets/svg/illustration.svg"
 
 const Banner = props => {
   const Contain = styled.div`
     background: transparent;
     color: #401364;
+    padding-left: 12em;
+    padding-right: 12em;
+    ${media.lessThan("large")`
+    padding-left: 4em;
+    padding-right: 4em;
+    `};
   `
 
   const Motto = styled.h1`
@@ -25,19 +31,26 @@ const Banner = props => {
   `
 
   const Body = styled.div`
-    height: 30vh;
-    padding-top: 7em;
-    ${media.lessThan("medium")`
-      height: 23vh;
-      padding-top: 4em;
+    padding-top: 4em;
+    ${media.lessThan("large")`
+      padding-top: 2em;
   `};
   `
 
   const [Width, setWidth] = useState(null)
+
   setTimeout(function() {
     setWidth(window.innerWidth)
-  }, 1000)
-  const { auth } = props
+  }, 500)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
 
   const Btn1 = styled.button`
     background: ${props => (props.download ? "#ff21c1" : "transparent")};
@@ -67,65 +80,126 @@ const Banner = props => {
   `
 
   return (
-    <Contain>
-      <Header auth={auth} />
+    <div>
+      <Header />
 
-      <Flex justifyCenter>
-        <div style={{ padding: "2em" }}>
-          <br />
-          <br />
-          <Motto style={{ textAlign: "center", margin: "0.5em" }}>
-            Create, Manage and Organize <br /> your events.{" "}
-          </Motto>
+      {Width >= 1050 ? (
+        <Contain>
+          <Flex justifyAround>
+            <img
+              src={Illustration}
+              alt="illustration here"
+              style={{ maxHeight: "40%", maxWidth: "50%" }}
+            />
 
-          <Text style={{ textAlign: "center", width: "50em" }}>
-            Create your conferences and let's do the management!{" "}
-          </Text>
-          <Flex justifyCenter>
-            <Flex column>
-              <div style={{ textAlign: "center" }}>
-                <Btn1 style={{ textAlign: "center" }} one>
-                  <Flex justifyCenter>
-                    <div style={{ paddingRight: "7px" }}>
-                      <IoIosDesktop style={{ fontSize: "1.7em" }} />{" "}
+            <Body>
+              <Flex column>
+                <br />
+                <br />
+                <Motto style={{ textAlign: "right", margin: "0.5em" }}>
+                  Create, Manage and Organize <br /> your events.
+                </Motto>
+
+                <Text style={{ textAlign: "right" }}>
+                  Create your conferences and let's do the management!{" "}
+                </Text>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ textAlign: "center" }}>
+                    <Btn1 style={{ textAlign: "center" }} one>
+                      <Flex justifyCenter>
+                        <div style={{ paddingRight: "7px" }}>
+                          <IoIosDesktop style={{ fontSize: "1.7em" }} />{" "}
+                        </div>
+                        Management Console
+                      </Flex>
+                    </Btn1>
+                  </div>
+                  <br />
+
+                  <Flex>
+                    <div style={{ fontWeight: "bold" }}>
+                      <Btn1 download two>
+                        <Flex justifyCenter>
+                          <div style={{ paddingRight: "7px" }}>
+                            <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
+                          </div>
+                          Apple Store
+                        </Flex>
+                      </Btn1>
                     </div>
-                    Management Console
+                    <br />
+                    <div style={{ textAlign: "center", fontWeight: "bold" }}>
+                      <Btn1 download two style={{ width: "13em" }}>
+                        <Flex justifyCenter>
+                          <div style={{ paddingRight: "7px" }}>
+                            <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
+                          </div>
+                          Play Store
+                        </Flex>
+                      </Btn1>
+                    </div>
                   </Flex>
-                </Btn1>
-              </div>
-              <br />
+                </div>
+              </Flex>
+            </Body>
+          </Flex>
 
-              <Flex>
-                <div style={{ fontWeight: "bold" }}>
-                  <Btn1 download two>
+          <br />
+          <br />
+        </Contain>
+      ) : (
+        <Flex justifyCenter>
+          <div style={{ padding: "2em" }}>
+            <Motto style={{ textAlign: "center", margin: "0.5em" }}>
+              Create, Manage and Organize <br /> your events.{" "}
+            </Motto>
+
+            <Text style={{ textAlign: "center", width: "50em" }}>
+              Create your conferences and let's do the management!{" "}
+            </Text>
+            <Flex justifyCenter>
+              <Flex column>
+                <div style={{ textAlign: "center" }}>
+                  <Btn1 style={{ textAlign: "center" }} one>
                     <Flex justifyCenter>
                       <div style={{ paddingRight: "7px" }}>
-                        <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
+                        <IoIosDesktop style={{ fontSize: "1.7em" }} />{" "}
                       </div>
-                      Apple Store
+                      Management Console
                     </Flex>
                   </Btn1>
                 </div>
                 <br />
-                <div style={{ textAlign: "center", fontWeight: "bold" }}>
-                  <Btn1 download two style={{ width: "13em" }}>
-                    <Flex justifyCenter>
-                      <div style={{ paddingRight: "7px" }}>
-                        <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
-                      </div>
-                      Play Store
-                    </Flex>
-                  </Btn1>
-                </div>
+
+                <Flex>
+                  <div style={{ fontWeight: "bold" }}>
+                    <Btn1 download two>
+                      <Flex justifyCenter>
+                        <div style={{ paddingRight: "7px" }}>
+                          <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
+                        </div>
+                        Apple Store
+                      </Flex>
+                    </Btn1>
+                  </div>
+                  <br />
+                  <div style={{ textAlign: "center", fontWeight: "bold" }}>
+                    <Btn1 download two style={{ width: "13em" }}>
+                      <Flex justifyCenter>
+                        <div style={{ paddingRight: "7px" }}>
+                          <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
+                        </div>
+                        Play Store
+                      </Flex>
+                    </Btn1>
+                  </div>
+                </Flex>
               </Flex>
             </Flex>
-          </Flex>
-        </div>
-      </Flex>
-
-      <br />
-      <br />
-    </Contain>
+          </div>
+        </Flex>
+      )}
+    </div>
   )
 }
 

@@ -62,13 +62,13 @@ const data = [
 const BgTitle = styled.h1`
   font-weight: bold;
   ${media.lessThan("medium")`
-    font-size : 2.2em
+    font-size : ${props => (props.support ? "1.9em" : "2.2em")}
   `};
   ${media.lessThan("large")`
-    font-size : 2.3em
+  font-size : ${props => (props.support ? "2em" : "2.3em")}
   `};
   ${media.lessThan("small")`
-      font-size : 2em
+      font-size : ${props => (props.support ? "1.7em" : "2em")}
     `};
 `
 
@@ -157,7 +157,7 @@ const Home = (): JSX.Element => {
         <br />
         <br />
         <div style={{ textAlign: "center" }}>
-          <BgTitle>Support For Your Event Type</BgTitle>
+          <BgTitle support>Support For Your Event Type</BgTitle>
           <Text explanation>
             Eventful has features to provide support your specific type of
             event.{" "}
@@ -223,7 +223,6 @@ const Home = (): JSX.Element => {
           })}
         </Items>
         <br />
-        <Organizers />
         <Speakers />
         <Attendees />
 
