@@ -67,13 +67,13 @@ const Attendees = () => {
       <Flex justifyCenter>
         <img
           alt="android"
-          style={{ maxHeight: "50%", maxWidth: "55%", paddingTop: "1%" }}
+          style={{ maxHeight: "50%", maxWidth: "65%", paddingTop: "1%" }}
           src={Android}
         />
       </Flex>
 
       <Contain>
-        <Title style={{ textAlign: "center" }} big>
+        <Title style={{ textAlign: "center", fontWeight: "bold" }} big>
           {" "}
           Get the App!{" "}
         </Title>
@@ -99,7 +99,7 @@ const Attendees = () => {
 
             <br />
             <div style={{ textAlign: "center" }}>
-              <Btn1 download one style={{ width: "15em" }}>
+              <Btn1 download one style={{ width: "12em" }}>
                 <Flex justifyCenter>
                   <div style={{ paddingRight: "7px" }}>
                     <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}

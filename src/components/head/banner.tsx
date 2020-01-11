@@ -96,18 +96,19 @@ const Banner = props => {
               <br />
 
               <Flex>
-                <Btn1 download two>
-                  <Flex justifyCenter>
-                    <div style={{ paddingRight: "7px" }}>
-                      <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
-                    </div>
-                    Apple Store
-                  </Flex>
-                </Btn1>
-
+                <div style={{ fontWeight: "bold" }}>
+                  <Btn1 download two>
+                    <Flex justifyCenter>
+                      <div style={{ paddingRight: "7px" }}>
+                        <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
+                      </div>
+                      Apple Store
+                    </Flex>
+                  </Btn1>
+                </div>
                 <br />
-                <div style={{ textAlign: "center" }}>
-                  <Btn1 download three style={{ width: "15em" }}>
+                <div style={{ textAlign: "center", fontWeight: "bold" }}>
+                  <Btn1 download two style={{ width: "13em" }}>
                     <Flex justifyCenter>
                       <div style={{ paddingRight: "7px" }}>
                         <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
