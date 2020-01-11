@@ -41,7 +41,7 @@ const Title = styled.h4`
 `
 
 const Text = styled.p`
-  font-size: 1.3em;
+  font-size: ${props => (props.explanation ? "1.57em " : "1.4em")};
   text-align: ${props => (props.features ? "center" : null)};
 `
 
@@ -118,7 +118,26 @@ const FeaturesList = [
       "All images taken during an event are sent to registered event attendees.",
     link: "",
   },
+  {
+    id: 5,
+    title: "Realtime Collaboration",
+    text: "Collaborate and give realtime feedbacks with speakers and sponsors",
+    link: "",
+  },
+  {
+    id: 6,
+    title: "Team Support",
+    text: "Create teams and group within your event to share workload",
+    link: "",
+  },
 ]
+
+const CustomCard = styled(Card)`
+  &:hover {
+    box-shadow: 0px 3px 4px grey;
+  }
+`
+
 const Home = (): JSX.Element => {
   return (
     <Layout>
@@ -135,24 +154,35 @@ const Home = (): JSX.Element => {
           Speakers slides. From creating teams to reviewing Speakers slides.
         </Text>
 
+        <br />
+        <br />
+        <div style={{ textAlign: "center" }}>
+          <BgTitle>Support For Your Event Type</BgTitle>
+          <Text explanation>
+            Eventful has features to provide support your specific type of
+            event.{" "}
+          </Text>
+        </div>
         <Flex justifyAround>
           {data.map(({ title, desc, id }) => {
             return (
-              <Card
+              <CustomCard
                 style={{
                   margin: "1em",
                   padding: "1em",
                   width: "35em",
-                  boxShadow: "0px 3px 4px grey",
                 }}
                 key={id}
               >
                 {" "}
                 <br /> <br />
-                <Title style={{ textAlign: "center" }}> {title} </Title>
+                <Title style={{ textAlign: "center", fontWeight: "bold" }}>
+                  {" "}
+                  {title}{" "}
+                </Title>
                 <Text style={{ textAlign: "center" }}> {desc} </Text>
                 <br /> <br />
-              </Card>
+              </CustomCard>
             )
           })}
         </Flex>

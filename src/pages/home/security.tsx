@@ -7,6 +7,8 @@ import { FiLock } from "react-icons/fi"
 import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "gatsby"
 
+import Lock from "../../assets/svg/lock.svg"
+
 const Security = props => {
   const Contain = styled.div`
     background: transparent;
@@ -68,32 +70,43 @@ const Security = props => {
   return (
     <Contain>
       <br />
-      <Flex>
-        <Title style={{ paddingRight: "10px" }}>Security & Privacy</Title>
 
-        <FiLock style={{ fontSize: "2em" }} />
+      <Flex>
+        <img
+          src={Lock}
+          alt="Lock"
+          style={{ maxHeight: "10%", maxWidth: "20%" }}
+        />
+        <div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+          <Title style={{ paddingRight: "10px", textAlign: "center" }}>
+            Security & Privacy
+          </Title>
+
+          <Text style={{ textAlign: "center", width: "35em" }}>
+            How data within eventful are secured How data within eventful are
+            secured How data within eventful are secured How data within
+            eventful are secured How data within eventful are secured
+          </Text>
+
+          <Text style={{ textAlign: "center", width: "35em" }}>
+            How data within eventful are secured How data within eventful are
+            secured How data within eventful are secured How data within
+            eventful are secured How data within eventful are secured
+          </Text>
+
+          <Flex justifyCenter>
+            <Link to="">
+              <Flex>
+                <p style={{ fontSize: "1.3em" }}> Learn More </p>
+                <IoIosArrowForward
+                  style={{ fontSize: "2.2em", paddingLeft: "5px" }}
+                />
+              </Flex>
+            </Link>{" "}
+          </Flex>
+        </div>
       </Flex>
 
-      <Text style={{ textAlign: "center" }}>
-        How data within eventful are secured How data within eventful are
-        secured How data within eventful are secured How data within eventful
-        are secured How data within eventful are secured
-      </Text>
-
-      <Text style={{ textAlign: "center" }}>
-        How data within eventful are secured How data within eventful are
-        secured How data within eventful are secured How data within eventful
-        are secured How data within eventful are secured
-      </Text>
-
-      <Link to="">
-        <Flex>
-          <p> Learn More </p>
-          <IoIosArrowForward
-            style={{ fontSize: "1.5em", paddingLeft: "5px" }}
-          />
-        </Flex>
-      </Link>
       <br />
     </Contain>
   )
