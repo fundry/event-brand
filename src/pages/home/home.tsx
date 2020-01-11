@@ -7,6 +7,8 @@ import media from "styled-media-query"
 import posed from "react-pose"
 import { Link } from "gatsby"
 
+import Feature from "../../assets/svg/features.svg"
+
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
@@ -123,7 +125,7 @@ const Home = (): JSX.Element => {
       <Seo title="Home" />
       <Banner />
 
-      <Body style={{ color: "#401364" }}>
+      <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <BgTitle>Better way to manage Events</BgTitle>
 
@@ -162,6 +164,17 @@ const Home = (): JSX.Element => {
             return (
               <div>
                 <Contain key={id}>
+                  <Flex justifyCenter>
+                    <img
+                      src={Feature}
+                      alt="feature"
+                      style={{
+                        maxHeight: "50%",
+                        maxWidth: "70%",
+                        padding: "1em",
+                      }}
+                    />
+                  </Flex>
                   <Title features>{title}</Title>
 
                   <Text features>{text}</Text>

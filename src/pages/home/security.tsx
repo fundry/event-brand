@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { Carousel } from "react-bootstrap"
 import Flex from "styled-flex-component"
 import { FiLock } from "react-icons/fi"
+import { IoIosArrowForward } from "react-icons/io"
+import { Link } from "gatsby"
 
 const Security = props => {
   const Contain = styled.div`
@@ -57,40 +59,41 @@ const Security = props => {
   `
 
   const Text = styled.p`
-    font-size: 1.5em;
+    font-size: 1.4em;
     ${media.lessThan("small")`
-     font-size: 1.2em; 
+     font-size: 1.2em;
     `};
   `
 
   return (
     <Contain>
       <br />
-      <Flex justifyCenter>
+      <Flex>
+        <Title style={{ paddingRight: "10px" }}>Security & Privacy</Title>
+
+        <FiLock style={{ fontSize: "2em" }} />
+      </Flex>
+
+      <Text style={{ textAlign: "center" }}>
+        How data within eventful are secured How data within eventful are
+        secured How data within eventful are secured How data within eventful
+        are secured How data within eventful are secured
+      </Text>
+
+      <Text style={{ textAlign: "center" }}>
+        How data within eventful are secured How data within eventful are
+        secured How data within eventful are secured How data within eventful
+        are secured How data within eventful are secured
+      </Text>
+
+      <Link to="">
         <Flex>
-          <Title style={{ paddingRight: "10px" }}>Security & Privacy</Title>
-
-          <FiLock style={{ fontSize: "2em" }} />
+          <p> Learn More </p>
+          <IoIosArrowForward
+            style={{ fontSize: "1.5em", paddingLeft: "5px" }}
+          />
         </Flex>
-      </Flex>
-
-      <Text style={{ textAlign: "center" }}>
-        How data within eventful are secured How data within eventful are
-        secured How data within eventful are secured How data within eventful
-        are secured How data within eventful are secured
-      </Text>
-
-      <Text style={{ textAlign: "center" }}>
-        How data within eventful are secured How data within eventful are
-        secured How data within eventful are secured How data within eventful
-        are secured How data within eventful are secured
-      </Text>
-      <Flex justifyCenter>
-        <Flex justifyAround>
-          <Button>Learn More </Button>
-          <br />
-        </Flex>
-      </Flex>
+      </Link>
       <br />
     </Contain>
   )

@@ -60,7 +60,6 @@ const Banner = props => {
       border: 1.7px solid #ff21c1;
       width: ${props => (props.one ? "15em" : "9em")};
   `};
- 
   `
 
   const Text = styled.p`
