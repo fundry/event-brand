@@ -15,13 +15,12 @@ interface Props {
 const Header = ({ style, auth }: Props) => {
   // console.log(auth, 'auth from header');
   const Div = {
-    padding: "1em",
+    padding: "0.7em",
     paddingTop: "1em",
     backgroundColor: style == "download" ? "#f2f5ff" : "transparent",
   }
 
   const Head = {
-    padding: "1em",
     paddingTop: "1em",
     backgroundColor: "transparent",
     Color: "#0b33a2",
@@ -53,18 +52,19 @@ const Header = ({ style, auth }: Props) => {
   `
 
   const Button = styled.button`
-    background: #361f94;
+    background: "#401364";
     text-align: right;
-    border-radius: 3px;
-    height: 35px;
+    border-radius: 5px;
+    height: 40px;
     border: 1px solid #0e2f5a;
     color: #fff;
     margin: 0 1em;
-    padding: 0.25em 1.5em;
+    padding: 0.5em 1.5em;
     font-size: 1em;
     &:hover {
-      color: #fff;
+      color: #401364;
       background: transparent;
+      border: 1px solid #ff21c1;
     }
     ${media.lessThan("medium")`
       margin: 0 0.25em;
@@ -219,7 +219,7 @@ const Header = ({ style, auth }: Props) => {
                 </Flex>
               </nav>
             </div>
-          )}{" "}
+          )}
         </div>
       )}
 
