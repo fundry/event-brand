@@ -51,11 +51,7 @@ const Speakers = () => {
       </Title>
 
       <Flex justifyCenter>
-        <img
-          alt="ipad"
-          style={{ maxHeight: "40%", maxWidth: "45%", paddingTop: "1%" }}
-          src={Ipad}
-        />
+        <img alt="ipad" style={{ maxWidth: "55%" }} src={Ipad} />
       </Flex>
 
       <Flex justifyBetween>

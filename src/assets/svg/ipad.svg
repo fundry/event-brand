@@ -1,10 +1,10 @@
-<svg width="766" height="966" viewBox="0 0 766 966" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <svg width="1148" height="771" viewBox="0 0 1148 771" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d)">
-<rect x="746.02" y="12.8679" width="929.861" height="729.029" rx="25" transform="rotate(89.7709 746.02 12.8679)" fill="#C4C4C4" fill-opacity="0.5"/>
-<rect x="751.995" y="6.84397" width="941.861" height="741.029" rx="31" transform="rotate(89.7709 751.995 6.84397)" stroke="#0C0B0B" stroke-width="12"/>
+<rect x="1125.13" y="750.777" width="1108.7" height="729.029" rx="25" transform="rotate(-179.504 1125.13 750.777)" fill="#C4C4C4" fill-opacity="0.5"/>
+<rect x="1131.07" y="756.829" width="1120.7" height="741.029" rx="31" transform="rotate(-179.504 1131.07 756.829)" stroke="#0C0B0B" stroke-width="12"/>
 </g>
 <defs>
-<filter id="filter0_d" x="0.948059" y="0.820007" width="764.838" height="964.865" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="0.365173" y="0.0762634" width="1147.17" height="770.804" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -15,4 +15,3 @@
 </filter>
 </defs>
 </svg>
-
