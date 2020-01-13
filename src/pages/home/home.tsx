@@ -8,6 +8,15 @@ import posed from "react-pose"
 import { Link } from "gatsby"
 
 import Feature from "../../assets/svg/features.svg"
+import {
+  Text,
+  Title,
+  Items,
+  Body,
+  CustomCard,
+  BgTitle,
+} from "../../styles/style"
+import { FeaturesList } from "../../data"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -18,32 +27,7 @@ import Attendees from "./features/attendees"
 import Speakers from "./features/speakers"
 import Organizers from "./features/organizers"
 
-const Body = styled.div`
-  padding-left: 8em;
-  padding-right: 8em;
-  ${media.lessThan("large")`
-  padding-left: 4em;
-  padding-right: 4em;
-  `};
-  ${media.lessThan("medium")`
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  `};
-  ${media.lessThan("small")`
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  `};
-`
-
-const Title = styled.h4`
-  font-weight: ${props => (props.features ? "bold" : "normal")};
-  text-align: ${props => (props.features ? "center" : null)};
-`
-
-const Text = styled.p`
-  font-size: ${props => (props.explanation ? "1.57em " : "1.4em")};
-  text-align: ${props => (props.features ? "center" : null)};
-`
+const Contain = styled.div``
 
 const data = [
   {
@@ -58,85 +42,6 @@ const data = [
     desc: "Create meetups that lasts for a specified duration ",
   },
 ]
-
-const BgTitle = styled.h1`
-  font-weight: bold;
-  ${media.lessThan("medium")`
-    font-size : ${props => (props.support ? "1.9em" : "2.2em")}
-  `};
-  ${media.lessThan("large")`
-  font-size : ${props => (props.support ? "2em" : "2.3em")}
-  `};
-  ${media.lessThan("small")`
-      font-size : ${props => (props.support ? "1.7em" : "2em")}
-    `};
-`
-
-const Contain = styled.div``
-
-const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
-  display: "grid",
-  gridTemplateColumns: `repeat(auto-fill, minmax(${minColumnWidth}px, 1fr))`,
-  gridGap,
-})
-
-const Items = styled.div({
-  ...autoGrid(220, 20),
-  padding: "3em",
-  marginLeft: "1.5em",
-})
-
-const FeaturesList = [
-  {
-    id: 1,
-    title: "Automated Image Delivery",
-    text:
-      "All images taken during an event are sent to registered event attendees.",
-    link: "",
-  },
-
-  {
-    id: 2,
-    title: "Review speakers slides",
-    text:
-      "All images taken during an event are sent to registered event attendees.",
-    link: "",
-  },
-
-  {
-    id: 3,
-    title: "Create Bucket list",
-    text:
-      "All images taken during an event are sent to registered event attendees.",
-    link: "",
-  },
-
-  {
-    id: 4,
-    title: "Automate Your Tasks",
-    text:
-      "All images taken during an event are sent to registered event attendees.",
-    link: "",
-  },
-  {
-    id: 5,
-    title: "Realtime Collaboration",
-    text: "Collaborate and give realtime feedbacks with speakers and sponsors",
-    link: "",
-  },
-  {
-    id: 6,
-    title: "Team Support",
-    text: "Create teams and group within your event to share workload",
-    link: "",
-  },
-]
-
-const CustomCard = styled(Card)`
-  &:hover {
-    box-shadow: 0px 3px 4px grey;
-  }
-`
 
 const Home = (): JSX.Element => {
   return (
@@ -174,12 +79,8 @@ const Home = (): JSX.Element => {
                 }}
                 key={id}
               >
-                {" "}
                 <br /> <br />
-                <Title style={{ textAlign: "center", fontWeight: "bold" }}>
-                  {" "}
-                  {title}{" "}
-                </Title>
+                <Title features>{title} </Title>
                 <Text style={{ textAlign: "center" }}> {desc} </Text>
                 <br /> <br />
               </CustomCard>
@@ -207,7 +108,7 @@ const Home = (): JSX.Element => {
                   </Flex>
                   <Title features>{title}</Title>
 
-                  <Text features>{text}</Text>
+                  <Text items>{text}</Text>
 
                   <Link to="">
                     <Flex justifyCenter>
