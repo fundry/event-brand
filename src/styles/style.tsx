@@ -32,7 +32,8 @@ const CustomCard = styled(Card)`
 
 const BgTitle = styled.h1`
   font-weight: bold;
-  ${media.lessThan("medium")`
+  font-size: ${props => (props.support ? "1.75em" : "2em")}
+    ${media.lessThan("medium")`
     font-size : ${props => (props.support ? "1.7em" : "2.05em")}
   `};
   ${media.lessThan("large")`
@@ -44,8 +45,10 @@ const BgTitle = styled.h1`
 `
 
 const Body = styled.div`
-  padding-left: 8em;
-  padding-right: 8em;
+  padding-left: ${props => (props.banner ? "12em" : "8em")};
+  padding-right: ${props => (props.banner ? "12em" : "8em")};
+  background: ${props => (props.banner ? "transparent" : null)};
+  color: ${props => (props.banner ? "#401364" : null)};
   ${media.lessThan("large")`
   padding-left: 4em;
   padding-right: 4em;
@@ -58,6 +61,13 @@ const Body = styled.div`
   padding-left: 0.4em;
   padding-right: 0.4em;
   `};
+`
+
+const Motto = styled.h1`
+  ${media.lessThan("medium")`
+  font-size: 2.5em
+`};
+  font-weight: bold;
 `
 
 const BigTitle = styled.h1`
@@ -89,4 +99,14 @@ const Button = styled.button`
 `};
 `
 
-export { Text, Title, Items, CustomCard, BgTitle, Body, BigTitle, Button }
+export {
+  Text,
+  Title,
+  Motto,
+  Items,
+  CustomCard,
+  BgTitle,
+  Body,
+  BigTitle,
+  Button,
+}
