@@ -1,26 +1,15 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 
 import Ipad from "../../../assets/svg/ipad.svg"
 import Feature from "../../../assets/svg/features.svg"
 
-const Body = styled.div`
-  padding: 1em;
-`
-
-const Title = styled.h4`
-  color: blue;
-`
+import { Title, Body, Text } from "../../../styles/style"
 
 const Contain = styled.div`
   padding: 0.5em;
 `
-
-const Text = styled.p`
-  font-size: 1.1em;
-`
-
 const data = [
   {
     id: 1,
@@ -43,43 +32,90 @@ const data = [
 ]
 
 const Speakers = () => {
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
+
   return (
     <Body>
       <Title style={{ textAlign: "right", paddingLeft: "10px" }}>
-        {" "}
         Event for Speakers{" "}
       </Title>
 
       <Flex justifyCenter>
-        <img alt="ipad" style={{ maxWidth: "55%" }} src={Ipad} />
+        <img
+          alt="ipad"
+          style={{ maxWidth: Width >= 700 ? "55%" : "77%" }}
+          src={Ipad}
+        />
       </Flex>
 
-      <Flex justifyBetween>
-        {data.map(({ title, id, text }) => {
-          return (
-            <div>
-              <Contain key={id}>
-                <Flex justifyCenter>
-                  <img
-                    src={Feature}
-                    alt="feature"
-                    style={{
-                      maxHeight: "50%",
-                      maxWidth: "70%",
-                      padding: "1em",
-                    }}
-                  />
-                </Flex>
-                <div style={{ textAlign: "center" }}>
-                  <Title>{title}</Title>
+      {Width >= 570 ? (
+        <Flex justifyBetween>
+          {data.map(({ title, id, text }) => {
+            return (
+              <div>
+                <Contain key={id}>
+                  <Flex justifyCenter>
+                    <img
+                      src={Feature}
+                      alt="feature"
+                      style={{
+                        maxHeight: "50%",
+                        maxWidth: "70%",
+                      }}
+                    />
+                  </Flex>
 
-                  <Text>{text}</Text>
-                </div>
-              </Contain>
-            </div>
-          )
-        })}
-      </Flex>
+                  <div style={{ textAlign: "center" }}>
+                    <Title>{title}</Title>
+
+                    <Text>{text}</Text>
+                  </div>
+                </Contain>
+              </div>
+            )
+          })}
+        </Flex>
+      ) : (
+        <Flex column>
+          {data.map(({ title, id, text }) => {
+            return (
+              <div>
+                <Contain key={id}>
+                  <Flex justifyCenter>
+                    <img
+                      src={Feature}
+                      alt="feature"
+                      style={{
+                        maxHeight: "50%",
+                        maxWidth: "70%",
+                      }}
+                    />
+                  </Flex>
+
+                  <div style={{ textAlign: "center" }}>
+                    <Title>{title}</Title>
+
+                    <Text>{text}</Text>
+                  </div>
+                </Contain>
+              </div>
+            )
+          })}
+        </Flex>
+      )}
       <br />
     </Body>
   )
