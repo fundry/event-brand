@@ -39,10 +39,10 @@ const Security = props => {
           <img
             src={Lock}
             alt="Lock"
-            style={{ maxHeight: "10%", maxWidth: "20%" }}
+            style={{ maxHeight: "10%", maxWidth: "17%" }}
           />
         ) : null}
-        <div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+        <div style={{ paddingLeft: "10px" }}>
           <Title style={{ textAlign: "center" }} features>
             Security & Privacy
           </Title>

@@ -4,6 +4,7 @@ import Img from "react-image"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
 import media from "styled-media-query"
+import { FiMenu } from "react-icons/fi"
 
 // import useWindowWidth from "../../hook_style"
 
@@ -213,9 +214,7 @@ const Header = ({ style, auth }: Props) => {
                     </Flex>
                   </NameDiv>
 
-                  <Link to="/download/download">
-                    <Button> Create Account </Button>
-                  </Link>
+                  <FiMenu style={{ fontSize: "2em" }} />
                 </Flex>
               </nav>
             </div>

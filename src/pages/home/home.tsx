@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Card } from "react-bootstrap"
 import Flex from "styled-flex-component"
@@ -44,6 +44,21 @@ const data = [
 ]
 
 const Home = (): JSX.Element => {
+  const [Width, setWidth] = useState(null)
+
+  setTimeout(function() {
+    setWidth(window.innerWidth)
+  }, 1000)
+
+  const handleResize = value => {
+    setWidth(value)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize.bind(this))
+    return () => window.removeEventListener("resize", handleResize.bind(this))
+  }, [])
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -68,25 +83,52 @@ const Home = (): JSX.Element => {
             event.{" "}
           </Text>
         </div>
-        <Flex justifyAround>
-          {data.map(({ title, desc, id }) => {
-            return (
-              <CustomCard
-                style={{
-                  margin: "1em",
-                  padding: "1em",
-                  width: "35em",
-                }}
-                key={id}
-              >
-                <br /> <br />
-                <Title features>{title} </Title>
-                <Text style={{ textAlign: "center" }}> {desc} </Text>
-                <br /> <br />
-              </CustomCard>
-            )
-          })}
-        </Flex>
+        {Width >= 550 ? (
+          <Flex justifyAround>
+            {data.map(({ title, desc, id }) => {
+              return (
+                <CustomCard
+                  style={{
+                    margin: "1em",
+                    padding: "1em",
+                    width: "35em",
+                  }}
+                  key={id}
+                >
+                  <br /> <br />
+                  <Title features>{title} </Title>
+                  <Text style={{ textAlign: "center" }} feature>
+                    {desc}{" "}
+                  </Text>
+                  <br /> <br />
+                </CustomCard>
+              )
+            })}
+          </Flex>
+        ) : (
+          <div>
+            {data.map(({ title, desc, id }) => {
+              return (
+                <CustomCard
+                  style={{
+                    margin: "1em",
+                    padding: "0.5em",
+                    width: "22em",
+                    textAlign: "center",
+                  }}
+                  key={id}
+                >
+                  <br /> <br />
+                  <Title features>{title} </Title>
+                  <Text style={{ textAlign: "center" }} feature>
+                    {desc}{" "}
+                  </Text>
+                  <br /> <br />
+                </CustomCard>
+              )
+            })}
+          </div>
+        )}
 
         <br />
 
