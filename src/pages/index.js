@@ -1,6 +1,6 @@
 // basic top-most entry file
 import React from "react"
-
+import { Link } from "react-helmet"
 import Home from "./home/home"
 
 const IndexPage = () => (
