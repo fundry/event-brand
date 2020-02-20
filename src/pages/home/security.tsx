@@ -47,16 +47,14 @@ const Security = props => {
             Security & Privacy
           </Title>
 
-          <Text style={{ textAlign: "center", width: "35em" }}>
+          <Text style={{ textAlign: "center", width: "27em" }}>
             How data within eventful are secured How data within eventful are
             secured How data within eventful are secured How data within
-            eventful are secured How data within eventful are secured
           </Text>
 
-          <Text style={{ textAlign: "center", width: "35em" }}>
+          <Text style={{ textAlign: "center", width: "27em" }}>
             How data within eventful are secured How data within eventful are
             secured How data within eventful are secured How data within
-            eventful are secured How data within eventful are secured
           </Text>
 
           <Flex justifyCenter>

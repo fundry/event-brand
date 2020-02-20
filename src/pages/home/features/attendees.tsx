@@ -42,7 +42,6 @@ const Attendees = () => {
           Manage events Manage events Manage events Manage events Manage events
           Manage events Manage events Manage events Manage events Manage events
           Manage events Manage events Manage events Manage events Manage events
-          Manage events Manage events Manage events Manage events Manage events
         </Text>
 
         <Flex justifyCenter>
