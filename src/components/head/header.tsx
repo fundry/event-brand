@@ -1,12 +1,8 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
-import Img from "react-image"
-import styled from "styled-components"
 import Flex from "styled-flex-component"
-import media from "styled-media-query"
 import { FiMenu } from "react-icons/fi"
-
-// import useWindowWidth from "../../hook_style"
+import { HeaderBody, HBtn as Button, Brand } from "../../styles/style"
 
 interface Props {
   style: Boolean
@@ -14,70 +10,6 @@ interface Props {
 }
 
 const Header = ({ style, auth }: Props) => {
-  // console.log(auth, 'auth from header');
-  const Div = {
-    padding: "0.7em",
-    paddingTop: "1em",
-    backgroundColor: style == "download" ? "#f2f5ff" : "transparent",
-  }
-
-  const Head = {
-    paddingTop: "1em",
-    backgroundColor: "transparent",
-    Color: "#0b33a2",
-  }
-
-  const Brand = styled.p`
-    color: #ff21c1;
-    text-decoration#: none;
-    font-size: 25px;
-    font-family: comic sans ms;
-    font-weight: bold;
-    ${media.lessThan("medium")`
-      font-size: 20px
-  `};
-  `
-
-  const Title = styled.a`
-    font-size: 17px;
-    color: #fff;
-    ${media.lessThan("medium")`
-    font-size: 15px
-    padding-top : 10px
-  `};
-  `
-
-  const Image = styled(Img)`
-    width: 7%;
-    height: 25px;
-  `
-
-  const Button = styled.button`
-    background: "#401364";
-    text-align: right;
-    border-radius: 5px;
-    height: 40px;
-    border: 1px solid #0e2f5a;
-    color: #fff;
-    margin: 0 1em;
-    padding: 0.5em 1.5em;
-    font-size: 1em;
-    &:hover {
-      color: #401364;
-      background: transparent;
-      border: 1px solid #ff21c1;
-    }
-    ${media.lessThan("medium")`
-      margin: 0 0.25em;
-      padding: 0.25em 1.2em;
-      height: 30px;
-  `};
-  `
-
-  const NameDiv = styled.div`
-    margin-left: 2%;
-  `
-
   const [Width, setWidth] = useState(null)
 
   setTimeout(function() {
@@ -95,135 +27,105 @@ const Header = ({ style, auth }: Props) => {
 
   // const hooks = useWindowWidth()
   return (
-    <div>
-      {Width >= 600 ? (
+    <HeaderBody>
+      {Width >= 800 ? (
         <div>
           {style == false ? (
-            <div style={Head}>
-              <nav>
-                <Flex justifyBetween>
-                  <NameDiv>
-                    <Flex>
-                      <Image
-                        src={
-                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                        }
-                      />
-                      <Link to="/">
-                        <Brand>Event</Brand>
-                      </Link>
-                    </Flex>
-                  </NameDiv>
-                  <Flex>
-                    <div style={{ paddingRight: "20px" }}>
-                      <Link to="/">
-                        <Title> Resources </Title>
-                      </Link>
-                    </div>
-                  </Flex>
-                </Flex>
-              </nav>
-            </div>
+            <Flex justifyBetween>
+              <Flex>
+                <img
+                  alt="logo"
+                  src={
+                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                  }
+                />
+                <Link to="/">
+                  <h3>Eventure</h3>
+                </Link>
+              </Flex>
+              <Flex>
+                <div style={{ paddingRight: "20px" }}>
+                  <Link to="/">
+                    <a> Resources </a>
+                  </Link>
+                </div>
+              </Flex>
+            </Flex>
           ) : (
-            <div style={Div}>
-              <nav>
-                <Flex justifyBetween>
-                  <NameDiv>
-                    <Flex>
-                      <Image
-                        src={
-                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                        }
-                      />
-                      <Link to="/">
-                        <Brand>Event</Brand>
-                      </Link>
-                    </Flex>
-                  </NameDiv>
-                  <Flex>
-                    <div style={{ paddingRight: "30px" }}>
-                      <Link to="/">
-                        <Title> Resources </Title>
-                      </Link>
-                    </div>
-                    {!auth ? (
-                      <Flex>
-                        <div style={{ paddingRight: "20px" }}>
-                          <Link to="user/login">
-                            <Title> Login </Title>
-                          </Link>
-                        </div>
+            <Flex justifyBetween>
+              <Flex>
+                <img
+                  alt="logo"
+                  src={
+                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                  }
+                />
+                <Link to="/">
+                  <h3>Eventure</h3>
+                </Link>
+              </Flex>
+              <Flex>
+                <div style={{ paddingRight: "30px" }}>
+                  <Link to="/">
+                    <a> Resources </a>
+                  </Link>
+                </div>
+                <Flex>
+                  <div style={{ paddingRight: "20px" }}>
+                    <Link to="user/login">
+                      <a> Login </a>
+                    </Link>
+                  </div>
 
-                        <Link to="/download/download">
-                          <Button> Create Account </Button>
-                        </Link>
-                      </Flex>
-                    ) : (
-                      <div style={{ paddingRight: "20px" }}>
-                        <Link to="user/login">
-                          <Title> Logout </Title>
-                        </Link>
-                      </div>
-                    )}
-                  </Flex>
+                  <Link to="/download/download">
+                    <Button small> Create Account </Button>
+                  </Link>
                 </Flex>
-              </nav>
-            </div>
+              </Flex>
+            </Flex>
           )}{" "}
         </div>
       ) : (
         // {/* MOBILE RESPONSIVENESS   */}
         <div>
           {style == false ? (
-            <div style={Head}>
-              <nav>
-                <Flex justifyBetween>
-                  <NameDiv>
-                    <Flex>
-                      <Image
-                        src={
-                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                        }
-                      />
-                      <Link to="/">
-                        <Brand>Remotify</Brand>
-                      </Link>
-                    </Flex>
-                  </NameDiv>
+            <Flex justifyBetween>
+              <Flex>
+                <img
+                  alt="logo"
+                  src={
+                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                  }
+                />
+                <Link to="/">
+                  <Brand>Remotify</Brand>
+                </Link>
+              </Flex>
 
-                  <Link to="/download/download">
-                    <Button> Download </Button>
-                  </Link>
-                </Flex>
-              </nav>
-            </div>
+              <Link to="/download/download">
+                <Button> Download </Button>
+              </Link>
+            </Flex>
           ) : (
-            <div style={Div}>
-              <nav>
-                <Flex justifyBetween>
-                  <NameDiv>
-                    <Flex>
-                      <Image
-                        src={
-                          "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                        }
-                      />
-                      <Link to="/">
-                        <Brand>Event</Brand>
-                      </Link>
-                    </Flex>
-                  </NameDiv>
+            <Flex justifyBetween>
+              <Flex>
+                <img
+                  alt="logo"
+                  src={
+                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                  }
+                />
+                <Link to="/">
+                  <Brand>Eventure</Brand>
+                </Link>
+              </Flex>
 
-                  <FiMenu style={{ fontSize: "2em" }} />
-                </Flex>
-              </nav>
-            </div>
+              <FiMenu style={{ fontSize: "2em" }} />
+            </Flex>
           )}
         </div>
       )}
-
-      <hr />
-    </div>
+    </HeaderBody>
   )
 }
 

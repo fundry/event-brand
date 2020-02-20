@@ -64,7 +64,7 @@ const Banner = props => {
                     <Button style={{ textAlign: "center" }} one>
                       <Flex justifyCenter>
                         <div style={{ paddingRight: "7px" }}>
-                          <IoIosDesktop style={{ fontSize: "1.7em" }} />{" "}
+                          <IoIosDesktop style={{ fontSize: "1.6em" }} />{" "}
                         </div>
                         Management Console
                       </Flex>
@@ -88,7 +88,7 @@ const Banner = props => {
                       <Button download two style={{ width: "13em" }}>
                         <Flex justifyCenter>
                           <div style={{ paddingRight: "7px" }}>
-                            <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
+                            <FaGooglePlay style={{ fontSize: "1.6em" }} />{" "}
                           </div>
                           Play Store
                         </Flex>
@@ -119,7 +119,7 @@ const Banner = props => {
                   <Button style={{ textAlign: "center" }} one>
                     <Flex justifyCenter>
                       <div style={{ paddingRight: "7px" }}>
-                        <IoIosDesktop style={{ fontSize: "1.7em" }} />{" "}
+                        <IoIosDesktop style={{ fontSize: "1.6em" }} />{" "}
                       </div>
                       Management Console
                     </Flex>
@@ -147,7 +147,7 @@ const Banner = props => {
                     >
                       <Flex justifyCenter>
                         <div style={{ paddingRight: "7px" }}>
-                          <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
+                          <FaGooglePlay style={{ fontSize: "1.5em" }} />{" "}
                         </div>
                         Play Store
                       </Flex>

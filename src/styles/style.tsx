@@ -3,6 +3,7 @@ import media from "styled-media-query"
 import { Card } from "react-bootstrap"
 
 const Text = styled.p`
+  color: #401364;
   font-size: ${props => (props.items ? "1.27em " : "1.3em")};
   text-align: ${props => (props.items ? "center" : null)};
 
@@ -66,8 +67,8 @@ const Body = styled.div`
   background: ${props => (props.banner ? "transparent" : null)};
   color: ${props => (props.banner ? "#401364" : null)};
   ${media.lessThan("large")`
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 3em;
+  padding-right: 3em;
   `};
   ${media.lessThan("medium")`
   padding-left: 1.5em;
@@ -81,6 +82,7 @@ const Body = styled.div`
 
 const Motto = styled.h1`
   font-weight: bold;
+  color: #401364;
   ${media.lessThan("medium")`
   font-size: 2em
 `};
@@ -111,14 +113,15 @@ const Button = styled.button`
   color: ${props => (props.download ? "#fff" : "#401364")};
   margin: 0 1em;
   padding: 0.25em 0.5em;
-  font-size: 1.3em;
+  font-size: 1.2em;
   &:hover {
     color: #401364
     background: #fff;
   }
   ${media.lessThan("medium")`
     margin: 0 0.25em;
-    height:  50px;
+    height:  ${props => (props.small ? "40px" : "50px")} ;
+    font-size:  ${props => (props.small ? "0.9em" : "1.1em")} ;
     border: 1.55px solid #ff21c1;
     font-size : 1.1em
     width: ${props => (props.one ? "14em" : "9em")};
@@ -132,9 +135,73 @@ ${media.lessThan("small")`
 `};
 `
 
+const Brand = styled.p`
+  color: #ff21c1;
+  text-decoration#: none;
+  font-size: 25px;
+  font-weight: 800px;
+  ${media.lessThan("medium")`
+      font-size: 30px
+  `};
+`
+
+const HeaderBody = styled.nav`
+  box-shadow: 0px 4px 5px grey;
+  padding: 0.7em 0.3em;
+  background-color: transparent;
+  color: #0b33a2;
+  a {
+    color: #0b33a2;
+    font-size: 1.05em;
+  }
+  img {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  h3 {
+    color: #ff21c1;
+    word-spacing: 5px;
+    font-size: 1.6rem;
+  }
+`
+
+const HBtn = styled.button`
+  background: #ff21c1;
+  border-radius: 20rem;
+  height: 47px;
+  width: 9em;
+  border: 1px solid #ff21c1;
+  color: #fff;
+  margin: 0rem 1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  &:hover {
+    color: #401364;
+    background: #fff;
+  }
+  ${media.lessThan("medium")`
+    margin: 0em 0.25em;
+    height: 40px;
+    font-size:  0.9em;
+    border: 1.55px solid #ff21c1;
+    border-radius : 10px;
+    width: 9em;
+`};
+  ${media.lessThan("small")`
+  margin: 0 0.25em;
+  height:  45px;
+  border: 1.5px solid #ff21c1;
+  font-size : 1em;
+  width: ${props => (props.one ? "14em" : "9em")};
+`};
+`
+
 export {
+  HBtn,
+  HeaderBody,
   Text,
   Title,
+  Brand,
   Motto,
   Items,
   CustomCard,
