@@ -6,10 +6,9 @@ import { HeaderBody, HBtn as Button, Brand } from "../../styles/style"
 
 interface Props {
   style: Boolean
-  auth: Boolean
 }
 
-const Header = ({ style, auth }: Props) => {
+const Header = ({ style }: Props) => {
   const [Width, setWidth] = useState(null)
 
   setTimeout(function() {
@@ -78,6 +77,12 @@ const Header = ({ style, auth }: Props) => {
                   </div>
 
                   <Link to="/download/download">
+                    <Button small login>
+                      Login
+                    </Button>
+                  </Link>
+
+                  <Link to="/download/download">
                     <Button small> Create Account </Button>
                   </Link>
                 </Flex>
@@ -103,7 +108,7 @@ const Header = ({ style, auth }: Props) => {
               </Flex>
 
               <Link to="/download/download">
-                <Button> Download </Button>
+                <Button> Downloada </Button>
               </Link>
             </Flex>
           ) : (

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { Card } from "react-bootstrap"
 import Flex from "styled-flex-component"
 import { IoIosArrowForward } from "react-icons/io"
-import media from "styled-media-query"
-import posed from "react-pose"
 import { Link } from "gatsby"
 
 import Feature from "../../assets/svg/features.svg"
@@ -25,7 +22,6 @@ import Security from "./security"
 
 import Attendees from "./features/attendees"
 import Speakers from "./features/speakers"
-import Organizers from "./features/organizers"
 
 const Contain = styled.div``
 
@@ -165,6 +161,15 @@ const Home = (): JSX.Element => {
             )
           })}
         </Items>
+
+        <div>
+          <Title features> Integrate With Your Ticketers </Title>
+          <Text items>
+            Use your existing ticket managers while managing other aspects of
+            your event within Eventful
+          </Text>
+        </div>
+
         <br />
         <Speakers />
         <Attendees />

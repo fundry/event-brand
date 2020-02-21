@@ -166,18 +166,19 @@ const HeaderBody = styled.nav`
 `
 
 const HBtn = styled.button`
-  background: #ff21c1;
+  background: ${props => (props.login ? "#401364" : "#ff21c1")};
   border-radius: 20rem;
   height: 47px;
-  width: 9em;
-  border: 1px solid #ff21c1;
+  width: ${props => (props.login ? "7em" : "9em")};
+  border: ${props => (props.login ? "1px solid #fff" : " 1px solid #ff21c1 ")};
   color: #fff;
-  margin: 0rem 1rem;
+  margin: 0rem 0.5rem;
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
   &:hover {
     color: #401364;
-    background: #fff;
+    background: #f2f5ff;
+    border: ${props => (props.login ? "2px solid #401364" : null)};
   }
   ${media.lessThan("medium")`
     margin: 0em 0.25em;

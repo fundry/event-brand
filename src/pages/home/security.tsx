@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react"
-import media from "styled-media-query"
 import styled from "styled-components"
-import { Carousel } from "react-bootstrap"
 import Flex from "styled-flex-component"
-import { FiLock } from "react-icons/fi"
 import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "gatsby"
 
@@ -47,12 +44,12 @@ const Security = props => {
             Security & Privacy
           </Title>
 
-          <Text style={{ textAlign: "center", width: "27em" }}>
+          <Text style={{ textAlign: "center" }}>
             How data within eventful are secured How data within eventful are
             secured How data within eventful are secured How data within
           </Text>
 
-          <Text style={{ textAlign: "center", width: "27em" }}>
+          <Text style={{ textAlign: "center" }}>
             How data within eventful are secured How data within eventful are
             secured How data within eventful are secured How data within
           </Text>
