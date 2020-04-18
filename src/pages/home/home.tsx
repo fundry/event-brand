@@ -4,7 +4,6 @@ import Flex from "styled-flex-component"
 import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "gatsby"
 
-import Feature from "../../assets/svg/features.svg"
 import {
   Text,
   Title,
@@ -13,31 +12,19 @@ import {
   CustomCard,
   BgTitle,
 } from "../../styles/style"
-import { FeaturesList } from "../../data"
+import { Users } from "../../data"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
 
+import Integration from "./features/integrations"
 import Attendees from "./features/attendees"
 import Speakers from "./features/speakers"
-
-const Contain = styled.div``
-
-const data = [
-  {
-    id: 1,
-    title: " Conferences ",
-    desc: " Create conferences for a shorter duration ",
-  },
-
-  {
-    id: 2,
-    title: "Meetups",
-    desc: "Create meetups that lasts for a specified duration ",
-  },
-]
+import Media from "./features/media"
+import Experience from "./features/experience"
+import Networking from "./features/networking"
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -46,7 +33,7 @@ const Home = (): JSX.Element => {
     setWidth(window.innerWidth)
   }, 1000)
 
-  const handleResize = value => {
+  const handleResize = (value: React.SetStateAction<null>) => {
     setWidth(value)
   }
 
@@ -62,12 +49,11 @@ const Home = (): JSX.Element => {
 
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
-        <BgTitle>Better way to manage Events</BgTitle>
 
-        <Text>
-          Conferences are hard to organize , we know!. <br /> <br /> Eventful
-          helps you automate somethings . From creating teams to reviewing
-          Speakers slides. From creating teams to reviewing Speakers slides.
+        <Text center>
+          Eventful helps you automate somethings . From creating teams to
+          reviewing Speakers slides. From creating teams to reviewing Speakers
+          slides.
         </Text>
 
         <br />
@@ -81,7 +67,7 @@ const Home = (): JSX.Element => {
         </div>
         {Width >= 550 ? (
           <Flex justifyAround>
-            {data.map(({ title, desc, id }) => {
+            {Users.map(({ title, desc, id }) => {
               return (
                 <CustomCard
                   style={{
@@ -103,7 +89,7 @@ const Home = (): JSX.Element => {
           </Flex>
         ) : (
           <div>
-            {data.map(({ title, desc, id }) => {
+            {Users.map(({ title, desc, id }) => {
               return (
                 <CustomCard
                   style={{
@@ -128,48 +114,13 @@ const Home = (): JSX.Element => {
 
         <br />
 
-        <Items>
-          {FeaturesList.map(({ title, id, text }) => {
-            return (
-              <div>
-                <Contain key={id}>
-                  <Flex justifyCenter>
-                    <img
-                      src={Feature}
-                      alt="feature"
-                      style={{
-                        maxHeight: "50%",
-                        maxWidth: "70%",
-                        padding: "1em",
-                      }}
-                    />
-                  </Flex>
-                  <Title features>{title}</Title>
+        <Media />
 
-                  <Text items>{text}</Text>
+        <Integration />
+        <Experience />
+        <br />
 
-                  <Link to="">
-                    <Flex justifyCenter>
-                      <p> Learn More </p>
-                      <IoIosArrowForward
-                        style={{ fontSize: "1.5em", paddingLeft: "5px" }}
-                      />
-                    </Flex>
-                  </Link>
-                </Contain>
-              </div>
-            )
-          })}
-        </Items>
-
-        <div>
-          <Title features> Integrate With Your Ticketers </Title>
-          <Text items>
-            Use your existing ticket managers while managing other aspects of
-            your event within Eventful
-          </Text>
-        </div>
-
+        <Networking />
         <br />
         <Speakers />
         <Attendees />

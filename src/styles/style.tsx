@@ -1,31 +1,39 @@
+// @ts-ignore
 import styled from "styled-components"
 import media from "styled-media-query"
 import { Card } from "react-bootstrap"
 
+const Contain = styled.div`
+  text-align: ${props => (props.center ? "center" : null)};
+  max-width: ${props => (props.width ? "900px" : null)};
+`
+
 const Text = styled.p`
   color: #401364;
-  font-size: ${props => (props.items ? "1.27em " : "1.3em")};
-  text-align: ${props => (props.items ? "center" : null)};
+  font-size: ${(props: { items: any }) => (props.items ? "1.27em " : "1.3em")};
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 
   ${media.lessThan("medium")`
-  font-size: ${props => (props.items ? "1.10em " : "1.20em")};
-  text-align: ${props => (props.items ? "center" : null)};
+  font-size: ${(props: { items: any }) => (props.items ? "1.10em " : "1.20em")};
+  text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
 `};
 
   ${media.lessThan("large")`
-font-size: ${props => (props.items ? "1.20em " : "1.27em")};
-text-align: ${props => (props.items ? "center" : null)};
+font-size: ${(props: { items: any }) => (props.items ? "1.20em " : "1.27em")};
+text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
 `};
 
   ${media.lessThan("small")`
-font-size: ${props => (props.items ? "1em " : "1.10em")};
-text-align: ${props => (props.items ? "center" : null)};
+font-size: ${(props: { items: any }) => (props.items ? "1em " : "1.10em")};
+text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
   `};
 `
 
 const Title = styled.h4`
-  font-weight: ${props => (props.features ? "520" : "normal")};
-  text-align: ${props => (props.features ? "center" : null)};
+  font-weight: ${(props: { features: any }) =>
+    props.features ? "520" : "normal"};
+  text-align: ${(props: { features: any }) =>
+    props.features ? "center" : null};
 `
 
 const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
@@ -41,31 +49,37 @@ const Items = styled.div({
 })
 
 const CustomCard = styled(Card)`
+  border: 1px solid grey;
   &:hover {
     box-shadow: 0px 3px 4px grey;
+    border: 0px;
   }
 `
 
 const BgTitle = styled.h1`
   font-weight: bold;
-  font-size: ${props => (props.support ? "1.75em" : "2em")}
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  font-size: ${(props: { support: any }) => (props.support ? "1.75em" : "2em")}
     ${media.lessThan("medium")`
-    font-size : ${props => (props.support ? "1.7em" : "2.05em")}
+    font-size : ${(props: { support: any }) =>
+      props.support ? "1.7em" : "2.05em"}
   `};
   ${media.lessThan("large")`
-  font-size : ${props => (props.support ? "1.77em" : "2em")}
+  font-size : ${(props: { support: any }) => (props.support ? "1.77em" : "2em")}
   `};
   ${media.lessThan("small")`
     font-weight: 550;
-      font-size : ${props => (props.support ? "1.27em" : "1.40em")}
+      font-size : ${(props: { support: any }) =>
+        props.support ? "1.27em" : "1.40em"}
     `};
 `
 
 const Body = styled.div`
-  padding-left: ${props => (props.banner ? "12em" : "8em")};
-  padding-right: ${props => (props.banner ? "12em" : "8em")};
-  background: ${props => (props.banner ? "transparent" : null)};
-  color: ${props => (props.banner ? "#401364" : null)};
+  padding-left: ${(props: { banner: any }) => (props.banner ? "12em" : "8em")};
+  padding-right: ${(props: { banner: any }) => (props.banner ? "12em" : "8em")};
+  background: ${(props: { banner: any }) =>
+    props.banner ? "transparent" : null};
+  color: ${(props: { banner: any }) => (props.banner ? "#401364" : null)};
   ${media.lessThan("large")`
   padding-left: 3em;
   padding-right: 3em;
@@ -92,25 +106,26 @@ font-size: 1.5em
 `
 
 const BigTitle = styled.h1`
-  color: ${props => (props.app ? "blue" : "black")};
-  font-size: ${props => (props.app ? null : "1.7em")};
-  text-align: ${props => (props.app ? "center" : null)};
+  color: ${(props: { app: any }) => (props.app ? "blue" : "black")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "1.7em")};
+  text-align: ${(props: { app: any }) => (props.app ? "center" : null)};
   ${media.lessThan("medium")`
-  font-size : ${props => (props.app ? "2.5em" : null)}
+  font-size : ${(props: { app: any }) => (props.app ? "2.5em" : null)}
 `};
   ${media.lessThan("small")`
-    font-size : ${props => (props.app ? "2.2em" : null)}
+    font-size : ${(props: { app: any }) => (props.app ? "2.2em" : null)}
   `};
 `
 
 const Button = styled.button`
-  background: ${props => (props.download ? "#ff21c1" : "transparent")};
+  background: ${(props: { download: any }) =>
+    props.download ? "#ff21c1" : "transparent"};
   text-align: center;
   border-radius: 5px;
   height:  50px;
-  width: ${props => (props.one ? "17em" : "12em")};
+  width: ${(props: { one: any }) => (props.one ? "17em" : "12em")};
   border: 2px solid #ff21c1;
-  color: ${props => (props.download ? "#fff" : "#401364")};
+  color: ${(props: { download: any }) => (props.download ? "#fff" : "#401364")};
   margin: 0 1em;
   padding: 0.25em 0.5em;
   font-size: 1.2em;
@@ -120,18 +135,18 @@ const Button = styled.button`
   }
   ${media.lessThan("medium")`
     margin: 0 0.25em;
-    height:  ${props => (props.small ? "40px" : "50px")} ;
-    font-size:  ${props => (props.small ? "0.9em" : "1.1em")} ;
+    height:  ${(props: string) => (props.small ? "40px" : "50px")} ;
+    font-size:  ${(props: string) => (props.small ? "0.9em" : "1.1em")} ;
     border: 1.55px solid #ff21c1;
     font-size : 1.1em
-    width: ${props => (props.one ? "14em" : "9em")};
+    width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
 `};
 ${media.lessThan("small")`
   margin: 0 0.25em;
   height:  45px;
   border: 1.5px solid #ff21c1;
   font-size : 1em
-  width: ${props => (props.one ? "14em" : "9em")};
+  width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
 `};
 `
 
@@ -166,11 +181,13 @@ const HeaderBody = styled.nav`
 `
 
 const HBtn = styled.button`
-  background: ${props => (props.login ? "#401364" : "#ff21c1")};
+  background: ${(props: { login: any }) =>
+    props.login ? "#401364" : "#ff21c1"};
   border-radius: 20rem;
   height: 47px;
-  width: ${props => (props.login ? "7em" : "9em")};
-  border: ${props => (props.login ? "1px solid #fff" : " 1px solid #ff21c1 ")};
+  width: ${(props: { login: any }) => (props.login ? "7em" : "9em")};
+  border: ${(props: { login: any }) =>
+    props.login ? "1px solid #fff" : " 1px solid #ff21c1 "};
   color: #fff;
   margin: 0rem 0.5rem;
   padding: 0.25rem 0.5rem;
@@ -178,7 +195,8 @@ const HBtn = styled.button`
   &:hover {
     color: #401364;
     background: #f2f5ff;
-    border: ${props => (props.login ? "2px solid #401364" : null)};
+    border: ${(props: { login: any }) =>
+      props.login ? "2px solid #401364" : null};
   }
   ${media.lessThan("medium")`
     margin: 0em 0.25em;
@@ -193,11 +211,19 @@ const HBtn = styled.button`
   height:  45px;
   border: 1.5px solid #ff21c1;
   font-size : 1em;
-  width: ${props => (props.one ? "14em" : "9em")};
+  width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
 `};
 `
 
+const Slider = styled.div`
+  width: 100%;
+  overflow: auto;
+  display: flex;
+`
+
 export {
+  Slider,
+  Contain,
   HBtn,
   HeaderBody,
   Text,

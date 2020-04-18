@@ -38,8 +38,8 @@ const Header = ({ style }: Props) => {
                     "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                   }
                 />
-                <Link to="/">
-                  <h3>Eventure</h3>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <h3>Oasis</h3>
                 </Link>
               </Flex>
               <Flex>
@@ -59,20 +59,20 @@ const Header = ({ style }: Props) => {
                     "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                   }
                 />
-                <Link to="/">
-                  <h3>Eventure</h3>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <h3>Oasis</h3>
                 </Link>
               </Flex>
               <Flex>
-                <div style={{ paddingRight: "30px" }}>
+                <div style={{ paddingRight: "15px" }}>
                   <Link to="/">
                     <a> Resources </a>
                   </Link>
                 </div>
                 <Flex>
-                  <div style={{ paddingRight: "20px" }}>
+                  <div style={{ paddingRight: "15px" }}>
                     <Link to="user/login">
-                      <a> Login </a>
+                      <a> Changelog</a>
                     </Link>
                   </div>
 
