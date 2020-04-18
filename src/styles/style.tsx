@@ -60,6 +60,16 @@ const CustomCard = styled(Card)`
   }
 `
 
+const Cards = styled.div`
+  display: flex;
+  justify-content: center;
+
+  ${media.lessThan("medium")`
+display: grid;
+justify-content: center;
+  `};
+`
+
 const BgTitle = styled.h1`
   font-weight: bold;
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
@@ -241,6 +251,8 @@ const Slider = styled.div`
 
 const Grid = styled.div`
   display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 5rem;
 `
 
 export {
@@ -252,6 +264,7 @@ export {
   Text,
   Title,
   Brand,
+  Cards,
   Motto,
   Items,
   CustomCard,

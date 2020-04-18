@@ -13,7 +13,9 @@ const Integration = (props): JSX.Element => {
   return (
     <Contain>
       <br />
-      <BgTitle center> Integrate With Your External Tools </BgTitle>
+      <BgTitle center support>
+        Integrate With Your External Tools{" "}
+      </BgTitle>
       <Text items>
         Use your existing ticket managers while managing other aspects of your
         event within Eventful
@@ -35,7 +37,7 @@ const Integration = (props): JSX.Element => {
                       }}
                     />
                   </Flex>
-                  <Title features>{title}</Title>
+                  <Title bold>{title}</Title>
 
                   <Text small center>
                     {text}

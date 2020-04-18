@@ -8,6 +8,8 @@ interface Props {
   style: Boolean
 }
 
+// TODO Rewrite this component to use correct UL && LI tags
+
 const Header = ({ style }: Props) => {
   const [Width, setWidth] = useState(null)
 
@@ -29,106 +31,67 @@ const Header = ({ style }: Props) => {
     <HeaderBody>
       {Width >= 800 ? (
         <div>
-          {style == false ? (
-            <Flex justifyBetween>
-              <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <h3>Oasis</h3>
-                </Link>
-              </Flex>
-              <Flex>
-                <div style={{ paddingRight: "20px" }}>
-                  <Link to="/">
-                    <a> Resources </a>
-                  </Link>
-                </div>
-              </Flex>
+          <Flex justifyBetween>
+            <Flex>
+              <img
+                alt="logo"
+                src={
+                  "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                }
+              />
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <h3>Oasis</h3>
+              </Link>
             </Flex>
-          ) : (
-            <Flex justifyBetween>
-              <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <h3>Oasis</h3>
+
+            <Flex>
+              <div style={{ paddingRight: "20px" }}>
+                <Link to="/">
+                  <a> Resources </a>
                 </Link>
-              </Flex>
-              <Flex>
-                <div style={{ paddingRight: "15px" }}>
-                  <Link to="/">
-                    <a> Resources </a>
-                  </Link>
-                </div>
-                <Flex>
-                  <div style={{ paddingRight: "15px" }}>
-                    <Link to="user/login">
-                      <a> Changelog</a>
-                    </Link>
-                  </div>
-
-                  <Link to="/download/download">
-                    <Button small login>
-                      Login
-                    </Button>
-                  </Link>
-
-                  <Link to="/download/download">
-                    <Button small> Create Account </Button>
-                  </Link>
-                </Flex>
-              </Flex>
+              </div>{" "}
+              <div style={{ paddingRight: "20px" }}>
+                <Link to="/">
+                  <a> Resources </a>
+                </Link>
+              </div>
+              <div style={{ paddingRight: "20px" }}>
+                <Link to="user/login">
+                  <a> Changelog</a>
+                </Link>
+              </div>
             </Flex>
-          )}{" "}
+
+            <Flex>
+              <Link to="/download/download">
+                <Button small login>
+                  Login
+                </Button>
+              </Link>
+
+              <Link to="/download/download">
+                <Button small> Create Account </Button>
+              </Link>
+            </Flex>
+          </Flex>
         </div>
       ) : (
         // {/* MOBILE RESPONSIVENESS   */}
-        <div>
-          {style == false ? (
-            <Flex justifyBetween>
-              <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
-                <Link to="/">
-                  <Brand>Remotify</Brand>
-                </Link>
-              </Flex>
+        <Flex justifyBetween>
+          <Flex>
+            <img
+              alt="logo"
+              src={
+                "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+              }
+            />
+            <Link to="/">
+              <Brand>Oasis</Brand>
+            </Link>
+          </Flex>
 
-              <Link to="/download/download">
-                <Button> Downloada </Button>
-              </Link>
-            </Flex>
-          ) : (
-            <Flex justifyBetween>
-              <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
-                <Link to="/">
-                  <Brand>Oasis</Brand>
-                </Link>
-              </Flex>
-
-              <FiMenu style={{ fontSize: "2em" }} />
-            </Flex>
-          )}
-        </div>
+          <FiMenu style={{ fontSize: "2em" }} />
+        </Flex>
       )}
     </HeaderBody>
   )

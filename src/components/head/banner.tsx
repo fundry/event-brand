@@ -60,7 +60,7 @@ const Banner = () => {
             </Flex>
           </Flex>
           <Text center small>
-            Try a demo of our <b> Event Management </b> Console
+            Try a demo of the <b> Event Management </b> Console
           </Text>
           <p style={{ textAlign: "center", color: "grey" }}>
             *No Account Required{" "}

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
-import Flex from "styled-flex-component"
-import { IoIosArrowForward } from "react-icons/io"
 import { Link } from "gatsby"
+import { FiArrowRight } from "react-icons/fi"
+import Flex from "styled-flex-component"
 
 import {
   Text,
   Title,
-  Items,
   Body,
   CustomCard,
   BgTitle,
+  Contain,
+  Cards,
 } from "../../styles/style"
 import { Users } from "../../data"
 
@@ -61,68 +61,56 @@ const Home = (): JSX.Element => {
           <BgTitle support>Support For Your Event Type</BgTitle>
           <Text explanation>
             Eventful has features to provide support your specific type of
-            event.{" "}
+            event.
           </Text>
         </div>
-        {Width >= 550 ? (
-          <Flex justifyAround>
-            {Users.map(({ title, desc, id }) => {
-              return (
-                <CustomCard
-                  style={{
-                    margin: "1em",
-                    padding: "1em",
-                    width: "35em",
-                  }}
-                  key={id}
-                >
-                  <br /> <br />
-                  <Title bold center>
-                    {title}{" "}
-                  </Title>
-                  <Text style={{ textAlign: "center" }} small center>
-                    {desc}{" "}
-                  </Text>
-                  <br /> <br />
-                </CustomCard>
-              )
-            })}
-          </Flex>
-        ) : (
-          <div>
-            {Users.map(({ title, desc, id }) => {
-              return (
-                <CustomCard
-                  style={{
-                    margin: "1em",
-                    padding: "0.5em",
-                    width: "22em",
-                    textAlign: "center",
-                  }}
-                  key={id}
-                >
+
+        <Cards>
+          {Users.map(({ title, desc, id }) => {
+            return (
+              <CustomCard
+                style={{
+                  margin: "1em",
+                  padding: "0.5em",
+                  width: "22em",
+                  textAlign: "center",
+                }}
+                key={id}
+              >
+                <Contain center>
                   <br /> <br />
                   <Title features>{title} </Title>
                   <Text style={{ textAlign: "center" }} small center>
-                    {desc}{" "}
+                    {desc}
                   </Text>
-                  <br /> <br />
-                </CustomCard>
-              )
-            })}
-          </div>
-        )}
+                  <br />
+                  <Flex justifyCenter>
+                    <Link to="/">
+                      <Flex>
+                        Create <FiArrowRight style={{ fontSize: "1.5rem" }} />
+                      </Flex>
+                    </Link>
+                  </Flex>
+                  <br />
+                </Contain>
+              </CustomCard>
+            )
+          })}
+        </Cards>
 
         <br />
 
         <Media />
+        <br />
 
         <Integration />
+        <br />
         <Experience />
         <br />
 
         <br />
         <Attendees />
+        <br />
 
         <Security />
       </Body>

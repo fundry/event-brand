@@ -1,33 +1,54 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Text, BgTitle, Title, Contain } from "../../../styles/style"
+import { Text, BgTitle, Title, Contain, Grid } from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
+import Folder from "../../../assets/svg/folder.svg"
 
 const Media = () => {
   const hooks = useWindowWidth()
 
   return (
     <Contain>
-      <BgTitle center> Manage Event Assets </BgTitle>
+      <BgTitle center support>
+        Manage Event Assets{" "}
+      </BgTitle>
       <br />
-      <Title support> Automatic Image Delivery </Title>
-      <Contain center>
-        <Text center>
-          All images taken during an event are sent to registered event
-          attendees.{" "}
-        </Text>
-        <Link to="/"> Read More </Link>
-      </Contain>
-
+      <Grid>
+        <div>
+          <Title bold> Automatic Image Delivery </Title>
+          <Contain>
+            <Text style={{ width: "77%" }} small>
+              All images taken during an event are sent to registered event
+              attendees All images taken during an event. <br /> <br /> Images
+              are sent to each cloud space allocated to each user when they
+              create an account. This space stores all assets gotten while using
+              services created with Oasis
+            </Text>
+            <Link to="/" style={{ textAlign: "right" }}>
+              Read More
+            </Link>
+          </Contain>
+        </div>
+        <img style={{ margin: "1rem" }} alt="delivery sample" src={Folder} />
+      </Grid>
       <br />
-      <Title support> Generate User Avatar for Events </Title>
-      <Contain center>
-        <Text center>
-          Generate a user avatar for each event based on the event preferences
-        </Text>
-        <Link to="/"> Read More </Link>
-      </Contain>
+      <Grid>
+        <div>
+          <Title bold> Generate Event Avatars </Title>
+          <Contain>
+            <Text style={{ width: "77%" }} small>
+              All images taken during an event are sent to registered event
+              attendees All images taken during an event. <br /> <br /> Images
+              are sent to each cloud space allocated to each user when they
+              create an account. This space stores all assets gotten while using
+              services created with Oasis
+            </Text>
+            <Link to="/"> Read More </Link>
+          </Contain>
+        </div>
+        <img style={{ margin: "1rem" }} alt="delivery sample" src={Folder} />
+      </Grid>
     </Contain>
   )
 }

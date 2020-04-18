@@ -11,7 +11,9 @@ import Ipad from "../../../assets/svg/ipad.svg"
 const Experience = () => {
   return (
     <Contain>
-      <BgTitle center> Immersive Event Experience </BgTitle>
+      <BgTitle center support>
+        Immersive Event Experience{" "}
+      </BgTitle>
       <br />
       <Contain center>
         <Slider>
