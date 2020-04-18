@@ -1,14 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Text, BgTitle, Contain } from "../../../styles/style"
+import { Text, BgTitle, Title, Contain } from "../../../styles/style"
+import useWindowWidth from "../../../styles/resize"
 
 const Media = () => {
+  const hooks = useWindowWidth()
+
   return (
     <Contain>
       <BgTitle center> Manage Event Assets </BgTitle>
       <br />
-      <BgTitle support> Automatic Image Delivery </BgTitle>
+      <Title support> Automatic Image Delivery </Title>
       <Contain center>
         <Text center>
           All images taken during an event are sent to registered event
@@ -18,7 +21,7 @@ const Media = () => {
       </Contain>
 
       <br />
-      <BgTitle support> Generate User Avatar for Events </BgTitle>
+      <Title support> Generate User Avatar for Events </Title>
       <Contain center>
         <Text center>
           Generate a user avatar for each event based on the event preferences

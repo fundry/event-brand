@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import Flex from "styled-flex-component"
 
-import { Text, BgTitle, Contain, Slider } from "../../../styles/style"
+import { Text, BgTitle, Contain, Slider, Title } from "../../../styles/style"
 import Ipad from "../../../assets/svg/ipad.svg"
 
 // TODO:  this component should be a slider later on
@@ -21,7 +21,7 @@ const Experience = () => {
               src={Ipad}
               style={{ height: "auto", maxWidth: "90%" }}
             />
-            <BgTitle support> Create Realtime Polls </BgTitle>
+            <Title support> Create Realtime Polls </Title>
           </Contain>
           <Contain width id="1">
             <img
@@ -29,7 +29,7 @@ const Experience = () => {
               src={Ipad}
               style={{ height: "auto", maxWidth: "90%" }}
             />
-            <BgTitle support> Key Into Slides </BgTitle>
+            <Title support> Key Into Slides </Title>
           </Contain>{" "}
           <Contain width id="1">
             <img
@@ -37,7 +37,7 @@ const Experience = () => {
               src={Ipad}
               style={{ height: "auto", maxWidth: "90%" }}
             />
-            <BgTitle support> Create Realtime Polls </BgTitle>
+            <Title support> Create Realtime Polls </Title>
           </Contain>
         </Slider>
       </Contain>

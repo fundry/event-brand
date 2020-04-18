@@ -10,30 +10,34 @@ const Contain = styled.div`
 
 const Text = styled.p`
   color: #401364;
-  font-size: ${(props: { items: any }) => (props.items ? "1.27em " : "1.3em")};
+  font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-
   ${media.lessThan("medium")`
-  font-size: ${(props: { items: any }) => (props.items ? "1.10em " : "1.20em")};
-  text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
+  font-size: ${(props: { small: any }) => (props.small ? "1.10em " : "1.20em")};
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `};
-
   ${media.lessThan("large")`
-font-size: ${(props: { items: any }) => (props.items ? "1.20em " : "1.27em")};
-text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
+font-size: ${(props: { small: any }) => (props.small ? "1.20em " : "1.27em")};
+text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `};
-
   ${media.lessThan("small")`
-font-size: ${(props: { items: any }) => (props.items ? "1em " : "1.10em")};
-text-align: ${(props: { items: any }) => (props.items ? "center" : null)};
+font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.10em")};
+text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   `};
 `
 
 const Title = styled.h4`
-  font-weight: ${(props: { features: any }) =>
-    props.features ? "520" : "normal"};
-  text-align: ${(props: { features: any }) =>
-    props.features ? "center" : null};
+  font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  ${media.lessThan("medium")`
+    font-size :  1.5rem;
+  `};
+  ${media.lessThan("large")`
+      font-size :  1.5rem;
+  `};
+  ${media.lessThan("small")`
+       font-size :  1.5rem;
+    `};
 `
 
 const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
@@ -162,12 +166,13 @@ const Brand = styled.p`
 
 const HeaderBody = styled.nav`
   box-shadow: 0px 4px 5px grey;
-  padding: 0.7em 0.3em;
+  padding: 1em 0.3em;
   background-color: transparent;
   color: #0b33a2;
   a {
     color: #0b33a2;
     font-size: 1.05em;
+    text-decoration: none;
   }
   img {
     margin-left: 1rem;
@@ -178,6 +183,13 @@ const HeaderBody = styled.nav`
     word-spacing: 5px;
     font-size: 1.6rem;
   }
+  ${media.lessThan("medium")`
+  padding: 0.3em 0.3em;
+  padding-top: 10px;
+`};
+  ${media.lessThan("small")`
+  padding: 0.5em 0.3em;
+`};
 `
 
 const HBtn = styled.button`
@@ -219,9 +231,20 @@ const Slider = styled.div`
   width: 100%;
   overflow: auto;
   display: flex;
+  ${media.lessThan("medium")`
+   display: grid; 
+`};
+  ${media.lessThan("small")`
+    display: grid; 
+`};
+`
+
+const Grid = styled.div`
+  display: grid;
 `
 
 export {
+  Grid,
   Slider,
   Contain,
   HBtn,

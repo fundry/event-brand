@@ -21,7 +21,6 @@ import Security from "./security"
 
 import Integration from "./features/integrations"
 import Attendees from "./features/attendees"
-import Speakers from "./features/speakers"
 import Media from "./features/media"
 import Experience from "./features/experience"
 import Networking from "./features/networking"
@@ -78,8 +77,10 @@ const Home = (): JSX.Element => {
                   key={id}
                 >
                   <br /> <br />
-                  <Title features>{title} </Title>
-                  <Text style={{ textAlign: "center" }} feature>
+                  <Title bold center>
+                    {title}{" "}
+                  </Title>
+                  <Text style={{ textAlign: "center" }} small center>
                     {desc}{" "}
                   </Text>
                   <br /> <br />
@@ -102,7 +103,7 @@ const Home = (): JSX.Element => {
                 >
                   <br /> <br />
                   <Title features>{title} </Title>
-                  <Text style={{ textAlign: "center" }} feature>
+                  <Text style={{ textAlign: "center" }} small center>
                     {desc}{" "}
                   </Text>
                   <br /> <br />
@@ -120,9 +121,7 @@ const Home = (): JSX.Element => {
         <Experience />
         <br />
 
-        <Networking />
         <br />
-        <Speakers />
         <Attendees />
 
         <Security />

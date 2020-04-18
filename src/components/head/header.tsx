@@ -121,7 +121,7 @@ const Header = ({ style }: Props) => {
                   }
                 />
                 <Link to="/">
-                  <Brand>Eventure</Brand>
+                  <Brand>Oasis</Brand>
                 </Link>
               </Flex>
 
