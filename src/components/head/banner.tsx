@@ -60,7 +60,19 @@ const Banner = () => {
             </Flex>
           </Flex>
           <Text center small>
-            Try a demo of the <b> Event Management </b> Console
+            Try a demo of the{" "}
+            <a
+              style={{
+                textDecoration: "none",
+                color: "#401364",
+                fontWeight: "bold",
+              }}
+              href="https://app-event.netlify.com"
+            >
+              {" "}
+              Event Management{" "}
+            </a>{" "}
+            Console
           </Text>
           <p style={{ textAlign: "center", color: "grey" }}>
             *No Account Required{" "}
@@ -74,23 +86,12 @@ const Banner = () => {
               Create, Manage and Organize <br /> your events.{" "}
             </Motto>
 
-            <Text style={{ textAlign: "center", width: "50em" }} items>
+            <Text style={{ textAlign: "center", width: "50em" }} small>
               Create your conferences and let's do the management!{" "}
             </Text>
             <Flex justifyCenter>
               <Flex column>
-                <div style={{ textAlign: "center" }}>
-                  <Button style={{ textAlign: "center" }} one>
-                    <Flex justifyCenter>
-                      <div style={{ paddingRight: "7px" }}>
-                        <IoIosDesktop style={{ fontSize: "1.6em" }} />{" "}
-                      </div>
-                      Management Console
-                    </Flex>
-                  </Button>
-                </div>
                 <br />
-
                 <Flex>
                   <div style={{ fontWeight: "bold" }}>
                     <Button download two>
@@ -117,7 +118,26 @@ const Banner = () => {
                       </Flex>
                     </Button>
                   </div>
-                </Flex>
+                </Flex>{" "}
+                <br />
+                <Text center small>
+                  Try a demo of the{" "}
+                  <a
+                    style={{
+                      textDecoration: "none",
+                      color: "#401364",
+                      fontWeight: "bold",
+                    }}
+                    href="https://app-event.netlify.com"
+                  >
+                    {" "}
+                    Event Management{" "}
+                  </a>{" "}
+                  Console
+                </Text>
+                <p style={{ textAlign: "center", color: "grey" }}>
+                  *No Account Required{" "}
+                </p>
               </Flex>
             </Flex>
           </div>
