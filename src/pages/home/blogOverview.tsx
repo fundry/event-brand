@@ -2,22 +2,28 @@ import React from "react"
 import Flex from "styled-flex-component"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import media from "styled-media-query"
 
-import {
-  BgTitle,
-  Contain,
-  Items,
-  Title,
-  Text,
-  Body,
-  BlogCards,
-} from "../../styles/style"
+import { BgTitle, Title, Text, Body, BlogCards } from "../../styles/style"
 import { BlogPosts } from "../../data"
 
 const Grid = styled.div`
   display: grid;
   grid-gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  ${media.lessThan("medium")`
+justify-content: center;
+`} ${media.lessThan("small")`
+justify-content: center;`};
+`
+
+const CenterBlog = styled.div`
+  ${media.lessThan("medium")`
+    display: flex;
+justify-content: center;
+`} ${media.lessThan("small")`
+display: flex;
+justify-content: center;`};
 `
 
 const BlogOverview = () => {
@@ -44,36 +50,40 @@ const BlogOverview = () => {
       <Grid>
         {BlogPosts.map(({ id, title, text }) => {
           return (
-            <BlogCards key={id}>
-              <img alt={"Event Cover"} />
+            <CenterBlog>
+              <BlogCards key={id}>
+                <img alt={"Event Cover"} />
 
-              <div>
-                <Title bold center style={{ padding: "0rem 0.5rem" }}>
-                  {title}
-                </Title>
-                <Text
-                  small
-                  style={{ color: "grey", padding: "0.7rem 0rem" }}
-                  center
-                >
-                  {text}
-                </Text>
-              </div>
-              <hr />
-              <Flex justifyBetween>
-                <Flex>
-                  <img alt={"User"} />
-                  <Text style={{ padding: "0rem 0.7rem" }}>Nwani Victory</Text>
-                </Flex>
-
-                <Link to={"/"} style={{ textDecoration: "none" }}>
-                  <Text small bold>
-                    {" "}
-                    Read More{" "}
+                <div>
+                  <Title bold center style={{ padding: "0rem 0.5rem" }}>
+                    {title}
+                  </Title>
+                  <Text
+                    small
+                    style={{ color: "grey", padding: "0.7rem 0rem" }}
+                    center
+                  >
+                    {text}
                   </Text>
-                </Link>
-              </Flex>
-            </BlogCards>
+                </div>
+                <hr />
+                <Flex justifyBetween>
+                  <Flex>
+                    <img alt={"User"} />
+                    <Text style={{ padding: "0rem 0.7rem" }}>
+                      Nwani Victory
+                    </Text>
+                  </Flex>
+
+                  <Link to={"/"} style={{ textDecoration: "none" }}>
+                    <Text small bold>
+                      {" "}
+                      Read More{" "}
+                    </Text>
+                  </Link>
+                </Flex>
+              </BlogCards>
+            </CenterBlog>
           )
         })}
       </Grid>

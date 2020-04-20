@@ -3,6 +3,7 @@ import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
 import styled from "styled-components"
+import media from "styled-media-query"
 
 import Android from "../../../assets/svg/android.svg"
 import HalfDevie from "../../../assets/svg/half-device.svg"
@@ -23,6 +24,7 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+};
 `
 
 const App = () => {
@@ -49,7 +51,7 @@ const App = () => {
               <Title small bold center>
                 {name}{" "}
               </Title>
-              <Text small center>
+              <Text padded small center>
                 {" "}
                 {summary}{" "}
               </Text>
