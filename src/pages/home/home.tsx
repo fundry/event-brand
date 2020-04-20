@@ -68,7 +68,7 @@ const Home = (): JSX.Element => {
         </div>
 
         <Cards>
-          {Users.map(({ title, desc, id }) => {
+          {Users.map(({ type, title, desc, id }) => {
             return (
               <CustomCard
                 style={{
@@ -87,9 +87,12 @@ const Home = (): JSX.Element => {
                   </Text>
                   <br />
                   <Flex justifyCenter>
-                    <Link to="/">
+                    <Link to="/" style={{ textDecoration: "none" }}>
                       <Flex>
-                        Create <FiArrowRight style={{ fontSize: "1.5rem" }} />
+                        Create a {type}{" "}
+                        <div style={{ paddingLeft: "7px" }}>
+                          <FiArrowRight style={{ fontSize: "1.8rem" }} />
+                        </div>
                       </Flex>
                     </Link>
                   </Flex>

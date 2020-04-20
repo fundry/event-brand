@@ -43,6 +43,9 @@ const Banner = () => {
             <Flex column>
               <br />
               <br />
+              <br />
+              <br />
+              <br />
               <Motto style={{ textAlign: "right", margin: "2rem  0.2em" }}>
                 Create, Manage and Organize <br /> your events.
               </Motto>
@@ -51,10 +54,10 @@ const Banner = () => {
                 Create your conferences and let's do the management!{" "}
               </Text>
               <Flex justifyCenter>
-                <Button download rounded style={{ textAlign: "center" }}>
+                <Button one download rounded style={{ textAlign: "center" }}>
                   <Flex justifyCenter>
                     Get Started
-                    <div style={{ paddingLeft: "15px" }}>
+                    <div style={{ paddingLeft: "30px" }}>
                       <FiArrowRight style={{ fontSize: "1.6em" }} />{" "}
                     </div>
                   </Flex>

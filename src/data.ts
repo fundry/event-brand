@@ -25,12 +25,14 @@ const FeaturesList = [
 const Users = [
   {
     id: 1,
+    type: "Meetup",
     title: "Oasis For Conferences ",
     desc: " Create conferences for a shorter duration ",
   },
 
   {
     id: 2,
+    type: "Conference",
     title: "Oasis For Meetups",
     desc: "Create meetups that lasts for a specified duration ",
   },

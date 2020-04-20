@@ -20,6 +20,7 @@ width: ${props => (props.widthed ? "20rem" : null)};
 
 const Text = styled.p`
   color: #401364;
+  font-weight: ${props => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
@@ -65,10 +66,7 @@ const Items = styled.div({
 
 const CustomCard = styled(Card)`
   border: 1px solid grey;
-  &:hover {
-    box-shadow: 0px 3px 4px grey;
-    border: 0px;
-  }
+  box-shadow: 1px 7px 5px grey;
 `
 
 const Cards = styled.div`
@@ -148,7 +146,7 @@ const Button = styled.button`
   text-align: center;
   border-radius:   ${props => (props.rounded ? "30px" : "5px")};
   height:  55px;
-  width: ${(props: { one: any }) => (props.one ? "17em" : "12em")};
+  width: ${(props: { one: any }) => (props.one ? "14em" : "12em")};
   border: 2px solid #ff21c1;
   color: ${(props: { download: any }) => (props.download ? "#fff" : "#401364")};
   margin: 0 1em;
@@ -224,16 +222,16 @@ const HBtn = styled.button`
     props.login ? "#401364" : "#ff21c1"};
   border-radius: 20rem;
   height: 47px;
-  width: ${(props: { login: any }) => (props.login ? "7em" : "9em")};
+  width: ${(props: { login: any }) => (props.login ? "8em" : "10em")};
   border: ${(props: { login: any }) =>
-    props.login ? "1px solid #fff" : " 1px solid #ff21c1 "};
+    props.login ? "1px solid #fff" : " 1.5px solid #ff21c1 "};
   color: #fff;
   margin: 0rem 0.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 1rem;
   font-size: 1rem;
   &:hover {
     color: #401364;
-    background: #f2f5ff;
+    background: transparent;
     border: ${(props: { login: any }) =>
       props.login ? "2px solid #401364" : null};
   }

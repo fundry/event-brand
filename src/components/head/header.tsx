@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { FiMenu } from "react-icons/fi"
-import { HeaderBody, HBtn as Button, Brand } from "../../styles/style"
+import { HeaderBody, HBtn as Button, Brand, Text } from "../../styles/style"
 
 interface Props {
   style: Boolean
@@ -45,19 +45,25 @@ const Header = ({ style }: Props) => {
             </Flex>
 
             <Flex>
-              <div style={{ paddingRight: "20px" }}>
-                <Link to="/">
-                  <a> Resources </a>
+              <div style={{ paddingRight: "60px" }}>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text small bold>
+                    Events
+                  </Text>
                 </Link>
               </div>{" "}
-              <div style={{ paddingRight: "20px" }}>
-                <Link to="/">
-                  <a> Resources </a>
+              <div style={{ paddingRight: "60px" }}>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text small bold>
+                    Resources
+                  </Text>
                 </Link>
               </div>
-              <div style={{ paddingRight: "20px" }}>
-                <Link to="user/login">
-                  <a> Changelog</a>
+              <div style={{ paddingRight: "60px" }}>
+                <Link to="user/login" style={{ textDecoration: "none" }}>
+                  <Text small bold>
+                    Road Map
+                  </Text>
                 </Link>
               </div>
             </Flex>
