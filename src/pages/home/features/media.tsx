@@ -5,6 +5,7 @@ import Flex from "styled-flex-component"
 import { Text, BgTitle, Title, Contain, Grid } from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
 import Folder from "../../../assets/svg/folder.svg"
+import Schedule from "../../../assets/svg/schedule.svg"
 
 const Media = () => {
   const hooks = useWindowWidth()
@@ -27,8 +28,13 @@ const Media = () => {
                 create an account. This space stores all assets gotten while
                 using services created with Oasis
               </Text>
-              <Link to="/" style={{ textAlign: "right" }}>
-                Read More
+              <Link
+                to="/"
+                style={{ textAlign: "right", textDecoration: "none" }}
+              >
+                <Text small bold>
+                  Read More{" "}
+                </Text>
               </Link>
             </Contain>
           </div>
@@ -50,13 +56,14 @@ const Media = () => {
           <Contain>
             <Text small>
               All images taken during an event are sent to registered event
-              attendees All images taken during an event. <br /> <br /> Images
-              are sent to each cloud space allocated to each user when they
-              create an account. This space stores all assets gotten while using
-              services created with Oasis
+              attendees <br /> <br /> Images are sent to each cloud space
+              allocated to each user when they create an account. This space
+              stores all assets gotten while using services created with Oasis
             </Text>
-            <Link to="/" style={{ textAlign: "right" }}>
-              Read More
+            <Link to="/" style={{ textAlign: "right", textDecoration: "none" }}>
+              <Text small bold>
+                Read More{" "}
+              </Text>
             </Link>
           </Contain>
         </div>
@@ -69,13 +76,17 @@ const Media = () => {
             <Contain>
               <Text style={{ width: "77%" }} small>
                 All images taken during an event are sent to registered event
-                attendees All images taken during an event. <br /> <br /> Images
-                are sent to each cloud space allocated to each user when they
-                create an account. This space stores all assets gotten while
-                using services created with Oasis
+                attendees <br /> <br /> Images are sent to each cloud space
+                allocated to each user when they create an account. This space
+                stores all assets gotten while using services created with Oasis
               </Text>
-              <Link to="/" style={{ textAlign: "right" }}>
-                Read More
+              <Link
+                to="/"
+                style={{ textAlign: "right", textDecoration: "none" }}
+              >
+                <Text small bold>
+                  Read More{" "}
+                </Text>
               </Link>
             </Contain>
           </div>
@@ -97,12 +108,13 @@ const Media = () => {
           <Contain>
             <Text small>
               All images taken during an event are sent to registered event
-              attendees All images taken during an event. <br /> <br /> Avatars
-              generated can be shared with the event hashtags on the social
-              media
+              attendees. <br /> <br /> Avatars generated can be shared with the
+              event hashtags on the social media
             </Text>
-            <Link to="/" style={{ textAlign: "right" }}>
-              Read More
+            <Link to="/" style={{ textAlign: "right", textDecoration: "none" }}>
+              <Text small bold>
+                Read More{" "}
+              </Text>
             </Link>
           </Contain>
         </div>
@@ -110,21 +122,30 @@ const Media = () => {
       <br />
 
       {hooks >= 700 ? (
-        <Grid>
+        <Grid schedule>
           <div>
             <Title bold> Event Schedule and Speaker Slides. </Title>
             <Contain>
-              <Text style={{ width: "77%" }} small>
+              <Text style={{ width: "90%" }} small>
                 View Event Schedule in realtime as time overlaps on each item.
                 <br /> <br /> Follow a speaker's deck in realtime as the
                 presenter goes over each slide.
               </Text>
-              <Link to="/" style={{ textAlign: "right" }}>
-                Read More
+              <Link
+                to="/"
+                style={{ textAlign: "right", textDecoration: "none" }}
+              >
+                <Text small bold>
+                  Read More{" "}
+                </Text>
               </Link>
             </Contain>
           </div>
-          <img style={{ margin: "1rem" }} alt="delivery sample" src={Folder} />
+          <img
+            style={{ margin: "2rem 0.5rem" }}
+            alt="delivery sample"
+            src={Schedule}
+          />
         </Grid>
       ) : (
         <div>
@@ -133,7 +154,7 @@ const Media = () => {
             <img
               style={{ margin: "1rem" }}
               alt="delivery sample"
-              src={Folder}
+              src={Schedule}
             />{" "}
           </Flex>
           <Title bold center>

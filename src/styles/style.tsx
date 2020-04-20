@@ -261,8 +261,8 @@ const Slider = styled.ul`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 70% 30%;
-  grid-gap: 5rem;
+  grid-template-columns: ${props => (props.schedule ? "55% 45%" : "70% 30%")};
+  grid-gap: ${props => (props.schedule ? "2rem" : "4rem")};
 `
 
 const Switch = styled.div`
