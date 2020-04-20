@@ -29,7 +29,7 @@ const Header = ({ style }: Props) => {
   // const hooks = useWindowWidth()
   return (
     <HeaderBody>
-      {Width >= 800 ? (
+      {Width >= 1000 ? (
         <div>
           <Flex justifyBetween>
             <Flex>

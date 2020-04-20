@@ -187,7 +187,9 @@ const Brand = styled.p`
 const HeaderBody = styled.nav`
   box-shadow: 0px 4px 5px grey;
   padding: 1em 0.3em;
-  background-color: transparent;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
   color: #0b33a2;
   a {
     color: #0b33a2;
@@ -203,9 +205,13 @@ const HeaderBody = styled.nav`
     word-spacing: 5px;
     font-size: 1.6rem;
   }
+  ${media.lessThan("large")`
+  padding: 0.7em 0.3em;
+  padding-top: 10px;
+`};
   ${media.lessThan("medium")`
   padding: 0.3em 0.3em;
-  padding-top: 10px;
+  padding-top: 15px;
 `};
   ${media.lessThan("small")`
   padding: 0.5em 0.3em;

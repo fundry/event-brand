@@ -28,6 +28,9 @@ const Banner = () => {
   return (
     <div style={{ overflow: "hidden" }}>
       <Header style={true} />
+      <br />
+      <br />
+      <br />
       {Width >= 1050 ? (
         <Body>
           <Flex justifyAround>
@@ -63,6 +66,7 @@ const Banner = () => {
           <Text center small>
             Try a demo of the{" "}
             <a
+              target="_blank"
               style={{
                 textDecoration: "none",
                 color: "#401364",
@@ -124,6 +128,7 @@ const Banner = () => {
                 <Text center small>
                   Try a demo of the{" "}
                   <a
+                    target="_blank"
                     style={{
                       textDecoration: "none",
                       color: "#401364",
