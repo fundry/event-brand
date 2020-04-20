@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import { IoIosDesktop, IoIosArrowDropright } from "react-icons/io"
+import { IoIosDesktop } from "react-icons/io"
+import { FiArrowRight } from "react-icons/fi"
 
 import Header from "./header"
 import Illustration from "../../assets/svg/illustration.svg"
@@ -25,7 +26,7 @@ const Banner = () => {
   }, [])
 
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       <Header style={true} />
       {Width >= 1050 ? (
         <Body>
@@ -47,11 +48,11 @@ const Banner = () => {
                 Create your conferences and let's do the management!{" "}
               </Text>
               <Flex justifyCenter>
-                <Button style={{ textAlign: "center" }} one>
+                <Button download rounded style={{ textAlign: "center" }}>
                   <Flex justifyCenter>
                     Get Started
-                    <div style={{ paddingLeft: "7px" }}>
-                      <IoIosArrowDropright style={{ fontSize: "1.6em" }} />{" "}
+                    <div style={{ paddingLeft: "15px" }}>
+                      <FiArrowRight style={{ fontSize: "1.6em" }} />{" "}
                     </div>
                   </Flex>
                 </Button>

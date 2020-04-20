@@ -46,7 +46,9 @@ const Home = (): JSX.Element => {
       <Seo title="Home" />
       <Banner />
 
-      <Body style={{ color: "#401364", background: "#f2f5ff" }}>
+      <Body
+        style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
+      >
         <br />
 
         <Text center>
@@ -104,16 +106,18 @@ const Home = (): JSX.Element => {
         <br />
 
         <Integration />
-        <br />
-        <Experience />
-        <br />
+      </Body>
 
+      <br />
+      <Experience />
+      <br />
+      <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <Attendees />
         <br />
-
-        <Security />
       </Body>
+
+      <Security />
     </Layout>
   )
 }

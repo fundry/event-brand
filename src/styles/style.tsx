@@ -6,6 +6,16 @@ import { Card } from "react-bootstrap"
 const Contain = styled.div`
   text-align: ${props => (props.center ? "center" : null)};
   max-width: ${props => (props.width ? "900px" : null)};
+  width: ${props => (props.widthed ? "45rem" : null)};
+  ${media.lessThan("medium")`
+width: ${props => (props.widthed ? "30rem" : null)};
+   `};
+  ${media.lessThan("large")`
+width: ${props => (props.widthed ? "35rem" : null)};
+  `};
+  ${media.lessThan("small")`
+width: ${props => (props.widthed ? "20rem" : null)};
+  `};
 `
 
 const Text = styled.p`
@@ -135,8 +145,8 @@ const Button = styled.button`
   background: ${(props: { download: any }) =>
     props.download ? "#ff21c1" : "transparent"};
   text-align: center;
-  border-radius: 5px;
-  height:  50px;
+  border-radius:   ${props => (props.rounded ? "30px" : "5px")};
+  height:  55px;
   width: ${(props: { one: any }) => (props.one ? "17em" : "12em")};
   border: 2px solid #ff21c1;
   color: ${(props: { download: any }) => (props.download ? "#fff" : "#401364")};
@@ -237,16 +247,11 @@ const HBtn = styled.button`
 `};
 `
 
-const Slider = styled.div`
-  width: 100%;
-  overflow: auto;
+const Slider = styled.ul`
+  overflow: hidden;
   display: flex;
-  ${media.lessThan("medium")`
-   display: grid; 
-`};
-  ${media.lessThan("small")`
-    display: grid; 
-`};
+  list-style: none;
+  flex-direction: row;
 `
 
 const Grid = styled.div`
@@ -255,8 +260,45 @@ const Grid = styled.div`
   grid-gap: 5rem;
 `
 
+const Switch = styled.div`
+  padding: 0rem 0rem;
+  border: 2.5px solid #401364;
+  width: 35rem;
+  background: transparent;
+  border-radius: 6px;
+  ${media.lessThan("medium")`
+     width: 23rem;
+    border-radius: 4px;
+`};
+  ${media.lessThan("small")`
+   width: 19rem;
+    border-radius: 3px;
+`};
+`
+
+const SwitchBtn = styled.button`
+  padding: 0.5rem 4.35rem;
+  border: 0px;
+  background: transparent;
+  color: #401364;
+  outline: none;
+  font-weight: bold;
+  &: hover {
+    background: #401364;
+    color: #fff;
+  }
+  ${media.lessThan("medium")`
+      padding: 0.5rem 2.25rem;
+`};
+  ${media.lessThan("small")`
+       padding: 0.5rem 1.6rem;
+`};
+`
+
 export {
   Grid,
+  Switch,
+  SwitchBtn,
   Slider,
   Contain,
   HBtn,
