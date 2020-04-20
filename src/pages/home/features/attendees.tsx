@@ -38,8 +38,7 @@ const Attendees = () => {
 
       <Contain>
         <BigTitle app>Get the App! </BigTitle>
-        <Text items>
-          Manage events Manage events Manage events Manage events Manage events
+        <Text small center>
           Manage events Manage events Manage events Manage events Manage events
           Manage events Manage events Manage events Manage events Manage events
         </Text>
