@@ -1,3 +1,5 @@
+// this file contains mock data that would come from api later on
+
 const FeaturesList = [
   {
     id: 1,
@@ -34,4 +36,25 @@ const Users = [
   },
 ]
 
-export { FeaturesList, Users }
+const ExperienceFeatures = [
+  {
+    id: 1,
+    title: "Create Realtime Polls",
+    text:
+      "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+  },
+  {
+    id: 2,
+    title: "Gather User Feedback",
+    text:
+      "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+  },
+  {
+    id: 3,
+    title: "Gather User Feedback",
+    text:
+      "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+  },
+]
+
+export { FeaturesList, Users, ExperienceFeatures }

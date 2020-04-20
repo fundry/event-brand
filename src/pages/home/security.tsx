@@ -15,16 +15,21 @@ const Security = () => {
       </BgTitle>
 
       <Contain>
-        <Title bold> Access Control Lock </Title>
-        <Text center>
+        <Title style={{ color: "#401364" }} bold colored>
+          Access Control Lock{" "}
+        </Title>
+        <Text center small>
           How data within eventful are secured How data within eventful are
           secured How data within eventful are secured How within eventful are
           secured How within eventful are secured How data within
         </Text>
       </Contain>
+      <br />
       <Contain>
-        <Title bold> Set Visibility Status</Title>
-        <Text center>
+        <Title style={{ color: "#401364" }} bold colored>
+          Set Visibility Status
+        </Title>
+        <Text center small>
           How data within eventful are secured How data within eventful are
           secured How data within eventful are secured How within eventful are
           secured How within eventful are secured How data within

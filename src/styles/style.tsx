@@ -37,6 +37,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `
 
 const Title = styled.h4`
+color: ${props => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
@@ -301,8 +302,22 @@ const SwitchBtn = styled.button`
 `};
 `
 
+const List = styled.li`
+  padding: ${props => (props.padded ? "0.2rem 14rem" : null)};
+  ${media.lessThan("large")`
+    padding: ${props => (props.padded ? "0.2rem 2rem" : null)};
+`};
+  ${media.lessThan("small")`
+    padding: ${props => (props.padded ? "0.2rem 0.3rem" : null)};
+`};
+  ${media.lessThan("medium")`
+    padding: ${props => (props.padded ? "0.2rem 1rem" : null)};
+`};
+`
+
 export {
   Grid,
+  List,
   Switch,
   SwitchBtn,
   Slider,

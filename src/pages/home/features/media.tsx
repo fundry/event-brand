@@ -107,6 +107,50 @@ const Media = () => {
           </Contain>
         </div>
       )}
+      <br />
+
+      {hooks >= 700 ? (
+        <Grid>
+          <div>
+            <Title bold> Event Schedule and Speaker Slides. </Title>
+            <Contain>
+              <Text style={{ width: "77%" }} small>
+                View Event Schedule in realtime as time overlaps on each item.
+                <br /> <br /> Follow a speaker's deck in realtime as the
+                presenter goes over each slide.
+              </Text>
+              <Link to="/" style={{ textAlign: "right" }}>
+                Read More
+              </Link>
+            </Contain>
+          </div>
+          <img style={{ margin: "1rem" }} alt="delivery sample" src={Folder} />
+        </Grid>
+      ) : (
+        <div>
+          <Flex justifyCenter>
+            {" "}
+            <img
+              style={{ margin: "1rem" }}
+              alt="delivery sample"
+              src={Folder}
+            />{" "}
+          </Flex>
+          <Title bold center>
+            Speaker Slides and Assets
+          </Title>
+          <Contain>
+            <Text small>
+              View Event Schedule in realtime as time overlaps on each item.
+              <br /> <br /> Follow a speaker's deck in realtime as the presenter
+              goes over each slide.
+            </Text>
+            <Link to="/" style={{ textAlign: "right" }}>
+              Read More
+            </Link>
+          </Contain>
+        </div>
+      )}
     </Contain>
   )
 }
