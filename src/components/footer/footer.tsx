@@ -6,12 +6,9 @@ import { FiGithub, FiTwitter, FiFacebook } from "react-icons/fi"
 import media from "styled-media-query"
 import { Link } from "gatsby"
 
-const Footer = () => {
-  const Div = {
-    backgroundColor: "#5919AB",
-    width: " 100%",
-  }
+import { Text, Footer as FooterBody } from "../../styles/style"
 
+const Footer = () => {
   const Head = {
     fontSize: "0.9em ",
     fontWeight: "bold",
@@ -44,27 +41,6 @@ const Footer = () => {
     }
   `
 
-  const Test = styled.p`
-    font-size: 1.2em;
-    padding-top: 10px;
-    ${media.lessThan("medium")`
-      font-size: 1em
-  `};
-  `
-
-  const Body = styled.div({
-    padding: "1.4em",
-  })
-
-  const Header = styled.h3({
-    textAlign: "center",
-  })
-
-  const Text = styled.p({
-    padding: "0.5em",
-    textAlign: "center",
-  })
-
   const [Width, setWidth] = useState(null)
 
   setTimeout(function() {
@@ -84,9 +60,13 @@ const Footer = () => {
     <div>
       <Testing>
         <Flex justifyBetween>
-          <Test style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}>
-            Join the Event beta testing program !
-          </Test>
+          <Text
+            small
+            white
+            style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}
+          >
+            Oasis is launching very soon!
+          </Text>
 
           {Width >= 470 ? (
             <Link to="/testing/testers">
@@ -100,7 +80,7 @@ const Footer = () => {
                   fontSize: "1.1em",
                 }}
               >
-                Join Program
+                Get Early Acess
               </Button>
             </Link>
           ) : (
@@ -121,7 +101,7 @@ const Footer = () => {
         </Flex>
       </Testing>
 
-      <footer style={Div}>
+      <FooterBody>
         {Width >= 500 ? (
           <div style={{ padding: "2%" }}>
             <Flex justifyAround>
@@ -136,22 +116,52 @@ const Footer = () => {
               </div>
               <Flex column>
                 <p style={Head}> PRODUCT </p>
-                <p style={Title}> Create Team </p>
-                <p style={Title}> Documentation </p>
-                <p style={Title}> Billing </p>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    Create Team
+                  </Text>
+                </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    Documentation
+                  </Text>
+                </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    Billing
+                  </Text>
+                </Link>{" "}
               </Flex>
               <Flex column>
                 <p style={Head}> HELP </p>
-                <p style={Title}> Integrations </p>
-                <p style={Title}> Guides </p>
-                <p style={Title}> About Us </p>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    Integrations
+                  </Text>
+                </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    Guides
+                  </Text>
+                </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Text white small>
+                    About Us
+                  </Text>
+                </Link>{" "}
               </Flex>
 
               <Flex column>
                 <p style={Head}> MORE </p>
-                <p style={Title}> Social </p>
-                <p style={Title}> Careers </p>
-                <p style={Title}> Legal terms </p>
+                <Text white small>
+                  Social
+                </Text>
+                <Text white small>
+                  Careers
+                </Text>
+                <Text white small>
+                  Legal terms
+                </Text>
               </Flex>
             </Flex>
           </div>
@@ -173,22 +183,40 @@ const Footer = () => {
             <Flex justifyAround>
               <Flex column>
                 <p style={Head}> PRODUCT </p>
-                <p style={Title}> Create Team </p>
-                <p style={Title}> Documentation </p>
-                <p style={Title}> Billing </p>
+                <Text white small>
+                  Create Team
+                </Text>
+                <Text white small>
+                  Documentation
+                </Text>
+                <Text white small>
+                  Billing
+                </Text>
               </Flex>
               <Flex column>
                 <p style={Head}> HELP </p>
-                <p style={Title}> Integrations </p>
-                <p style={Title}> Guides </p>
-                <p style={Title}> About Us </p>
+                <Text white small>
+                  Integrations
+                </Text>
+                <Text white small>
+                  Guides
+                </Text>
+                <Text white small>
+                  About Us
+                </Text>
               </Flex>
 
               <Flex column>
                 <p style={Head}> MORE </p>
-                <p style={Title}> Social </p>
-                <p style={Title}> Careers </p>
-                <p style={Title}> Legal terms </p>
+                <Text white small>
+                  Social
+                </Text>
+                <Text white small>
+                  Careers
+                </Text>
+                <Text white small>
+                  Legal terms
+                </Text>
               </Flex>
             </Flex>
           </div>
@@ -212,7 +240,7 @@ const Footer = () => {
             <a href="/"> Privacy Policies </a>
           </p>
         </div>
-      </footer>
+      </FooterBody>
     </div>
   )
 }

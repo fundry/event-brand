@@ -74,7 +74,7 @@ const Home = (): JSX.Element => {
                 style={{
                   margin: "1em",
                   padding: "0.5em",
-                  width: "22em",
+                  width: "24em",
                   textAlign: "center",
                 }}
                 key={id}

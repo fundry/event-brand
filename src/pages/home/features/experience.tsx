@@ -16,8 +16,6 @@ import {
 import Ipad from "../../../assets/svg/ipad.svg"
 import { ExperienceFeatures } from "../../../data"
 
-// TODO:  this component should be a slider later on
-
 const Experience = () => {
   return (
     <Body>

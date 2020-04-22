@@ -4,31 +4,31 @@ import media from "styled-media-query"
 import { Card } from "react-bootstrap"
 
 const Contain = styled.div`
-  text-align: ${props => (props.center ? "center" : null)};
-  max-width: ${props => (props.width ? "900px" : null)};
-  width: ${props => (props.widthed ? "45rem" : null)};
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  max-width: ${(props: { width: any }) => (props.width ? "900px" : null)};
+  width: ${(props: { widthed: any }) => (props.widthed ? "45rem" : null)};
   ${media.lessThan("medium")`
-width: ${props => (props.widthed ? "30rem" : null)};
+width: ${(props: { widthed: any }) => (props.widthed ? "30rem" : null)};
    `};
   ${media.lessThan("large")`
-width: ${props => (props.widthed ? "35rem" : null)};
+width: ${(props: { widthed: any }) => (props.widthed ? "35rem" : null)};
   `};
   ${media.lessThan("small")`
-width: ${props => (props.widthed ? "20rem" : null)};
+width: ${(props: { widthed: any }) => (props.widthed ? "20rem" : null)};
   `};
 `
 
 const Text = styled.p`
-  color: #401364;
-  font-weight: ${props => (props.bold ? "700" : null)};
+  color: ${props => (props.white ? "#fff" : "#401364")};
+  font-weight: ${(props: string) => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
-  font-size: ${(props: { small: any }) => (props.small ? "1.10em " : "1.20em")};
+  font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `};
   ${media.lessThan("large")`
-font-size: ${(props: { small: any }) => (props.small ? "1.20em " : "1.27em")};
+font-size: ${(props: { small: any }) => (props.small ? "1.1em " : "1.27em")};
 text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `};
   ${media.lessThan("small")`
@@ -38,7 +38,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `
 
 const Title = styled.h4`
-color: ${props => (props.colored ? "#401364" : "#000")}
+color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
@@ -60,13 +60,18 @@ const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
 
 const Items = styled.div({
   ...autoGrid(220, 20),
-  padding: "3em",
+  padding: "1em",
   marginLeft: "1.5em",
 })
 
 const CustomCard = styled(Card)`
   border: 1px solid grey;
   box-shadow: 1px 7px 5px grey;
+  transition: transform 1s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+  }
 `
 
 const Cards = styled.div`
@@ -144,7 +149,8 @@ const Button = styled.button`
   background: ${(props: { download: any }) =>
     props.download ? "#ff21c1" : "transparent"};
   text-align: center;
-  border-radius:   ${props => (props.rounded ? "30px" : "5px")};
+  border-radius:   ${(props: { rounded: any }) =>
+    props.rounded ? "30px" : "5px"};
   height:  55px;
   width: ${(props: { one: any }) => (props.one ? "14em" : "12em")};
   border: 2px solid #ff21c1;
@@ -261,8 +267,9 @@ const Slider = styled.ul`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: ${props => (props.schedule ? "55% 45%" : "70% 30%")};
-  grid-gap: ${props => (props.schedule ? "2rem" : "4rem")};
+  grid-template-columns: ${(props: { schedule: any }) =>
+    props.schedule ? "55% 45%" : "70% 30%"};
+  grid-gap: ${(props: { schedule: any }) => (props.schedule ? "2rem" : "4rem")};
 `
 
 const Switch = styled.div`
@@ -301,19 +308,33 @@ const SwitchBtn = styled.button`
 `
 
 const List = styled.li`
-  padding: ${props => (props.padded ? "0.2rem 14rem" : null)};
+  padding: ${(props: { padded: any }) =>
+    props.padded ? "0.2rem 14rem" : null};
   ${media.lessThan("large")`
-    padding: ${props => (props.padded ? "0.2rem 2rem" : null)};
+    padding: ${(props: { padded: any }) =>
+      props.padded ? "0.2rem 2rem" : null};
 `};
   ${media.lessThan("small")`
-    padding: ${props => (props.padded ? "0.2rem 0.3rem" : null)};
+    padding: ${(props: { padded: any }) =>
+      props.padded ? "0.2rem 0.3rem" : null};
 `};
   ${media.lessThan("medium")`
-    padding: ${props => (props.padded ? "0.2rem 1rem" : null)};
+    padding: ${(props: { padded: any }) =>
+      props.padded ? "0.2rem 1rem" : null};
 `};
 `
 
+const Footer = styled.footer`
+  background: #5919ab;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+`
+
 export {
+  Footer,
   Grid,
   List,
   Switch,

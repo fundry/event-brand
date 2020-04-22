@@ -3,20 +3,20 @@
 const FeaturesList = [
   {
     id: 1,
-    title: "Automate Your Tasks",
+    title: "Sell and Manage Tickets",
     text:
-      "All images taken during an event are sent to registered event attendees.",
+      "Handle ticketing with external ticketers while Oasis manages your event.c",
     link: "",
   },
   {
     id: 2,
-    title: "Realtime Collaboration",
+    title: "Create Tasks and Checklists",
     text: "Collaborate and give realtime feedbacks with speakers and sponsors",
     link: "",
   },
   {
     id: 3,
-    title: "Team Support",
+    title: "Organize Your Event Crew",
     text: "Create teams and group within your event to share workload",
     link: "",
   },

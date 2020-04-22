@@ -44,30 +44,27 @@ const Banner = () => {
               <br />
               <br />
               <br />
-              <br />
-              <br />
               <Motto style={{ textAlign: "right", margin: "2rem  0.2em" }}>
                 Create, Manage and Organize <br /> your events.
               </Motto>
 
               <Text style={{ textAlign: "right" }} items>
-                Create your conferences and let's do the management!{" "}
+                Create your conferences and let's do the management!
               </Text>
               <Flex justifyCenter>
                 <Button one download rounded style={{ textAlign: "center" }}>
                   <Flex justifyCenter>
                     Get Started
                     <div style={{ paddingLeft: "30px" }}>
-                      <FiArrowRight style={{ fontSize: "1.6em" }} />{" "}
+                      <FiArrowRight style={{ fontSize: "1.6em" }} />
                     </div>
                   </Flex>
                 </Button>
               </Flex>
-              <br />
             </Flex>
           </Flex>
           <Text center small>
-            Try a demo of the{" "}
+            Try a demo of the
             <a
               target="_blank"
               style={{
@@ -77,25 +74,24 @@ const Banner = () => {
               }}
               href="https://app-event.netlify.com"
             >
-              {" "}
-              Event Management{" "}
-            </a>{" "}
+              Event Management
+            </a>
             Console
           </Text>
           <p style={{ textAlign: "center", color: "grey" }}>
-            *No Account Required{" "}
+            *No Account Required
           </p>
           <br />
         </Body>
       ) : (
         <Flex justifyCenter>
-          <div style={{ padding: "2em" }}>
+          <div style={{ padding: "1em" }}>
             <Motto style={{ textAlign: "center", margin: "0.5em" }}>
-              Create, Manage and Organize <br /> your events.{" "}
+              Create, Manage and Organize <br /> your events.
             </Motto>
 
             <Text style={{ textAlign: "center", width: "50em" }} small>
-              Create your conferences and let's do the management!{" "}
+              Create your conferences and let's do the management!
             </Text>
             <Flex justifyCenter>
               <Flex column>
@@ -105,7 +101,7 @@ const Banner = () => {
                     <Button download two>
                       <Flex justifyCenter>
                         <div style={{ paddingRight: "7px" }}>
-                          <DiAppstore style={{ fontSize: "1.7em" }} />{" "}
+                          <DiAppstore style={{ fontSize: "1.7em" }} />
                         </div>
                         Apple Store
                       </Flex>
@@ -120,16 +116,16 @@ const Banner = () => {
                     >
                       <Flex justifyCenter>
                         <div style={{ paddingRight: "7px" }}>
-                          <FaGooglePlay style={{ fontSize: "1.5em" }} />{" "}
+                          <FaGooglePlay style={{ fontSize: "1.5em" }} />
                         </div>
                         Play Store
                       </Flex>
                     </Button>
                   </div>
-                </Flex>{" "}
+                </Flex>
                 <br />
                 <Text center small>
-                  Try a demo of the{" "}
+                  Try a demo of the
                   <a
                     target="_blank"
                     style={{
@@ -139,13 +135,12 @@ const Banner = () => {
                     }}
                     href="https://app-event.netlify.com"
                   >
-                    {" "}
-                    Event Management{" "}
-                  </a>{" "}
+                    Event Management
+                  </a>
                   Console
                 </Text>
                 <p style={{ textAlign: "center", color: "grey" }}>
-                  *No Account Required{" "}
+                  *No Account Required
                 </p>
               </Flex>
             </Flex>
