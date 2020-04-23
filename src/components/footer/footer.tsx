@@ -15,31 +15,12 @@ const Footer = () => {
     color: "#fff",
   }
 
-  const Title = {
-    fontSize: "0.8em",
-    color: "#fff",
-  }
-
   const Testing = styled.div({
     textAlign: "center",
     background: "#0e2f5a",
     padding: "1em",
     color: "#fff",
   })
-
-  const Button = styled.button`
-    background: #5919ab;
-    border: 1px solid #0e2f5a;
-    border-radius: 0px 15px 15px 0px  ;
-    color: #fff;
-    height: 7.1vh,
-    margin: 0 1em;
-    padding: 0.50em 1.5em;
-    :hover {
-      border: 2px solid #0e2f5a;
-      font-size: 1em;
-    }
-  `
 
   const [Width, setWidth] = useState(null)
 
@@ -59,45 +40,14 @@ const Footer = () => {
   return (
     <div>
       <Testing>
-        <Flex justifyBetween>
+        <Flex justifyCenter>
           <Text
             small
             white
             style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}
           >
-            Oasis is launching very soon!
+            Oasis is coming soon. Get early acess
           </Text>
-
-          {Width >= 470 ? (
-            <Link to="/testing/testers">
-              <Button
-                onClick={() => {
-                  setTestModal(true)
-                }}
-                style={{
-                  paddingRight: "15px",
-                  marginRight: "25px",
-                  fontSize: "1.1em",
-                }}
-              >
-                Get Early Acess
-              </Button>
-            </Link>
-          ) : (
-            <Link to="/testing/testers">
-              <Button
-                onClick={() => {
-                  setTestModal(true)
-                }}
-                style={{
-                  paddingRight: "15px",
-                  fontSize: "1.1em",
-                }}
-              >
-                Join
-              </Button>
-            </Link>
-          )}
         </Flex>
       </Testing>
 

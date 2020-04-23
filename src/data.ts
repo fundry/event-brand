@@ -59,4 +59,25 @@ const ExperienceFeatures = [
   },
 ]
 
-export { FeaturesList, Users, ExperienceFeatures }
+const CommunityFeatures = [
+  {
+    id: 1,
+    title: "Speakers",
+    text:
+      "speakers speaking speak speaking speak speaking speak speaking speak speaking speak speaking speak speaking speak",
+  },
+  {
+    id: 2,
+    title: "Volunteer",
+    text:
+      "Volunteers volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer",
+  },
+  {
+    id: 3,
+    title: "Peering",
+    text:
+      "speaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking speak",
+  },
+]
+
+export { FeaturesList, Users, ExperienceFeatures, CommunityFeatures }

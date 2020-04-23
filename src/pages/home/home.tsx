@@ -18,12 +18,13 @@ import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
+import sample from "../../assets/svg/illustration.svg"
 
 import Integration from "./features/integrations"
 import Attendees from "./features/attendees"
 import Media from "./features/media"
 import Experience from "./features/experience"
-import Networking from "./features/networking"
+import Communtiy from "./features/community"
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -80,7 +81,13 @@ const Home = (): JSX.Element => {
                 key={id}
               >
                 <Contain center>
-                  <br /> <br />
+                  <br />
+                  <img
+                    alt="sample"
+                    src={sample}
+                    style={{ maxWidth: "17rem" }}
+                  />
+                  <br />
                   <Title features>{title} </Title>
                   <Text style={{ textAlign: "center" }} small center>
                     {desc}
@@ -113,6 +120,8 @@ const Home = (): JSX.Element => {
 
       <br />
       <Experience />
+      <br />
+      <Communtiy />
       <br />
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />

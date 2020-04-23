@@ -44,6 +44,9 @@ const Banner = () => {
               <br />
               <br />
               <br />
+              <br />
+              <br />
+              <br />
               <Motto style={{ textAlign: "right", margin: "2rem  0.2em" }}>
                 Create, Manage and Organize <br /> your events.
               </Motto>
@@ -72,7 +75,7 @@ const Banner = () => {
                 color: "#401364",
                 fontWeight: "bold",
               }}
-              href="https://app-event.netlify.com"
+              href="https://event-console.netlify.app/"
             >
               Event Management
             </a>
@@ -133,7 +136,7 @@ const Banner = () => {
                       color: "#401364",
                       fontWeight: "bold",
                     }}
-                    href="https://app-event.netlify.com"
+                    href="https://event-console.netlify.app/"
                   >
                     Event Management
                   </a>

@@ -70,7 +70,7 @@ const CustomCard = styled(Card)`
   transition: transform 1s;
   &:hover {
     cursor: pointer;
-    transform: translateY(-15px);
+    transform: translateY(-10px);
   }
 `
 
