@@ -21,7 +21,7 @@ import Security from "./security"
 import sample from "../../assets/svg/illustration.svg"
 
 import Integration from "./features/integrations"
-import Attendees from "./features/attendees"
+import App from "./features/app"
 import Media from "./features/media"
 import Experience from "./features/experience"
 import Communtiy from "./features/community"
@@ -125,7 +125,7 @@ const Home = (): JSX.Element => {
       <br />
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
-        <Attendees />
+        <App />
         <br />
       </Body>
 

@@ -25,7 +25,7 @@ padding-right: 1em;
 `};
 `
 
-const Attendees = () => {
+const App = () => {
   return (
     <div>
       <Flex justifyCenter>
@@ -58,7 +58,7 @@ const Attendees = () => {
               <Button download one style={{ width: "11em" }}>
                 <Flex justifyCenter>
                   <div style={{ paddingRight: "7px" }}>
-                    <FaGooglePlay style={{ fontSize: "1.7em" }} />{" "}
+                    <FaGooglePlay style={{ fontSize: "1.6em" }} />{" "}
                   </div>
                   Play Store
                 </Flex>
@@ -74,4 +74,4 @@ const Attendees = () => {
   )
 }
 
-export default Attendees
+export default App

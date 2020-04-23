@@ -24,7 +24,7 @@ const Community = () => {
           Fostering Community Involement
         </BgTitle>
 
-        {Hooks >= 700 ? (
+        {Hooks >= 800 ? (
           <Flex justifyBetween>
             {CommunityFeatures.map(({ id, title, text }) => {
               return (

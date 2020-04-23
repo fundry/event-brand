@@ -64,10 +64,11 @@ const Items = styled.div({
   marginLeft: "1.5em",
 })
 
-const CustomCard = styled(Card)`
+const CustomCard = styled.div`
   border: 1px solid grey;
   box-shadow: 1px 7px 5px grey;
   transition: transform 1s;
+  background: #fff;
   &:hover {
     cursor: pointer;
     transform: translateY(-10px);
@@ -191,7 +192,7 @@ const Brand = styled.p`
 
 const HeaderBody = styled.nav`
   box-shadow: 0px 4px 5px grey;
-  padding: 1em 0.3em;
+  padding: 0.7em 0.3em;
   background-color: #fff;
   position: fixed;
   width: 100%;
@@ -215,8 +216,8 @@ const HeaderBody = styled.nav`
   padding-top: 10px;
 `};
   ${media.lessThan("medium")`
-  padding: 0.3em 0.3em;
-  padding-top: 15px;
+  padding: 0.2em 0.6em;
+  padding-top: 7px;
 `};
   ${media.lessThan("small")`
   padding: 0.5em 0.3em;

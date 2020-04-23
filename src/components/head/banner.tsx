@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import { IoIosDesktop } from "react-icons/io"
 import { FiArrowRight } from "react-icons/fi"
 
 import Header from "./header"
@@ -46,7 +45,6 @@ const Banner = () => {
               <br />
               <br />
               <br />
-              <br />
               <Motto style={{ textAlign: "right", margin: "2rem  0.2em" }}>
                 Create, Manage and Organize <br /> your events.
               </Motto>
@@ -66,11 +64,13 @@ const Banner = () => {
               </Flex>
             </Flex>
           </Flex>
+          <br />
           <Text center small>
             Try a demo of the
             <a
               target="_blank"
               style={{
+                padding: "0rem 0.5rem",
                 textDecoration: "none",
                 color: "#401364",
                 fontWeight: "bold",
@@ -132,6 +132,7 @@ const Banner = () => {
                   <a
                     target="_blank"
                     style={{
+                      padding: "0rem 0.5rem",
                       textDecoration: "none",
                       color: "#401364",
                       fontWeight: "bold",
