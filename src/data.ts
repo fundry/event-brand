@@ -80,4 +80,25 @@ const CommunityFeatures = [
   },
 ]
 
-export { FeaturesList, Users, ExperienceFeatures, CommunityFeatures }
+const BlogPosts = [
+  {
+    id: 1,
+    title: "Organizing the Open Source Community Africa Festival",
+    text:
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+  },
+  {
+    id: 2,
+    title: "Organizing the Concatenate Africa ",
+    text:
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+  },
+  {
+    id: 3,
+    title: "Organizing the 2020 Google Developer Group",
+    text:
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+  },
+]
+
+export { FeaturesList, BlogPosts, Users, ExperienceFeatures, CommunityFeatures }

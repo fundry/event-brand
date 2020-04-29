@@ -20,6 +20,7 @@ import Layout from "../../components/layout"
 import Security from "./security"
 import sample from "../../assets/svg/illustration.svg"
 
+import BlogOverview from "./blogOverview"
 import Integration from "./features/integrations"
 import App from "./features/app"
 import Media from "./features/media"
@@ -71,17 +72,8 @@ const Home = (): JSX.Element => {
         <Cards>
           {Users.map(({ type, title, desc, id }) => {
             return (
-              <CustomCard
-                style={{
-                  margin: "1em",
-                  padding: "0.5em",
-                  width: "24em",
-                  textAlign: "center",
-                }}
-                key={id}
-              >
+              <CustomCard key={id}>
                 <Contain center>
-                  <br />
                   <img
                     alt="sample"
                     src={sample}
@@ -114,22 +106,32 @@ const Home = (): JSX.Element => {
 
         <Media />
         <br />
+        <br />
 
         <Integration />
       </Body>
 
       <br />
+      <br />
       <Experience />
+      <br />
       <br />
       <Communtiy />
       <br />
+      <br />
+      <BlogOverview />
+      <br />
+      <br />
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
+        <br />
         <br />
         <App />
         <br />
       </Body>
 
       <Security />
+      <br />
+      <br />
     </Layout>
   )
 }

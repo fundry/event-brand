@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi"
 
 import Header from "./header"
 import Illustration from "../../assets/svg/illustration.svg"
-import { Text, Button, Body, Motto } from "../../styles/style"
+import { Text, Button, CustomImage, Motto } from "../../styles/style"
 
 const Banner = () => {
   const [Width, setWidth] = useState(null)
@@ -31,38 +31,35 @@ const Banner = () => {
       <br />
       <br />
       {Width >= 1050 ? (
-        <Body>
+        <div>
           <Flex justifyAround>
-            <img
-              src={Illustration}
-              alt="illustration here"
-              style={{ maxHeight: "40%", maxWidth: "37%" }}
-            />
+            <CustomImage src={Illustration} alt="illustration here" />
 
-            <Flex column>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <Motto style={{ textAlign: "right", margin: "2rem  0.2em" }}>
-                Create, Manage and Organize <br /> your events.
-              </Motto>
+            <div style={{ paddingRight: "20px" }}>
+              <Flex column>
+                <br />
+                <br />
+                <br />
+                <br />
+                <Motto style={{ textAlign: "center", margin: "1rem  0.2em" }}>
+                  Create, Manage and Organize <br /> your events.
+                </Motto>
 
-              <Text style={{ textAlign: "right" }} items>
-                Create your conferences and let's do the management!
-              </Text>
-              <Flex justifyCenter>
-                <Button one download rounded style={{ textAlign: "center" }}>
-                  <Flex justifyCenter>
-                    Get Started
-                    <div style={{ paddingLeft: "30px" }}>
-                      <FiArrowRight style={{ fontSize: "1.6em" }} />
-                    </div>
-                  </Flex>
-                </Button>
+                <Text style={{ textAlign: "center" }} items>
+                  Redefining the regular event experience!
+                </Text>
+                <Flex justifyCenter>
+                  <Button one download rounded style={{ textAlign: "center" }}>
+                    <Flex justifyCenter>
+                      Get Started
+                      <div style={{ paddingLeft: "20px" }}>
+                        <FiArrowRight style={{ fontSize: "1.6em" }} />
+                      </div>
+                    </Flex>
+                  </Button>
+                </Flex>
               </Flex>
-            </Flex>
+            </div>
           </Flex>
           <br />
           <Text center small>
@@ -85,7 +82,7 @@ const Banner = () => {
             *No Account Required
           </p>
           <br />
-        </Body>
+        </div>
       ) : (
         <Flex justifyCenter>
           <div style={{ padding: "1em" }}>

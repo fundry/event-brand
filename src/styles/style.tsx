@@ -1,13 +1,13 @@
 // @ts-ignore
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
-import { Card } from "react-bootstrap"
 
 const Contain = styled.div`
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   max-width: ${(props: { width: any }) => (props.width ? "900px" : null)};
   width: ${(props: { widthed: any }) => (props.widthed ? "45rem" : null)};
-  ${media.lessThan("medium")`
+  padding: ${(props: { padded: any }) => (props.padded ? "1rem" : null)}
+    ${media.lessThan("medium")`
 width: ${(props: { widthed: any }) => (props.widthed ? "30rem" : null)};
    `};
   ${media.lessThan("large")`
@@ -23,17 +23,22 @@ const Text = styled.p`
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  ${media.lessThan("medium")`
+  line-height: 1.8rem;
+  padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
+    ${media.lessThan("medium")`
   font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
 `};
   ${media.lessThan("large")`
-font-size: ${(props: { small: any }) => (props.small ? "1.1em " : "1.27em")};
-text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  font-size: ${(props: { small: any }) => (props.small ? "1.1em " : "1.27em")};
+  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  padding: ${props => (props.padded ? "0rem 2rem" : "0rem")}
 `};
   ${media.lessThan("small")`
 font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.10em")};
 text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  padding: ${props => (props.padded ? "0rem 0.5rem" : "0rem")}
   `};
 `
 
@@ -69,6 +74,11 @@ const CustomCard = styled.div`
   box-shadow: 1px 7px 5px grey;
   transition: transform 1s;
   background: #fff;
+  margin: 1em;
+  padding: 0.5em 1rem;
+  width: 24em;
+  height: auto;
+  textalign: center;
   &:hover {
     cursor: pointer;
     transform: translateY(-10px);
@@ -104,33 +114,41 @@ const BgTitle = styled.h1`
 `
 
 const Body = styled.div`
-  padding-left: ${(props: { banner: any }) => (props.banner ? "12em" : "8em")};
-  padding-right: ${(props: { banner: any }) => (props.banner ? "12em" : "8em")};
+  padding: ${(props: { banner: any }) =>
+    props.banner ? "0rem 12em" : "0rem 8em"};
   background: ${(props: { banner: any }) =>
     props.banner ? "transparent" : null};
   color: ${(props: { banner: any }) => (props.banner ? "#401364" : null)};
+  ${media.lessThan("huge")`
+    padding: 0rem 4em;
+  `};
   ${media.lessThan("large")`
-  padding-left: 3em;
-  padding-right: 3em;
+  padding: 0rem 3em;
   `};
   ${media.lessThan("medium")`
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding: 0rem 1.5em;
   `};
   ${media.lessThan("small")`
-  padding-left: 0.4em;
-  padding-right: 0.4em;
+  padding: 0rem 0.4em;
   `};
 `
 
 const Motto = styled.h1`
   font-weight: bold;
   color: #401364;
+  font-size: 3em;
+  padding-top: 3rem;
+  ${media.lessThan("large")`
+  font-size: 2.4em
+    padding-top : 1rem;
+  `};
   ${media.lessThan("medium")`
   font-size: 2em
+    padding-top : 1rem;
 `};
   ${media.lessThan("small")`
 font-size: 1.5em
+    padding-top : 1rem;
 `};
 `
 
@@ -334,7 +352,54 @@ const Footer = styled.footer`
   }
 `
 
+const BlogCards = styled.div`
+  padding: 0.5rem 1rem;
+  border : 2px solid grey;
+  width : 30rem;
+  height: auto;
+  background: transparent;
+  border-radius: 15px;
+  ${media.lessThan("large")`
+    width : 30rem;
+    background: transparent;
+  `}
+  ${media.lessThan("medium")`
+    width : 30rem;
+    background: transparent;
+  `}
+  ${media.lessThan("small")`
+    width : 25rem;
+    background: transparent;
+  `}
+`
+
+const fadein = keyframes`
+    0% {
+      opacity : 0;
+    }
+    200% {
+      opacity : 1;
+      cursor: pointer;
+    }
+`
+
+const CustomImage = styled.img`
+  animation: ${fadein} 1000ms ease-in;
+  max-height: 50%;
+  max-width: 50%;
+  ${media.lessThan("large")`
+       max-height: 50%;
+        max-width: 42%;
+    `}
+  ${media.lessThan("medium")`
+      max-height: 50%;
+      max-width: 42%;
+    `}
+`
+
 export {
+  CustomImage,
+  BlogCards,
   Footer,
   Grid,
   List,
