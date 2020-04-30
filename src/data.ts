@@ -44,18 +44,21 @@ const ExperienceFeatures = [
     title: "Create Realtime Polls",
     text:
       "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+    column: "Polls",
   },
   {
     id: 2,
     title: "Gather User Feedback",
     text:
       "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+    column: "Feedback",
   },
   {
     id: 3,
-    title: "Gather User Feedback",
+    title: "Attendee Peering",
     text:
       "Some text about the exprience category of the event the     exprience category of the event the exprience category of the event the",
+    column: "Chat",
   },
 ]
 
@@ -85,19 +88,19 @@ const BlogPosts = [
     id: 1,
     title: "Organizing the Open Source Community Africa Festival",
     text:
-      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was  the maiden edition of the OSCA",
   },
   {
     id: 2,
     title: "Organizing the Concatenate Africa ",
     text:
-      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was  the maiden edition of the OSCA",
   },
   {
     id: 3,
     title: "Organizing the 2020 Google Developer Group",
     text:
-      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA was held the maiden edition of the OSCA",
+      "On the 21st Of March, the maiden edition of the OSCA was held the maiden edition of the OSCA was  the maiden edition of the OSCA",
   },
 ]
 

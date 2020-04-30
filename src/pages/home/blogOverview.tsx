@@ -24,7 +24,10 @@ const BlogOverview = () => {
   return (
     <Body padded>
       <Flex justifyBetween>
-        <BgTitle bold> Deep Dive </BgTitle>
+        <BgTitle support bold>
+          {" "}
+          Deep Dive{" "}
+        </BgTitle>
 
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <Text bold> Read More Experiences </Text>

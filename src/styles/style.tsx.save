@@ -23,7 +23,7 @@ const Text = styled.p`
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
+  line-height: 1.8rem;
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
     ${media.lessThan("medium")`
   font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
@@ -387,7 +387,7 @@ const fadein = keyframes`
 const CustomImage = styled.img`
   animation: ${fadein} 1000ms ease-in;
   max-height: 50%;
-  max-width: 50%;
+^  max-width: 50%;
   ${media.lessThan("large")`
        max-height: 50%;
         max-width: 42%;

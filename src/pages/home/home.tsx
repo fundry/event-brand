@@ -25,7 +25,8 @@ import Integration from "./features/integrations"
 import App from "./features/app"
 import Media from "./features/media"
 import Experience from "./features/experience"
-import Communtiy from "./features/community"
+import Community from "./features/community"
+import Email from "./features/email"
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -53,12 +54,11 @@ const Home = (): JSX.Element => {
       >
         <br />
 
-        <Text center padded>
+        <Text center padded heightened>
           Oasis is helping to redefine the regular event experience attendees
-          get when they attend event managed using Oasis. Oasis provides a
-          feature rich web base event console for organizer to manage the
-          affairs of their event while provide a User centered mobile app for
-          event attendees.
+          get when they attend events. Oasis provides a feature rich web base
+          event console for organizer to manage the affairs of their event while
+          provide a User centered mobile app for event attendees.
         </Text>
 
         <br />
@@ -117,7 +117,7 @@ const Home = (): JSX.Element => {
       <Experience />
       <br />
       <br />
-      <Communtiy />
+      <Community />
       <br />
       <br />
       <BlogOverview />
