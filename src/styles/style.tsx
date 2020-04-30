@@ -21,7 +21,7 @@ width: ${(props: { widthed: any }) => (props.widthed ? "20rem" : null)};
 const Text = styled.p`
   color: ${props => (props.white ? "#fff" : "#401364")};
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
-  font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.3em")};
+  font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: 1.8rem;
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
@@ -252,6 +252,7 @@ const HBtn = styled.button`
     props.login ? "1px solid #fff" : " 1.5px solid #ff21c1 "};
   color: #fff;
   margin: 0rem 0.5rem;
+  outline: none;
   padding: 0.25rem 1rem;
   font-size: 1rem;
   &:hover {

@@ -101,4 +101,38 @@ const BlogPosts = [
   },
 ]
 
-export { FeaturesList, BlogPosts, Users, ExperienceFeatures, CommunityFeatures }
+const AppFeatures = [
+  {
+    id: 1,
+    name: "Dedicated Cross-Platform Mobile App",
+    summary:
+      "Take Charge of the entire Oasis App during your event. No trace of Oasis when a user is checked in. ",
+  },
+  {
+    id: 2,
+    name: "Keep  the cat in the bag while visible",
+    summary:
+      "Take Charge of the entire Oasis App during your event. No trace of Oasis when a user is checked in. ",
+  },
+  {
+    id: 3,
+    name: "Events Tracks and Schedules",
+    summary:
+      "Take Charge of the entire Oasis App during your event. No trace of Oasis when a user is checked in. ",
+  },
+  {
+    id: 4,
+    name: "Internationalization Support",
+    summary:
+      "Cater for the needs of your foreign attendees with multiple language support",
+  },
+]
+
+export {
+  AppFeatures,
+  FeaturesList,
+  BlogPosts,
+  Users,
+  ExperienceFeatures,
+  CommunityFeatures,
+}

@@ -5,7 +5,6 @@ import Flex from "styled-flex-component"
 import { IoIosArrowForward } from "react-icons/io"
 
 import { Contain, Text, Title, BgTitle, Items } from "../../../styles/style"
-// import Feature from '../../../assets/images/eventbrite.png';
 import useWindowWidth from "../../../styles/resize"
 
 const Integration = (props): JSX.Element => {
@@ -99,6 +98,8 @@ const Integration = (props): JSX.Element => {
           })}
         </Items>
       )}
+
+      <br />
     </Contain>
   )
 }

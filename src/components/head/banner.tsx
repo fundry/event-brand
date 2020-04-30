@@ -61,7 +61,6 @@ const Banner = () => {
               </Flex>
             </div>
           </Flex>
-          <br />
           <Text center small>
             Try a demo of the
             <a
@@ -74,7 +73,7 @@ const Banner = () => {
               }}
               href="https://event-console.netlify.app/"
             >
-              Event Management
+              Oasis Event Management
             </a>
             Console
           </Text>
@@ -136,7 +135,7 @@ const Banner = () => {
                     }}
                     href="https://event-console.netlify.app/"
                   >
-                    Event Management
+                    Oasis Event Management
                   </a>
                   Console
                 </Text>

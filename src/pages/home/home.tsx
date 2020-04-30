@@ -53,19 +53,20 @@ const Home = (): JSX.Element => {
       >
         <br />
 
-        <Text center>
-          Eventful helps you automate somethings . From creating teams to
-          reviewing Speakers slides. From creating teams to reviewing Speakers
-          slides.
+        <Text center padded>
+          Oasis is helping to redefine the regular event experience attendees
+          get when they attend event managed using Oasis. Oasis provides a
+          feature rich web base event console for organizer to manage the
+          affairs of their event while provide a User centered mobile app for
+          event attendees.
         </Text>
 
         <br />
         <br />
         <div style={{ textAlign: "center" }}>
           <BgTitle support>Support For Your Event Type</BgTitle>
-          <Text explanation>
-            Eventful has features to provide support your specific type of
-            event.
+          <Text padded>
+            Oasis has features to provide support your specific type of event.
           </Text>
         </div>
 

@@ -1,33 +1,65 @@
 import React from "react"
-import styled from "styled-components"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import media from "styled-media-query"
+import styled from "styled-components"
 
 import Android from "../../../assets/svg/android.svg"
-import { Text, BigTitle, Button } from "../../../styles/style"
+import Feature from "../../../assets/svg/features.svg"
+import {
+  Items,
+  Text,
+  Body,
+  Contain,
+  BgTitle,
+  BigTitle,
+  Button,
+  Title,
+} from "../../../styles/style"
+import { AppFeatures } from "../../../data"
 
-const Contain = styled.div`
-  padding-left: 13em;
-  padding-right: 13em;
-  ${media.lessThan("large")`
-padding-left: 5em;
-padding-right: 5em;
-`};
-  ${media.lessThan("medium")`
-padding-left: 1em;
-padding-right: 1em;
-`};
-  ${media.lessThan("small")`
-padding-left: 1em;
-padding-right: 1em;
-`};
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 `
 
 const App = () => {
   return (
-    <div>
+    <Contain>
+      <BgTitle support>User Centered Mobile Design</BgTitle>
+
+      <br />
+
+      <Grid>
+        {AppFeatures.map(({ id, name, summary }) => {
+          return (
+            <Contain key={id}>
+              <Flex justifyCenter>
+                <img
+                  src={Feature}
+                  style={{
+                    width: "30%",
+                    height: "auto",
+                  }}
+                  alt={"Feature Demo"}
+                />
+              </Flex>
+              <Title small bold center>
+                {name}{" "}
+              </Title>
+              <Text small center>
+                {" "}
+                {summary}{" "}
+              </Text>
+            </Contain>
+          )
+        })}
+      </Grid>
+
+      <br />
+      <br />
+
       <Flex justifyCenter>
         <img
           alt="android"
@@ -38,10 +70,14 @@ const App = () => {
 
       <Contain>
         <BigTitle app>Get the App! </BigTitle>
-        <Text small center>
-          Manage events Manage events Manage events Manage events Manage events
-          Manage events Manage events Manage events Manage events Manage events
-        </Text>
+
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Text style={{ width: "40rem" }} padded small center>
+            Manage events Manage events Manage events Manage events Manage
+            events Manage events Manage events Manage events Manage events
+            Manage events
+          </Text>
+        </div>
 
         <Flex justifyCenter>
           <Flex>
@@ -70,7 +106,7 @@ const App = () => {
 
         <br />
       </Contain>
-    </div>
+    </Contain>
   )
 }
 

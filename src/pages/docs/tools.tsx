@@ -1,10 +1,10 @@
-import React from "react"
+import * as React from "react"
 
 import Header from "../../components/head/header"
 import Layout from "../../components/layout"
 import { Body } from "../../styles/style"
 
-const Service = () => {
+const Tools = () => {
   return (
     <Layout>
       <Header style={false} />
@@ -12,9 +12,8 @@ const Service = () => {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <p> Explanation of All Service and Features </p>
+        <p> Full explanation of integratable tools </p>
+        <br /> <br />
         <br />
         <br />
       </Body>
@@ -22,4 +21,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default Tools

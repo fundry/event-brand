@@ -46,21 +46,21 @@ const Header = ({ style }: Props) => {
 
             <Flex>
               <div style={{ paddingRight: "60px" }}>
-                <Link to="/" style={{ textDecoration: "none" }}>
+                <Link to="/events/event" style={{ textDecoration: "none" }}>
                   <Text small bold>
                     Events
                   </Text>
                 </Link>
               </div>{" "}
               <div style={{ paddingRight: "60px" }}>
-                <Link to="/" style={{ textDecoration: "none" }}>
+                <Link to="/docs/service" style={{ textDecoration: "none" }}>
                   <Text small bold>
                     Resources
                   </Text>
                 </Link>
               </div>
               <div style={{ paddingRight: "60px" }}>
-                <Link to="user/login" style={{ textDecoration: "none" }}>
+                <Link to="docs/proposal" style={{ textDecoration: "none" }}>
                   <Text small bold>
                     Road Map
                   </Text>
@@ -69,15 +69,15 @@ const Header = ({ style }: Props) => {
             </Flex>
 
             <Flex>
-              <Link to="/download/download">
+              <a href={"https://event-console.netlify.com"} target={"_blank"}>
                 <Button small login>
                   Login
                 </Button>
-              </Link>
+              </a>
 
-              <Link to="/download/download">
+              <a href={"https://event-console.netlify.com"} target={"_blank"}>
                 <Button small> Create Account </Button>
-              </Link>
+              </a>
             </Flex>
           </Flex>
         </div>

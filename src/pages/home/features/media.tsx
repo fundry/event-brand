@@ -22,7 +22,7 @@ const Media = () => {
       {hooks >= 700 ? (
         <Grid>
           <div>
-            <Title bold> Automatic Image Delivery </Title>
+            <Title bold> Centralized Cloud Storage </Title>
             <Contain>
               <Text style={{ width: "77%" }} small>
                 All images taken during an event are sent to registered event
@@ -33,7 +33,7 @@ const Media = () => {
               </Text>
               <div style={{ float: "right" }}>
                 <Link
-                  to="/"
+                  to="/docs/service"
                   style={{ textAlign: "right", textDecoration: "none" }}
                 >
                   <Flex>
@@ -70,7 +70,7 @@ const Media = () => {
             </Text>
             <div style={{ float: "right" }}>
               <Link
-                to="/"
+                to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}
               >
                 <Flex>
@@ -99,7 +99,7 @@ const Media = () => {
               </Text>
               <div style={{ float: "right" }}>
                 <Link
-                  to="/"
+                  to="/docs/service"
                   style={{ textAlign: "right", textDecoration: "none" }}
                 >
                   <Flex>
@@ -133,9 +133,10 @@ const Media = () => {
               attendees. <br /> <br /> Avatars generated can be shared with the
               event hashtags on the social media
             </Text>
+            s
             <div style={{ float: "right" }}>
               <Link
-                to="/"
+                to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}
               >
                 <Flex>
@@ -164,7 +165,7 @@ const Media = () => {
               </Text>
               <div style={{ float: "right" }}>
                 <Link
-                  to="/"
+                  to="/docs/service"
                   style={{ textAlign: "right", textDecoration: "none" }}
                 >
                   <Flex>
@@ -204,7 +205,7 @@ const Media = () => {
             </Text>
             <div style={{ float: "right" }}>
               <Link
-                to="/"
+                to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}
               >
                 <Flex>
