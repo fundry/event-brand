@@ -1,0 +1,28 @@
+.modes {
+  margin-bottom: 1rem;
+}
+
+.slider-container {
+  margin-bottom: 0.5rem;
+}
+
+.fade-enter .slider-container {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-enter-active .slider-container {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit .slider-container {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit-active .slider-container {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-enter-active .slider-container,
+.fade-exit-active .slider-container {
+  transition: opacity 500ms, transform 500ms;
+}

@@ -67,7 +67,7 @@ const Banner = () => {
               target="_blank"
               style={{
                 padding: "0rem 0.5rem",
-                textDecoration: "none",
+                textDecoration: "underline",
                 color: "#401364",
                 fontWeight: "bold",
               }}
@@ -125,18 +125,18 @@ const Banner = () => {
                 <br />
                 <Text center small>
                   Try a demo of the
-                  <a
+                  <ae
                     target="_blank"
                     style={{
                       padding: "0rem 0.5rem",
-                      textDecoration: "none",
+                      textDecoration: "underline",
                       color: "#401364",
                       fontWeight: "bold",
                     }}
                     href="https://event-console.netlify.app/"
                   >
                     Oasis Event Management
-                  </a>
+                  </ae>
                   Console
                 </Text>
                 <p style={{ textAlign: "center", color: "grey" }}>

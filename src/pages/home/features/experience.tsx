@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Flex from "styled-flex-component"
-import { CSSTransition } from "react-transition-group"
+import { SwitchTransition, CSSTransition } from "react-transition-group"
 
 import {
   Text,
@@ -13,6 +13,8 @@ import {
   Body,
 } from "../../../styles/style"
 import { ExperienceFeatures } from "../../../data"
+
+import "./test.css"
 
 const Experience = () => {
   const [ActiveColumn, setActiveColumn] = useState<string>("Polls")
@@ -54,14 +56,14 @@ const Experience = () => {
 
         <Slider>
           {ExperienceFeatures.map(({ id, column, title, text }) => {
-            console.log(column)
             return (
-              <Flex justifyCenter>
-                <CSSTransition
-                  timeout={500}
-                  unmountOnExit
-                  in={column === ActiveColumn}
-                >
+              <CSSTransition
+                timeout={500}
+                unmountOnExit
+                in={column === ActiveColumn}
+                classNames={"fade"}
+              >
+                <Flex justifyCenter>
                   <Body
                     style={{ textAlign: "center" }}
                     padded
@@ -69,6 +71,7 @@ const Experience = () => {
                     widthed
                     center
                     id={id}
+                    className={"slider-container"}
                   >
                     <img
                       alt="Experience art "
@@ -82,8 +85,8 @@ const Experience = () => {
                       {text}
                     </Text>
                   </Body>
-                </CSSTransition>
-              </Flex>
+                </Flex>
+              </CSSTransition>
             )
           })}
         </Slider>
