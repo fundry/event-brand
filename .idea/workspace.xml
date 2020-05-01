@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c96a75e5-3482-4cc0-8b6f-f68b8f109367" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/head/banner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/banner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/features/experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/features/experience.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/features/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/features/app.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,23 +15,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/home/features/experience.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="62" column="38" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/home/features/test.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/home/features/app.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="680">
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,7 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/home/features/app.tsx" />
         <option value="$PROJECT_DIR$/src/pages/home/features/integrations.tsx" />
         <option value="$PROJECT_DIR$/src/pages/docs/service.tsx" />
         <option value="$PROJECT_DIR$/src/components/head/header.tsx" />
@@ -90,11 +76,13 @@
         <option value="$PROJECT_DIR$/src/components/head/banner.tsx" />
         <option value="$PROJECT_DIR$/src/pages/home/features/experience.tsx" />
         <option value="$PROJECT_DIR$/src/pages/home/features/test.css" />
+        <option value="$PROJECT_DIR$/src/assets/svg/half-device.svg" />
+        <option value="$PROJECT_DIR$/src/pages/home/features/app.tsx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="910" />
+    <option name="width" value="960" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -114,6 +102,19 @@
               <item name="event-brand" type="b2602c69:ProjectViewProjectNode" />
               <item name="event-brand" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="event-brand" type="b2602c69:ProjectViewProjectNode" />
+              <item name="event-brand" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="event-brand" type="b2602c69:ProjectViewProjectNode" />
+              <item name="event-brand" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="svg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="event-brand" type="b2602c69:ProjectViewProjectNode" />
@@ -192,18 +193,18 @@
       <workItem from="1588170907330" duration="14878000" />
       <workItem from="1588246923725" duration="1177000" />
       <workItem from="1588260288501" duration="23000" />
-      <workItem from="1588278449205" duration="9763000" />
+      <workItem from="1588278449205" duration="11243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26382000" />
+    <option name="totallyTimeSpent" value="27862000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="728" height="864" extended-state="0" />
+    <frame x="0" y="0" width="768" height="864" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24675325" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23328786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -219,7 +220,7 @@
       <window_info anchor="bottom" id="GraphQL" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" x="246" y="158" width="665" height="586" id="Terminal" order="12" type="WINDOWED" visible="true" weight="0.33514985" />
+      <window_info active="true" anchor="bottom" x="395" y="124" width="665" height="586" id="Terminal" order="12" type="WINDOWED" visible="true" weight="0.33514985" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -277,16 +278,6 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/download.svg" />
     <entry file="file://$PROJECT_DIR$/src/pages/home/features/user.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/pages/home/features/app.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/head/header.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -455,18 +446,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/features/experience.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="38" />
+        <state relative-caret-position="96">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/svg/half-device.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home/features/test.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="204">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/features/app.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

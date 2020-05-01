@@ -5,6 +5,7 @@ import { FaGooglePlay } from "react-icons/fa"
 import styled from "styled-components"
 
 import Android from "../../../assets/svg/android.svg"
+import HalfDevie from "../../../assets/svg/half-device.svg"
 import Feature from "../../../assets/svg/features.svg"
 import {
   Items,
@@ -37,7 +38,7 @@ const App = () => {
             <Contain key={id}>
               <Flex justifyCenter>
                 <img
-                  src={Feature}
+                  src={HalfDevie}
                   style={{
                     width: "30%",
                     height: "auto",
