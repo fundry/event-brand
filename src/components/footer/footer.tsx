@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Flex from "styled-flex-component"
-import { Modal } from "react-bootstrap"
 import { FiGithub, FiTwitter, FiFacebook } from "react-icons/fi"
-import media from "styled-media-query"
 import { Link } from "gatsby"
 
-import { Text, Footer as FooterBody } from "../../styles/style"
+import {
+  Text,
+  Footer as FooterBody,
+  FooterColumnHead,
+  Hover,
+  FooterList,
+  Brand,
+} from "../../styles/style"
 
 const Footer = () => {
-  const Head = {
-    fontSize: "0.9em ",
-    fontWeight: "bold",
-    color: "#fff",
-  }
-
   const Testing = styled.div({
     textAlign: "center",
     background: "#0e2f5a",
@@ -37,150 +36,131 @@ const Footer = () => {
     return () => window.removeEventListener("resize", handleResize.bind(this))
   }, [])
 
+  const FooterLink = (props: any) => {
+    return (
+      <Link to={props.to} style={{ textDecoration: "none" }}>
+        <Text white small>
+          {props.text}
+        </Text>
+      </Link>
+    )
+  }
+
   return (
     <div>
       <Testing>
         <Flex justifyCenter>
-          <Text
-            small
-            white
-            style={{ paddingLeft: Width >= 500 ? "50px" : "2px" }}
-          >
+          <Text small white>
             Oasis is coming soon. Get early acess
           </Text>
         </Flex>
       </Testing>
 
       <FooterBody>
-        {Width >= 500 ? (
+        {Width >= 800 ? (
           <div style={{ padding: "2%" }}>
             <Flex justifyAround>
               <div>
-                <h5 style={{ marginTop: "1em", color: "#fff" }}>Event.Inc</h5>
+                <br />
+                <Brand style={{ color: "#fff", textAlign: "center" }}>
+                  Oasis{" "}
+                </Brand>
 
                 <Flex justifyAround>
-                  <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />
-                  <FiTwitter style={{ color: "blue", fontSize: "1.5em" }} />
-                  <FiGithub style={{ color: "black", fontSize: "1.5em" }} />
+                  <Hover padded>
+                    <FiFacebook style={{ color: "black", fontSize: "2rem" }} />
+                  </Hover>
+
+                  <Hover padded>
+                    <FiTwitter style={{ color: "blue", fontSize: "2rem" }} />
+                  </Hover>
+
+                  <Hover padded>
+                    <FiGithub style={{ color: "black", fontSize: "2rem" }} />
+                  </Hover>
                 </Flex>
               </div>
-              <Flex column>
-                <p style={Head}> PRODUCT </p>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    Create Team
-                  </Text>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    Documentation
-                  </Text>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    Billing
-                  </Text>
-                </Link>{" "}
-              </Flex>
-              <Flex column>
-                <p style={Head}> HELP </p>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    Integrations
-                  </Text>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    Guides
-                  </Text>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Text white small>
-                    About Us
-                  </Text>
-                </Link>{" "}
-              </Flex>
+              <FooterList>
+                <FooterColumnHead> PRODUCT </FooterColumnHead>
+                <FooterLink text={" Create Team"} />
+                <FooterLink text={"Documentation"} />
+                <FooterLink text={"Biling"} />
+              </FooterList>
+              <FooterList>
+                <FooterColumnHead> HELP </FooterColumnHead>
+                <FooterLink text={"Integrations"} />
+                <FooterLink text={"Contact Support"} />
+                <FooterLink text={"Guides"} />
+                <FooterLink text={"About Us"} />
+              </FooterList>
 
-              <Flex column>
-                <p style={Head}> MORE </p>
-                <Text white small>
-                  Social
-                </Text>
-                <Text white small>
-                  Careers
-                </Text>
-                <Text white small>
-                  Legal terms
-                </Text>
-              </Flex>
+              <FooterList>
+                <FooterColumnHead> MORE </FooterColumnHead>
+                <FooterLink text={"Social"} />
+                <FooterLink text={"Careers"} />
+                <FooterLink text={"Legal Terms"} />
+              </FooterList>
             </Flex>
           </div>
         ) : (
           <div style={{ padding: "0.5%" }}>
             <Flex justifyCenter>
               <div>
-                <h5 style={{ marginTop: "1em", color: "#fff" }}>Event.Inc</h5>
+                <Brand
+                  style={{
+                    textAlign: "center",
+                    marginTop: "1em",
+                    color: "#fff",
+                  }}
+                >
+                  Oasis
+                </Brand>
 
                 <Flex justifyAround>
-                  <FiFacebook style={{ color: "black", fontSize: "1.5em" }} />
-                  <FiTwitter style={{ color: "blue", fontSize: "1.5em" }} />
-                  <FiGithub style={{ color: "black", fontSize: "1.5em" }} />
+                  <Hover padded>
+                    <FiFacebook style={{ color: "black", fontSize: "1.8em" }} />
+                  </Hover>
+                  <Hover padded>
+                    <FiTwitter style={{ color: "blue", fontSize: "1.8em" }} />
+                  </Hover>
+                  <Hover padded>
+                    <FiGithub style={{ color: "black", fontSize: "1.8em" }} />
+                  </Hover>
                 </Flex>
               </div>
             </Flex>
 
             <br />
             <Flex justifyAround>
-              <Flex column>
-                <p style={Head}> PRODUCT </p>
-                <Text white small>
-                  Create Team
-                </Text>
-                <Text white small>
-                  Documentation
-                </Text>
-                <Text white small>
-                  Billing
-                </Text>
-              </Flex>
-              <Flex column>
-                <p style={Head}> HELP </p>
-                <Text white small>
-                  Integrations
-                </Text>
-                <Text white small>
-                  Guides
-                </Text>
-                <Text white small>
-                  About Us
-                </Text>
-              </Flex>
+              <FooterList>
+                <FooterColumnHead> PRODUCT </FooterColumnHead>
+                <Hover marginRight>
+                  <FooterLink text={" Create Team"} />
+                </Hover>
+                <FooterLink text={"Documentation"} />
+                <FooterLink text={"Biling"} />
+              </FooterList>
+              <FooterList>
+                <FooterColumnHead> HELP </FooterColumnHead>
+                <FooterLink text={"Integrations"} />
+                <FooterLink text={"Contact Support"} />
+                <FooterLink text={"Guides"} />
+                <FooterLink text={"About Us"} />
+              </FooterList>
 
-              <Flex column>
-                <p style={Head}> MORE </p>
-                <Text white small>
-                  Social
-                </Text>
-                <Text white small>
-                  Careers
-                </Text>
-                <Text white small>
-                  Legal terms
-                </Text>
-              </Flex>
+              <FooterList>
+                <FooterColumnHead> MORE </FooterColumnHead>
+                <FooterLink text={"Social"} />
+                <FooterLink text={"Careers"} />
+                <FooterLink text={"Legal Terms"} />
+              </FooterList>
             </Flex>
           </div>
         )}
 
-        <div
+        <Testing
           style={{
-            marginTop: "1em",
-            paddingTop: "0.5em",
-            textAlign: "center",
-            padding: "0.7%",
             backgroundColor: " #361f94",
-            fontSize: "0.8em",
-            color: "#fff",
           }}
         >
           <p>
@@ -189,7 +169,7 @@ const Footer = () => {
             <br /> <a href="/"> Terms of Service </a> or
             <a href="/"> Privacy Policies </a>
           </p>
-        </div>
+        </Testing>
       </FooterBody>
     </div>
   )

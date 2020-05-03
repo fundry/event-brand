@@ -198,23 +198,26 @@ ${media.lessThan("small")`
 `};
 `
 
-const Brand = styled.p`
+const Brand = styled.h3`
   color: #ff21c1;
-  text-decoration#: none;
-  font-size: 25px;
+  text-decoration: none;
+  font-size: 2rem;
   font-weight: 800px;
   ${media.lessThan("medium")`
-      font-size: 30px
+      font-size: 1.5rem;
+  `};
+  ${media.lessThan("small")`
+      font-size: 1.3rem;
   `};
 `
 
 const HeaderBody = styled.nav`
-  box-shadow: 0px 4px 5px grey;
+  box-shadow: 0px 7px 5px grey;
   padding: 0.7em 0.3em;
-  background-color: #fff;
+  background: #5919ab;
   position: fixed;
   width: 100%;
-  color: #0b33a2;
+  color: #fff;
   a {
     color: #0b33a2;
     font-size: 1.05em;
@@ -355,23 +358,21 @@ const Footer = styled.footer`
 
 const BlogCards = styled.div`
   padding: 0.5rem 1rem;
-  border : 1px solid grey;
-  width : 27rem;
+  border: 1px solid grey;
+  width: 27rem;
   height: auto;
   background: transparent;
   border-radius: 15px;
   ${media.lessThan("large")`
     width : 30rem;
     background: transparent;
-  `}
-  ${media.lessThan("medium")`
+  `} ${media.lessThan("medium")`
     width : 30rem;
     background: transparent;
-  `}
-  ${media.lessThan("small")`
+  `} ${media.lessThan("small")`
     width : 25rem;
     background: transparent;
-  `}
+  `};
 `
 
 const fadein = keyframes`
@@ -391,14 +392,33 @@ const CustomImage = styled.img`
   ${media.lessThan("large")`
        max-height: 50%;
         max-width: 42%;
-    `}
-  ${media.lessThan("medium")`
+    `} ${media.lessThan("medium")`
       max-height: 50%;
       max-width: 42%;
-    `}
+    `};
+`
+
+const Hover = styled.div`
+  padding: ${props => (props.padded ? "0rem 1rem" : null)};
+  &: hover {
+    cursor: pointer;
+  }
+`
+
+const FooterColumnHead = styled.div`
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+`
+
+const FooterList = styled.ul`
+  list-style: none;
 `
 
 export {
+  FooterColumnHead,
+  Hover,
+  FooterList,
   CustomImage,
   BlogCards,
   Footer,

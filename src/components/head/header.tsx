@@ -1,8 +1,15 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
-import { FiMenu } from "react-icons/fi"
-import { HeaderBody, HBtn as Button, Brand, Text } from "../../styles/style"
+import { FiChevronRight, FiMenu } from "react-icons/fi"
+
+import {
+  HeaderBody,
+  HBtn as Button,
+  Brand,
+  Text,
+  Hover,
+} from "../../styles/style"
 
 interface Props {
   style: Boolean
@@ -26,6 +33,21 @@ const Header = ({ style }: Props) => {
     return () => window.removeEventListener("resize", handleResize.bind(this))
   }, [])
 
+  const Icons = (props: any) => {
+    return (
+      <div style={{ paddingRight: "60px" }}>
+        <Link to={props.to} style={{ textDecoration: "none" }}>
+          <Flex>
+            <Text white small bold>
+              {props.text}
+            </Text>
+            <FiChevronRight style={{ color: "#fff", fontSize: "2rem" }} />
+          </Flex>
+        </Link>
+      </div>
+    )
+  }
+
   // const hooks = useWindowWidth()
   return (
     <HeaderBody>
@@ -40,32 +62,14 @@ const Header = ({ style }: Props) => {
                 }
               />
               <Link to="/" style={{ textDecoration: "none" }}>
-                <h3>Oasis</h3>
+                <Brand>Oasis</Brand>
               </Link>
             </Flex>
 
             <Flex>
-              <div style={{ paddingRight: "60px" }}>
-                <Link to="/events/event" style={{ textDecoration: "none" }}>
-                  <Text small bold>
-                    Events
-                  </Text>
-                </Link>
-              </div>{" "}
-              <div style={{ paddingRight: "60px" }}>
-                <Link to="/docs/service" style={{ textDecoration: "none" }}>
-                  <Text small bold>
-                    Resources
-                  </Text>
-                </Link>
-              </div>
-              <div style={{ paddingRight: "60px" }}>
-                <Link to="docs/proposal" style={{ textDecoration: "none" }}>
-                  <Text small bold>
-                    Road Map
-                  </Text>
-                </Link>
-              </div>
+              <Icons text={"Events"} to="/events/event" />
+              <Icons text={"Resources"} to="/docs/service" />
+              <Icons text={"Road Map"} to="docs/proposal" />
             </Flex>
 
             <Flex>
@@ -96,7 +100,14 @@ const Header = ({ style }: Props) => {
             </Link>
           </Flex>
 
-          <FiMenu style={{ fontSize: "2em" }} />
+          <Flex>
+            <div
+              style={{ borderRight: "2px solid #fff", marginRight: "1rem" }}
+            />
+            <Hover style={{ paddingTop: "5px" }}>
+              <FiMenu style={{ color: "#fff", fontSize: "2em" }} />
+            </Hover>
+          </Flex>
         </Flex>
       )}
     </HeaderBody>
