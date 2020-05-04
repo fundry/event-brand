@@ -3,15 +3,11 @@ import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
 import styled from "styled-components"
-import media from "styled-media-query"
 
 import Android from "../../../assets/svg/android.svg"
 import HalfDevie from "../../../assets/svg/half-device.svg"
-import Feature from "../../../assets/svg/features.svg"
 import {
-  Items,
   Text,
-  Body,
   Contain,
   BgTitle,
   BigTitle,
@@ -51,7 +47,7 @@ const App = () => {
               <Title small bold center>
                 {name}{" "}
               </Title>
-              <Text padded small center>
+              <Text style={{ padding: "0rem 7rem" }} padded small center>
                 {" "}
                 {summary}{" "}
               </Text>
@@ -75,13 +71,13 @@ const App = () => {
         <BigTitle app>Get the App! </BigTitle>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Text style={{ width: "40rem" }} padded small center>
+          <Text style={{ width: "55rem" }} padded small center>
             Manage events Manage events Manage events Manage events Manage
             events Manage events Manage events Manage events Manage events
             Manage events
           </Text>
         </div>
-
+        <br />
         <Flex justifyCenter>
           <Flex>
             <Button download two style={{ marginRight: "25px" }}>
