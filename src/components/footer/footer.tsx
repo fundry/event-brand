@@ -161,6 +161,7 @@ const Footer = () => {
         <Testing
           style={{
             backgroundColor: " #361f94",
+            fontSize: "0.9rem",
           }}
         >
           <p>
