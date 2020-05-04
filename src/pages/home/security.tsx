@@ -19,7 +19,6 @@ const Grid = styled.div`
   ${media.lessThan("small")`
   text-align: center;
   align-items: center;
-
   flex-direction: column;
   display: flex;
   `};

@@ -258,11 +258,12 @@ const HBtn = styled.button`
   outline: none;
   padding: 0.25rem 1rem;
   font-size: 1rem;
+  transition: all 400ms;
   &:hover {
-    color: #401364;
+    color: #fff;
     background: transparent;
     border: ${(props: { login: any }) =>
-      props.login ? "2px solid #401364" : null};
+      props.login ? "2px solid #fff" : null};
   }
   ${media.lessThan("medium")`
     margin: 0em 0.25em;
@@ -318,6 +319,7 @@ const SwitchBtn = styled.button`
   color: #401364;
   outline: none;
   font-weight: bold;
+  transition: all 550ms;
   &: hover {
     background: #401364;
     color: #fff;

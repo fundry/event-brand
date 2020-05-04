@@ -26,7 +26,6 @@ import App from "./features/app"
 import Media from "./features/media"
 import Experience from "./features/experience"
 import Community from "./features/community"
-import Email from "./features/email"
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -120,6 +119,8 @@ const Home = (): JSX.Element => {
       <Community />
       <br />
       <br />
+      <br />
+      <br />
       <BlogOverview />
       <br />
       <br />
@@ -127,6 +128,7 @@ const Home = (): JSX.Element => {
         <br />
         <br />
         <App />
+        <br />
         <br />
       </Body>
 
