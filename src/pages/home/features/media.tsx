@@ -142,7 +142,7 @@ const Media = () => {
               attendees. <br /> <br /> Avatars generated can be shared with the
               event hashtags on the social media
             </Text>
-            s
+
             <div style={{ float: "right" }}>
               <Link
                 to="/docs/service"

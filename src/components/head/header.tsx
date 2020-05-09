@@ -50,9 +50,44 @@ const Header = ({ style }: Props) => {
 
   // const hooks = useWindowWidth()
   return (
-    <HeaderBody>
-      {Width >= 1000 ? (
-        <div>
+    <div>
+      <HeaderBody>
+        {Width >= 1000 ? (
+          <div>
+            <Flex justifyBetween>
+              <Flex>
+                <img
+                  alt="logo"
+                  src={
+                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
+                  }
+                />
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Brand>Oasis</Brand>
+                </Link>
+              </Flex>
+
+              <Flex>
+                <Icons text={"Events"} to="/events/event" />
+                <Icons text={"Resources"} to="/docs/service" />
+                <Icons text={"Road Map"} to="docs/proposal" />
+              </Flex>
+
+              <Flex>
+                <a href={"https://event-console.netlify.com"} target={"_blank"}>
+                  <Button small login>
+                    Login
+                  </Button>
+                </a>
+
+                <a href={"https://event-console.netlify.com"} target={"_blank"}>
+                  <Button small> Create Account </Button>
+                </a>
+              </Flex>
+            </Flex>
+          </div>
+        ) : (
+          // {/* MOBILE RESPONSIVENESS   */}
           <Flex justifyBetween>
             <Flex>
               <img
@@ -61,56 +96,32 @@ const Header = ({ style }: Props) => {
                   "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
                 }
               />
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/">
                 <Brand>Oasis</Brand>
               </Link>
             </Flex>
 
             <Flex>
-              <Icons text={"Events"} to="/events/event" />
-              <Icons text={"Resources"} to="/docs/service" />
-              <Icons text={"Road Map"} to="docs/proposal" />
-            </Flex>
-
-            <Flex>
-              <a href={"https://event-console.netlify.com"} target={"_blank"}>
-                <Button small login>
-                  Login
-                </Button>
-              </a>
-
-              <a href={"https://event-console.netlify.com"} target={"_blank"}>
-                <Button small> Create Account </Button>
-              </a>
+              <div
+                style={{ borderRight: "2px solid #fff", marginRight: "1rem" }}
+              />
+              <Hover style={{ paddingTop: "5px" }}>
+                <FiMenu style={{ color: "#fff", fontSize: "2em" }} />
+              </Hover>
             </Flex>
           </Flex>
-        </div>
-      ) : (
-        // {/* MOBILE RESPONSIVENESS   */}
-        <Flex justifyBetween>
-          <Flex>
-            <img
-              alt="logo"
-              src={
-                "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-              }
-            />
-            <Link to="/">
-              <Brand>Oasis</Brand>
-            </Link>
-          </Flex>
-
-          <Flex>
-            <div
-              style={{ borderRight: "2px solid #fff", marginRight: "1rem" }}
-            />
-            <Hover style={{ paddingTop: "5px" }}>
-              <FiMenu style={{ color: "#fff", fontSize: "2em" }} />
-            </Hover>
-          </Flex>
-        </Flex>
-      )}
-    </HeaderBody>
+        )}
+      </HeaderBody>{" "}
+      <div style={{ background: "#401364", padding: "0.5rem 1rem" }}>
+        <br />
+        <br />
+        <br />
+        <Text small white center>
+          What do you think the Future of Events after the Pandemic would be?{" "}
+          <a href="/"> Fill a short survey </a>
+        </Text>{" "}
+      </div>{" "}
+    </div>
   )
 }
 

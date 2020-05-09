@@ -54,10 +54,9 @@ const Home = (): JSX.Element => {
         <br />
 
         <Text center padded heightened>
-          Oasis is helping to redefine the regular event experience attendees
-          get when they attend events. Oasis provides a feature rich web base
-          event console for organizer to manage the affairs of their event while
-          provide a User centered mobile app for event attendees.
+          Oasis provides a feature rich web base event console for organizer to
+          manage the affairs of their event while provide a User centered mobile
+          app for event attendees.
         </Text>
 
         <br />
@@ -119,7 +118,7 @@ const Home = (): JSX.Element => {
       <div
         style={{
           color: "#fff",
-          background: "#C9255D",
+          background: "#35076F",
         }}
       >
         <br />

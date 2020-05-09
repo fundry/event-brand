@@ -6,6 +6,7 @@ import { FiArrowRight } from "react-icons/fi"
 
 import Header from "./header"
 import Illustration from "../../assets/svg/illustration.svg"
+import Wave from "../../assets/svg/wave.svg"
 import { Text, Button, CustomImage, Motto } from "../../styles/style"
 
 const Banner = () => {
@@ -27,7 +28,6 @@ const Banner = () => {
   return (
     <div style={{ overflow: "hidden" }}>
       <Header style={true} />
-      <br />
       <br />
       <br />
       {Width >= 1050 ? (
@@ -80,7 +80,6 @@ const Banner = () => {
           <p style={{ textAlign: "center", color: "grey" }}>
             *No Account Required
           </p>
-          <br />
         </div>
       ) : (
         <Flex justifyCenter>
@@ -125,7 +124,7 @@ const Banner = () => {
                 <br />
                 <Text center small>
                   Try a demo of the
-                  <ae
+                  <a
                     target="_blank"
                     style={{
                       padding: "0rem 0.5rem",
@@ -136,7 +135,7 @@ const Banner = () => {
                     href="https://event-console.netlify.app/"
                   >
                     Oasis Event Management
-                  </ae>
+                  </a>
                   Console
                 </Text>
                 <p style={{ textAlign: "center", color: "grey" }}>
@@ -147,6 +146,7 @@ const Banner = () => {
           </div>
         </Flex>
       )}
+      <img alt="Wave design" src={Wave} />
     </div>
   )
 }

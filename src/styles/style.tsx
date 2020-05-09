@@ -27,16 +27,19 @@ const Text = styled.p`
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
     ${media.lessThan("medium")`
+  letter-spacing: 0.03rem;
   font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
 `};
   ${media.lessThan("large")`
+  letter-spacing: 0.04rem;
   font-size: ${(props: { small: any }) => (props.small ? "1.1em " : "1.27em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 2rem" : "0rem")}
 `};
   ${media.lessThan("small")`
+  letter-spacing: 0.01rem;
 font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.10em")};
 text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 0.5rem" : "0rem")}
@@ -213,7 +216,7 @@ const Brand = styled.h3`
 `
 
 const HeaderBody = styled.nav`
-  box-shadow: 0px 7px 5px grey;
+  // box-shadow: 0px 7px 5px grey; would owrk with intersection api
   padding: 0.7em 0.3em;
   background: #5919ab;
   position: fixed;
@@ -361,7 +364,7 @@ const Footer = styled.footer`
 
 const BlogCards = styled.div`
   padding: 0.5rem 1rem;
-  border: 1px solid grey;
+  border: 1px solid #fff;
   width: 27rem;
   height: auto;
   background: transparent;
