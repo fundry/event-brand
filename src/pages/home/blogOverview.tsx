@@ -36,11 +36,14 @@ const BlogOverview = () => {
         </BgTitle>
 
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <Text bold> Read More Experiences </Text>
+          <Text bold white>
+            {" "}
+            Read More Experiences{" "}
+          </Text>
         </Link>
       </Flex>
 
-      <Text center padded>
+      <Text white center padded>
         Read experiences of how event organizers created and leveraged Oasis for
         their events and also see tips on how to create yours
       </Text>
@@ -60,6 +63,7 @@ const BlogOverview = () => {
                   </Title>
                   <Text
                     small
+                    white
                     style={{ color: "grey", padding: "0.7rem 0rem" }}
                     center
                   >
@@ -70,13 +74,13 @@ const BlogOverview = () => {
                 <Flex justifyBetween>
                   <Flex>
                     <img alt={"User"} />
-                    <Text style={{ padding: "0rem 0.7rem" }}>
+                    <Text white style={{ padding: "0rem 0.7rem" }}>
                       Nwani Victory
                     </Text>
                   </Flex>
 
                   <Link to={"/"} style={{ textDecoration: "none" }}>
-                    <Text small bold>
+                    <Text white small bold>
                       {" "}
                       Read More{" "}
                     </Text>

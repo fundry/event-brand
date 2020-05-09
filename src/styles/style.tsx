@@ -19,6 +19,7 @@ width: ${(props: { widthed: any }) => (props.widthed ? "20rem" : null)};
 `
 
 const Text = styled.p`
+  letter-spacing: 0.05rem;
   color: ${props => (props.white ? "#fff" : "#401364")};
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};

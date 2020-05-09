@@ -115,15 +115,25 @@ const Home = (): JSX.Element => {
       <br />
       <Experience />
       <br />
-      <br />
-      <Community />
-      <br />
-      <br />
-      <br />
-      <br />
-      <BlogOverview />
-      <br />
-      <br />
+
+      <div
+        style={{
+          color: "#fff",
+          background: "#C9255D",
+        }}
+      >
+        <br />
+        <br />
+        <Community />
+        <br />
+        <br />
+        <br />
+        <br />
+        <BlogOverview />
+        <br />
+        <br />
+        <br />
+      </div>
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <br />
