@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Event`,
-    description: `Brand page for event project, built with Gatsby`,
+    title: `Oasis`,
+    description: `Redefining the regular event process and experience`,
     author: `@vickywane`,
   },
   plugins: [
