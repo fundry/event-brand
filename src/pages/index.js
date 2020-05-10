@@ -1,11 +1,11 @@
 // basic top-most entry file
 import React from "react"
-import { Link } from "react-helmet"
 import Home from "./home/home"
+import ComingSoon from "./coming-soon/landing"
 
 const IndexPage = () => (
   <div>
-    <Home />
+    <ComingSoon />
   </div>
 )
 

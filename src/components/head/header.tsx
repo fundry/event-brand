@@ -37,12 +37,9 @@ const Header = ({ style }: Props) => {
     return (
       <div style={{ paddingRight: "60px" }}>
         <Link to={props.to} style={{ textDecoration: "none" }}>
-          <Flex>
-            <Text white small bold>
-              {props.text}
-            </Text>
-            <FiChevronRight style={{ color: "#fff", fontSize: "2rem" }} />
-          </Flex>
+          <Text white small>
+            {props.text}
+          </Text>
         </Link>
       </div>
     )
@@ -52,7 +49,7 @@ const Header = ({ style }: Props) => {
   return (
     <div>
       <HeaderBody>
-        {Width >= 1000 ? (
+        {Width >= 1200 ? (
           <div>
             <Flex justifyBetween>
               <Flex>
