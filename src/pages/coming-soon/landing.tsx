@@ -14,8 +14,11 @@ import Features from "../../assets/svg/features.svg"
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 3rem 0rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  ${media.lessThan("large")`
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  `};
 `
 
 const Input = styled.input`
@@ -42,10 +45,55 @@ const Input = styled.input`
 
 const Landing = () => {
   const [Submit, setSubmit] = React.useState(false)
+
+  const [Loading, setLoading] = React.useState(true)
   const Width = useWindowWidth()
+  const [opacity, setOpacity] = React.useState(0)
+
+  // Putting an entire element into a div gives depth err
+  // const [FeaturesElement, setFeaturesElement] = React.useState(null);
+
+  const FeaturesRef = React.useRef(
+    new IntersectionObserver(
+      (entries, observer) => {
+        console.log(observer, "entries")
+        console.log(entries, "entries")
+      },
+      {
+        threshold: 1,
+      }
+    )
+  )
+
+  // TODO : trying to use IntersectionAPI to lazy load the features
+  // React.useEffect(
+  //   () => {
+  //     const Element = FeaturesElement;
+  //     const Observed = FeaturesRef.current;
+
+  //     if (Element) {
+  //       Observed.observe(Element);
+  //     }
+
+  //     return () => {
+  //       if (Element) {
+  //         Observed.unobserve(Element);
+  //       }
+  //     };
+  //   },
+  //   [FeaturesElement]
+  // );
+
+  const ItemsWrapper = styled.div`
+    opacity: 1;
+    transition: opacity 450ms;
+  `
 
   const SubmitData = () => {
     setSubmit(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500)
   }
 
   return (
@@ -88,7 +136,6 @@ const Landing = () => {
         <Text white center>
           Redefining the regular event experience!
         </Text>
-
         <br />
         {!Submit ? (
           <Flex justifyCenter>
@@ -109,18 +156,21 @@ const Landing = () => {
           </Flex>
         ) : (
           <Flex justifyCenter>
-            <Text white small center>
-              Inorder to build a User Centered tool, we would like to know your
-              thoughts on past events attended. <br /> <br />
-              Please{" "}
-              <a href="/" target="_blank">
-                take{" "}
-              </a>{" "}
-              this short survey
-            </Text>
+            {Loading ? (
+              <Text white> Loading ... </Text>
+            ) : (
+              <Text white small center>
+                Inorder to build a User Centered tool, we would like to know
+                your thoughts on past events attended. <br /> <br />
+                Please{" "}
+                <a href="/" target="_blank">
+                  take{" "}
+                </a>{" "}
+                this short survey
+              </Text>
+            )}
           </Flex>
         )}
-
         <br />
         <br />
         <Flex justifyCenter>
@@ -139,32 +189,34 @@ const Landing = () => {
           )}
         </Flex>
         <br />
-        <br />
+        <br />{" "}
         <Grid>
           {BetaRelease.map(({ id, title }) => {
             return (
-              <div key={id} style={{ width: "30rem" }}>
+              <ItemsWrapper>
                 <Flex justifyCenter>
-                  <img
-                    alt={"Feature Illustration"}
-                    src={Features}
-                    style={{
-                      alignItems: "center",
-                      height: "auto",
-                      width: "10rem",
-                    }}
-                  />
-                </Flex>
-
-                <Title bold style={{ color: "white" }} center>
-                  {" "}
-                  {title}{" "}
-                </Title>
-              </div>
+                  <div key={id} style={{ width: "20rem" }}>
+                    <Flex justifyCenter>
+                      <img
+                        alt={"Feature Illustration"}
+                        src={Features}
+                        style={{
+                          alignItems: "center",
+                          height: "auto",
+                          width: "10rem",
+                        }}
+                      />
+                    </Flex>
+                    <Title bold style={{ color: "white" }} center>
+                      {" "}
+                      {title}{" "}
+                    </Title>{" "}
+                  </div>
+                </Flex>{" "}
+              </ItemsWrapper>
             )
           })}
         </Grid>
-
         <Link to="/home/home"> Preview </Link>
       </Body>
     </div>

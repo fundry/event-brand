@@ -424,6 +424,7 @@ const FooterList = styled.ul`
 `
 
 export {
+  fadein,
   FooterColumnHead,
   Hover,
   FooterList,
