@@ -119,7 +119,35 @@ const AppFeatures = [
   },
 ]
 
+const BetaRelease = [
+  {
+    id: 1,
+    title: "Centralized Cloud Storage",
+  },
+  {
+    id: 2,
+    title: "Automatic Image Delivery",
+  },
+  {
+    id: 3,
+    title: "Custom Built Email Sub - system",
+  },
+  {
+    id: 4,
+    title: "Personalized Attendee Cross - Platform Mobile App ",
+  },
+  {
+    id: 5,
+    title: "Event Management Console",
+  },
+  {
+    id: 6,
+    title: "Public Developer API",
+  },
+]
+
 export {
+  BetaRelease,
   AppFeatures,
   FeaturesList,
   BlogPosts,

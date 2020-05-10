@@ -101,6 +101,7 @@ justify-content: center;
 
 const BgTitle = styled.h1`
   font-weight: bold;
+  color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   font-size: ${(props: { support: any }) => (props.support ? "1.75em" : "2em")}
     ${media.lessThan("medium")`
@@ -181,6 +182,7 @@ const Button = styled.button`
   margin: 0 1em;
   padding: 0.25em 0.5em;
   font-size: 1.2em;
+  transition : all 400ms;
   &:hover {
     color: #401364
     background: #fff;

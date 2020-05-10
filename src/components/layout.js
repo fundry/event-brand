@@ -18,18 +18,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-        />
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css"
         />
         <link
           rel="stylesheet"
@@ -50,7 +44,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
 
