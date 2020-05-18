@@ -28,6 +28,7 @@ const Text = styled.p`
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
     ${media.lessThan("medium")`
   letter-spacing: 0.03rem;
+  font-family: tahoma;
   font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
@@ -47,6 +48,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `
 
 const Title = styled.h4`
+font-family: calibri;
 color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
@@ -101,6 +103,7 @@ justify-content: center;
 
 const BgTitle = styled.h1`
   font-weight: bold;
+  font-family: calibri;
   color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   font-size: ${(props: { support: any }) => (props.support ? "1.75em" : "2em")}

@@ -35,10 +35,10 @@ const Input = styled.input`
     border: 5px solid #0b33a2;
   }
   ${media.lessThan("medium")`
-  width: 30rem;
+  width: 27rem;
   `}
   ${media.lessThan("small")`
-  width: 25rem;
+  width: 23rem;
   `}
 }
 `
@@ -217,7 +217,7 @@ const Landing = () => {
             )
           })}
         </Grid>
-        <Link to="/home/home"> Preview </Link>
+        <Link to="/home/home"> . </Link>
       </Body>
     </div>
   )
