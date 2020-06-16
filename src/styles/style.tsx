@@ -22,7 +22,7 @@ const Text = styled.p`
   letter-spacing: 0.05rem;
   color: ${props => (props.white ? "#fff" : "#401364")};
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
-  font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};
+  font-size: ${(props: { small: any }) => (props.small ? "1.2em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
@@ -145,7 +145,7 @@ const Motto = styled.h1`
   font-weight: bold;
   color: #401364;
   font-size: 3em;
-  padding-top: 3rem;
+  padding-top: 1rem;
   ${media.lessThan("large")`
   font-size: 2.4em
     padding-top : 1rem;
@@ -177,14 +177,14 @@ const Button = styled.button`
     props.download ? "#ff21c1" : "transparent"};
   text-align: center;
   border-radius:   ${(props: { rounded: any }) =>
-    props.rounded ? "30px" : "5px"};
-  height:  55px;
+    props.rounded ? "25px" : "5px"};
+  height:  50px;
   width: ${(props: { one: any }) => (props.one ? "14em" : "12em")};
   border: 2px solid #ff21c1;
   color: ${(props: { download: any }) => (props.download ? "#fff" : "#401364")};
   margin: 0 1em;
   padding: 0.25em 0.5em;
-  font-size: 1.2em;
+  font-size: 1.1em;
   transition : all 400ms;
   &:hover {
     color: #401364
@@ -398,8 +398,8 @@ const fadein = keyframes`
 
 const CustomImage = styled.img`
   animation: ${fadein} 1000ms ease-in;
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 80%;
+  max-width: 80%;
   ${media.lessThan("large")`
        max-height: 50%;
         max-width: 42%;

@@ -3,11 +3,34 @@ import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
 import { FiArrowRight } from "react-icons/fi"
+import styled from "styled-components"
 
 import Header from "./header"
 import Illustration from "../../assets/svg/illustration.svg"
+import Ipad from "../../assets/svg/ipad.svg"
 import Wave from "../../assets/svg/wave.svg"
-import { Text, Button, CustomImage, Motto } from "../../styles/style"
+import { Text, Button, CustomImage, Motto, Title } from "../../styles/style"
+
+const Grid = styled.div`
+  display:  grid; 
+  grid-gap  : 1rem 1rem 
+  margin : 0rem 3rem
+  grid-template-columns: 60% 40%
+`
+
+const Available = styled.div`
+  margin : 1rem 1rem;
+  padding : 0.5rem 2rem;
+  h6 {
+    font-weight : normal
+      border-bottom : 1px solid grey
+  }
+  div {
+    display : flex
+    border-bottom : 0px
+    justify-content : space-between
+  }
+`
 
 const Banner = () => {
   const [Width, setWidth] = useState(null)
@@ -29,27 +52,38 @@ const Banner = () => {
     <div style={{ overflow: "hidden" }}>
       <Header style={true} />
       <br />
-      <br />
       {Width >= 1050 ? (
         <div>
-          <Flex justifyAround>
-            <CustomImage src={Illustration} alt="illustration here" />
+          <Motto style={{ textAlign: "center", margin: "0.2rem  0.2em" }}>
+            Launch, Manage and Organize Modern Events.
+          </Motto>
+          <br />
+          <Title style={{ textAlign: "center" }} items>
+            Redefining the regular event experience!
+          </Title>
+
+          <br />
+          <br />
+          <Grid>
+            <CustomImage src={Ipad} alt="illustration here" />
 
             <div style={{ paddingRight: "20px" }}>
               <Flex column>
                 <br />
                 <br />
-                <br />
-                <br />
-                <Motto style={{ textAlign: "center", margin: "1rem  0.2em" }}>
-                  Create, Manage and Organize <br /> your events.
-                </Motto>
 
-                <Text style={{ textAlign: "center" }} items>
-                  Redefining the regular event experience!
+                <br />
+                <Text style={{ textAlign: "right" }} items>
+                  Redefining the regular event experience! Redefining the
+                  regular event experience! Redefining the regular event regular
+                  event experience!
                 </Text>
-                <Flex justifyCenter>
-                  <Button one download rounded style={{ textAlign: "center" }}>
+
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  .
+                  <Button download rounded style={{ textAlign: "right" }}>
                     <Flex justifyCenter>
                       Get Started
                       <div style={{ paddingLeft: "20px" }}>
@@ -57,29 +91,19 @@ const Banner = () => {
                       </div>
                     </Flex>
                   </Button>
-                </Flex>
+                </div>
+
+                <Available style={{ textAlign: "right" }}>
+                  <h6 style={{ color: "grey" }}>AVAILABLE VIA: </h6>
+                  <div>
+                    <Text small>Web Console</Text>
+                    <Text small>Ios Devices</Text>
+                    <Text small>Android Device</Text>
+                  </div>
+                </Available>
               </Flex>
             </div>
-          </Flex>
-          <Text center small>
-            Try a demo of the
-            <a
-              target="_blank"
-              style={{
-                padding: "0rem 0.5rem",
-                textDecoration: "underline",
-                color: "#401364",
-                fontWeight: "bold",
-              }}
-              href="https://event-console.netlify.app/"
-            >
-              Oasis Event Management
-            </a>
-            Console
-          </Text>
-          <p style={{ textAlign: "center", color: "grey" }}>
-            *No Account Required
-          </p>
+          </Grid>
         </div>
       ) : (
         <Flex justifyCenter>
