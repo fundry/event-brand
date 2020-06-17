@@ -49,8 +49,8 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 
 const Title = styled.h4`
 font-family: calibri;
-color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
-  font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
+color: ${(props: { colored: any }) => (props.colored ? "#5919ab" : "#000")}
+  font-weight: ${(props: { bold: any }) => (props.bold ? "550" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
     font-size :  1.5rem;
@@ -102,7 +102,7 @@ justify-content: center;
 `
 
 const BgTitle = styled.h1`
-  font-weight: bold;
+  font-weight: normal;
   font-family: calibri;
   color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
@@ -161,7 +161,7 @@ font-size: 1.5em
 `
 
 const BigTitle = styled.h1`
-  color: ${(props: { app: any }) => (props.app ? "blue" : "black")};
+  color: ${(props: any) => props.color};
   font-size: ${(props: { app: any }) => (props.app ? null : "1.7em")};
   text-align: ${(props: { app: any }) => (props.app ? "center" : null)};
   ${media.lessThan("medium")`
@@ -209,14 +209,17 @@ ${media.lessThan("small")`
 
 const Brand = styled.h3`
   color: #ff21c1;
+  padding: 0rem 2rem;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800px;
   ${media.lessThan("medium")`
       font-size: 1.5rem;
+    padding: 0rem 0.7rem;
   `};
   ${media.lessThan("small")`
       font-size: 1.3rem;
+    padding: 0rem 0.5rem;
   `};
 `
 
@@ -308,7 +311,7 @@ const Grid = styled.div`
 const Switch = styled.div`
   padding: 0rem 0rem;
   border: 2.5px solid #401364;
-  width: 35rem;
+  width: auto;
   background: transparent;
   border-radius: 6px;
   ${media.lessThan("medium")`
@@ -398,8 +401,8 @@ const fadein = keyframes`
 
 const CustomImage = styled.img`
   animation: ${fadein} 1000ms ease-in;
-  max-height: 80%;
-  max-width: 80%;
+  max-height: 85%;
+  max-width: 85%;
   ${media.lessThan("large")`
        max-height: 50%;
         max-width: 42%;

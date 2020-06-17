@@ -16,14 +16,15 @@ const Media = () => {
     <Contain>
       <br />
       <br />
-
-      <BgTitle center support>
-        Manage Event Assets
-      </BgTitle>
+      <BgTitle support>CLOUD DATA STORAGE</BgTitle>
+      <br />
       {hooks >= 700 ? (
         <Grid>
           <div>
-            <Title bold> Centralized Cloud Storage </Title>
+            <Title style={{ fontWeight: 550 }} bold>
+              {" "}
+              Allocated Storage For Event Assets{" "}
+            </Title>
             <Contain>
               <Text heightened style={{ width: "77%" }} small>
                 All images taken during an event are sent to registered event
@@ -94,7 +95,10 @@ const Media = () => {
       {hooks >= 700 ? (
         <Grid schedule>
           <div>
-            <Title bold> Automatic Image Delivery </Title>
+            <Title bold style={{ fontWeight: 550 }}>
+              {" "}
+              Automatic Image Delivery{" "}
+            </Title>
             <Contain>
               <Text heightened style={{ width: "90%" }} small>
                 All images taken during an event are sent to registered event
@@ -168,8 +172,7 @@ const Media = () => {
       {hooks >= 700 ? (
         <Grid schedule>
           <div>
-            <Title heightened bold>
-              {" "}
+            <Title style={{ fontWeight: 550 }} heightened bold>
               Event Schedule and Speaker Slides.{" "}
             </Title>
             <Contain>
@@ -236,77 +239,6 @@ const Media = () => {
           <br />
           <br />
           <br />
-        </div>
-      )}
-
-      {hooks >= 700 ? (
-        <Grid schedule>
-          <div>
-            <Title heightened bold>
-              {" "}
-              Custom built Email Subsystem{" "}
-            </Title>
-            <Contain>
-              <Text style={{ width: "90%" }} small>
-                View Event Schedule in realtime as time overlaps on each item.
-                <br /> <br /> Follow a speaker's deck in realtime as the
-                presenter goes over each slide.
-              </Text>
-              <div style={{ float: "right" }}>
-                <Link
-                  to="/docs/service"
-                  style={{ textAlign: "right", textDecoration: "none" }}
-                >
-                  <Flex>
-                    <Text small bold>
-                      Read More
-                    </Text>
-
-                    <FiChevronRight style={{ fontSize: "2rem" }} />
-                  </Flex>
-                </Link>
-              </div>
-            </Contain>
-          </div>
-          <img
-            style={{ margin: "2rem 0.5rem" }}
-            alt="delivery sample"
-            src={Schedule}
-          />
-        </Grid>
-      ) : (
-        <div>
-          <Flex justifyCenter>
-            <img
-              style={{ margin: "1rem" }}
-              alt="delivery sample"
-              src={Schedule}
-            />
-          </Flex>
-          <Title bold center>
-            Custom built Email Subsystem
-          </Title>
-          <Contain>
-            <Text heightened small>
-              View Event Schedule in realtime as time overlaps on each item.
-              <br /> <br /> Follow a speaker's deck in realtime as the presenter
-              goes over each slide.
-            </Text>
-            <div style={{ float: "right" }}>
-              <Link
-                to="/docs/service"
-                style={{ textAlign: "right", textDecoration: "none" }}
-              >
-                <Flex>
-                  <Text small bold>
-                    Read More
-                  </Text>
-
-                  <FiChevronRight style={{ fontSize: "2rem" }} />
-                </Flex>
-              </Link>
-            </div>
-          </Contain>
         </div>
       )}
     </Contain>

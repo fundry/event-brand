@@ -65,21 +65,39 @@ const ExperienceFeatures = [
 const CommunityFeatures = [
   {
     id: 1,
-    title: "Speakers",
+    title: "Reusable Drafts",
     text:
-      "speakers speaking speak speaking speak speaking speak speaking speak speaking speak speaking speak speaking speak",
+      "speakers speaking speak speaking speak speaking speak speaking speak speaking speak ",
   },
   {
     id: 2,
-    title: "Volunteer",
+    title: "Call For Papers",
     text:
-      "Volunteers volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer  volunteering volunteer",
+      "Volunteers volunteering volunteer  volunteering volunteer  volunteering volunteer  ",
   },
   {
     id: 3,
-    title: "Peering",
+    title: "Volunteering Process",
     text:
-      "speaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking speak",
+      "speaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking ",
+  },
+  {
+    id: 1,
+    title: "Reusable Drafts",
+    text:
+      "speakers speaking speak speaking speak speaking speak speaking speak speaking speak ",
+  },
+  {
+    id: 2,
+    title: "Call For Papers",
+    text:
+      "Volunteers volunteering volunteer  volunteering volunteer  volunteering volunteer  ",
+  },
+  {
+    id: 3,
+    title: "Volunteering Process",
+    text:
+      "speaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking ",
   },
 ]
 

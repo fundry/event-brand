@@ -2,35 +2,12 @@ import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import { FiArrowRight } from "react-icons/fi"
-import styled from "styled-components"
 
 import Header from "./header"
-import Illustration from "../../assets/svg/illustration.svg"
-import Ipad from "../../assets/svg/ipad.svg"
 import Wave from "../../assets/svg/wave.svg"
 import { Text, Button, CustomImage, Motto, Title } from "../../styles/style"
 
-const Grid = styled.div`
-  display:  grid; 
-  grid-gap  : 1rem 1rem 
-  margin : 0rem 3rem
-  grid-template-columns: 60% 40%
-`
-
-const Available = styled.div`
-  margin : 1rem 1rem;
-  padding : 0.5rem 2rem;
-  h6 {
-    font-weight : normal
-      border-bottom : 1px solid grey
-  }
-  div {
-    display : flex
-    border-bottom : 0px
-    justify-content : space-between
-  }
-`
+import LargeBanner from "./LargeBanner"
 
 const Banner = () => {
   const [Width, setWidth] = useState(null)
@@ -39,7 +16,7 @@ const Banner = () => {
     setWidth(window.innerWidth)
   }, 500)
 
-  const handleResize = value => {
+  const handleResize = (value: any) => {
     setWidth(value)
   }
 
@@ -53,58 +30,7 @@ const Banner = () => {
       <Header style={true} />
       <br />
       {Width >= 1050 ? (
-        <div>
-          <Motto style={{ textAlign: "center", margin: "0.2rem  0.2em" }}>
-            Launch, Manage and Organize Modern Events.
-          </Motto>
-          <br />
-          <Title style={{ textAlign: "center" }} items>
-            Redefining the regular event experience!
-          </Title>
-
-          <br />
-          <br />
-          <Grid>
-            <CustomImage src={Ipad} alt="illustration here" />
-
-            <div style={{ paddingRight: "20px" }}>
-              <Flex column>
-                <br />
-                <br />
-
-                <br />
-                <Text style={{ textAlign: "right" }} items>
-                  Redefining the regular event experience! Redefining the
-                  regular event experience! Redefining the regular event regular
-                  event experience!
-                </Text>
-
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  .
-                  <Button download rounded style={{ textAlign: "right" }}>
-                    <Flex justifyCenter>
-                      Get Started
-                      <div style={{ paddingLeft: "20px" }}>
-                        <FiArrowRight style={{ fontSize: "1.6em" }} />
-                      </div>
-                    </Flex>
-                  </Button>
-                </div>
-
-                <Available style={{ textAlign: "right" }}>
-                  <h6 style={{ color: "grey" }}>AVAILABLE VIA: </h6>
-                  <div>
-                    <Text small>Web Console</Text>
-                    <Text small>Ios Devices</Text>
-                    <Text small>Android Device</Text>
-                  </div>
-                </Available>
-              </Flex>
-            </div>
-          </Grid>
-        </div>
+        <LargeBanner />
       ) : (
         <Flex justifyCenter>
           <div style={{ padding: "1em" }}>

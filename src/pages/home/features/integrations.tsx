@@ -11,20 +11,13 @@ const Integration = (props): JSX.Element => {
   const hooks = useWindowWidth()
   return (
     <Contain>
-      <br />
-      <br />
-      <br />
       <BgTitle center support>
         Integrate With Your External Tools
       </BgTitle>
       <Text items center>
         Bring in your external tools to manage your events better on Oasis.
-        <br />
-        <br />
-        Existing data can also be imported into Oasis from external tools to
-        reduce the amount of forms filled.
       </Text>
-
+      <br />
       {hooks >= 1000 ? (
         <Flex justifyBetween>
           {FeaturesList.map(({ title, id, text }) => {

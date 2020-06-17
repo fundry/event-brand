@@ -53,12 +53,6 @@ const Header = ({ style }: Props) => {
           <div>
             <Flex justifyBetween>
               <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
                 <Link to="/" style={{ textDecoration: "none" }}>
                   <Brand>Oasis</Brand>
                 </Link>
@@ -87,12 +81,6 @@ const Header = ({ style }: Props) => {
           // {/* MOBILE RESPONSIVENESS   */}
           <Flex justifyBetween>
             <Flex>
-              <img
-                alt="logo"
-                src={
-                  "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                }
-              />
               <Link to="/">
                 <Brand>Oasis</Brand>
               </Link>

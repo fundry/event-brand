@@ -10,6 +10,8 @@ import {
   FooterColumnHead,
   Hover,
   FooterList,
+  BigTitle,
+  Title,
   Brand,
 } from "../../styles/style"
 
@@ -18,7 +20,10 @@ const Footer = () => {
     textAlign: "center",
     background: "#0e2f5a",
     padding: "1em",
+    flexDirection: "column",
     color: "#fff",
+    display: "flex",
+    justifyContent: "center",
   })
 
   const [Width, setWidth] = useState(null)
@@ -49,11 +54,10 @@ const Footer = () => {
   return (
     <div>
       <Testing>
-        <Flex justifyCenter>
-          <Text small white>
-            Oasis is coming soon. Get early acess
-          </Text>
-        </Flex>
+        <BigTitle> Take The Leap! </BigTitle>
+        <Text small white>
+          Oasis is coming soon. Get early acess
+        </Text>
       </Testing>
 
       <FooterBody>

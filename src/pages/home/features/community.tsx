@@ -47,55 +47,55 @@ ${media.lessThan("small")`
 `};
 `
 
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 2rem 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+`
+
 const Community = () => {
   const Hooks = useWindowWidth()
 
   return (
     <Body>
-      <Body>
+      <br />
+      <div>
+        <BgTitle support bold>
+          FOSTERING COMMUNITY INVOLVEMENT
+        </BgTitle>
         <br />
-        <div>
-          <BgTitle center support bold>
-            Fostering Community Involement
-          </BgTitle>
-          <br />
-          <Flex center>
-            <Button long> Get Involved </Button>
-          </Flex>
-        </div>
-        <br />
-        <br />
+      </div>
 
-        {Hooks >= 800 ? (
-          <Flex justifyBetween>
-            {CommunityFeatures.map(({ id, title, text }) => {
-              return (
-                <Contain key={id} center>
-                  <img alt="Volunteer" src={Volunteer} />
-                  <Title center small>
-                    {title}{" "}
-                  </Title>
-                  <Text small />
-                </Contain>
-              )
-            })}
-          </Flex>
-        ) : (
-          <Items>
-            {CommunityFeatures.map(({ id, title, text }) => {
-              return (
-                <Contain key={id} center>
-                  <img alt="Volunteer" src={Volunteer} />
-                  <Title center small>
-                    {title}{" "}
-                  </Title>
-                  <Text small />
-                </Contain>
-              )
-            })}
-          </Items>
-        )}
-      </Body>
+      {Hooks >= 800 ? (
+        <Grid>
+          {CommunityFeatures.map(({ id, title, text }) => {
+            return (
+              <div style={{ textAlign: "center" }}>
+                <img alt="Volunteer" src={Volunteer} />
+                <Title>{title}</Title>
+                <Text white small>
+                  {text}
+                </Text>
+              </div>
+            )
+          })}
+        </Grid>
+      ) : (
+        <Items>
+          {CommunityFeatures.map(({ id, title, text }) => {
+            return (
+              <Contain key={id} center>
+                <img alt="Volunteer" src={Volunteer} />
+                <Title>{title}</Title>
+                <Text white small>
+                  {text}
+                </Text>
+              </Contain>
+            )
+          })}
+        </Items>
+      )}
+      <br />
     </Body>
   )
 }

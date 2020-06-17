@@ -26,39 +26,6 @@ const Grid = styled.div`
 const App = () => {
   return (
     <Contain>
-      <BgTitle support>User Centered Mobile Design</BgTitle>
-
-      <br />
-
-      <Grid>
-        {AppFeatures.map(({ id, name, summary }) => {
-          return (
-            <Contain key={id}>
-              <Flex justifyCenter>
-                <img
-                  src={HalfDevie}
-                  style={{
-                    width: "30%",
-                    height: "auto",
-                  }}
-                  alt={"Feature Demo"}
-                />
-              </Flex>
-              <Title small bold center>
-                {name}{" "}
-              </Title>
-              <Text style={{ padding: "0rem 7rem" }} padded small center>
-                {" "}
-                {summary}{" "}
-              </Text>
-            </Contain>
-          )
-        })}
-      </Grid>
-
-      <br />
-      <br />
-
       <Flex justifyCenter>
         <img
           alt="android"

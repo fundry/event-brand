@@ -52,14 +52,6 @@ const Home = (): JSX.Element => {
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
         <br />
-
-        <Text center padded heightened>
-          Oasis provides a feature rich web base event console for organizer to
-          manage the affairs of their event while provide a User centered mobile
-          app for event attendees.
-        </Text>
-
-        <br />
         <br />
         <div style={{ textAlign: "center" }}>
           <BgTitle support>Support For Your Event Type</BgTitle>
@@ -128,7 +120,6 @@ const Home = (): JSX.Element => {
         <br />
         <br />
         <br />
-        <BlogOverview />
         <br />
         <br />
         <br />
