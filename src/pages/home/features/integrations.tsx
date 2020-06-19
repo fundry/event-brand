@@ -73,9 +73,13 @@ const Integration = (props): JSX.Element => {
                       }}
                     />
                   </Flex>
-                  <Title features>{title}</Title>
+                  <Title small features>
+                    {title}
+                  </Title>
 
-                  <Text items>{text}</Text>
+                  <Text small items>
+                    {text}
+                  </Text>
 
                   <Link to="">
                     <Flex justifyCenter>

@@ -47,8 +47,9 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   `};
 `
 
-const Title = styled.h4`
+const Title = styled.h3`
 font-family: calibri;
+font-size : 1.8rem;
 color: ${(props: { colored: any }) => (props.colored ? "#5919ab" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "550" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};

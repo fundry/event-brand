@@ -1,11 +1,21 @@
 import React from "react"
-import Flex from "styled-flex-component"
 import { DiAppstore, DiAndroid } from "react-icons/di"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import media from "styled-media-query"
 
-import { Text, Button, CustomImage, Motto, Title } from "../../styles/style"
+import { Text, Button, Motto, Title } from "../../styles/style"
 import Ipad from "../../assets/svg/ipad.svg"
-import { FaAppStore, FaDesktop } from "react-icons/fa"
+import { FaDesktop } from "react-icons/fa"
+
+const fadein = keyframes`
+    0% {
+      opacity : 0;
+    }
+    200% {
+      opacity : 1;
+      cursor: pointer;
+    }
+`
 
 const Available = styled.div`
   margin: 1rem 1rem;
@@ -26,23 +36,41 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 2rem 7rem;
   grid-template-columns: 50% 50%;
+  margin: 2rem 0rem;
+  img {
+    animation: ${fadein} 1000ms ease-in;
+    max-height: 85%;
+    max-width: 85%;
+  }
+  ${media.lessThan("large")`
+    display : flex;
+    flex-direction : column;
+    align-items:  center;
+    margin: 1rem 0rem;
+    img {
+        max-height: 50%;
+        max-width: 60%;
+    }
+  `};
+  ${media.lessThan("medium")`
+  margin: 1rem 0rem;    
+  img {
+      max-height: 50%;
+      max-width: 42%;
+      }
+  `};
 `
 
 const LargeBanner = () => {
   return (
     <div>
       <Motto style={{ textAlign: "center", margin: "0.2rem  0.2em" }}>
-        Launch, Manage and Organize Modern Events.
+        Organize, Manage and Launch Modern Events.
       </Motto>
-      <br />
-      <Title bold support style={{ textAlign: "center" }} items>
-        Redefining the regular event experience!
-      </Title>
-      <br />
       <br />
 
       <Grid>
-        <CustomImage
+        <img
           style={{ marginLeft: "5rem" }}
           src={Ipad}
           alt="illustration here"
@@ -56,6 +84,9 @@ const LargeBanner = () => {
             flexDirection: "column",
           }}
         >
+          <Title bold support style={{ color: "#401364", textAlign: "center" }}>
+            Powering Next Generation Events!
+          </Title>
           <Text style={{ textAlign: "right" }} items>
             Redefining the regular event experience! Redefining the regular
             event experience! Redefining the regular event regular event

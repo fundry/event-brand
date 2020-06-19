@@ -20,12 +20,13 @@ import Layout from "../../components/layout"
 import Security from "./security"
 import sample from "../../assets/svg/illustration.svg"
 
-import BlogOverview from "./blogOverview"
 import Integration from "./features/integrations"
 import App from "./features/app"
 import Media from "./features/media"
 import Experience from "./features/experience"
 import Community from "./features/community"
+
+import EventSupport from "./eventSupport"
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -53,45 +54,8 @@ const Home = (): JSX.Element => {
       >
         <br />
         <br />
-        <div style={{ textAlign: "center" }}>
-          <BgTitle support>Support For Your Event Type</BgTitle>
-          <Text padded>
-            Oasis has features to provide support your specific type of event.
-          </Text>
-        </div>
 
-        <Cards>
-          {Users.map(({ type, title, desc, id }) => {
-            return (
-              <CustomCard key={id}>
-                <Contain center>
-                  <img
-                    alt="sample"
-                    src={sample}
-                    style={{ maxWidth: "17rem" }}
-                  />
-                  <br />
-                  <Title features>{title} </Title>
-                  <Text style={{ textAlign: "center" }} small center>
-                    {desc}
-                  </Text>
-                  <br />
-                  <Flex justifyCenter>
-                    <Link to="/" style={{ textDecoration: "none" }}>
-                      <Flex>
-                        Create a {type}{" "}
-                        <div style={{ paddingLeft: "7px" }}>
-                          <FiArrowRight style={{ fontSize: "1.8rem" }} />
-                        </div>
-                      </Flex>
-                    </Link>
-                  </Flex>
-                  <br />
-                </Contain>
-              </CustomCard>
-            )
-          })}
-        </Cards>
+        <EventSupport />
 
         <br />
 

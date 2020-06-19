@@ -12,7 +12,7 @@ import {
 } from "../../../styles/style"
 
 import "./test.css"
-import { FiShare } from "react-icons/fi"
+import { FiShare, FiExternalLink } from "react-icons/fi"
 
 const Grid = styled.div`
   display: grid;
@@ -94,7 +94,7 @@ const Experience = () => {
                 justifyContent: "center",
               }}
             >
-              <FiShare style={{ fontSize: "1.7rem" }} />
+              <FiExternalLink style={{ fontSize: "1.7rem" }} />
 
               <Text small style={{ padding: "0rem 0.5rem" }}>
                 <a href="/"> Read Api Documentation </a>{" "}
