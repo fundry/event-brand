@@ -53,17 +53,17 @@ const Landing = () => {
   // Putting an entire element into a div gives depth err
   // const [FeaturesElement, setFeaturesElement] = React.useState(null);
 
-  const FeaturesRef = React.useRef(
-    new IntersectionObserver(
-      (entries, observer) => {
-        console.log(observer, "entries")
-        console.log(entries, "entries")
-      },
-      {
-        threshold: 1,
-      }
-    )
-  )
+  // const FeaturesRef = React.useRef(
+  //   new IntersectionObserver(
+  //     (entries, observer) => {
+  //       console.log(observer, "entries")
+  //       console.log(entries, "entries")
+  //     },
+  //     {
+  //       threshold: 1,
+  //     }
+  //   )
+  // )
 
   // TODO : trying to use IntersectionAPI to lazy load the features
   // React.useEffect(
