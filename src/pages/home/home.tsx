@@ -91,7 +91,7 @@ const Home = (): JSX.Element => {
       <Body style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <br />
-        <App />
+        <App width={Width} />
         <br />
         <br />
       </Body>

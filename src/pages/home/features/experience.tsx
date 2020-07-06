@@ -1,6 +1,7 @@
 import React from "react"
 import Flex from "styled-flex-component"
 import styled from "styled-components"
+import media from "styled-media-query"
 
 import {
   Text,
@@ -23,9 +24,38 @@ const Grid = styled.div`
     display: column;
     width: 35rem;
   }
+  ${media.lessThan("huge")`
+  grid-gap: 2rem 5rem;
+  grid-template-columns: 50% 50%;
+  div {
+    margin : 1rem 0rem
+    display: column;
+    width: 35rem;
+  }
+  `};
+  ${media.lessThan("large")`
+  display : flex;
+  flex-direction : column;
+  align-items:  center;
+  div {
+    margin : 1rem 0rem
+    display: column;
+    width: 45rem;
+  }
+  `};
+  ${media.lessThan("medium")`
+  display : flex;
+  flex-direction : column;
+  align-items:  center;
+  div {
+    margin : 1rem 0rem
+    display: column;
+    width: 35rem;
+  }
+  `};
 `
 
-const Experience = () => {
+const Experience = (): JSX.Element => {
   return (
     <Body>
       <Contain>
@@ -42,11 +72,13 @@ const Experience = () => {
             </Title>
             <Text heightened small>
               Make Edit edit edit edit edit ed edit edit edit edit edit edi edit
-              edit edit edit edit ediit edit all using the Oasis console.
+              edit edit edit edit ediit edit all using the Oasis edit edit edit
+              edit ediit edit all using the Oasis console.
               <br />
               <br />
-              Edit edit edit edit edit ed edit edit edit edit edit edi edit edit
-              edit edit edit ediit edit all using the Oasis console.
+              Make Edit edit edit edit edit ed edit edit edit edit edit edi edit
+              edit edit edit edit ediit edit all using the Oasis edit edit edit
+              edit ediit edit all using the Oasis console.
             </Text>
 
             <div
@@ -59,7 +91,7 @@ const Experience = () => {
               <FiShare style={{ fontSize: "1.7rem" }} />
 
               <Text small style={{ padding: "0rem 0.5rem" }}>
-                <a href="/"> Try A Demo Of Oasis Console </a>{" "}
+                <a href="/"> Try A Console Demo </a>
               </Text>
             </div>
           </div>

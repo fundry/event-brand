@@ -61,10 +61,26 @@ const Grid = styled.div`
   `};
 `
 
+const NButton = styled(Button)`
+  border-radius: 10px;
+  height: 55px;
+  width: 15rem;
+  box-shadow: 0px 2px 3px grey;
+  &: hover {
+    color: #401364;
+  }
+`
+
 const LargeBanner = () => {
   return (
     <div>
-      <Motto style={{ textAlign: "center", margin: "0.2rem  0.2em" }}>
+      <Motto
+        style={{
+          fontFamily: "calibri",
+          textAlign: "center",
+          margin: "0.2rem  0.2em",
+        }}
+      >
         Organize, Manage and Launch Modern Events.
       </Motto>
       <br />
@@ -87,19 +103,23 @@ const LargeBanner = () => {
           <Title bold support style={{ color: "#401364", textAlign: "center" }}>
             Powering Next Generation Events!
           </Title>
-          <Text style={{ textAlign: "right" }} items>
+          <Text
+            style={{
+              textAlign: "right",
+            }}
+            items
+          >
             Redefining the regular event experience! Redefining the regular
             event experience! Redefining the regular event regular event
           </Text>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button download rounded style={{ textAlign: "center" }}>
-              Host An Event
-            </Button>
+            <NButton download rounded style={{ textAlign: "center" }}>
+              Launch Next Event
+            </NButton>
           </div>
-
+          <br />
           <Available style={{ textAlign: "right" }}>
-            <h6 style={{ color: "grey" }}>AVAILABLE VIA: </h6>
             <div style={{ display: "flex" }}>
               <div>
                 <div style={{ padding: "0.1rem 0.5rem" }}>
@@ -113,7 +133,7 @@ const LargeBanner = () => {
                 <div style={{ padding: "0.1rem 0.5rem" }}>
                   <DiAppstore style={{ fontSize: "1.7rem" }} />
                 </div>
-                <Text small>Ios Devices</Text>
+                <Text small>Ios Device</Text>
               </div>
 
               <div>

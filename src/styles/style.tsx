@@ -24,11 +24,11 @@ const Text = styled.p`
   font-weight: ${(props: string) => (props.bold ? "700" : null)};
   font-size: ${(props: { small: any }) => (props.small ? "1.2em " : "1.3em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
+  line-height: ${props => (props.heightened ? "2.2rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
     ${media.lessThan("medium")`
   letter-spacing: 0.03rem;
-  font-family: tahoma;
+          font-family: aktiv-grotesk,helvetica,arial,sans-serif
   font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
@@ -48,7 +48,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `
 
 const Title = styled.h3`
-font-family: calibri;
+font-family: "Helvetica Neue", Arial, sans-serif;
 font-size : 1.8rem;
 color: ${(props: { colored: any }) => (props.colored ? "#5919ab" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "550" : "normal")};
@@ -104,7 +104,7 @@ justify-content: center;
 
 const BgTitle = styled.h1`
   font-weight: normal;
-  font-family: calibri;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   font-size: ${(props: { support: any }) => (props.support ? "1.75em" : "2em")}
@@ -161,15 +161,15 @@ font-size: 1.5em
 `};
 `
 
-const BigTitle = styled.h1`
+const BigTitle = styled.h2`
   color: ${(props: any) => props.color};
   font-size: ${(props: { app: any }) => (props.app ? null : "1.7em")};
   text-align: ${(props: { app: any }) => (props.app ? "center" : null)};
   ${media.lessThan("medium")`
-  font-size : ${(props: { app: any }) => (props.app ? "2.5em" : null)}
+  font-size : ${(props: { app: any }) => (props.app ? "2.1em" : null)}
 `};
   ${media.lessThan("small")`
-    font-size : ${(props: { app: any }) => (props.app ? "2.2em" : null)}
+    font-size : ${(props: { app: any }) => (props.app ? "1.8em" : null)}
   `};
 `
 

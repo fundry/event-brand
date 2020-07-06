@@ -87,18 +87,6 @@ const CommunityFeatures = [
     text:
       "speakers speaking speak speaking speak speaking speak speaking speak speaking speak ",
   },
-  {
-    id: 2,
-    title: "Call For Papers",
-    text:
-      "Volunteers volunteering volunteer  volunteering volunteer  volunteering volunteer  ",
-  },
-  {
-    id: 3,
-    title: "Volunteering Process",
-    text:
-      "speaking speakspeaking speakspeaking speakspeaking speakspeaking speakspeaking ",
-  },
 ]
 
 const BlogPosts = [

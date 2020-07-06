@@ -19,18 +19,22 @@ const Grid = styled.div`
     max-width: 90%;
   }
   ${media.lessThan("large")`
-  display: grid;
-  grid-gap: 1rem 0rem;
-  grid-template-columns: 50% 50%;
+    display: grid;
+    grid-gap: 1rem 0rem;
+    grid-template-columns: 50% auto;
   div {
-          margin : 1rem 0rem;
+          margin : 2rem 0rem;
           display: column;
           width: 35rem;
         p {
-            width : 27rem;
+            width : 23rem;
             text-align :  left;
           }
        }
+       img {
+        height: auto;
+        max-width: 400px;
+      }
   `};
   ${media.lessThan("medium")`
       display : flex;
@@ -60,41 +64,14 @@ const EventSupport = (): JSX.Element => {
               Make Edit edit edit edit edit ed edit edit edit edit edit edi edit
               edit edit edit edit ediit edit all using the Oasis console.
               <br />
-              <br />
-              Edit edit edit edit edit ed edit edit edit edit edit edi edit edit
-              edit edit edit ediit edit all using the Oasis console.
             </Text>
           </div>
 
           <img alt="Experience art " src={conference} />
         </Grid>
       </div>
+
       <br />
-      <div>
-        <Grid>
-          <div>
-            <Title style={{ fontWeight: 500 }} bold>
-              Oasis For <b> Meetups </b>
-            </Title>
-
-            <Text heightened small>
-              Make Edit edit edit edit edit ed edit edit edit edit edit edi edit
-              edit edit edit edit ediit edit all using the Oasis console.
-              <br />
-            </Text>
-          </div>
-
-          <img
-            alt="Experience art "
-            src={require("../../assets/svg/meetups.svg")}
-            style={{
-              height: "auto",
-              maxWidth: "90%",
-            }}
-          />
-        </Grid>
-      </div>
-
       <div style={{ padding: "0rem 2rem" }}>
         <br />
         <Title center style={{ fontWeight: 500 }} bold>
