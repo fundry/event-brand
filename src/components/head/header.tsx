@@ -107,7 +107,10 @@ const Header = ({ style }: Props) => {
         <br />
         <Text small white center>
           What do you think the Future of Events after the Pandemic would be?{" "}
-          <a href="/"> Fill a short survey </a>
+          <a href="/" style={{ margin: "0rem 1rem" }}>
+            {" "}
+            Fill a short survey{" "}
+          </a>
         </Text>{" "}
       </div>{" "}
     </div>

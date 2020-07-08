@@ -39,7 +39,7 @@ const Home = (): JSX.Element => {
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <HeadTitle color="#ED7440" style={{ margin: "0rem 1rem" }}>
+          <HeadTitle color="#F84E06" style={{ margin: "0rem 1rem" }}>
             {" "}
             Leverage Oasis{" "}
           </HeadTitle>
@@ -58,28 +58,14 @@ const Home = (): JSX.Element => {
       <Experience />
       <br />
 
-      <div
-        style={{
-          color: "#fff",
-          background: "#22263D",
-        }}
-      >
-        <br />
-        <br />
-        <Community />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-      <Body style={{ color: "#401364", background: "#f2f5ff" }}>
+      <Community />
+      <div style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <br />
         <App />
         <br />
         <br />
-      </Body>
+      </div>
 
       <Security />
       <br />

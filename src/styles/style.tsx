@@ -2,9 +2,26 @@
 import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 
+export const CustomButton = styled.button`
+  padding: 0.6rem 0.7rem;
+  transition: all 450ms;
+  border: 1px solid #f84e06;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background: #f84e06;
+  display: flex;
+  justify-content: center;
+  width: ${props => (props.wide ? "18rem" : "17rem")};
+  color: #fff;
+  box-shadow: 0px 2px 5px #401364;
+  &: hover {
+    width: 19rem;
+  }
+`
+
 export const HeadTitle = styled.h1`
   color: ${(props: { color: any }) => props.color};
-  font-size: ${(props: { app: any }) => (props.app ? null : "2.5em")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "2.2em")};
   text-align: ${(props: { align: any }) => props.align};
 `
 
@@ -27,7 +44,7 @@ width: ${(props: { widthed: any }) => (props.widthed ? "20rem" : null)};
 const Text = styled.p`
   letter-spacing: 0.05rem;
   color: ${props => (props.white ? "#fff" : "#401364")};
-  font-weight: ${(props: string) => (props.bold ? "700" : null)};
+  font-weight: lighter;
   font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
@@ -211,7 +228,7 @@ ${media.lessThan("small")`
 `
 
 const Brand = styled.h3`
-  color: #ed7440;
+  color: #f84e06;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800px;
@@ -231,7 +248,7 @@ const HeaderBody = styled.nav`
   width: 100%;
   color: #fff;
   a {
-    color: #ed7440;
+    color: #f84e06;
 
     font-size: 1.05em;
     text-decoration: none;
@@ -241,7 +258,7 @@ const HeaderBody = styled.nav`
     margin-right: 1rem;
   }
   h3 {
-    color: #ed7440;
+    color: #f84e06;
     word-spacing: 5px;
     font-size: 1.6rem;
   }
@@ -260,12 +277,12 @@ const HeaderBody = styled.nav`
 
 const HBtn = styled.button`
   background: ${(props: { login: any }) =>
-    props.login ? "#401364" : "#ED7440"};
+    props.login ? "#401364" : "#F84E06"};
   border-radius: 20rem;
   height: 47px;
   width: ${(props: { login: any }) => (props.login ? "8em" : "10em")};
   border: ${(props: { login: any }) =>
-    props.login ? "1px solid #fff" : " 1.5px solid #ED7440 "};
+    props.login ? "1px solid #fff" : " 1.5px solid #F84E06 "};
   color: #fff;
   margin: 0rem 0.5rem;
   outline: none;

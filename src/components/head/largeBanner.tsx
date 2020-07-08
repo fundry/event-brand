@@ -4,22 +4,29 @@ import Flex from "styled-flex-component"
 import styled from "styled-components"
 
 import Illustration from "../../assets/svg/illustration.svg"
-import { Text, CustomImage, Motto, HeadTitle } from "../../styles/style"
+import {
+  Text,
+  CustomImage,
+  Motto,
+  CustomButton as Button,
+} from "../../styles/style"
 
-const Button = styled.button`
-  padding: 0.7rem 1rem;
-  transition: all 450ms;
-  border: 1px solid #ed7440;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  background: #ed7440;
-  width: 20rem;
-  color: #fff;
-  box-shadow: 0px 1px 2px grey;
-  &: hover {
-    background: transparent;
-    border: 1px solid #ed7440;
-    color: #fff;
+const Texts = styled(Text)`
+  font-size: 1.45rem;
+  font-weight: 400;
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 0rem 2rem;
+  grid-template-columns: 40% 60%;
+  img {
+    margin-left: 1rem;
+    width: 700px;
+    height: 700px;
+  }
+  div {
+    margin-top: 3rem;
   }
 `
 
@@ -35,46 +42,51 @@ const LargeBanner = () => {
   }, [currentItem])
 
   return (
-    <div>
-      <Flex justifyAround>
-        <CustomImage src={Illustration} alt="illustration here" />
+    <Grid>
+      <img src={Illustration} alt="illustration here" />
 
-        <div style={{ paddingRight: "20px" }}>
-          <Flex column>
-            <br />
-            <br />
-            <br />
-            <br />
-            <Motto style={{ textAlign: "center", margin: "1rem  0.2em" }}>
-              Launch, Plan, and Manage your <br />{" "}
-              <span style={{ color: "#ED7440" }}> {currentText} . </span>
-            </Motto>
+      <div style={{ textAlign: "right", width: "45rem", margin: "1rem  0em" }}>
+        <br />
+        <br />
+        <br />
+        <Motto style={{ textAlign: "center" }}>
+          Launch, Plan, and Manage your <br />{" "}
+          <span style={{ color: "#F84E06" }}> {currentText}.</span>
+        </Motto>
+        <br />
 
-            <Text style={{ textAlign: "center" }} items>
-              Redefining the regular event experience!
-            </Text>
-            <Flex justifyCenter>
-              <Button
-                onClick={() => {
-                  currentItem + 1
-                }}
-                one
-                download
-                rounded
-                style={{ textAlign: "center" }}
-              >
-                <Flex justifyCenter>
-                  Get Started
-                  <div style={{ paddingLeft: "20px" }}>
-                    <FiArrowRight style={{ fontSize: "1.6em" }} />
-                  </div>
-                </Flex>
-              </Button>
-            </Flex>
-          </Flex>
+        <div style={{ textAlign: "center" }}>
+          <Texts style={{ textAlign: "center" }}>
+            {" "}
+            Planning an event Today ?{" "}
+          </Texts>
+          <Texts style={{ textAlign: "center" }}>
+            Leverage tools built within Oasis to redefine the regular event
+            experience for your event team and your attendees !
+          </Texts>
+
+          <div
+            style={{
+              marginTop: "0rem",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Button
+              onClick={() => {
+                currentItem + 1
+              }}
+              style={{ textAlign: "center" }}
+            >
+              Launch An Event
+              <div style={{ paddingLeft: "20px", marginTop: "0rem" }}>
+                <FiArrowRight style={{ fontSize: "1.6em" }} />
+              </div>
+            </Button>
+          </div>
         </div>
-      </Flex>
-    </div>
+      </div>
+    </Grid>
   )
 }
 
