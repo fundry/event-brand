@@ -52,17 +52,9 @@ const Header = ({ style }: Props) => {
         {Width >= 1200 ? (
           <div>
             <Flex justifyBetween>
-              <Flex>
-                <img
-                  alt="logo"
-                  src={
-                    "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                  }
-                />
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <Brand>Oasis</Brand>
-                </Link>
-              </Flex>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Brand>Oasis</Brand>
+              </Link>
 
               <Flex>
                 <Icons text={"Events"} to="/events/event" />

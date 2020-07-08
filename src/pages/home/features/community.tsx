@@ -10,6 +10,7 @@ import {
   Items,
   Title,
   Body,
+  HeadTitle,
 } from "../../../styles/style"
 import Volunteer from "../../../assets/svg/volunteer.svg"
 import { CommunityFeatures } from "../../../data"
@@ -52,49 +53,15 @@ const Community = () => {
 
   return (
     <Body>
+      <HeadTitle>
+        Oasis is Fostering{" "}
+        <span style={{ color: "#ED7440" }}> Community Involvement.</span>
+      </HeadTitle>
       <Body>
-        <br />
-        <div>
-          <BgTitle center support bold>
-            Fostering Community Involement
-          </BgTitle>
-          <br />
-          <Flex center>
-            <Button long> Get Involved </Button>
-          </Flex>
-        </div>
         <br />
         <br />
 
-        {Hooks >= 800 ? (
-          <Flex justifyBetween>
-            {CommunityFeatures.map(({ id, title, text }) => {
-              return (
-                <Contain key={id} center>
-                  <img alt="Volunteer" src={Volunteer} />
-                  <Title center small>
-                    {title}{" "}
-                  </Title>
-                  <Text small />
-                </Contain>
-              )
-            })}
-          </Flex>
-        ) : (
-          <Items>
-            {CommunityFeatures.map(({ id, title, text }) => {
-              return (
-                <Contain key={id} center>
-                  <img alt="Volunteer" src={Volunteer} />
-                  <Title center small>
-                    {title}{" "}
-                  </Title>
-                  <Text small />
-                </Contain>
-              )
-            })}
-          </Items>
-        )}
+        <Title center> Transparent Paper review process </Title>
       </Body>
     </Body>
   )

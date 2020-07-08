@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-import { FiArrowRight } from "react-icons/fi"
-import Flex from "styled-flex-component"
 
-import {
-  Text,
-  Title,
-  Body,
-  CustomCard,
-  BgTitle,
-  Contain,
-  Cards,
-} from "../../styles/style"
-import { Users } from "../../data"
+import { Text, HeadTitle, Body, BgTitle, BigTitle } from "../../styles/style"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
-import sample from "../../assets/svg/illustration.svg"
 
 import BlogOverview from "./blogOverview"
 import Integration from "./features/integrations"
@@ -51,57 +38,13 @@ const Home = (): JSX.Element => {
       <Body
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
-        <br />
-
-        <Text center padded heightened>
-          Oasis provides a feature rich web base event console for organizer to
-          manage the affairs of their event while provide a User centered mobile
-          app for event attendees.
-        </Text>
-
-        <br />
-        <br />
-        <div style={{ textAlign: "center" }}>
-          <BgTitle support>Support For Your Event Type</BgTitle>
-          <Text padded>
-            Oasis has features to provide support your specific type of event.
-          </Text>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <HeadTitle color="#ED7440" style={{ margin: "0rem 1rem" }}>
+            {" "}
+            Leverage Oasis{" "}
+          </HeadTitle>
+          <HeadTitle> For A Heads Up </HeadTitle>
         </div>
-
-        <Cards>
-          {Users.map(({ type, title, desc, id }) => {
-            return (
-              <CustomCard key={id}>
-                <Contain center>
-                  <img
-                    alt="sample"
-                    src={sample}
-                    style={{ maxWidth: "17rem" }}
-                  />
-                  <br />
-                  <Title features>{title} </Title>
-                  <Text style={{ textAlign: "center" }} small center>
-                    {desc}
-                  </Text>
-                  <br />
-                  <Flex justifyCenter>
-                    <Link to="/" style={{ textDecoration: "none" }}>
-                      <Flex>
-                        Create a {type}{" "}
-                        <div style={{ paddingLeft: "7px" }}>
-                          <FiArrowRight style={{ fontSize: "1.8rem" }} />
-                        </div>
-                      </Flex>
-                    </Link>
-                  </Flex>
-                  <br />
-                </Contain>
-              </CustomCard>
-            )
-          })}
-        </Cards>
-
-        <br />
 
         <Media />
         <br />
@@ -118,7 +61,7 @@ const Home = (): JSX.Element => {
       <div
         style={{
           color: "#fff",
-          background: "#35076F",
+          background: "#22263D",
         }}
       >
         <br />
@@ -126,9 +69,6 @@ const Home = (): JSX.Element => {
         <Community />
         <br />
         <br />
-        <br />
-        <br />
-        <BlogOverview />
         <br />
         <br />
         <br />

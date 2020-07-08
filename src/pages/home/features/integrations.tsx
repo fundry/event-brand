@@ -21,8 +21,6 @@ const Integration = (props): JSX.Element => {
         Bring in your external tools to manage your events better on Oasis.
         <br />
         <br />
-        Existing data can also be imported into Oasis from external tools to
-        reduce the amount of forms filled.
       </Text>
 
       {hooks >= 1000 ? (
@@ -42,6 +40,7 @@ const Integration = (props): JSX.Element => {
                       }}
                     />
                   </Flex>
+                  <br />
                   <Title bold>{title}</Title>
 
                   <Text small center>

@@ -2,6 +2,12 @@
 import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 
+export const HeadTitle = styled.h1`
+  color: ${(props: { color: any }) => props.color};
+  font-size: ${(props: { app: any }) => (props.app ? null : "2.5em")};
+  text-align: ${(props: { align: any }) => props.align};
+`
+
 const Contain = styled.div`
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   max-width: ${(props: { width: any }) => (props.width ? "900px" : null)};
@@ -205,7 +211,7 @@ ${media.lessThan("small")`
 `
 
 const Brand = styled.h3`
-  color: #ff21c1;
+  color: #ed7440;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800px;
@@ -219,13 +225,14 @@ const Brand = styled.h3`
 
 const HeaderBody = styled.nav`
   // box-shadow: 0px 7px 5px grey; would owrk with intersection api
-  padding: 0.7em 0.3em;
-  background: #5919ab;
+  padding: 0.7em 2em;
+  background: #22263d;
   position: fixed;
   width: 100%;
   color: #fff;
   a {
-    color: #0b33a2;
+    color: #ed7440;
+
     font-size: 1.05em;
     text-decoration: none;
   }
@@ -234,7 +241,7 @@ const HeaderBody = styled.nav`
     margin-right: 1rem;
   }
   h3 {
-    color: #ff21c1;
+    color: #ed7440;
     word-spacing: 5px;
     font-size: 1.6rem;
   }
@@ -253,12 +260,12 @@ const HeaderBody = styled.nav`
 
 const HBtn = styled.button`
   background: ${(props: { login: any }) =>
-    props.login ? "#401364" : "#ff21c1"};
+    props.login ? "#401364" : "#ED7440"};
   border-radius: 20rem;
   height: 47px;
   width: ${(props: { login: any }) => (props.login ? "8em" : "10em")};
   border: ${(props: { login: any }) =>
-    props.login ? "1px solid #fff" : " 1.5px solid #ff21c1 "};
+    props.login ? "1px solid #fff" : " 1.5px solid #ED7440 "};
   color: #fff;
   margin: 0rem 0.5rem;
   outline: none;

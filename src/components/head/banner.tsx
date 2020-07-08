@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import { FiArrowRight } from "react-icons/fi"
 
 import Header from "./header"
-import Illustration from "../../assets/svg/illustration.svg"
 import Wave from "../../assets/svg/wave.svg"
 import { Text, Button, CustomImage, Motto } from "../../styles/style"
+import LargeBanner from "./largeBanner"
 
 const Banner = () => {
   const [Width, setWidth] = useState(null)
@@ -26,61 +25,10 @@ const Banner = () => {
   }, [])
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", background: "#9EE9DF" }}>
       <Header style={true} />
-      <br />
-      <br />
       {Width >= 1050 ? (
-        <div>
-          <Flex justifyAround>
-            <CustomImage src={Illustration} alt="illustration here" />
-
-            <div style={{ paddingRight: "20px" }}>
-              <Flex column>
-                <br />
-                <br />
-                <br />
-                <br />
-                <Motto style={{ textAlign: "center", margin: "1rem  0.2em" }}>
-                  Create, Manage and Organize <br /> your events.
-                </Motto>
-
-                <Text style={{ textAlign: "center" }} items>
-                  Redefining the regular event experience!
-                </Text>
-                <Flex justifyCenter>
-                  <Button one download rounded style={{ textAlign: "center" }}>
-                    <Flex justifyCenter>
-                      Get Started
-                      <div style={{ paddingLeft: "20px" }}>
-                        <FiArrowRight style={{ fontSize: "1.6em" }} />
-                      </div>
-                    </Flex>
-                  </Button>
-                </Flex>
-              </Flex>
-            </div>
-          </Flex>
-          <Text center small>
-            Try a demo of the
-            <a
-              target="_blank"
-              style={{
-                padding: "0rem 0.5rem",
-                textDecoration: "underline",
-                color: "#401364",
-                fontWeight: "bold",
-              }}
-              href="https://event-console.netlify.app/"
-            >
-              Oasis Event Management
-            </a>
-            Console
-          </Text>
-          <p style={{ textAlign: "center", color: "grey" }}>
-            *No Account Required
-          </p>
-        </div>
+        <LargeBanner />
       ) : (
         <Flex justifyCenter>
           <div style={{ padding: "1em" }}>
