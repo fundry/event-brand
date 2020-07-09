@@ -38,13 +38,10 @@ const Home = (): JSX.Element => {
       <Body
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <HeadTitle color="#F84E06" style={{ margin: "0rem 1rem" }}>
-            {" "}
-            Leverage Oasis{" "}
-          </HeadTitle>
-          <HeadTitle> For A Heads Up </HeadTitle>
-        </div>
+        <HeadTitle align="center" color="#F84E06">
+          Leverage Oasis{" "}
+          <span style={{ color: "#401364" }}> For A Heads Up </span>
+        </HeadTitle>
 
         <Media />
         <br />

@@ -94,7 +94,18 @@ const Banner = () => {
           </div>
         </Flex>
       )}
-      <img alt="Wave design" src={Wave} />
+      <div style={{ height: "150px", overflow: "hidden" }}>
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style={{ height: "100%", width: "100%" }}
+        >
+          <path
+            d="M-6.06,-2.19 C128.81,88.36 378.81,75.70 500.70,-2.19 L508.47,168.19 L-2.25,163.33 Z"
+            style={{ stroke: "none", fill: "#f2f5ff" }}
+          ></path>
+        </svg>
+      </div>
     </div>
   )
 }

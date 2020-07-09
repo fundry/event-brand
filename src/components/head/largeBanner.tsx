@@ -12,7 +12,7 @@ import {
 } from "../../styles/style"
 
 const Texts = styled(Text)`
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   font-weight: 400;
 `
 
@@ -49,6 +49,7 @@ const LargeBanner = () => {
         <br />
         <br />
         <br />
+        <br />
         <Motto style={{ textAlign: "center" }}>
           Launch, Plan, and Manage your <br />{" "}
           <span style={{ color: "#F84E06" }}> {currentText}.</span>
@@ -57,9 +58,9 @@ const LargeBanner = () => {
 
         <div style={{ textAlign: "center" }}>
           <Texts style={{ textAlign: "center" }}>
-            {" "}
-            Planning an event Today ?{" "}
+            Planning an event Today ?
           </Texts>
+
           <Texts style={{ textAlign: "center" }}>
             Leverage tools built within Oasis to redefine the regular event
             experience for your event team and your attendees !
@@ -80,7 +81,7 @@ const LargeBanner = () => {
             >
               Launch An Event
               <div style={{ paddingLeft: "20px", marginTop: "0rem" }}>
-                <FiArrowRight style={{ fontSize: "1.6em" }} />
+                <FiArrowRight style={{ fontSize: "1.6rem" }} />
               </div>
             </Button>
           </div>

@@ -8,21 +8,21 @@ import { Text, Contain, Title, HeadTitle, Body } from "../../../styles/style"
 import "./test.css"
 
 const Circle = styled.div`
-  height  : 70px;
-  width   : 70px;
-  border-radius : 50%;
-  border : 1px solid  #F84E06;
-  display : flex;
-  background : ${(props: { active: any }) =>
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid #f84e06;
+  display: flex;
+  background: ${(props: { active: any }) =>
     props.active ? "#401364" : "transparent"};
-  justify-content : center;
-  transition : all 400ms
-  align-items : center; 
-  color : ${(props: { active: any }) => (props.active ? "#fff" : "#F84E06")};
+  justify-content: center;
+  transition: all 400ms;
+  align-items: center;
+  color: ${(props: { active: any }) => (props.active ? "#fff" : "#F84E06")};
   &:  hover {
-      cursor : pointer
-      background : #F84E06
-      color : #fff
+    cursor: pointer;
+    background: #f84e06;
+    color: #fff;
   }
 `
 
@@ -59,7 +59,7 @@ const Experience = () => {
               onClick={() => setActiveColumn("archives")}
             >
               {" "}
-              <FiArchive style={{ fontSize: "1.7rem" }} />{" "}
+              <FiArchive style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
             <div
               style={{
@@ -79,7 +79,7 @@ const Experience = () => {
               onClick={() => setActiveColumn("versioned")}
             >
               {" "}
-              <FiArchive style={{ fontSize: "1.7rem" }} />{" "}
+              <FiArchive style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
           </div>
           <div
@@ -99,7 +99,7 @@ const Experience = () => {
               onClick={() => setActiveColumn("templates")}
             >
               {" "}
-              <FiArchive style={{ fontSize: "1.7rem" }} />{" "}
+              <FiArchive style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
           </div>
           <div
@@ -157,6 +157,19 @@ const Experience = () => {
         </CSSTransition>
         <br />
       </Contain>
+      <br />
+      <br />
+
+      <div style={{ background: "blue", padding: "3rem", color: "#fff" }}>
+        <Title>Regionally Distributed Meetup Groups</Title>
+
+        <Text white small>
+          {" "}
+          Create Multiple groups of your event across different regions to reach
+          a far greater audience.{" "}
+        </Text>
+      </div>
+
       <br />
     </Body>
   )

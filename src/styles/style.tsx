@@ -3,10 +3,10 @@ import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 
 export const CustomButton = styled.button`
-  padding: 0.6rem 0.7rem;
+  padding: 0.5rem 0.6rem;
   transition: all 450ms;
   border: 1px solid #f84e06;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 1.2rem;
   background: #f84e06;
   display: flex;
@@ -21,7 +21,7 @@ export const CustomButton = styled.button`
 
 export const HeadTitle = styled.h1`
   color: ${(props: { color: any }) => props.color};
-  font-size: ${(props: { app: any }) => (props.app ? null : "2.2em")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "2em")};
   text-align: ${(props: { align: any }) => props.align};
 `
 
@@ -45,7 +45,8 @@ const Text = styled.p`
   letter-spacing: 0.05rem;
   color: ${props => (props.white ? "#fff" : "#401364")};
   font-weight: lighter;
-  font-size: ${(props: { small: any }) => (props.small ? "1.27em " : "1.4em")};
+  font-size: ${(props: { small: any }) =>
+    props.small ? "1.15rem " : "1.3rem"};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
@@ -70,8 +71,8 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
 `
 
 const Title = styled.h4`
-color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
-  font-weight: ${(props: { bold: any }) => (props.bold ? "520" : "normal")};
+  color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
+  font-weight: ${(props: { bold: any }) => (props.bold ? "400" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   ${media.lessThan("medium")`
     font-size :  1.5rem;
@@ -92,8 +93,8 @@ const autoGrid = (minColumnWidth = 200, gridGap = 0) => ({
 
 const Items = styled.div({
   ...autoGrid(220, 20),
-  padding: "1em",
-  marginLeft: "1.5em",
+  padding: "1rem",
+  marginLeft: "1.5rem",
 })
 
 const CustomCard = styled.div`
@@ -101,9 +102,9 @@ const CustomCard = styled.div`
   box-shadow: 1px 7px 5px grey;
   transition: transform 1s;
   background: #fff;
-  margin: 1em;
-  padding: 0.5em 1rem;
-  width: 24em;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  width: 24rem;
   height: auto;
   textalign: center;
   &:hover {
@@ -123,21 +124,23 @@ justify-content: center;
 `
 
 const BgTitle = styled.h1`
-  font-weight: bold;
+  font-weight: normal;
   color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  font-size: ${(props: { support: any }) => (props.support ? "1.75em" : "2em")}
+  font-size: ${(props: { support: any }) =>
+      props.support ? "1.75rem" : "2rem"}
     ${media.lessThan("medium")`
     font-size : ${(props: { support: any }) =>
-      props.support ? "1.7em" : "2.05em"}
+      props.support ? "1.7rem" : "2.05rem"}
   `};
   ${media.lessThan("large")`
-  font-size : ${(props: { support: any }) => (props.support ? "1.77em" : "2em")}
+  font-size : ${(props: { support: any }) =>
+    props.support ? "1.77rem" : "2rem"}
   `};
   ${media.lessThan("small")`
     font-weight: 550;
       font-size : ${(props: { support: any }) =>
-        props.support ? "1.27em" : "1.40em"}
+        props.support ? "1.27rem" : "1.40rem"}
     `};
 `
 
@@ -164,31 +167,31 @@ const Body = styled.div`
 const Motto = styled.h1`
   font-weight: bold;
   color: #401364;
-  font-size: 3em;
+  font-size: 2.7eem;
   padding-top: 3rem;
   ${media.lessThan("large")`
-  font-size: 2.4em
+  font-size: 2.4rem
     padding-top : 1rem;
   `};
   ${media.lessThan("medium")`
-  font-size: 2em
+  font-size: 2rem
     padding-top : 1rem;
 `};
   ${media.lessThan("small")`
-font-size: 1.5em
+font-size: 1.5rem
     padding-top : 1rem;
 `};
 `
 
 const BigTitle = styled.h1`
   color: ${(props: { app: any }) => (props.app ? "blue" : "black")};
-  font-size: ${(props: { app: any }) => (props.app ? null : "1.7em")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "1.7rem")};
   text-align: ${(props: { app: any }) => (props.app ? "center" : null)};
   ${media.lessThan("medium")`
-  font-size : ${(props: { app: any }) => (props.app ? "2.5em" : null)}
+  font-size : ${(props: { app: any }) => (props.app ? "2.5rem" : null)}
 `};
   ${media.lessThan("small")`
-    font-size : ${(props: { app: any }) => (props.app ? "2.2em" : null)}
+    font-size : ${(props: { app: any }) => (props.app ? "2.2rem" : null)}
   `};
 `
 
@@ -199,31 +202,31 @@ const Button = styled.button`
   border-radius:   ${(props: { rounded: any }) =>
     props.rounded ? "30px" : "5px"};
   height:  55px;
-  width: ${(props: { one: any }) => (props.one ? "14em" : "12em")};
+  width: ${(props: { one: any }) => (props.one ? "14rem" : "12rem")};
   border: 2px solid #ff21c1;
   color: ${(props: { download: any }) => (props.download ? "#fff" : "#401364")};
-  margin: 0 1em;
-  padding: 0.25em 0.5em;
-  font-size: 1.2em;
+  margin: 0 1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.2rem;
   transition : all 400ms;
   &:hover {
     color: #401364
     background: #fff;
   }
   ${media.lessThan("medium")`
-    margin: 0 0.25em;
+    margin: 0 0.25rem;
     height:  ${(props: string) => (props.small ? "40px" : "50px")} ;
-    font-size:  ${(props: string) => (props.small ? "0.9em" : "1.1em")} ;
+    font-size:  ${(props: string) => (props.small ? "0.9rem" : "1.1rem")} ;
     border: 1.55px solid #ff21c1;
-    font-size : 1.1em
-    width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
+    font-size : 1.1rem
+    width: ${(props: { one: any }) => (props.one ? "14rem" : "9rem")};
 `};
 ${media.lessThan("small")`
-  margin: 0 0.25em;
+  margin: 0 0.25rem;
   height:  45px;
   border: 1.5px solid #ff21c1;
-  font-size : 1em
-  width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
+  font-size : 1rem
+  width: ${(props: { one: any }) => (props.one ? "14rem" : "9rem")};
 `};
 `
 
@@ -242,7 +245,7 @@ const Brand = styled.h3`
 
 const HeaderBody = styled.nav`
   // box-shadow: 0px 7px 5px grey; would owrk with intersection api
-  padding: 0.7em 2em;
+  padding: 0.7rem 2rem;
   background: #22263d;
   position: fixed;
   width: 100%;
@@ -250,7 +253,7 @@ const HeaderBody = styled.nav`
   a {
     color: #f84e06;
 
-    font-size: 1.05em;
+    font-size: 1.05rem;
     text-decoration: none;
   }
   img {
@@ -263,15 +266,15 @@ const HeaderBody = styled.nav`
     font-size: 1.6rem;
   }
   ${media.lessThan("large")`
-  padding: 0.7em 0.3em;
+  padding: 0.7rem 0.3rem;
   padding-top: 10px;
 `};
   ${media.lessThan("medium")`
-  padding: 0.2em 0.6em;
+  padding: 0.2rem 0.6rem;
   padding-top: 7px;
 `};
   ${media.lessThan("small")`
-  padding: 0.5em 0.3em;
+  padding: 0.5rem 0.3rem;
 `};
 `
 
@@ -280,7 +283,7 @@ const HBtn = styled.button`
     props.login ? "#401364" : "#F84E06"};
   border-radius: 20rem;
   height: 47px;
-  width: ${(props: { login: any }) => (props.login ? "8em" : "10em")};
+  width: ${(props: { login: any }) => (props.login ? "8rem" : "10rem")};
   border: ${(props: { login: any }) =>
     props.login ? "1px solid #fff" : " 1.5px solid #F84E06 "};
   color: #fff;
@@ -296,19 +299,19 @@ const HBtn = styled.button`
       props.login ? "2px solid #fff" : null};
   }
   ${media.lessThan("medium")`
-    margin: 0em 0.25em;
+    margin: 0rem 0.25rem;
     height: 40px;
-    font-size:  0.9em;
+    font-size:  0.9rem;
     border: 1.55px solid #ff21c1;
     border-radius : 10px;
-    width: 9em;
+    width: 9rem;
 `};
   ${media.lessThan("small")`
-  margin: 0 0.25em;
+  margin: 0 0.25rem;
   height:  45px;
   border: 1.5px solid #ff21c1;
-  font-size : 1em;
-  width: ${(props: { one: any }) => (props.one ? "14em" : "9em")};
+  font-size : 1rem;
+  width: ${(props: { one: any }) => (props.one ? "14rem" : "9rem")};
 `};
 `
 
@@ -380,7 +383,7 @@ const List = styled.li`
 `
 
 const Footer = styled.footer`
-  background: #5919ab;
+  background: #22263d;
   width: 100%;
 
   a {
@@ -438,7 +441,7 @@ const Hover = styled.div`
 `
 
 const FooterColumnHead = styled.div`
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
 `

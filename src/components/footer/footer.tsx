@@ -51,7 +51,8 @@ const Footer = () => {
       <Testing>
         <Flex justifyCenter>
           <Text small white>
-            Oasis is coming soon. Get early acess
+            Thinking of Organizing an event? Create One on Oasis and plan it out
+            gradually.
           </Text>
         </Flex>
       </Testing>
@@ -157,10 +158,12 @@ const Footer = () => {
             </Flex>
           </div>
         )}
-
+        <hr
+          style={{ margin: "0rem 3rem", color: "#fff", background: "#fff" }}
+        />
         <Testing
           style={{
-            backgroundColor: " #361f94",
+            backgroundColor: "transparent",
             fontSize: "0.9rem",
           }}
         >

@@ -2,11 +2,18 @@ import React from "react"
 import { Link } from "gatsby"
 import { FeaturesList } from "../../../data"
 import Flex from "styled-flex-component"
-import { IoIosArrowForward } from "react-icons/io"
 import styled from "styled-components"
 
-import { Contain, Text, Title, BgTitle, Items } from "../../../styles/style"
+import {
+  Contain,
+  Text,
+  Title,
+  BgTitle,
+  Items,
+  Body,
+} from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
+import { FiArrowRight, FiChevronRight } from "react-icons/fi"
 
 const Card = styled.div`
   width: 90rem;
@@ -16,44 +23,61 @@ const Card = styled.div`
   box-shadow: 0px 2px 3px grey;
 `
 
+const OpaqueButton = styled.button`
+  padding: 0.8rem 1rem;
+  color: #401364;
+  border: 0px;
+  outline: 0px;
+  font-size: 1.1rem;
+  display: flex;
+  border-radius: 15px;
+  transition: all 500ms;
+  &: hover {
+    background: #401364;
+    color: #fff;
+    border-radius: 15px;
+  }
+`
+
+const TextLink = styled(Text)`
+  font-size: 1em;
+`
+
 const Integration = (props): JSX.Element => {
   const hooks = useWindowWidth()
   return (
     <Contain>
       <br />
       <br />
-      <br />
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Card>
           <br />
-          <BgTitle center support>
-            Integrate With Your External Tools
-          </BgTitle>
-          <Text items center>
+          <BgTitle center>Integrate With Your External Tools</BgTitle>
+          <Text small items center>
             Bring in your external tools to manage your events better on Oasis.
           </Text>
           <br />
 
-          {hooks >= 1000 ? (
-            <Flex justifyBetween>
-              {FeaturesList.map(({ title, id, text }) => {
-                return (
-                  <div>
-                    <Contain key={id} center>
-                      <Flex justifyCenter>
-                        <img
-                          src={require(`../../../assets/images/${id}.png`)}
-                          alt="feature"
-                          style={{
-                            height: "auto",
-                            maxWidth: "60%",
-                            padding: "0.5em",
-                          }}
-                        />
-                      </Flex>
-                      <br />
-                      <Title bold>{title}</Title>
+          <Flex justifyBetween>
+            {FeaturesList.map(({ title, id, text }) => {
+              return (
+                <div>
+                  <Contain key={id} center>
+                    <Flex justifyCenter>
+                      <img
+                        src={require(`../../../assets/images/${id}.png`)}
+                        alt="feature"
+                        style={{
+                          height: "auto",
+                          maxWidth: "55%",
+                          padding: "0.5em",
+                        }}
+                      />
+                    </Flex>
+                    <br />
+                    <div style={{ margin: "1rem 0.7rem" }}>
+                      <Title>{title}</Title>
 
                       <Text small center>
                         {text}
@@ -62,58 +86,38 @@ const Integration = (props): JSX.Element => {
                       <Flex justifyCenter>
                         <Link to="" style={{ textDecoration: "none" }}>
                           <Flex>
-                            <p> Learn More </p>
-                            <IoIosArrowForward
-                              style={{ fontSize: "1.5em", paddingLeft: "5px" }}
-                            />
+                            <TextLink small bold>
+                              Read More
+                            </TextLink>
+
+                            <FiChevronRight style={{ fontSize: "1.8rem" }} />
                           </Flex>
                         </Link>
                       </Flex>
-                    </Contain>
-                  </div>
-                )
-              })}
-            </Flex>
-          ) : (
-            <Items>
-              {FeaturesList.map(({ title, id, text }) => {
-                return (
-                  <div>
-                    <Contain key={id} center>
-                      <Flex justifyCenter>
-                        <img
-                          src={require(`../../../assets/images/${id}.png`)}
-                          alt="feature"
-                          style={{
-                            maxHeight: "50%",
-                            maxWidth: "70%",
-                            padding: "1em",
-                          }}
-                        />
-                      </Flex>
-                      <Title features>{title}</Title>
+                    </div>
+                  </Contain>
+                </div>
+              )
+            })}
+          </Flex>
+          <br />
 
-                      <Text items>{text}</Text>
-
-                      <Link to="">
-                        <Flex justifyCenter>
-                          <p> Learn More </p>
-                          <IoIosArrowForward
-                            style={{ fontSize: "1.5em", paddingLeft: "5px" }}
-                          />
-                        </Flex>
-                      </Link>
-                    </Contain>
-                  </div>
-                )
-              })}
-            </Items>
-          )}
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            .
+            <OpaqueButton onClick={() => alert("more integrations")}>
+              Learn more about integrations
+              <div style={{ margin: "0rem 0.7rem" }}>
+                <FiArrowRight style={{ fontSize: "1.6rem" }} />
+              </div>
+            </OpaqueButton>
+          </div>
           <br />
         </Card>
       </div>
 
       <br />
+      <br />
+
       <br />
       <br />
     </Contain>
