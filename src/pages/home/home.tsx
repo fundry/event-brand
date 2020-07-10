@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react"
 
-import { Text, HeadTitle, Body, BgTitle, BigTitle } from "../../styles/style"
+import {
+  Text,
+  HeadTitle,
+  Body,
+  BgTitle,
+  BigTitle,
+  Title,
+} from "../../styles/style"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
 
-import BlogOverview from "./blogOverview"
 import Integration from "./features/integrations"
 import App from "./features/app"
 import Media from "./features/media"
@@ -53,8 +59,28 @@ const Home = (): JSX.Element => {
       <br />
       <br />
       <Experience />
-      <br />
 
+      <div
+        style={{
+          background: "linear-gradient(to top,#22263d, #F84E06)",
+          padding: "3rem",
+          color: "#fff",
+        }}
+      >
+        <br />
+        <Title center>Regionally Distributed Meetup Groups</Title>
+
+        <Text white small center>
+          Create Multiple groups of your event across different regions to reach
+          a far greater audience. <br />
+          Meetup Groups are quick and easy to setup and launch as they inherit
+          the features of the parent event.
+        </Text>
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
       <Community />
       <div style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />

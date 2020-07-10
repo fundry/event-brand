@@ -39,7 +39,7 @@ const Community = () => {
 
             <Text small white>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              cupiditate eligendi quisquam quam impedit, reiciendis ex eveniet
+              cupiditate eligendi quisquam quam impedit. reiciendis ex eveniet
               ad dicta assumenda, ratione veniam saepe. Quos officiis ab eum,
               nobis atque perferendis.
             </Text>

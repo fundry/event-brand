@@ -6,9 +6,7 @@ import styled from "styled-components"
 
 import { Text, BgTitle, Title, Contain, Grid } from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
-import Folder from "../../../assets/svg/folder.svg"
 import Schedule from "../../../assets/svg/schedule.svg"
-import ImageDelivery from "../../../assets/svg/image-delivery.svg"
 
 const TextLink = styled(Text)`
   font-size: 1.1em;
@@ -26,10 +24,10 @@ const Media = () => {
             Cloud Storage For Event Data
           </Title>
           <Contain>
-            <Text style={{ width: "90%" }} small>
-              View Event Schedule in realtime as time overlaps on each item.
-              <br /> <br /> Follow a speaker's deck in realtime as the presenter
-              goes over each slide.
+            <Text style={{ width: "80%" }} small>
+              Store every file relating to your event on the Cloud using Oasis.
+              <br /> <br /> While storing these files, you can keep them in a
+              great sync with you , your event and your attendees.
             </Text>
             <div style={{ float: "right" }}>
               <Link
@@ -59,13 +57,14 @@ const Media = () => {
       <Grid schedule>
         <div>
           <Title heightened bold>
-            In - Event Team Support
+            In - Event Team Marketplace
           </Title>
           <Contain>
-            <Text style={{ width: "90%" }} small>
-              View Event Schedule in realtime as time overlaps on each item.
-              <br /> <br /> Follow a speaker's deck in realtime as the presenter
-              goes over each slide.
+            <Text style={{ width: "80%" }} small>
+              Leverage your event marketplace provided to your event to create,
+              advertise and accept payment for event items and Swags.
+              <br /> <br /> Your marketplace can handle purchases bla bla bla
+              bla
             </Text>
             <div style={{ float: "right" }}>
               <Link
@@ -97,10 +96,12 @@ const Media = () => {
             In - Event Custom Email Invitations
           </Title>
           <Contain>
-            <Text style={{ width: "90%" }} small>
-              View Event Schedule in realtime as time overlaps on each item.
-              <br /> <br /> Follow a speaker's deck in realtime as the presenter
-              goes over each slide.
+            <Text style={{ width: "80%" }} small>
+              Composing and Sending promotional and invitation emails for your
+              event is now simplified Oasis email support.
+              <br /> <br /> Get started with broadcasting emails across all
+              registered attendees within seconds using Pre-made invitation
+              templates.
             </Text>
             <div style={{ float: "right" }}>
               <Link
@@ -131,10 +132,11 @@ const Media = () => {
             In-Event Team Support
           </Title>
           <Contain>
-            <Text style={{ width: "90%" }} small>
-              View Event Schedule in realtime as time overlaps on each item.
-              <br /> <br /> Follow a speaker's deck in realtime as the presenter
-              goes over each slide.
+            <Text style={{ width: "80%" }} small>
+              Spread the workload of organizing your event using Oasis Teams
+              support within the console.
+              <br /> <br /> Accept Volunteers , create a team and grant them
+              access to a specific part of your event console.
             </Text>
             <div style={{ float: "right" }}>
               <Link

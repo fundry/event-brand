@@ -123,7 +123,17 @@ const Experience = () => {
           <div>
             <br />
             <Title> Event Archives </Title> <br />
-            <Text> See event Archive </Text>
+            <Text
+              small
+              style={{
+                width: "40rem",
+              }}
+            >
+              {" "}
+              Give your attendees the oppurtunity to make an informed choice
+              about your event by going your automated event archive.{" "}
+            </Text>
+            <br />
             <br />
           </div>
         </CSSTransition>
@@ -159,16 +169,6 @@ const Experience = () => {
       </Contain>
       <br />
       <br />
-
-      <div style={{ background: "blue", padding: "3rem", color: "#fff" }}>
-        <Title>Regionally Distributed Meetup Groups</Title>
-
-        <Text white small>
-          {" "}
-          Create Multiple groups of your event across different regions to reach
-          a far greater audience.{" "}
-        </Text>
-      </div>
 
       <br />
     </Body>
