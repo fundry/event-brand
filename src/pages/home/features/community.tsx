@@ -50,7 +50,7 @@ const Community = () => {
           </div>
 
           <img
-            style={{ height: "500px", maxWidth: "60%" }}
+            style={{ height: "400px", maxWidth: "60%" }}
             alt="illustration"
             src={Sample}
           />
@@ -79,7 +79,7 @@ const Community = () => {
           </div>
 
           <img
-            style={{ height: "500px", maxWidth: "60%" }}
+            style={{ height: "400px", maxWidth: "50%" }}
             alt="illustration"
             src={Sample}
           />
@@ -108,7 +108,7 @@ const Community = () => {
           </div>
 
           <img
-            style={{ height: "500px", maxWidth: "60%" }}
+            style={{ height: "400px", maxWidth: "60%" }}
             alt="illustration"
             src={Sample}
           />
