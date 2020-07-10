@@ -1,5 +1,12 @@
 import * as React from "react"
-import { Body, Title, BgTitle, Text, Button } from "../../styles/style"
+import {
+  Body,
+  Title,
+  BgTitle,
+  Text,
+  Button,
+  CustomButton,
+} from "../../styles/style"
 import { Link } from "gatsby"
 import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
@@ -50,40 +57,6 @@ const Landing = () => {
   const Width = useWindowWidth()
   const [opacity, setOpacity] = React.useState(0)
 
-  // Putting an entire element into a div gives depth err
-  // const [FeaturesElement, setFeaturesElement] = React.useState(null);
-
-  // const FeaturesRef = React.useRef(
-  //  new IntersectionObserver(
-   //   (entries, observer) => {
-   //     console.log(observer, "entries")
-   //     console.log(entries, "entries")
-  //    },
-  //    {
-//        threshold: 1,
- //     }
- //   )
-//  )
-
-  // TODO : trying to use IntersectionAPI to lazy load the features
-  // React.useEffect(
-  //   () => {
-  //     const Element = FeaturesElement;
-  //     const Observed = FeaturesRef.current;
-
-  //     if (Element) {
-  //       Observed.observe(Element);
-  //     }
-
-  //     return () => {
-  //       if (Element) {
-  //         Observed.unobserve(Element);
-  //       }
-  //     };
-  //   },
-  //   [FeaturesElement]
-  // );
-
   const ItemsWrapper = styled.div`
     opacity: 1;
     transition: opacity 450ms;
@@ -120,9 +93,14 @@ const Landing = () => {
           borderBottomStyle: "dashed",
         }}
       >
+        <br />
         <Text white small center>
           What do you think would be the future of events? <br />
-          <a href="/" target="_blank">
+          <a
+            href="/"
+            target="_blank"
+            style={{ textDecoration: "none", color: "#f84e06" }}
+          >
             {" "}
             Take a short survey.{" "}
           </a>
@@ -143,14 +121,14 @@ const Landing = () => {
               <Input placeholder="Get Notified" />
               <br />
               <Flex justifyCenter>
-                <Button
+                <CustomButton
                   onClick={() => {
                     SubmitData()
                   }}
                   style={{ color: "#fff", textAlign: "center" }}
                 >
                   Stay Notified{" "}
-                </Button>
+                </CustomButton>
               </Flex>
             </Flex>
           </Flex>
@@ -163,9 +141,13 @@ const Landing = () => {
                 Inorder to build a User Centered tool, we would like to know
                 your thoughts on past events attended. <br /> <br />
                 Please{" "}
-                <a href="/" target="_blank">
+                <a
+                  href="/"
+                  target="_blank"
+                  style={{ textDecoration: "none", color: "#f84e06" }}
+                >
                   take{" "}
-                </a>{" "}
+                </a>
                 this short survey
               </Text>
             )}
@@ -207,6 +189,8 @@ const Landing = () => {
                         }}
                       />
                     </Flex>
+                    <br />
+                    <br />
                     <Title bold style={{ color: "white" }} center>
                       {" "}
                       {title}{" "}

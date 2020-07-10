@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
-import { FiChevronRight, FiMenu } from "react-icons/fi"
+import { FiChevronRight, FiMenu, FiArrowRight } from "react-icons/fi"
 
 import {
   HeaderBody,
@@ -105,13 +105,29 @@ const Header = ({ style }: Props) => {
         <br />
         <br />
         <br />
-        <Text small white center>
-          What do you think the Future of Events after the Pandemic would be?{" "}
-          <a href="/" style={{ margin: "0rem 1rem" }}>
-            {" "}
-            Fill a short survey{" "}
-          </a>
-        </Text>{" "}
+
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Text small white center>
+            What do you think the Future of Events after the Pandemic would be?{" "}
+            <a
+              target="_blank"
+              rel={"noopener"}
+              href="https://google-forms.com"
+              style={{
+                textDecoration: "none",
+                color: "#f84e06",
+                marginLeft: "1rem",
+              }}
+            >
+              {" "}
+              Fill a short survey{" "}
+            </a>
+          </Text>
+
+          <Hover style={{ margin: "0.2rem 0.3rem" }}>
+            <FiArrowRight style={{ fontSize: "1.7rem", color: "#f84e06" }} />
+          </Hover>
+        </div>
       </div>{" "}
     </div>
   )

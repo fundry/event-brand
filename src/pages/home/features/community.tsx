@@ -21,6 +21,23 @@ const Community = () => {
 
   return (
     <Body img={CommunityBckg}>
+      <HeadTitle align="center">
+        Oasis Extends Beyond
+        <span
+          style={{
+            margin: "0rem 0.6rem",
+            textDecoration: "underline",
+            textDecorationStyle: "wavy",
+            textDecorationColor: "#F84E06",
+          }}
+        >
+          {" "}
+          Organizing Events.
+        </span>
+      </HeadTitle>
+
+      <br />
+      <br />
       <HeadTitle>
         Fostering{" "}
         <span style={{ color: "#F84E06" }}> Community Involvement.</span>

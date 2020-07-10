@@ -4,7 +4,7 @@ import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
 import { IoIosAlarm } from "react-icons/io"
 import styled from "styled-components"
-import { FiArchive, FiImage } from "react-icons/fi"
+import { FiImage, FiCalendar } from "react-icons/fi"
 import { CSSTransition } from "react-transition-group"
 
 import Iphone from "../../../assets/svg/iphone.svg"
@@ -58,7 +58,9 @@ const Button = styled(CustomButton)`
   width: 10rem;
   padding: 0.3rem 0.3rem;
   border-radius: 3px;
-  font-size: 1.05rem;
+  background: ${(props: { background: any }) => props.background};
+  border: ${(props: { background: any }) => props.background};
+  font-size: 1rem;
   &: hover {
     width: 11rem;
   }
@@ -106,7 +108,7 @@ const App = () => {
               }}
               active={ActiveColumn === "first"}
             >
-              <FiArchive style={{ fontSize: "1.7rem" }} />{" "}
+              <FiCalendar style={{ fontSize: "1.7rem" }} />{" "}
             </Circle>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Divider />
@@ -148,13 +150,50 @@ const App = () => {
             flexDirection: "column",
           }}
         >
-          <Title center> Some App Feature title </Title>
-          <Text small center>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            cupiditate eligendi quisquam quam impedit, reiciendis ex eveniet ad
-            dicta assumenda, ratione veniam saepe. Quos officiis ab eum, nobis
-            atque perferendis.
-          </Text>
+          <CSSTransition
+            in={ActiveColumn === "first"}
+            timeout={300}
+            unmountOnExit
+          >
+            <div>
+              <Title center> Mobile Event Schedules Sync </Title>
+              <Text small center>
+                Lorem ipsum dolo#401364s.
+              </Text>
+            </div>
+          </CSSTransition>
+
+          <CSSTransition
+            in={ActiveColumn === "second"}
+            timeout={300}
+            unmountOnExit
+          >
+            <div>
+              <Title center> Mobile Event Alarms</Title>
+              <Text small center>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Incidunt cupiditate eligendi quisquam quam impedit, reiciendis
+                ex eveniet ad dicta assumenda, ratione veniam saepe. Quos
+                officiis ab eum, nobis atque perferendis.
+              </Text>
+            </div>
+          </CSSTransition>
+
+          <CSSTransition
+            in={ActiveColumn === "third"}
+            timeout={300}
+            unmountOnExit
+          >
+            <div>
+              <Title center> Mobile Event Media Assets </Title>
+              <Text small center>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Incidunt cupiditate eligendi quisquam quam impedit, reiciendis
+                ex eveniet ad dicta assumenda, ratione veniam saepe. Quos
+                officiis ab eum, nobis atque perferendis.
+              </Text>
+            </div>
+          </CSSTransition>
         </div>
 
         <div>
@@ -172,7 +211,7 @@ const App = () => {
             <br />
 
             <div style={{ display: "flex ", justifyContent: "center" }}>
-              <Button style={{ margin: "0rem 2rem" }}>
+              <Button background="#401364" style={{ margin: "0rem 2rem" }}>
                 <div style={{ margin: "0rem 0.7rem" }}>
                   <DiAppstore style={{ fontSize: "1.5em" }} />
                 </div>

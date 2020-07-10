@@ -57,7 +57,7 @@ const Media = () => {
       <Grid schedule>
         <div>
           <Title heightened bold>
-            In - Event Team Marketplace
+            In - Event Attendee Marketplace
           </Title>
           <Contain>
             <Text style={{ width: "80%" }} small>

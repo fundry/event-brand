@@ -1,17 +1,9 @@
 import React from "react"
-import Flex from "styled-flex-component"
 import styled from "styled-components"
 import media from "styled-media-query"
 import Cloud from "../../assets/svg/ipad.svg"
 
-import {
-  Text,
-  Title,
-  BgTitle,
-  Contain,
-  Body,
-  HeadTitle,
-} from "../../styles/style"
+import { Text, Title, Contain, Body, HeadTitle } from "../../styles/style"
 import { FiArrowRight } from "react-icons/fi"
 
 const Grid = styled.div`
@@ -19,7 +11,8 @@ const Grid = styled.div`
   grid-gap: 1rem;
   grid-template-columns: 50% 50%;
   p {
-    margin-left: 5rem;
+    margin: 0rem 0.5rem;
+    text-indent: 30px;
     width: 40rem;
     text-align: center;
   }
@@ -81,15 +74,17 @@ const Security = () => {
 
             <div>
               <br />
-              <br />
               <Title colored center>
                 <span style={{ color: "#F84E06" }}> Mutate </span> Your Data
               </Title>
               <Text center small>
                 Events on Oasis are the most flexible. You can personalize and
                 make changes to your data and your console. <br />
-                <br /> How data within eventful are secured How within eventful
-                are secured How within eventful are secured How data within
+              </Text>
+              <br />
+              <Text center small>
+                How data within eventful are secured How within eventful are
+                secured How within eventful are secured How data within
               </Text>
               <br />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -117,7 +112,6 @@ const Security = () => {
 
         <div>
           <br />
-          <br />
           <Title center colored>
             <span style={{ color: "#F84E06" }}> Consume </span> Your Data
           </Title>
@@ -125,8 +119,11 @@ const Security = () => {
             Consume your event data and statistics stored on Oasis into your
             event blogs and webpages. Our Graphql Api is customer centered and
             easy to interacte consume. <br />
-            <br /> How data within eventful are secured How within eventful are
-            secured How within eventful are secured How data within
+          </Text>
+          <br />
+          <Text center small>
+            How data within eventful are secured How within eventful are secured
+            How within eventful are secured How data within
           </Text>
 
           <div style={{ display: "flex", justifyContent: "space-between" }}>
