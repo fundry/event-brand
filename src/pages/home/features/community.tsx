@@ -74,7 +74,7 @@ const Community = () => {
             </Text>
 
             <div>
-              <CustomButton wide> View Open Call For Speakers </CustomButton>
+              <CustomButton wide> Create A Talk Draft </CustomButton>
             </div>
           </div>
 
