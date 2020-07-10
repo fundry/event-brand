@@ -64,6 +64,35 @@ const Community = () => {
           }}
         >
           <div style={{ marginTop: "6rem" }}>
+            <Title> Public Speaking and Writing </Title>
+
+            <Text small white>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              cupiditate eligendi quisquam quam impedit, reiciendis ex eveniet
+              ad dicta assumenda, ratione veniam saepe. Quos officiis ab eum,
+              nobis atque perferendis.
+            </Text>
+
+            <div>
+              <CustomButton wide> View Open Call For Speakers </CustomButton>
+            </div>
+          </div>
+
+          <img
+            style={{ height: "500px", maxWidth: "60%" }}
+            alt="illustration"
+            src={Sample}
+          />
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "40% 60%",
+            gridGap: "0rem 10rem",
+          }}
+        >
+          <div style={{ marginTop: "6rem" }}>
             <Title> Transparent Talk Draft Process </Title>
 
             <Text small white>

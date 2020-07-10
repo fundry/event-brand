@@ -18,6 +18,11 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 50% 50%;
+  p {
+    margin-left: 5rem;
+    width: 40rem;
+    text-align: center;
+  }
   ${media.lessThan("medium")`
   display: flex;
   align-items: center;
@@ -28,21 +33,18 @@ const Grid = styled.div`
   text-align: center;
   align-items: center;
   flex-direction: column;
-  display: flex; <div style={{display : 'flex' ,  justifyContent : 'space-between'}} >
-  .
-  <OpaqueButton> Tour Oasis Web Console </OpaqueButton>
-  </div>
+  display: flex; <div style={{display : 'flex' ,  justifyContent : 'space-between'}}; 
   `};
 `
 
 const OpaqueButton = styled.button`
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   color: #401364;
   border: 0px;
   outline: 0px;
   font-size: 1.1rem;
   display: flex;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 500ms;
   &: hover {
     background: #401364;
@@ -61,6 +63,11 @@ const Security = () => {
           We value <span style={{ color: "#F84E06" }}> Your Data </span> On
           Oasis
         </HeadTitle>
+        <Text small center>
+          {" "}
+          Every byte of data provided to Oasis belongs to you and secured, You
+          can ;{" "}
+        </Text>
         <br />
 
         <br />
@@ -74,14 +81,15 @@ const Security = () => {
 
             <div>
               <br />
+              <br />
               <Title colored center>
                 <span style={{ color: "#F84E06" }}> Mutate </span> Your Data
               </Title>
               <Text center small>
-                How data within eventful are secured How data within eventful
-                are secured How data within eventful are secured How within
-                eventful are secured How within eventful are secured How data
-                within
+                Events on Oasis are the most flexible. You can personalize and
+                make changes to your data and your console. <br />
+                <br /> How data within eventful are secured How within eventful
+                are secured How within eventful are secured How data within
               </Text>
               <br />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -109,19 +117,21 @@ const Security = () => {
 
         <div>
           <br />
+          <br />
           <Title center colored>
             <span style={{ color: "#F84E06" }}> Consume </span> Your Data
           </Title>
           <Text center small>
-            How data within eventful are secured How data within eventful are
-            secured How data within eventful are secured How within eventful are
+            Consume your event data and statistics stored on Oasis into your
+            event blogs and webpages. Our Graphql Api is customer centered and
+            easy to interacte consume. <br />
+            <br /> How data within eventful are secured How within eventful are
             secured How within eventful are secured How data within
           </Text>
 
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             .
             <OpaqueButton>
-              {" "}
               Try Oasis For Developers
               <div style={{ margin: "0rem 0.6rem" }}>
                 <FiArrowRight style={{ fontSize: "1.7rem" }} />
