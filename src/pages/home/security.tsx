@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 import Cloud from "../../assets/svg/ipad.svg"
+import { Link } from "gatsby"
 
 import { Text, Title, Contain, Body, HeadTitle } from "../../styles/style"
 import { FiArrowRight } from "react-icons/fi"
@@ -73,7 +74,6 @@ const Security = () => {
             />
 
             <div>
-              <br />
               <Title colored center>
                 <span style={{ color: "#F84E06" }}> Mutate </span> Your Data
               </Title>
@@ -89,13 +89,15 @@ const Security = () => {
               <br />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 .
-                <OpaqueButton>
-                  {" "}
-                  Tour Oasis Web Console
-                  <div style={{ margin: "0rem 0.6rem" }}>
-                    <FiArrowRight style={{ fontSize: "1.7rem" }} />
-                  </div>
-                </OpaqueButton>
+                <Link to="/docs/service" style={{ textDecoration: "none" }}>
+                  <OpaqueButton>
+                    {" "}
+                    Tour Oasis Web Console
+                    <div style={{ margin: "0rem 0.6rem" }}>
+                      <FiArrowRight style={{ fontSize: "1.7rem" }} />
+                    </div>
+                  </OpaqueButton>
+                </Link>
               </div>
             </div>
           </Grid>
@@ -111,7 +113,6 @@ const Security = () => {
         <img src={Cloud} alt="Cloud illustration" style={{ maxWidth: "70%" }} />
 
         <div>
-          <br />
           <Title center colored>
             <span style={{ color: "#F84E06" }}> Consume </span> Your Data
           </Title>
@@ -125,15 +126,17 @@ const Security = () => {
             How data within eventful are secured How within eventful are secured
             How within eventful are secured How data within
           </Text>
-
+          <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             .
-            <OpaqueButton>
-              Try Oasis For Developers
-              <div style={{ margin: "0rem 0.6rem" }}>
-                <FiArrowRight style={{ fontSize: "1.7rem" }} />
-              </div>
-            </OpaqueButton>
+            <Link to="/docs/service" style={{ textDecoration: "none" }}>
+              <OpaqueButton>
+                Try Oasis For Developers
+                <div style={{ margin: "0rem 0.6rem" }}>
+                  <FiArrowRight style={{ fontSize: "1.7rem" }} />
+                </div>
+              </OpaqueButton>
+            </Link>
           </div>
         </div>
       </Grid>

@@ -6,7 +6,9 @@ import Footer from "./footer/footer"
 
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = props => {
+  const { children, showLaunchEvent } = props
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,6 +18,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  console.log(showLaunchEvent)
 
   return (
     <div>
@@ -42,7 +46,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Footer />
+        <Footer showLaunchEvent={showLaunchEvent} />
       </div>
     </div>
   )

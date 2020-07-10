@@ -30,7 +30,13 @@ const HoverCircle = styled(Hover)`
   border: 1px solid #f84e06;
 `
 
-const Footer = () => {
+interface CustomProps {
+  showLaunchEvent: boolean
+}
+
+const Footer = (props: CustomProps): JSX.Element => {
+  const { showLaunchEvent } = props
+
   const Testing = styled.div({
     textAlign: "center",
     background: "#0e2f5a",
@@ -44,7 +50,7 @@ const Footer = () => {
     setWidth(window.innerWidth)
   }, 1000)
 
-  const handleResize = value => {
+  const handleResize = (value: React.SetStateAction<null>) => {
     setWidth(value)
   }
 
@@ -65,25 +71,26 @@ const Footer = () => {
 
   return (
     <div>
-      <Testing>
-        <br />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Text small white>
-            Thinking of Organizing an event? <br />
-            Oasis is flexible enough to upscale and downscale automatically to
-            fit your event needs.
-          </Text>
-          <CustomButton> Create An Event Today </CustomButton>
-        </div>
-        <br />
-      </Testing>
-
+      {showLaunchEvent ? null : (
+        <Testing>
+          <br />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Text small white>
+              Thinking of Organizing an event? <br />
+              Oasis is flexible enough to upscale and downscale automatically to
+              fit your event needs.
+            </Text>
+            <CustomButton> Create An Event Today </CustomButton>
+          </div>
+          <br />
+        </Testing>
+      )}
       <FooterBody>
         <br />
 

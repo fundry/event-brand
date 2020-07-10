@@ -158,7 +158,10 @@ const App = () => {
             <div>
               <Title center> Mobile Event Schedules Sync </Title>
               <Text small center>
-                Lorem ipsum dolo#401364s.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Incidunt cupiditate eligendi quisquam quam impedit, reiciendis
+                ex eveniet ad dicta assumenda, ratione veniam saepe. Quos
+                officiis ab eum, nobis atque perferendis.
               </Text>
             </div>
           </CSSTransition>

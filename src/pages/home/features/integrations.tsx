@@ -104,12 +104,14 @@ const Integration = (props): JSX.Element => {
 
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             .
-            <OpaqueButton onClick={() => alert("more integrations")}>
-              Learn more about integrations
-              <div style={{ margin: "0rem 0.7rem" }}>
-                <FiArrowRight style={{ fontSize: "1.6rem" }} />
-              </div>
-            </OpaqueButton>
+            <Link to="/docs/tools" style={{ textDecoration: "none" }}>
+              <OpaqueButton>
+                Learn more about integrations
+                <div style={{ margin: "0rem 0.7rem" }}>
+                  <FiArrowRight style={{ fontSize: "1.6rem" }} />
+                </div>
+              </OpaqueButton>
+            </Link>
           </div>
           <br />
         </Card>

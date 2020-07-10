@@ -6,8 +6,8 @@ import { Body } from "../../styles/style"
 
 const Service = () => {
   return (
-    <Layout>
-      <Header style={false} />
+    <Layout showLaunchEvent={false}>
+      <Header style={true} />
       <Body>
         <br />
         <br />
