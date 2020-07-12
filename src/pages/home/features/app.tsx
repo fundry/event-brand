@@ -18,8 +18,11 @@ import {
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 1rem 2rem;
+  grid-gap: 0rem 2rem;
   grid-template-columns: 5rem auto 25rem; 
+  p {
+    padding : 0rem 5rem
+  }
 };
 `
 
@@ -203,7 +206,7 @@ const App = () => {
           <Flex justifyCenter>
             <img
               alt="android"
-              style={{ maxHeight: "25%", maxWidth: "40%", paddingTop: "1%" }}
+              style={{ maxHeight: "30%", maxWidth: "46%" }}
               src={Iphone}
             />
           </Flex>

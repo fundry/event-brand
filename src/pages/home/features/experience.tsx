@@ -122,7 +122,7 @@ const Experience = () => {
         >
           <div>
             <br />
-            <Title> Event Archives </Title> <br />
+            <Title style={{ color: "#401364" }}> Event Archives </Title> <br />
             <Text
               small
               style={{
@@ -146,7 +146,11 @@ const Experience = () => {
         >
           <div>
             <br />
-            <Title> Event Versioned Events </Title> <br />
+            <Title style={{ color: "#401364" }}>
+              {" "}
+              Event Versioned Events{" "}
+            </Title>{" "}
+            <br />
             <Text> See event Archive </Text>
             <br />
           </div>
@@ -160,7 +164,7 @@ const Experience = () => {
         >
           <div>
             <br />
-            <Title> Event Templates </Title> <br />
+            <Title style={{ color: "#401364" }}> Event Templates </Title> <br />
             <Text> See event Archive </Text>
             <br />
           </div>

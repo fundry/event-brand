@@ -78,17 +78,12 @@ const Header = ({ style }: Props) => {
         ) : (
           // {/* MOBILE RESPONSIVENESS   */}
           <Flex justifyBetween>
-            <Flex>
-              <img
-                alt="logo"
-                src={
-                  "https:/a/res.cloudinary.com/dkfptto8m/image/upload/v1558070244/Mongodb%20hackathon%20project/thunder.png"
-                }
-              />
-              <Link to="/">
-                <Brand>Oasis</Brand>
-              </Link>
-            </Flex>
+            <Link
+              to="/"
+              style={{ textDecoration: "none", margin: "0rem 1rem" }}
+            >
+              <Brand>Oasis</Brand>
+            </Link>
 
             <Flex>
               <div

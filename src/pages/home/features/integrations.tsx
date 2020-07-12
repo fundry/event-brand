@@ -70,7 +70,7 @@ const Integration = (props): JSX.Element => {
                         alt="feature"
                         style={{
                           height: "auto",
-                          maxWidth: "55%",
+                          maxWidth: "50%",
                           padding: "0.5em",
                         }}
                       />

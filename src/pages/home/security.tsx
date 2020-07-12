@@ -17,17 +17,26 @@ const Grid = styled.div`
     width: 40rem;
     text-align: center;
   }
+  img {
+    max-width: 70%;
+  }
+  ${media.lessThan("large")`
+  display: flex;
+  flex-direction: column;
+  align-items  : center;
+  img {
+    margin : 2rem;
+    max-width : 70%;
+  }
+  `};
+
   ${media.lessThan("medium")`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
   `};
   ${media.lessThan("small")`
-  text-align: center;
-  align-items: center;
+  display: flex;
   flex-direction: column;
-  display: flex; <div style={{display : 'flex' ,  justifyContent : 'space-between'}}; 
   `};
 `
 
@@ -67,11 +76,7 @@ const Security = () => {
         <br />
         <Contain>
           <Grid>
-            <img
-              src={Cloud}
-              alt="Cloud illustration"
-              style={{ maxWidth: "70%" }}
-            />
+            <img src={Cloud} alt="Cloud illustration" />
 
             <div>
               <Title colored center>
@@ -110,7 +115,11 @@ const Security = () => {
         <br />
       </Contain>
       <Grid>
-        <img src={Cloud} alt="Cloud illustration" style={{ maxWidth: "70%" }} />
+        <img
+          src={require("../../assets/images/graphql.png")}
+          alt="graphql api"
+          style={{ maxWidth: "100%", marginLeft: "7rem" }}
+        />
 
         <div>
           <Title center colored>

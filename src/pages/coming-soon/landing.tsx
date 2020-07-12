@@ -1,17 +1,11 @@
 import * as React from "react"
-import {
-  Body,
-  Title,
-  BgTitle,
-  Text,
-  Button,
-  CustomButton,
-} from "../../styles/style"
+import { Body, Title, BgTitle, Text, CustomButton } from "../../styles/style"
 import { Link } from "gatsby"
 import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import media from "styled-media-query"
+import { IoIosMegaphone } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
 import { BetaRelease } from "../../data"
@@ -50,12 +44,18 @@ const Input = styled.input`
 }
 `
 
-const Landing = () => {
-  const [Submit, setSubmit] = React.useState(false)
+const Landing = (): JSX.Element => {
+  const [Submit, setSubmit] = React.useState<boolean>(false)
 
-  const [Loading, setLoading] = React.useState(true)
+  const [Email, setEmail] = React.useState<string>("")
+  const [Error, setError] = React.useState<string>("")
+  const [hasError, setEError] = React.useState<boolean>(false)
+
+  const [Loading, setLoading] = React.useState<boolean>(true)
   const Width = useWindowWidth()
-  const [opacity, setOpacity] = React.useState(0)
+
+  //@ts-ignore
+  const ENDPOINT: string = process.env.GATSBY_BETA_ENDPOINT
 
   const ItemsWrapper = styled.div`
     opacity: 1;
@@ -67,6 +67,11 @@ const Landing = () => {
     setTimeout(() => {
       setLoading(false)
     }, 1500)
+
+    //@ts-ignore
+    fetch(`${ENDPOINT}/?${Email}`)
+      .then(() => {})
+      .catch(e => console.log(e))
   }
 
   return (
@@ -101,16 +106,32 @@ const Landing = () => {
             target="_blank"
             style={{ textDecoration: "none", color: "#f84e06" }}
           >
-            {" "}
-            Take a short survey.{" "}
+            Take a short survey.
           </a>
         </Text>
       </div>
 
       <Body style={{ padding: "5rem 1rem" }}>
-        <BgTitle white center>
-          Oasis For Events
-        </BgTitle>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <BgTitle white center>
+            Oasis For Events
+          </BgTitle>
+          <div>
+            <span
+              style={{
+                margin: "0.6rem 0.5rem",
+                color: "#fff",
+                background: "#f84e06",
+                borderRadius: "15px",
+                padding: "0.2rem 0.5rem",
+                fontSize: "1rem",
+              }}
+            >
+              {" "}
+              Coming Soon{" "}
+            </span>
+          </div>
+        </div>
         <Text white center>
           Redefining the regular event experience!
         </Text>
@@ -118,15 +139,32 @@ const Landing = () => {
         {!Submit ? (
           <Flex justifyCenter>
             <Flex column>
-              <Input placeholder="Get Notified" />
+              <Input
+                type="email"
+                required
+                value={Email}
+                onChange={(e: {
+                  target: { value: React.SetStateAction<string> }
+                }) => setEmail(e.target.value)}
+                placeholder="Get Notified"
+              />
               <br />
               <Flex justifyCenter>
                 <CustomButton
+                  disabled={Email.length < 8}
                   onClick={() => {
                     SubmitData()
                   }}
-                  style={{ color: "#fff", textAlign: "center" }}
+                  style={{
+                    background: Email.length < 8 && "transparent",
+                    display: "flex",
+                    color: "#fff",
+                    textAlign: "center",
+                  }}
                 >
+                  <div style={{ margin: "0rem 0.5rem" }}>
+                    <IoIosMegaphone style={{ fontSize: "1.9rem" }} />{" "}
+                  </div>
                   Stay Notified{" "}
                 </CustomButton>
               </Flex>
@@ -135,21 +173,51 @@ const Landing = () => {
         ) : (
           <Flex justifyCenter>
             {Loading ? (
-              <Text white> Loading ... </Text>
+              <div>
+                <br />
+                <Text white> Loading ... </Text>
+                <br />
+              </div>
             ) : (
-              <Text white small center>
-                Inorder to build a User Centered tool, we would like to know
-                your thoughts on past events attended. <br /> <br />
-                Please{" "}
-                <a
-                  href="/"
-                  target="_blank"
-                  style={{ textDecoration: "none", color: "#f84e06" }}
-                >
-                  take{" "}
-                </a>
-                this short survey
-              </Text>
+              <div>
+                {!hasError ? (
+                  <div>
+                    <Text white small center>
+                      Inorder to make Oasis more User Centered, we would like to
+                      know your thoughts on past events attended. <br /> <br />
+                      Please
+                      <a
+                        href="/"
+                        target="_blank"
+                        style={{
+                          margin: "0rem 0.5rem",
+                          textDecoration: "none",
+                          color: "#f84e06",
+                        }}
+                      >
+                        take{" "}
+                      </a>
+                      this short survey
+                    </Text>
+                  </div>
+                ) : (
+                  <div>
+                    <Text center white>
+                      {" "}
+                      Ooops! An Error Occurred.{" "}
+                      <span
+                        onClick={() => {
+                          setSubmit(false)
+                        }}
+                        style={{ color: "#f84e06", cursor: "pointer" }}
+                      >
+                        {" "}
+                        Try Again{" "}
+                      </span>{" "}
+                    </Text>
+                  </div>
+                )}
+              </div>
             )}
           </Flex>
         )}

@@ -154,10 +154,10 @@ const Body = styled.div`
     padding: 0rem 4em;
   `};
   ${media.lessThan("large")`
-  padding: 0rem 3em;
+  padding: 0rem 1.5em;
   `};
   ${media.lessThan("medium")`
-  padding: 0rem 1.5em;
+  padding: 0rem 1em;
   `};
   ${media.lessThan("small")`
   padding: 0rem 0.4em;
