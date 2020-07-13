@@ -62,16 +62,38 @@ const Landing = (): JSX.Element => {
     transition: opacity 450ms;
   `
 
-  const SubmitData = () => {
+  const handleErr = (e: { statusText: React.SetStateAction<string> }) => {
+    setLoading(false)
     setSubmit(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1500)
+    setEError(true)
+    setError(e.statusText)
+  }
+
+  const SubmitData = () => {
+    // setTimeout(() => {
+    // }, 1500)
 
     //@ts-ignore
-    fetch(`${ENDPOINT}/?${Email}`)
-      .then(() => {})
-      .catch(e => console.log(e))
+    const body = {
+      email: Email,
+    }
+
+    fetch(`${ENDPOINT}?email=${Email}`, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+    })
+      // fetch always returns 200||ok. Have to replicate errs in 2 blcks
+      .then(res => {
+        if (res.ok) {
+          setLoading(false)
+          setSubmit(true)
+        } else {
+          handleErr(res) // throw into app logger
+        }
+      })
+      .catch(e => {
+        handleErr(e)
+      })
   }
 
   return (
