@@ -57,7 +57,7 @@ const Home = (): JSX.Element => {
       <div
         style={{
           background: "linear-gradient(to top,#22263d, #F84E06)",
-          padding: "3rem",
+          padding: "1rem",
           color: "#fff",
         }}
       >

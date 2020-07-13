@@ -5,6 +5,7 @@ import media from "styled-media-query"
 
 import { Text, CustomButton, Title, HeadTitle } from "../../../styles/style"
 import Sample from "../../../assets/svg/illustration.svg"
+import Ipad from "../../../assets/svg/ipad.svg"
 import CommunityBckg from "../../../assets/svg/community.svg"
 import useWindowWidth from "../../../styles/resize"
 
@@ -51,7 +52,7 @@ const Community = () => {
             gridGap: "0rem 10rem",
           }}
         >
-          <div style={{ marginTop: "6rem" }}>
+          <div style={{ marginTop: "4rem" }}>
             <Title> Participate in Events as a Volunteer </Title>
 
             <Text small white>
@@ -72,7 +73,7 @@ const Community = () => {
             src={Sample}
           />
         </div>
-
+        <br />
         <div
           style={{
             display: "grid",
@@ -80,7 +81,7 @@ const Community = () => {
             gridGap: "0rem 10rem",
           }}
         >
-          <div style={{ marginTop: "6rem" }}>
+          <div style={{ marginTop: "4rem" }}>
             <Title> Public Speaking and Writing </Title>
 
             <Text small white>
@@ -96,9 +97,9 @@ const Community = () => {
           </div>
 
           <img
-            style={{ height: "400px", maxWidth: "50%" }}
+            style={{ height: "400px", maxWidth: "60%" }}
             alt="illustration"
-            src={Sample}
+            src={Ipad}
           />
         </div>
 

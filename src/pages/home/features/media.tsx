@@ -98,7 +98,7 @@ const Media = () => {
           <Contain>
             <Text style={{ width: "80%" }} small>
               Composing and Sending promotional and invitation emails for your
-              event is now simplified Oasis email support.
+              event is now simplified using Oasis Email Support.
               <br /> <br /> Get started with broadcasting emails across all
               registered attendees within seconds using Pre-made invitation
               templates.

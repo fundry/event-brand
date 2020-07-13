@@ -5,13 +5,14 @@ import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import media from "styled-media-query"
-import { IoIosMegaphone } from "react-icons/io"
+import { IoIosMegaphone, IoLogoMarkdown } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
 import { BetaRelease } from "../../data"
 import Ipad from "../../assets/svg/ipad.svg"
 import Iphone from "../../assets/svg/iphone.svg"
 import Features from "../../assets/svg/features.svg"
+import { FiEye } from "react-icons/fi"
 
 const Grid = styled.div`
   display: grid;
@@ -147,9 +148,9 @@ const Landing = (): JSX.Element => {
                 borderRadius: "15px",
                 padding: "0.2rem 0.5rem",
                 fontSize: "1rem",
+                boxShadow: "0px 2px 4px solid #f84e06",
               }}
             >
-              {" "}
               Coming Soon{" "}
             </span>
           </div>
@@ -157,19 +158,19 @@ const Landing = (): JSX.Element => {
         <Text white center>
           Redefining the regular event experience!
         </Text>
-        <br />
         {!Submit ? (
           <Flex justifyCenter>
             <Flex column>
               <Input
                 type="email"
                 required
-                style={{ fontWeight: "normal" }}
+                style={{ fontWeight: "normal", textAlign: "center" }}
                 value={Email}
-                onChange={(e: {
-                  target: { value: React.SetStateAction<string> }
-                }) => setEmail(e.target.value)}
-                placeholder="Get Notified"
+                onChange={(e: any) => {
+                  e.preventDefault()
+                  setEmail(e.target.value)
+                }}
+                placeholder="Your Email Address"
               />
               <br />
               <Flex justifyCenter>
@@ -246,6 +247,17 @@ const Landing = (): JSX.Element => {
         )}
         <br />
         <br />
+        <br />
+        <Link to="/home/home" style={{ textDecoration: "none" }}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ margin: "0rem 1rem" }}>
+              <FiEye style={{ fontSize: "1.8rem" }} />
+            </div>
+            <Text small white>
+              Peep on what Oasis really is.
+            </Text>
+          </div>
+        </Link>
         <Flex justifyCenter>
           {Width >= 800 ? (
             <img
@@ -292,7 +304,6 @@ const Landing = (): JSX.Element => {
             )
           })}
         </Grid>
-        <Link to="/home/home"> Preview </Link>
       </Body>
     </div>
   )
