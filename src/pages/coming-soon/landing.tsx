@@ -164,6 +164,7 @@ const Landing = (): JSX.Element => {
               <Input
                 type="email"
                 required
+                style={{ fontWeight: "normal" }}
                 value={Email}
                 onChange={(e: {
                   target: { value: React.SetStateAction<string> }
