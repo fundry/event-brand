@@ -122,16 +122,20 @@ const Experience = () => {
         >
           <div>
             <br />
-            <Title style={{ color: "#401364" }}> Event Archives </Title> <br />
+            <Title style={{ color: "#401364" }}>
+              {" "}
+              Compiled Event Archives{" "}
+            </Title>{" "}
+            <br />
             <Text
               small
               style={{
                 width: "40rem",
               }}
             >
-              {" "}
               Give your attendees the oppurtunity to make an informed choice
-              about your event by going your automated event archive.{" "}
+              about your event by going through an automatically compiled
+              archive of your event.
             </Text>
             <br />
             <br />
@@ -147,8 +151,7 @@ const Experience = () => {
           <div>
             <br />
             <Title style={{ color: "#401364" }}>
-              {" "}
-              Event Versioned Events{" "}
+              Semantically Versioned Events
             </Title>{" "}
             <br />
             <Text> See event Archive </Text>

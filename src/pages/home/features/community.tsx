@@ -52,14 +52,18 @@ const Community = () => {
             gridGap: "0rem 10rem",
           }}
         >
-          <div style={{ marginTop: "4rem" }}>
+          <div style={{ marginTop: "2rem" }}>
             <Title> Participate in Events as a Volunteer </Title>
 
             <Text small white>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              cupiditate eligendi quisquam quam impedit. reiciendis ex eveniet
-              ad dicta assumenda, ratione veniam saepe. Quos officiis ab eum,
-              nobis atque perferendis.
+              Events organized on Oasis have a full support for volunteers with
+              the ability to create roles for volunteers to fill and accept
+              applied roles.
+              <br />
+              <br />
+              Now you can participate actively in the organizing of your
+              favourite events when you check for events currently accepting
+              volunteers or facillitators.
             </Text>
 
             <div>
@@ -132,6 +136,7 @@ const Community = () => {
           />
         </div>
       </div>
+      <br />
     </Body>
   )
 }

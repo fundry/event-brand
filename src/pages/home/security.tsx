@@ -97,7 +97,7 @@ const Security = () => {
                 <Link to="/docs/service" style={{ textDecoration: "none" }}>
                   <OpaqueButton>
                     {" "}
-                    Tour Oasis Web Console
+                    Tour The Oasis Web Console
                     <div style={{ margin: "0rem 0.6rem" }}>
                       <FiArrowRight style={{ fontSize: "1.7rem" }} />
                     </div>
@@ -128,7 +128,7 @@ const Security = () => {
           <Text center small>
             Consume your event data and statistics stored on Oasis into your
             event blogs and webpages. Our Graphql Api is customer centered and
-            easy to interacte consume. <br />
+            easy to consume. <br />
           </Text>
           <br />
           <Text center small>

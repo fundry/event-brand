@@ -191,7 +191,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 10px;
   opacity: 0;
   background: transparent;
 }
