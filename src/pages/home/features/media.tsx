@@ -29,6 +29,26 @@ const Media = () => {
               <br /> <br /> While storing these files, you can keep them in a
               great sync with you , your event and your attendees.
             </Text>
+
+            <div
+              style={{
+                background: "#22263d",
+                height: "70px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "290px",
+                padding: "0.5rem 0.5rem",
+                borderRadius: "15px",
+              }}
+            >
+              <img
+                alt="cloud"
+                style={{ height: "70px", width: "270px" }}
+                src={require("../../../assets/images/cloudinary.png")}
+              />
+            </div>
+
             <div style={{ float: "right" }}>
               <Link
                 to="/docs/service"
