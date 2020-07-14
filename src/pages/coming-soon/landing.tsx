@@ -156,7 +156,7 @@ const Landing = (): JSX.Element => {
           </div>
         </div>
         <Text white center>
-          Redefining the regular event experience!
+          Powering Modern Events For a Redefined Experience!
         </Text>
         {!Submit ? (
           <Flex justifyCenter>
