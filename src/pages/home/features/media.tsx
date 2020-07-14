@@ -52,7 +52,6 @@ const Media = () => {
         />
       </Grid>
       <br />
-      <br />
 
       <Grid schedule>
         <div>

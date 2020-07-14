@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { FiArchive } from "react-icons/fi"
 import { CSSTransition } from "react-transition-group"
+import { IoMdGitNetwork, IoMdColorPalette } from "react-icons/io"
 
 import { Text, Contain, Title, HeadTitle, Body } from "../../../styles/style"
 
@@ -44,16 +45,6 @@ const Experience = () => {
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={{ display: "flex" }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                margin: "0rem 0.7rem",
-              }}
-            >
-              <Divider />
-            </div>
             <Circle
               active={ActiveColumn === "archives"}
               onClick={() => setActiveColumn("archives")}
@@ -79,7 +70,7 @@ const Experience = () => {
               onClick={() => setActiveColumn("versioned")}
             >
               {" "}
-              <FiArchive style={{ fontSize: "1.5rem" }} />{" "}
+              <IoMdGitNetwork style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
           </div>
           <div
@@ -99,18 +90,8 @@ const Experience = () => {
               onClick={() => setActiveColumn("templates")}
             >
               {" "}
-              <FiArchive style={{ fontSize: "1.5rem" }} />{" "}
+              <IoMdColorPalette style={{ fontSize: "2rem" }} />{" "}
             </Circle>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: "0rem 0.7rem",
-            }}
-          >
-            <Divider />
           </div>
         </div>
 
@@ -175,8 +156,6 @@ const Experience = () => {
         <br />
       </Contain>
       <br />
-      <br />
-
       <br />
     </Body>
   )
