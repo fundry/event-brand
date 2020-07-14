@@ -1,5 +1,5 @@
-import React from "react"
-import { Title, Text, Hover } from "../../../styles/style"
+import React, { useState, useEffect } from "react"
+import { Title, Text, Hover, BgTitle, BigTitle } from "../../../styles/style"
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io"
 import styled from "styled-components"
 
@@ -39,25 +39,34 @@ const MeetupWindow = styled.div`
   margin: 0rem 1rem;
   padding: 3rem 1rem;
   border-right: 1px solid #fff;
-  width: 20rem;
+  width: ${props => (props.active ? "26rem" : "20rem")};
   height: auto;
   transition: all 600ms;
-  filter: grayscale(90%) blur(0.9px);
+  filter: ${props =>
+    props.active ? "grayscale(0%) blur(0px)" : "grayscale(90%) blur(0.9px)"};
   &: hover {
     width: 26rem;
     filter: grayscale(0%) blur(0px);
   }
 `
 
-const Window = typeof window !== `undefined`
-
 const DistributedMeetups = (props): JSX.Element => {
-  const {} = props
+  const [currentWindow, setCurrentWindow] = useState(0)
+
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentWindow(currentWindow =>
+        currentWindow > 3 ? 0 : currentWindow + 1
+      )
+    }, 3000)
+
+    return clearInterval(3000)
+  }, [])
 
   return (
     <div>
       <br />
-      <Title center>
+      <BigTitle style={{ color: "#fff", textAlign: "center" }}>
         Regionally{" "}
         <span
           style={{
@@ -70,7 +79,7 @@ const DistributedMeetups = (props): JSX.Element => {
           Distributed{" "}
         </span>{" "}
         Meetup Groups
-      </Title>
+      </BigTitle>
 
       <Text white small center>
         Create Multiple groups of your event across different regions to reach a
@@ -78,6 +87,7 @@ const DistributedMeetups = (props): JSX.Element => {
         Meetup Groups are quick and easy to setup and launch as they inherit the
         features of the parent event.
       </Text>
+      <Text white> {currentWindow} </Text>
       <br />
       <Grid>
         <Hover
@@ -98,7 +108,10 @@ const DistributedMeetups = (props): JSX.Element => {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Title center> {name} </Title>
+            <BigTitle style={{ color: "#fff", textAlign: "center" }}>
+              {" "}
+              {name}{" "}
+            </BigTitle>
 
             <div
               style={{
@@ -109,7 +122,7 @@ const DistributedMeetups = (props): JSX.Element => {
             >
               {Meetups.map(({ id, name, summary }) => {
                 return (
-                  <MeetupWindow key={id}>
+                  <MeetupWindow active={id === currentWindow} key={id}>
                     <div>
                       <Title style={{ cursor: "pointer" }} center>
                         {" "}

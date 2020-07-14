@@ -1,7 +1,5 @@
 import React from "react"
-import Flex from "styled-flex-component"
 import styled from "styled-components"
-import media from "styled-media-query"
 
 import { Text, CustomButton, Title, HeadTitle } from "../../../styles/style"
 import Sample from "../../../assets/svg/illustration.svg"
@@ -17,9 +15,18 @@ const Body = styled.div`
   object-fit: center;
 `
 
-const Community = () => {
-  const Hooks = useWindowWidth()
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-gap: 0rem 10rem;
+  img {
+    height: 400px;
+    max-width: 60%;
+    margin: 0rem 4rem;
+  }
+`
 
+const Community = () => {
   return (
     <Body img={CommunityBckg}>
       <HeadTitle align="center">
@@ -32,7 +39,6 @@ const Community = () => {
             textDecorationColor: "#F84E06",
           }}
         >
-          {" "}
           Organizing Events.
         </span>
       </HeadTitle>
@@ -45,13 +51,7 @@ const Community = () => {
       </HeadTitle>
 
       <div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "40% 60%",
-            gridGap: "0rem 10rem",
-          }}
-        >
+        <Grid>
           <div style={{ marginTop: "2rem" }}>
             <Title> Participate in Events as a Volunteer </Title>
 
@@ -71,20 +71,10 @@ const Community = () => {
             </div>
           </div>
 
-          <img
-            style={{ height: "400px", maxWidth: "60%" }}
-            alt="illustration"
-            src={Sample}
-          />
-        </div>
+          <img alt="illustration" src={Sample} />
+        </Grid>
         <br />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "40% 60%",
-            gridGap: "0rem 10rem",
-          }}
-        >
+        <Grid>
           <div style={{ marginTop: "4rem" }}>
             <Title> Public Speaking and Writing </Title>
 
@@ -100,20 +90,11 @@ const Community = () => {
             </div>
           </div>
 
-          <img
-            style={{ height: "400px", maxWidth: "60%" }}
-            alt="illustration"
-            src={Ipad}
-          />
-        </div>
+          <img alt="illustration" src={Ipad} />
+        </Grid>
+        <br />
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "40% 60%",
-            gridGap: "0rem 10rem",
-          }}
-        >
+        <Grid>
           <div style={{ marginTop: "6rem" }}>
             <Title> Transparent Talk Draft Process </Title>
 
@@ -129,12 +110,8 @@ const Community = () => {
             </div>
           </div>
 
-          <img
-            style={{ height: "400px", maxWidth: "60%" }}
-            alt="illustration"
-            src={Sample}
-          />
-        </div>
+          <img alt="illustration" src={Sample} />
+        </Grid>
       </div>
       <br />
     </Body>

@@ -34,32 +34,34 @@ const Circle = styled.div`
 `
 
 const LargeBanner = () => {
+  const words = ["Streams", "Events", "Communities", "Talk Drafts"]
+  const colors = ["#690579", "#22263d", "indigo", "#401364"]
+
   const [currentText, setText] = useState<string>("Events")
   const [time, setTime] = useState<number>(300)
   const [currentItem, setCurrentItem] = useState<number>(0)
   const [Colour, setColour] = useState<string>("#9EE9DF")
-  const [TextColour, setTextColour] = useState<string>("#401364")
+  const [TextColour, setTextColour] = useState<string>(
+    colors[currentItem] === "#9EE9DF" ? "#22263d" : "#401364"
+  )
   const [Animation, showAnimation] = useState(false)
 
-  const words = ["Streams", "Events", "Communities", "Talk Drafts"]
-
   useEffect(() => {
-    setText(words[currentItem])
-  }, [currentItem])
+    setInterval(() => {
+      setCurrentItem(currentItem => (currentItem > 2 ? 0 : currentItem + 1))
+    }, 3500)
+
+    return clearInterval(3500)
+  }, [])
 
   setTimeout(() => {
-    setText(words[1])
-    setColour("#22263d")
+    // setColour()
     setTextColour("#fff")
     showAnimation(true)
   }, 1000)
 
-  // setTimeout(() => {
-  //   setColour("indigo")
-  // }, 2000)
-
   return (
-    <div style={{ transition: "all 600ms", background: Colour }}>
+    <div style={{ transition: "all 600ms", background: colors[currentItem] }}>
       <Grid>
         <img
           src={!Animation ? Illustration : StreamsIllustration}
@@ -87,7 +89,7 @@ const LargeBanner = () => {
               }}
             >
               {" "}
-              {currentText}.
+              {words[currentItem]}.
             </span>
           </Motto>
           <br />
