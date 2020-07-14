@@ -7,7 +7,7 @@ const Grid = styled.div`
   height: 35vh;
   display: grid;
   grid-gap: 3rem 1rem;
-  grid-template-columns: 5rem auto 5rem;
+  grid-template-columns: 3rem auto 3rem;
 `
 
 const name = "Open Source Community Africa"
@@ -48,6 +48,8 @@ const MeetupWindow = styled.div`
     filter: grayscale(0%) blur(0px);
   }
 `
+
+const Window = typeof window !== `undefined`
 
 const DistributedMeetups = (props): JSX.Element => {
   const {} = props
@@ -102,7 +104,7 @@ const DistributedMeetups = (props): JSX.Element => {
               style={{
                 display: "flex",
                 overflow: "auto",
-                width: window.innerWidth - 310,
+                width: "auto",
               }}
             >
               {Meetups.map(({ id, name, summary }) => {
