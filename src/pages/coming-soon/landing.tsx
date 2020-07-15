@@ -142,7 +142,7 @@ const Landing = (): JSX.Element => {
           <div>
             <button
               onClick={() => {
-                process.env.GATSBY_BETA_ENDPOINT
+                alert(process.env.GATSBY_BETA_ENDPOINT)
               }}
             >
               {" "}
