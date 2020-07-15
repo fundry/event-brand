@@ -140,14 +140,6 @@ const Landing = (): JSX.Element => {
             Oasis For Events
           </BgTitle>
           <div>
-            <button
-              onClick={() => {
-                alert(process.env.GATSBY_BETA_ENDPOINT)
-              }}
-            >
-              {" "}
-              testing{" "}
-            </button>
             <span
               style={{
                 margin: "0.6rem 0.5rem",
