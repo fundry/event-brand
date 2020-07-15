@@ -87,7 +87,6 @@ const DistributedMeetups = (props): JSX.Element => {
         Meetup Groups are quick and easy to setup and launch as they inherit the
         features of the parent event.
       </Text>
-      <Text white> {currentWindow} </Text>
       <br />
       <Grid>
         <Hover
