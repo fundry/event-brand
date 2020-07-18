@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import { Text, HeadTitle, Body, Title } from "../../styles/style"
+import { HeadTitle, Body } from "../../styles/style"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
