@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import media from "styled-media-query"
 
 import { Text, CustomButton, Title, HeadTitle } from "../../../styles/style"
 import Sample from "../../../assets/svg/illustration.svg"
@@ -13,18 +14,44 @@ const Body = styled.div`
   background-image: url(${(props: { img: any }) => props.img});
   background-position: center;
   object-fit: center;
+  ${media.lessThan("large")`
+    padding: 2rem 3rem;
+  `}
+  ${media.lessThan("medium")`
+    padding: 2rem 1.5rem;
+  `};
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   grid-gap: 0rem 10rem;
-  transition : all 500ms;
-  img { transition : 'all 600ms' , 
+  transition: all 500ms;
+  img {
+    transition: all 600ms;
     height: 400px;
     max-width: 60%;
     margin: 0rem 4rem;
   }
+  ${media.lessThan("huge")`
+    grid-gap: 0rem 10rem;
+  `};
+  ${media.lessThan("large")`
+    grid-template-columns: 55% 45%;
+    grid-gap: 0rem 3rem;
+    img { 
+      transition : all 600ms; 
+      height: 300px;
+      max-width: 80%;
+      margin: 0rem 1rem;
+    }
+  `};
+  ${media.lessThan("medium")`
+    grid-gap: 0rem 5rem;
+  `};
+  ${media.lessThan("small")`
+    grid-gap: 0rem 10rem;
+  `};
 `
 
 export default class community extends Component {
@@ -51,6 +78,11 @@ export default class community extends Component {
         this.setState({
           transform: 0,
           imgTransform: 10,
+        })
+      } else {
+        this.setState({
+          transform: 30,
+          imgTransform: 80,
         })
       }
     }, 50)

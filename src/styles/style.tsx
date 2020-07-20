@@ -46,7 +46,7 @@ const Text = styled.p`
   color: ${props => (props.white ? "#fff" : "#401364")};
   font-weight: lighter;
   font-size: ${(props: { small: any }) =>
-    props.small ? "1.15rem " : "1.3rem"};
+    props.small ? "1.10rem " : "1.2rem"};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
@@ -167,18 +167,17 @@ const Body = styled.div`
 const Motto = styled.h1`
   font-weight: bold;
   color: #401364;
-  font-size: 2.7eem;
+  font-size: 2.7rem;
   padding-top: 3rem;
+  ${media.lessThan("huge")`
+    font-size: 2.7rem;
+  `};
   ${media.lessThan("large")`
-  font-size: 2.4rem
-    padding-top : 1rem;
+    font-size: 2rem
+    padding-top : 0rem;
   `};
   ${media.lessThan("medium")`
-  font-size: 2rem
-    padding-top : 1rem;
-`};
-  ${media.lessThan("small")`
-font-size: 1.5rem
+  font-size: 1.7rem
     padding-top : 1rem;
 `};
 `
@@ -401,10 +400,12 @@ const BlogCards = styled.div`
   ${media.lessThan("large")`
     width : 30rem;
     background: transparent;
-  `} ${media.lessThan("medium")`
+  `};
+  ${media.lessThan("medium")`
     width : 30rem;
     background: transparent;
-  `} ${media.lessThan("small")`
+  `};
+  ${media.lessThan("small")`
     width : 25rem;
     background: transparent;
   `};

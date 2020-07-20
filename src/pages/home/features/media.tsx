@@ -30,52 +30,8 @@ const Media = () => {
               great sync with you , your event and your attendees.
             </Text>
 
-            <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  background: "#22263d",
-                  height: "67px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "290px",
-                  padding: "0.1rem 0.5rem 0.5rem",
-                  borderRadius: "10px",
-                  margin: "0rem 4rem",
-                }}
-              >
-                <img
-                  alt="cloud"
-                  style={{ height: "60px", width: "210px" }}
-                  src={require("../../../assets/images/cloudinary.png")}
-                />
-              </div>
-              <div
-                style={{
-                  background: "#22263d",
-                  height: "67px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "290px",
-                  padding: "0.1rem 0.5rem 0.5rem",
-                  borderRadius: "10px",
-                  margin: "0rem 4rem",
-                }}
-              >
-                <img
-                  alt="cloud"
-                  style={{ height: "60px", width: "210px" }}
-                  src={require("../../../assets/images/cloudinary.png")}
-                />
-              </div>
-            </div>
-
-            <div style={{ float: "right" }}>
-              <Link
-                to="/docs/service"
-                style={{ textAlign: "right", textDecoration: "none" }}
-              >
+            <div style={{}}>
+              <Link to="/docs/service" style={{ textDecoration: "none" }}>
                 <Flex>
                   <Text small bold>
                     Read More
@@ -84,6 +40,48 @@ const Media = () => {
                   <FiChevronRight style={{ fontSize: "2rem" }} />
                 </Flex>
               </Link>
+            </div>
+            <br />
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+                  background: "#22263d",
+                  height: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "250px",
+                  padding: "0.1rem 0.5rem 0.5rem",
+                  borderRadius: "7px",
+                  margin: "0rem 0.5rem",
+                }}
+              >
+                <img
+                  alt="cloud"
+                  style={{ height: "50px", width: "210px" }}
+                  src={require("../../../assets/images/cloudinary.png")}
+                />
+              </div>
+
+              <div
+                style={{
+                  background: "#22263d",
+                  height: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "250px",
+                  padding: "0.1rem 0.5rem 0.5rem",
+                  borderRadius: "7px",
+                  margin: "0rem 5rem",
+                }}
+              >
+                <img
+                  alt="cloud"
+                  style={{ height: "50px", width: "210px" }}
+                  src={require("../../../assets/images/cloudinary.png")}
+                />
+              </div>
             </div>
           </Contain>
         </div>
@@ -94,7 +92,7 @@ const Media = () => {
         />
       </Grid>
       <br />
-
+      <br />
       <Grid schedule>
         <div>
           <Title heightened bold>
@@ -107,7 +105,8 @@ const Media = () => {
               <br /> <br /> Your marketplace can handle purchases bla bla bla
               bla
             </Text>
-            <div style={{ float: "right" }}>
+            <br />
+            <div>
               <Link
                 to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}
@@ -144,7 +143,7 @@ const Media = () => {
               registered attendees within seconds using Pre-made invitation
               templates.
             </Text>
-            <div style={{ float: "right" }}>
+            <div>
               <Link
                 to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}
@@ -166,7 +165,7 @@ const Media = () => {
           src={Schedule}
         />
       </Grid>
-
+      <br />
       <Grid schedule>
         <div>
           <Title heightened bold>
@@ -179,7 +178,7 @@ const Media = () => {
               <br /> <br /> Accept Volunteers , create a team and grant them
               access to a specific part of your event console.
             </Text>
-            <div style={{ float: "right" }}>
+            <div>
               <Link
                 to="/docs/service"
                 style={{ textAlign: "right", textDecoration: "none" }}

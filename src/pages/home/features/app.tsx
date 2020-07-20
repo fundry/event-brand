@@ -95,8 +95,8 @@ const App = () => {
   return (
     <div style={{ padding: "1rem 4rem" }}>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <HeadTitle center style={{ margin: "0rem 1rem" }}>
-          Oasis is a Tool.{" "}
+        <HeadTitle center style={{ textAlign: "center", margin: "0rem 1rem" }}>
+          Oasis is a Media Tool. <br />{" "}
           <span style={{ color: "#F84E06", fontWeight: "bold" }}>
             Wield It!{" "}
           </span>{" "}

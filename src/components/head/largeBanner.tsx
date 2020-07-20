@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from "react"
 import { FiArrowRight } from "react-icons/fi"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import Illustration from "../../assets/svg/illustration.svg"
 import StreamsIllustration from "../../assets/svg/banner-anim.svg"
 import { Text, Motto, CustomButton as Button } from "../../styles/style"
+import media from "styled-media-query"
 
 const Texts = styled(Text)`
   font-size: 1.3rem;
   font-weight: 400;
+`
+
+const Bouncer = keyframes`
+  from {
+    height: 850px;
+  }
+  to {
+    height: 830px;
+  }
+  ${media.lessThan("large")`
+  from {
+    height: 550px;
+  }
+  to {
+    height: 530px;
+  }
+  `};
 `
 
 const Grid = styled.div`
@@ -16,6 +34,7 @@ const Grid = styled.div`
   grid-gap: 0rem 1rem;
   grid-template-columns: 40% 60%;
   img {
+    animation: ${Bouncer} 2500ms ease-in-out 0s infinite;
     margin-left: 1rem;
     width: 750px;
     height: 700px;
@@ -23,14 +42,36 @@ const Grid = styled.div`
   }
   div {
     margin-top: 1rem;
+    text-align: right;
+    width: 45rem;
+    margin: 1rem 0em;
   }
-`
-
-const Circle = styled.div`
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: violet;
+  ${media.lessThan("huge")`
+  margin-top: 1rem;
+  text-align: right;
+   width: 45rem;
+   margin: 1rem  0em;
+  `};
+  ${media.lessThan("large")`
+    display : flex;
+    flex-direction : column;
+     align-items  : center;
+     justify-content : center;
+    img {
+      animation : ${Bouncer} 2500ms ease-in-out 0s infinite;
+      width: 500px;
+      height: 500px;
+      transition: all 400ms;
+    }
+    div {
+      margin-top: 0rem;
+       width: auto;
+       margin: 1rem  0em;
+    }
+  `};
+  ${media.lessThan("small")`
+  
+  `};
 `
 
 const LargeBanner = () => {
@@ -68,13 +109,7 @@ const LargeBanner = () => {
           alt="illustration here"
         />
 
-        <div
-          style={{ textAlign: "right", width: "45rem", margin: "1rem  0em" }}
-        >
-          <br />
-          <br />
-          <br />
-          <br />
+        <div>
           <Motto style={{ textAlign: "center" }}>
             <span style={{ color: TextColour }}>
               Launch, Plan, and Manage your{" "}
@@ -118,9 +153,7 @@ const LargeBanner = () => {
                 style={{ textAlign: "center" }}
               >
                 Launch An Event
-                <div style={{ paddingLeft: "20px", marginTop: "0rem" }}>
-                  <FiArrowRight style={{ fontSize: "1.6rem" }} />
-                </div>
+                <FiArrowRight style={{ fontSize: "1.6rem" }} />
               </Button>
             </div>
           </div>

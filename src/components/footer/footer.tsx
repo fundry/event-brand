@@ -8,6 +8,7 @@ import {
   FiInstagram,
   FiMail,
 } from "react-icons/fi"
+import { IoIosSend } from "react-icons/io"
 import { Link } from "gatsby"
 
 import {
@@ -28,6 +29,10 @@ const HoverCircle = styled(Hover)`
   margin: 0rem 0.5rem;
   align-items: center;
   border: 1px solid #f84e06;
+  box-shadow: 0px 3px 4px #000;
+  a {
+    color: #fff;
+  }
 `
 
 interface CustomProps {
@@ -37,12 +42,44 @@ interface CustomProps {
 const Footer = (props: CustomProps): JSX.Element => {
   const { showLaunchEvent } = props
 
-  const Testing = styled.div({
-    textAlign: "center",
-    background: "#0e2f5a",
-    padding: "1em",
-    color: "#fff",
-  })
+  const Testing = styled.div`
+    text-align: center;
+    display: flex;
+    height: 30vh;
+    flex-direction: column;
+    justify-content: center;
+    background: #0e2f5a;
+    padding: 1rem;
+    color: #fff;
+    div {
+      text-align: center;
+    }
+  `
+  const InputBox = styled.div`
+    display: flex;
+    width: 35rem;
+    background: #fff;
+    input {
+      display: flex;
+      flex: 1;
+      width: auto;
+      color: #0e2f5a;
+      font-size: 1.1rem;
+      padding: 1rem 1rem;
+      border: 1px solid #fff;
+      background: transparent;
+      outline: 1px solid #0e2f5a;
+    }
+    div {
+      height: auto;
+      width: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f84e06;
+      cursor: pointer;
+    }
+  `
 
   const [Width, setWidth] = useState(null)
 
@@ -73,22 +110,24 @@ const Footer = (props: CustomProps): JSX.Element => {
     <div>
       {showLaunchEvent ? null : (
         <Testing>
-          <br />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Text small white>
+          <div>
+            <Text white>
               Thinking of Organizing an event? <br />
               Oasis is flexible enough to upscale and downscale automatically to
               fit your event needs.
             </Text>
-            <CustomButton> Create An Event Today </CustomButton>
+
+            <span style={{ display: "flex", justifyContent: "center" }}>
+              <InputBox>
+                <input placeholder="Let's contact you via an email." />
+                <div>
+                  <IoIosSend
+                    style={{ transform: "rotate(42deg)", fontSize: "2rem" }}
+                  />
+                </div>
+              </InputBox>
+            </span>
           </div>
-          <br />
         </Testing>
       )}
       <FooterBody>
@@ -122,7 +161,7 @@ const Footer = (props: CustomProps): JSX.Element => {
                       rel="noopenerr"
                       style={{ textDecoration: "none" }}
                     >
-                      <FiTwitter style={{ color: "blue", fontSize: "2rem" }} />
+                      <FiTwitter style={{ fontSize: "2rem" }} />
                     </a>
                   </HoverCircle>
 
@@ -233,6 +272,7 @@ const Footer = (props: CustomProps): JSX.Element => {
           style={{
             backgroundColor: "transparent",
             fontSize: "0.9rem",
+            height: "6rem",
           }}
         >
           <p>
