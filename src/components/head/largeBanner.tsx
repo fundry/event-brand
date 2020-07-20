@@ -84,7 +84,7 @@ const LargeBanner = () => {
               style={{
                 color: "#F84E06",
                 padding: "0.3rem 1.5rem",
-                background: Animation ? "#401364d4" : "transparemt",
+                background: Animation ? "#401364d4" : "transparent",
                 borderBottom: "5px solid #F84E06",
               }}
             >
