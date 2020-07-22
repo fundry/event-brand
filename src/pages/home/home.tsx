@@ -78,6 +78,27 @@ const FitHover = styled(Hover)`
   `};
 `
 
+const SupportBox = styled.div`
+  width: 25rem;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+  background: #22263d;
+  color: white;
+  position: absolute;
+  position: -webkit-sticky;
+  bottom: 0rem;
+  float: right;
+  transition: all 800ms;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 3px 1px 3px 0px grey;
+`
+
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
 
@@ -169,6 +190,20 @@ const Home = (): JSX.Element => {
 
       <Security />
       <br />
+
+      <SupportBox>
+        <div style={{ display: "flex" }}>
+          <Hover style={{ margin: "0rem 0.2rem" }}>
+            <IoMdRocket style={{ fontSize: "1.7rem" }} />
+          </Hover>
+
+          <Text style={{ color: "#fff" }} small>
+            {" "}
+            How can we help with your event?{" "}
+          </Text>
+        </div>
+      </SupportBox>
+
       <br />
     </Layout>
   )

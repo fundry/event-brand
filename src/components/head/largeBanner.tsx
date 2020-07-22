@@ -119,7 +119,6 @@ const LargeBanner = () => {
                 borderBottom: "5px solid #F84E06",
               }}
             >
-              {" "}
               {words[currentItem]}.
             </span>
           </Motto>
