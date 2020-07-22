@@ -14,19 +14,20 @@ const Texts = styled(Text)`
 
 const Bouncer = keyframes`
   from {
-    height: 850px;
+    height: 650px;
   }
   to {
-    height: 830px;
+    height: 630px;
   }
-  ${media.lessThan("large")`
+`
+
+const SmallBouncer = keyframes`
   from {
-    height: 550px;
+    height: 350px;
   }
   to {
-    height: 530px;
+    height: 330px;
   }
-  `};
 `
 
 const Grid = styled.div`
@@ -34,17 +35,16 @@ const Grid = styled.div`
   grid-gap: 0rem 1rem;
   grid-template-columns: 40% 60%;
   img {
-    animation: ${Bouncer} 2500ms ease-in-out 0s infinite;
+    // animation: ${Bouncer} 2500ms ease-in-out 0s infinite;
     margin-left: 1rem;
-    width: 750px;
-    height: 700px;
+    width: 800px;
+    height: 600px;
     transition: all 400ms;
   }
   div {
-    margin-top: 1rem;
+    margin-top: 3rem;
     text-align: right;
     width: 45rem;
-    margin: 1rem 0em;
   }
   ${media.lessThan("huge")`
   margin-top: 1rem;
@@ -56,17 +56,20 @@ const Grid = styled.div`
     display : flex;
     flex-direction : column;
      align-items  : center;
+     margin-left : 5rem;
      justify-content : center;
     img {
-      animation : ${Bouncer} 2500ms ease-in-out 0s infinite;
-      width: 500px;
-      height: 500px;
+      // animation : ${SmallBouncer} 2500ms ease-in-out 0s infinite;
+      width: 400px;
+      height: 400px;
       transition: all 400ms;
     }
     div {
+    text-align: center;
+
       margin-top: 0rem;
        width: auto;
-       margin: 1rem  0em;
+       margin: 0rem  0em;
     }
   `};
   ${media.lessThan("small")`
@@ -78,13 +81,8 @@ const LargeBanner = () => {
   const words = ["Streams", "Events", "Communities", "Talk Drafts"]
   const colors = ["#690579", "#22263d", "indigo", "#401364"]
 
-  const [currentText, setText] = useState<string>("Events")
-  const [time, setTime] = useState<number>(300)
   const [currentItem, setCurrentItem] = useState<number>(0)
-  const [Colour, setColour] = useState<string>("#9EE9DF")
-  const [TextColour, setTextColour] = useState<string>(
-    colors[currentItem] === "#9EE9DF" ? "#22263d" : "#401364"
-  )
+  const [TextColour, setTextColour] = useState<string>("#22263d")
   const [Animation, showAnimation] = useState(false)
 
   useEffect(() => {
@@ -96,13 +94,11 @@ const LargeBanner = () => {
   }, [])
 
   setTimeout(() => {
-    // setColour()
-    setTextColour("#fff")
     showAnimation(true)
   }, 1000)
 
   return (
-    <div style={{ transition: "all 600ms", background: colors[currentItem] }}>
+    <div style={{ transition: "all 600ms" }}>
       <Grid>
         <img
           src={!Animation ? Illustration : StreamsIllustration}
@@ -127,13 +123,8 @@ const LargeBanner = () => {
               {words[currentItem]}.
             </span>
           </Motto>
-          <br />
 
           <div style={{ textAlign: "center" }}>
-            <Texts style={{ color: TextColour, textAlign: "center" }}>
-              Planning an event Today ?
-            </Texts>
-
             <Texts style={{ color: TextColour, textAlign: "center" }}>
               Leverage tools built within Oasis to redefine the regular event
               experience for your event team and your attendees !
@@ -159,7 +150,7 @@ const LargeBanner = () => {
           </div>
         </div>
       </Grid>
-      <div style={{ height: "150px", overflow: "hidden" }}>
+      {/* <div style={{ height: "150px", overflow: "hidden" }}>
         <svg
           viewBox="0 0 500 150"
           preserveAspectRatio="none"
@@ -170,7 +161,7 @@ const LargeBanner = () => {
             style={{ stroke: "none", fill: "#f2f5ff" }}
           ></path>
         </svg>
-      </div>
+      </div> */}
     </div>
   )
 }

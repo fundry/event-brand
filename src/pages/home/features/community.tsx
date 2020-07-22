@@ -2,7 +2,12 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import { Text, CustomButton, Title, HeadTitle } from "../../../styles/style"
+import {
+  Text,
+  CustomButton as Button,
+  Title,
+  HeadTitle,
+} from "../../../styles/style"
 import Sample from "../../../assets/svg/illustration.svg"
 import Ipad from "../../../assets/svg/ipad.svg"
 import CommunityBckg from "../../../assets/svg/community.svg"
@@ -14,6 +19,7 @@ const Body = styled.div`
   background-image: url(${(props: { img: any }) => props.img});
   background-position: center;
   object-fit: center;
+  overflow: hidden;
   ${media.lessThan("large")`
     padding: 2rem 3rem;
   `}
@@ -47,12 +53,45 @@ const Grid = styled.div`
     }
   `};
   ${media.lessThan("medium")`
-    grid-gap: 0rem 5rem;
-  `};
-  ${media.lessThan("small")`
-    grid-gap: 0rem 10rem;
+  display : flex;
+  flex-direction : column;
+  align-items: center;
+  img { 
+   transition : all 600ms; 
+   height: 250px;
+   max-width: 80%;
+   margin: 0rem 0rem;
+   transform : -10%;
+ }
+ h4, p {
+   text-align : center;
+ } 
   `};
 `
+
+const CustomButton = styled(Button)`
+  ${media.lessThan("large")`
+  font-size: 1.05rem;
+  width : 17.5rem; 
+   &: hover {
+   width : 18rem; 
+  }
+  `};
+  ${media.lessThan("medium")`
+  padding: 0.35rem 0.3rem;
+  transition: all 450ms;
+  border: 1px solid #f84e06;
+  border-radius: 4px;
+  font-size: 1rem;
+    margin : 2rem 5rem;
+  width: 15rem;
+  &: hover {
+    width : 15rem; 
+  }
+`}
+`
+
+const Image = styled.div``
 
 export default class community extends Component {
   state = {
@@ -77,7 +116,7 @@ export default class community extends Component {
       if (entry.isIntersecting) {
         this.setState({
           transform: 0,
-          imgTransform: 10,
+          imgTransform: 6,
         })
       } else {
         this.setState({
@@ -158,7 +197,7 @@ export default class community extends Component {
             <div
               style={{
                 transition: "all 800ms",
-                marginTop: "4rem",
+                marginTop: "2rem",
                 transform: `translate(-${this.state.transform}%)`,
               }}
             >
@@ -188,7 +227,7 @@ export default class community extends Component {
           <br />
 
           <Grid>
-            <div style={{ marginTop: "6rem" }}>
+            <div style={{ marginTop: "3rem" }}>
               <Title> Transparent Talk Draft Process </Title>
 
               <Text small white>

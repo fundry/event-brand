@@ -33,10 +33,32 @@ const Grid = styled.div`
   ${media.lessThan("medium")`
   display: flex;
   flex-direction: column;
+  align-items  : center;
+  img {
+    margin : 2rem;
+    max-width : 70%;
+  }
+  p {
+    margin: 0rem 1rem;
+    text-indent: 30px;
+    width: auto;
+    text-align: center;
+  }
   `};
   ${media.lessThan("small")`
   display: flex;
   flex-direction: column;
+  align-items  : center;
+  img {
+    margin : 0.1rem;
+    max-width : 80%;
+  };
+  p {
+    margin: 0rem 1rem;
+    text-indent: 30px;
+    width: auto;
+    text-align: center;
+  }
   `};
 `
 
@@ -54,6 +76,15 @@ const OpaqueButton = styled.button`
     color: #fff;
     border-radius: 20px;
   }
+  ${media.lessThan("small")`
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right  : 5rem; 
+  padding: 0.4rem 0.8rem;
+  &: hover {
+    border-radius: 7px;
+  }
+`};
 `
 
 const Security = () => {

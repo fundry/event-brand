@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { DiAppstore } from "react-icons/di"
 import { FaGooglePlay } from "react-icons/fa"
-import { IoIosAlarm } from "react-icons/io"
+import { IoIosAlarm, IoIosDesktop, IoIosPhonePortrait } from "react-icons/io"
 import styled from "styled-components"
-import { FiImage, FiCalendar } from "react-icons/fi"
+import { FiImage, FiCalendar, FiMonitor, FiPhone } from "react-icons/fi"
 import { CSSTransition } from "react-transition-group"
 
 import Iphone from "../../../assets/svg/iphone.svg"
@@ -15,6 +15,9 @@ import {
   CustomButton,
   HeadTitle,
 } from "../../../styles/style"
+import media from "styled-media-query"
+
+// Using alot of vars for CSS inorder to make them responsive
 
 const Grid = styled.div`
   display: grid;
@@ -23,12 +26,27 @@ const Grid = styled.div`
   p {
     padding : 0rem 5rem
   }
+  ${media.lessThan("large")`
+      grid-gap: 0rem 0rem;
+      grid-template-columns: auto 25rem; 
+      p {
+        padding : 0rem 0rem
+      }
+  `};
+  ${media.lessThan("medium")`
+  display : flex;
+  flex-direction : column;
+  align-items: center;
+  p {
+    padding : 1rem 0rem
+  }
+    `};
 };
 `
 
 const Circle = styled.div`
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   border: 1px solid #f84e06;
   display: flex;
@@ -44,6 +62,24 @@ const Circle = styled.div`
     background: #f84e06;
     color: #fff;
   }
+`
+
+const TypeCircle = styled.div`
+  width: 75px;
+  height: 75px;
+  border: 1px solid ${props => props.background};
+  background: ${props => props.background};
+  border-radius: 50%;
+  margin: 0.6rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  ${media.lessThan("large")`
+  margin: 1.7rem 0.5rem;
+  height: 60px;
+  width: 60px;
+`};
 `
 
 const Divider = styled.div`
@@ -69,41 +105,129 @@ const Button = styled(CustomButton)`
   }
 `
 
+const Switches = styled.div`
+  ${media.lessThan("large")`
+      display : none;
+    `}
+`
+
+const Description = styled.div`
+  margin-left: 3rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  ${media.lessThan("large")`
+  margin-left: 0rem;
+`}
+`
+
+const Body = styled.div`
+  padding: 1rem 4rem;
+  ${media.lessThan("large")`
+    padding: 1rem 1rem;
+  `};
+`
+
+const Users = styled.div`
+  margin: 0.5rem 0rem;
+  display: flex;
+  justify-content: center;
+  ${media.lessThan("small")`  
+  display : none;
+`}
+`
+
 const App = () => {
   const [ActiveColumn, setActiveColumn] = useState("first")
-  const [Number, setNumber] = useState(0)
-
-  // const increase = () => {
-  //   let no = 0
-  //   no++
-  //   window.requestAnimationFrame(increase)
-  //   setNumber(no)
-  //   console.log(no)
-  // }
-
-  // useEffect(() => {
-  //   increase()
-  // }, [])
-
-  // TODO: HAVENT DONE SLIDING ANIMATION
-  // const animate = () => {
-  //   window.requestAnimationFrame(animate)
-  //   return width
-  // }
-  // animate()
 
   return (
-    <div style={{ padding: "1rem 4rem" }}>
+    <Body>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <HeadTitle center style={{ textAlign: "center", margin: "0rem 1rem" }}>
-          Oasis is a Media Tool. <br />{" "}
-          <span style={{ color: "#F84E06", fontWeight: "bold" }}>
+          Oasis is a Media Tool.
+          <span
+            style={{
+              margin: "0rem 0.5rem",
+              color: "#F84E06",
+              fontWeight: "bold",
+            }}
+          >
             Wield It!{" "}
           </span>{" "}
         </HeadTitle>
       </div>
+
+      <Users>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", margin: "0rem 0.7rem" }}>
+            <div>
+              <TypeCircle background="violet">
+                {" "}
+                <IoIosDesktop style={{ fontSize: "1.8rem" }} />
+              </TypeCircle>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ margin: "2rem 1rem" }}>
+                {" "}
+                For <b> Event Organizers </b>{" "}
+              </Text>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", margin: "0rem 0.7rem" }}>
+            <div>
+              <TypeCircle background="#f84e06">
+                {" "}
+                <IoIosDesktop style={{ fontSize: "1.8rem" }} />{" "}
+              </TypeCircle>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text>
+                {" "}
+                For <b> Event Speakers </b>{" "}
+              </Text>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", margin: "0rem 0.7rem" }}>
+            <div>
+              <TypeCircle background="#22263d">
+                {" "}
+                <IoIosPhonePortrait style={{ fontSize: "1.8rem" }} />{" "}
+              </TypeCircle>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text>
+                {" "}
+                For <b> Event Attendees </b>{" "}
+              </Text>
+            </div>
+          </div>
+        </div>
+      </Users>
+      <br />
+
       <Grid>
-        <div>
+        <Switches>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Circle
               onClick={() => {
@@ -142,17 +266,9 @@ const App = () => {
               <FiImage style={{ fontSize: "1.7rem" }} />{" "}
             </Circle>
           </div>
-        </div>
+        </Switches>
 
-        <div
-          style={{
-            marginLeft: "3rem",
-            display: "flex",
-            flex: 1,
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
-        >
+        <Description>
           <CSSTransition
             in={ActiveColumn === "first"}
             timeout={300}
@@ -200,7 +316,7 @@ const App = () => {
               </Text>
             </div>
           </CSSTransition>
-        </div>
+        </Description>
 
         <div>
           <Flex justifyCenter>
@@ -235,7 +351,7 @@ const App = () => {
         </div>
       </Grid>
       <br />
-    </div>
+    </Body>
   )
 }
 

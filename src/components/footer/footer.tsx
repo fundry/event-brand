@@ -7,9 +7,11 @@ import {
   FiFacebook,
   FiInstagram,
   FiMail,
+  FiSlack,
 } from "react-icons/fi"
 import { IoIosSend } from "react-icons/io"
 import { Link } from "gatsby"
+import media from "styled-media-query"
 
 import {
   Text,
@@ -18,21 +20,32 @@ import {
   Hover,
   FooterList,
   Brand,
-  CustomButton,
 } from "../../styles/style"
 
 const HoverCircle = styled(Hover)`
-  width: 65px;
-  height: 65px;
+  width: 57px;
+  height: 57px;
   display: flex;
   justify-content: center;
-  margin: 0rem 0.5rem;
+  margin: 0.5rem 0.5rem;
   align-items: center;
   border: 1px solid #f84e06;
+  transition: all 300ms;
   box-shadow: 0px 3px 4px #000;
   a {
     color: #fff;
   }
+  &: hover {
+    border: 1px solid #fff;
+  }
+  ${media.lessThan("medium")`
+  width: 50px;
+  height: 50px;
+  `};
+  ${media.lessThan("medium")`
+  width: 47px;
+  height: 47px;
+  `};
 `
 
 interface CustomProps {
@@ -65,23 +78,67 @@ const Footer = (props: CustomProps): JSX.Element => {
       width: auto;
       color: #0e2f5a;
       font-size: 1.1rem;
-      padding: 1rem 1rem;
+      padding: 0.7rem 1rem;
       border: 1px solid #fff;
       background: transparent;
       outline: 1px solid #0e2f5a;
     }
     div {
       height: auto;
-      width: 5rem;
+      width: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
       background: #f84e06;
       cursor: pointer;
     }
+    ${media.lessThan("large")`
+        width: 32rem;
+        input {
+          display: flex;
+          flex: 1;
+          width: auto;
+          color: #0e2f5a;
+          font-size: 1rem;
+          paddif84e06ng: 0.6rem 0.7rem;
+          border: 1px solid #fff;
+        }
+        div {
+          width: 3rem;
+          background: #f84e06;
+        }
+    `}
+    ${media.lessThan("medium")`
+    width: 28rem;
+    input {
+      display: flex;
+      flex: 1;
+      width: auto;
+      color: #0e2f5a;
+      font-size: 0.9rem;
+      padding: 0.6rem 0.7rem;
+      border: 1px solid #fff;
+    }
+    div {
+      width: 2.7rem;
+      background: #f84e06;
+    }
+`}
   `
 
-  const [Width, setWidth] = useState(null)
+  const FooterText = styled(Text)`
+    ${media.lessThan("large")`
+        font-size : 0.9rem
+    `};
+    ${media.lessThan("medium")`
+    font-size : 0.8rem
+`};
+    &: hover {
+      color: #f84e06;
+    }
+  `
+
+  const [Width, setWidth]: any = useState<any>(null)
 
   setTimeout(function() {
     setWidth(window.innerWidth)
@@ -99,9 +156,9 @@ const Footer = (props: CustomProps): JSX.Element => {
   const FooterLink = (props: any) => {
     return (
       <Link to={props.to} style={{ textDecoration: "none" }}>
-        <Text white small>
+        <FooterText white small>
           {props.text}
-        </Text>
+        </FooterText>
       </Link>
     )
   }
@@ -111,12 +168,15 @@ const Footer = (props: CustomProps): JSX.Element => {
       {showLaunchEvent ? null : (
         <Testing>
           <div>
-            <Text white>
+            <Text small white>
               Thinking of Organizing an event? <br />
               Oasis is flexible enough to upscale and downscale automatically to
               fit your event needs.
             </Text>
-
+            <br />
+            <Text small white>
+              Lets have a chat about your event.
+            </Text>
             <span style={{ display: "flex", justifyContent: "center" }}>
               <InputBox>
                 <input placeholder="Let's contact you via an email." />
@@ -133,14 +193,13 @@ const Footer = (props: CustomProps): JSX.Element => {
       <FooterBody>
         <br />
 
-        {Width >= 800 ? (
+        {Width >= 1000 ? (
           <div style={{ padding: "2rem 0.5rem" }}>
             <Flex justifyAround>
               <div>
-                <br />
-                <Brand style={{ color: "#fff", textAlign: "center" }}>
+                <h4 style={{ color: "#fff", textAlign: "center" }}>
                   Oasis For Events
-                </Brand>
+                </h4>
 
                 <Flex justifyAround>
                   <HoverCircle padded>
@@ -150,7 +209,7 @@ const Footer = (props: CustomProps): JSX.Element => {
                       rel="noopenerr"
                       style={{ textDecoration: "none" }}
                     >
-                      <FiFacebook style={{ fontSize: "2rem" }} />
+                      <FiFacebook style={{ fontSize: "1.7rem" }} />
                     </a>
                   </HoverCircle>
 
@@ -161,7 +220,7 @@ const Footer = (props: CustomProps): JSX.Element => {
                       rel="noopenerr"
                       style={{ textDecoration: "none" }}
                     >
-                      <FiTwitter style={{ fontSize: "2rem" }} />
+                      <FiTwitter style={{ fontSize: "1.7rem" }} />
                     </a>
                   </HoverCircle>
 
@@ -172,7 +231,7 @@ const Footer = (props: CustomProps): JSX.Element => {
                       rel="noopenerr"
                       style={{ textDecoration: "none" }}
                     >
-                      <FiInstagram style={{ fontSize: "2rem" }} />
+                      <FiInstagram style={{ fontSize: "1.7rem" }} />
                     </a>
                   </HoverCircle>
 
@@ -214,26 +273,54 @@ const Footer = (props: CustomProps): JSX.Element => {
           <div style={{ padding: "0.5%" }}>
             <Flex justifyCenter>
               <div>
-                <Brand
-                  style={{
-                    textAlign: "center",
-                    marginTop: "1em",
-                    color: "#fff",
-                  }}
-                >
-                  Oasis
-                </Brand>
+                <h4 style={{ color: "#fff", textAlign: "center" }}>
+                  Oasis For Events
+                </h4>
 
                 <Flex justifyAround>
-                  <Hover padded>
-                    <FiFacebook style={{ color: "black", fontSize: "1.8em" }} />
-                  </Hover>
-                  <Hover padded>
-                    <FiTwitter style={{ color: "blue", fontSize: "1.8em" }} />
-                  </Hover>
-                  <Hover padded>
-                    <FiGithub style={{ color: "black", fontSize: "1.8em" }} />
-                  </Hover>
+                  <HoverCircle padded>
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopenerr"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <FiFacebook style={{ fontSize: "1.6rem" }} />
+                    </a>
+                  </HoverCircle>
+
+                  <HoverCircle padded>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopenerr"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <FiTwitter style={{ fontSize: "1.6rem" }} />
+                    </a>
+                  </HoverCircle>
+
+                  <HoverCircle padded>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopenerr"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <FiInstagram style={{ fontSize: "1.6rem" }} />
+                    </a>
+                  </HoverCircle>
+
+                  <HoverCircle padded>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopenerr"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <FiSlack style={{ fontSize: "1.6rem" }} />
+                    </a>
+                  </HoverCircle>
                 </Flex>
               </div>
             </Flex>
@@ -271,13 +358,13 @@ const Footer = (props: CustomProps): JSX.Element => {
         <Testing
           style={{
             backgroundColor: "transparent",
-            fontSize: "0.9rem",
-            height: "6rem",
+            fontSize: "0.8rem",
+            height: "4rem",
           }}
         >
           <p>
             Copyright © {new Date().getFullYear()} , a subsidiary of the
-            <a href="https://www.fundry.netlify.com"> Fundry Program </a>.
+            <a href="https://www.github.com/fundry"> Fundry Program </a>.
             <br /> <a href="/"> Terms of Service </a> or
             <a href="/"> Privacy Policies </a>
           </p>

@@ -3,14 +3,15 @@ import styled from "styled-components"
 import { FiArchive } from "react-icons/fi"
 import { CSSTransition } from "react-transition-group"
 import { IoMdGitNetwork, IoMdColorPalette } from "react-icons/io"
+import media from "styled-media-query"
 
 import { Text, Contain, Title, HeadTitle, Body } from "../../../styles/style"
 
 import "./test.css"
 
 const Circle = styled.div`
-  height: 60px;
-  width: 60px;
+  height: 56px;
+  width: 56px;
   border-radius: 50%;
   border: 1px solid #f84e06;
   display: flex;
@@ -25,11 +26,56 @@ const Circle = styled.div`
     background: #f84e06;
     color: #fff;
   }
+  ${media.lessThan("large")`
+  height: 55px;
+  width: 55px;
+  `};
+  ${media.lessThan("medium")`
+  height: 50px;
+  width: 50px;
+  `};
+  ${media.lessThan("small")`
+  height: 45px;
+  width: 45px;
+  `};
 `
 
 const Divider = styled.div`
   width: 8rem;
   border: 1px solid #401364;
+  ${media.lessThan("medium")`
+  width: 7rem;
+  border: 1px solid #401364;
+  `};
+  ${media.lessThan("small")`
+  width: 5rem;
+  border: 0.8px solid #401364;
+  `};
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-gap: 0rem 2rem;
+  grid-template-columns: 5rem auto 25rem; 
+  p {
+    padding : 0rem 5rem
+  }
+  ${media.lessThan("large")`
+      grid-gap: 0rem 0rem;
+      grid-template-columns: auto 25rem; 
+      p {
+        padding : 0rem 0rem
+      }
+  `};
+  ${media.lessThan("medium")`
+  display : flex;
+  flex-direction : column;
+  align-items: center;
+  p {
+    padding : 0.4rem 0rem
+  }
+    `};
+};
 `
 
 const Experience = () => {
@@ -40,8 +86,9 @@ const Experience = () => {
       <br />
       <Contain>
         <HeadTitle color="#401364">
-          Maintain <span style={{ color: "#F84E06" }}>Long Term Support </span>
+          Event <span style={{ color: "#F84E06" }}>Long Term Support </span>
         </HeadTitle>
+        <br />
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={{ display: "flex" }}>
@@ -94,33 +141,26 @@ const Experience = () => {
             </Circle>
           </div>
         </div>
-
+        <br />
         <CSSTransition
           in={ActiveColumn === "archives"}
           timeout={300}
           classNames={""}
           unmountOnExit
         >
-          <div>
-            <br />
-            <Title style={{ color: "#401364" }}>
-              {" "}
-              Compiled Event Archives{" "}
-            </Title>{" "}
-            <br />
-            <Text
-              small
-              style={{
-                width: "40rem",
-              }}
-            >
-              Give your attendees the oppurtunity to make an informed choice
-              about your event by going through an automatically compiled
-              archive of your event.
-            </Text>
-            <br />
-            <br />
-          </div>
+          <Grid>
+            <div>
+              <Title style={{ color: "#401364" }}>
+                Compiled Event Archives{" "}
+              </Title>{" "}
+              <Text small>
+                Give your attendees the oppurtunity to make an informed choice
+                about your event by going through an automatically compiled
+                archive of your event.
+              </Text>
+              <br />
+            </div>
+          </Grid>
         </CSSTransition>
 
         <CSSTransition

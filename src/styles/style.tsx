@@ -21,8 +21,21 @@ export const CustomButton = styled.button`
 
 export const HeadTitle = styled.h1`
   color: ${(props: { color: any }) => props.color};
-  font-size: ${(props: { app: any }) => (props.app ? null : "2em")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "2.2em")};
   text-align: ${(props: { align: any }) => props.align};
+  ${media.lessThan("huge")`
+  font-size: ${(props: { app: any }) => (props.app ? null : "2em")};
+  `};
+  ${media.lessThan("large")`
+  font-size: ${(props: { app: any }) => (props.app ? null : "1.9em")};
+  `};
+  ${media.lessThan("medium")`
+  font-size: ${(props: { app: any }) => (props.app ? null : "1.8em")};
+  `};
+  ${media.lessThan("small")`
+  font-size: ${(props: { app: any }) => (props.app ? null : "1.6em")};
+  font-weight : lighter;
+  `};
 `
 
 const Contain = styled.div`
@@ -49,22 +62,23 @@ const Text = styled.p`
     props.small ? "1.10rem " : "1.2rem"};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
-  padding: ${props => (props.padded ? "0rem 3rem" : "0rem")}
-    ${media.lessThan("medium")`
-  letter-spacing: 0.03rem;
-  font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.20em")};
-  text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
-`};
+  padding: ${props => (props.padded ? "0rem 3rem" : "0rem")};
   ${media.lessThan("large")`
   letter-spacing: 0.04rem;
-  font-size: ${(props: { small: any }) => (props.small ? "1.1em " : "1.27em")};
+  font-size: ${(props: { small: any }) =>
+    props.small ? "1.1rem " : "1.15rem"};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 2rem" : "0rem")}
 `};
+  ${media.lessThan("medium")`
+letter-spacing: 0.03rem;
+font-size: ${(props: { small: any }) => (props.small ? "0.95rem " : "1rem")};
+text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+padding: ${props => (props.padded ? "0rem 1rem" : "0rem")}
+`};
   ${media.lessThan("small")`
   letter-spacing: 0.01rem;
-font-size: ${(props: { small: any }) => (props.small ? "1em " : "1.10em")};
+font-size: ${(props: { small: any }) => (props.small ? "0.90rem " : "1rem")};
 text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   padding: ${props => (props.padded ? "0rem 0.5rem" : "0rem")}
   `};
@@ -78,10 +92,10 @@ const Title = styled.h4`
     font-size :  1.5rem;
   `};
   ${media.lessThan("large")`
-      font-size :  1.5rem;
+      font-size :  1.4rem;
   `};
-  ${media.lessThan("small")`
-       font-size :  1.5rem;
+  ${media.lessThan("medium")`
+       font-size :  1.35rem;
     `};
 `
 
@@ -128,19 +142,19 @@ const BgTitle = styled.h1`
   color: ${props => (props.white ? "#fff" : null)};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   font-size: ${(props: { support: any }) =>
-      props.support ? "1.75rem" : "2rem"}
-    ${media.lessThan("medium")`
-    font-size : ${(props: { support: any }) =>
-      props.support ? "1.7rem" : "2.05rem"}
-  `};
+    props.support ? "1.75rem" : "2rem"};
   ${media.lessThan("large")`
   font-size : ${(props: { support: any }) =>
     props.support ? "1.77rem" : "2rem"}
   `};
+  ${media.lessThan("medium")`
+  font-size : ${(props: { support: any }) =>
+    props.support ? "1.5rem" : "1.6rem"}
+`};
   ${media.lessThan("small")`
     font-weight: 550;
       font-size : ${(props: { support: any }) =>
-        props.support ? "1.27rem" : "1.40rem"}
+        props.support ? "1.4rem" : "1.45rem"}
     `};
 `
 
@@ -173,12 +187,12 @@ const Motto = styled.h1`
     font-size: 2.7rem;
   `};
   ${media.lessThan("large")`
-    font-size: 2rem
-    padding-top : 0rem;
+    font-size: 2rem;
+    padding-top : 1rem;
   `};
   ${media.lessThan("medium")`
-  font-size: 1.7rem
-    padding-top : 1rem;
+  font-size: 1.9rem;
+   padding-top : 0.7rem;
 `};
 `
 
@@ -326,6 +340,38 @@ const Grid = styled.div`
   grid-template-columns: ${(props: { schedule: any }) =>
     props.schedule ? "55% 45%" : "70% 30%"};
   grid-gap: ${(props: { schedule: any }) => (props.schedule ? "2rem" : "4rem")};
+  p {
+    text-align: left;
+    width: 80%;
+  }
+  h4 {
+  }
+  ${media.lessThan("large")`
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+  `};
+  ${media.lessThan("medium")`
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    grid-gap: ${(props: { schedule: any }) =>
+      props.schedule ? "1rem" : "2rem"};
+    `};
+  ${media.lessThan("small")`
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  grid-gap: ${(props: { schedule: any }) =>
+    props.schedule ? "0rem 1rem" : "1rem"};
+  `};
+  p {
+    padding: 0rem 0.5rem;
+    width: 100%;
+  }
+  h4 {
+    text-align: center;
+  }
 `
 
 const Switch = styled.div`
@@ -445,9 +491,18 @@ const FooterColumnHead = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
+  ${media.lessThan("large")`
+  font-size: 1.1rem;
+`};
+  ${media.lessThan("medium")`
+    font-size: 1.07rem;
+  `};
+  ${media.lessThan("small")`
+  font-size: 0.9rem;
+`};
 `
 
-const FooterList = styled.ul`
+const FooterList = styled.li`
   list-style: none;
 `
 

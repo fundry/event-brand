@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react"
+import { IoMdRocket } from "react-icons/io"
+import { FiArrowRight } from "react-icons/fi"
+import styled, { keyframes } from "styled-components"
+import media from "styled-media-query"
 
-import { HeadTitle, Body } from "../../styles/style"
+import { HeadTitle, Body, Text, Hover } from "../../styles/style"
+import Splash from "../../assets/svg/illustration.svg"
 
 import Banner from "../../components/head/banner"
 import Seo from "../../components/seo"
@@ -13,6 +18,65 @@ import App from "./features/app"
 import Media from "./features/media"
 import Experience from "./features/experience"
 import Community from "./features/community"
+
+const SmallBouncer = keyframes`
+  from {
+    height: 170px;
+  }
+  to {
+    height: 130px;
+  }
+`
+
+const Rocket = styled.div`
+  background-image : url(${(props: { url: any }) => props.url});
+  width : 120px;
+  height : 120px;
+  background : violet;
+  border-radius : 50%;
+  display : flex;
+  justify-content : center;
+  margin : 1rem 0rem;
+  align-items : center;
+  &: hover {
+    cursor : pointer;
+  }
+  ${media.lessThan("huge")`
+  width : 100px;
+  height : 100px;
+  `}
+  ${media.lessThan("large")`
+  width : 95px;
+  height : 95px;
+  `}
+  ${media.lessThan("medium")`
+  width : 85px;
+  height : 85px;
+  `}
+  `
+
+const RIcon = styled(IoMdRocket)`
+  animation: ${SmallBouncer} 2500ms ease-in-out 0s infinite;
+`
+
+const PaddedText = styled(Text)`
+    padding : 0rem 13rem;
+    ${media.lessThan("huge")`
+    padding : 0rem 12rem;
+    `}
+    ${media.lessThan("large")`
+    padding : 0rem 2rem;
+    `}
+    ${media.lessThan("medium")`
+    padding : 0rem 1rem;
+    `}
+`
+
+const FitHover = styled(Hover)`
+  ${media.lessThan("medium")`
+      display : none;
+  `};
+`
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
@@ -38,10 +102,37 @@ const Home = (): JSX.Element => {
       <Body
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
+        <br />
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Rocket img={Splash}>
+            <RIcon style={{ fontSize: "3rem" }} />
+          </Rocket>
+        </div>
+
         <HeadTitle align="center" color="#F84E06">
           Leverage Oasis{" "}
-          <span style={{ color: "#401364" }}> For A Heads Up </span>
+          <span style={{ color: "#401364" }}> As A LaunchPad. </span>
         </HeadTitle>
+        <PaddedText center>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus,
+          omnis eos tenetur officia ducimus quidem totam delectus non ea saepe.
+        </PaddedText>
+
+        <FitHover style={{ display: "flex", justifyContent: "center" }}>
+          <Text style={{ margin: "0rem 0.7rem", fontWeight: "bold" }}>
+            {" "}
+            Evaluate Oasis{" "}
+          </Text>
+          <FiArrowRight style={{ fontSize: "1.7rem" }} />
+        </FitHover>
+        <br />
 
         <Media />
         <br />

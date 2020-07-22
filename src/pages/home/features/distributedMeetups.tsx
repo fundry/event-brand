@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react"
-import { Title, Text, Hover, BgTitle, BigTitle } from "../../../styles/style"
+import React, { useState, useEffect, Component } from "react"
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io"
 import styled from "styled-components"
+import media from "styled-media-query"
+
+import { Title, Text, Hover, BgTitle, BigTitle } from "../../../styles/style"
 
 const Grid = styled.div`
   height: 35vh;
   display: grid;
   grid-gap: 3rem 1rem;
   grid-template-columns: 3rem auto 3rem;
+  ${media.lessThan("large")`
+      display: none;
+  `}
+  ${media.lessThan("medium")`
+  display: none;
+  `}
 `
 
 const name = "Open Source Community Africa"
@@ -35,33 +43,97 @@ const Meetups = [
   },
 ]
 
-const MeetupWindow = styled.div`
-  margin: 0rem 1rem;
-  padding: 3rem 1rem;
-  border-right: 1px solid #fff;
-  width: ${props => (props.active ? "26rem" : "20rem")};
-  height: auto;
-  transition: all 600ms;
-  filter: ${props =>
-    props.active ? "grayscale(0%) blur(0px)" : "grayscale(90%) blur(0.9px)"};
-  &: hover {
-    width: 26rem;
-    filter: grayscale(0%) blur(0px);
-  }
+const Circle = styled.div`
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: #fff;
+  ${media.greaterThan("large")`
+      display: none;
+  `}
 `
 
-const DistributedMeetups = (props): JSX.Element => {
+const CircleGrid = styled.div`
+  display: grid;
+  grid-gap: 2rem 2rem;
+  margin: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+`
+
+export default class DistributedMeetupsObserver extends Component {
+  state = {
+    isInView: false,
+  }
+
+  componentDidMount() {
+    //@ts-ignore
+    this.observer = new window.IntersectionObserver(this.observerCallback, {
+      threshold: 0.5,
+    })
+
+    //@ts-ignore
+    this.observer.observe(this.container)
+  }
+
+  //@ts-ignore
+  observerCallback = entries => {
+    setTimeout(() => {
+      const entry = entries.slice(0).shift()
+      if (entry.isIntersecting) {
+        this.setState({
+          isInView: true,
+        })
+      } else {
+        this.setState({
+          isInView: false,
+        })
+      }
+    }, 50)
+  }
+
+  componentWillUnmount() {
+    //@ts-ignore
+    this.observer.unobserve(this.container)
+  }
+
+  render() {
+    return (
+      <div ref={(node: any) => (this.container = node)}>
+        <DistributedMeetups isInView={this.state.isInView} />
+      </div>
+    )
+  }
+}
+
+const DistributedMeetups = (props: { isInView: boolean }) => {
+  const { isInView } = props
   const [currentWindow, setCurrentWindow] = useState(0)
 
   useEffect(() => {
-    setInterval(() => {
-      setCurrentWindow(currentWindow =>
-        currentWindow > 3 ? 0 : currentWindow + 1
-      )
-    }, 3000)
-
+    if (isInView) {
+      setInterval(() => {
+        setCurrentWindow(currentWindow =>
+          currentWindow > 3 ? 0 : currentWindow + 1
+        )
+      }, 3000)
+    }
     return clearInterval(3000)
-  }, [])
+  }, [isInView])
+
+  const MeetupWindow = styled.div`
+    margin: 0rem 0.5rem;
+    padding: 3rem 0.5rem;
+    border-right: 1px solid #fff;
+    width: ${(props: any) => (props.active ? "26rem" : "20rem")};
+    height: auto;
+    transition: all 600ms;
+    filter: ${(props: any) =>
+      props.active ? "grayscale(0%) blur(0px)" : "grayscale(90%) blur(0.9px)"};
+    &: hover {
+      width: 26rem;
+      filter: grayscale(0%) blur(0px);
+    }
+  `
 
   return (
     <div>
@@ -80,7 +152,6 @@ const DistributedMeetups = (props): JSX.Element => {
         </span>{" "}
         Meetup Groups
       </BigTitle>
-
       <Text white small center>
         Create Multiple groups of your event across different regions to reach a
         far greater audience. <br />
@@ -88,6 +159,7 @@ const DistributedMeetups = (props): JSX.Element => {
         features of the parent event.
       </Text>
       <br />
+      <BigTitle style={{ color: "#fff", textAlign: "center" }}>{name}</BigTitle>
       <Grid>
         <Hover
           style={{
@@ -107,11 +179,6 @@ const DistributedMeetups = (props): JSX.Element => {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <BigTitle style={{ color: "#fff", textAlign: "center" }}>
-              {" "}
-              {name}{" "}
-            </BigTitle>
-
             <div
               style={{
                 display: "flex",
@@ -155,8 +222,12 @@ const DistributedMeetups = (props): JSX.Element => {
           <IoIosArrowForward style={{ fontSize: "3rem" }} />
         </Hover>
       </Grid>
+
+      <CircleGrid>
+        {Meetups.map(() => {
+          return <Circle></Circle>
+        })}
+      </CircleGrid>
     </div>
   )
 }
-
-export default DistributedMeetups

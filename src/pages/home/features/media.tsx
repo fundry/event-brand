@@ -24,7 +24,7 @@ const Media = () => {
             Cloud Storage For Event Data
           </Title>
           <Contain>
-            <Text style={{ width: "80%" }} small>
+            <Text small>
               Store every file relating to your event on the Cloud using Oasis.
               <br /> <br /> While storing these files, you can keep them in a
               great sync with you , your event and your attendees.
@@ -42,47 +42,6 @@ const Media = () => {
               </Link>
             </div>
             <br />
-            <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  background: "#22263d",
-                  height: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "250px",
-                  padding: "0.1rem 0.5rem 0.5rem",
-                  borderRadius: "7px",
-                  margin: "0rem 0.5rem",
-                }}
-              >
-                <img
-                  alt="cloud"
-                  style={{ height: "50px", width: "210px" }}
-                  src={require("../../../assets/images/cloudinary.png")}
-                />
-              </div>
-
-              <div
-                style={{
-                  background: "#22263d",
-                  height: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "250px",
-                  padding: "0.1rem 0.5rem 0.5rem",
-                  borderRadius: "7px",
-                  margin: "0rem 5rem",
-                }}
-              >
-                <img
-                  alt="cloud"
-                  style={{ height: "50px", width: "210px" }}
-                  src={require("../../../assets/images/cloudinary.png")}
-                />
-              </div>
-            </div>
           </Contain>
         </div>
         <img
@@ -99,7 +58,7 @@ const Media = () => {
             In - Event Attendee Marketplace
           </Title>
           <Contain>
-            <Text style={{ width: "80%" }} small>
+            <Text small>
               Leverage your event marketplace provided to your event to create,
               advertise and accept payment for event items and Swags.
               <br /> <br /> Your marketplace can handle purchases bla bla bla
@@ -136,7 +95,7 @@ const Media = () => {
             In - Event Custom Email Invitations
           </Title>
           <Contain>
-            <Text style={{ width: "80%" }} small>
+            <Text small>
               Composing and Sending promotional and invitation emails for your
               event is now simplified using Oasis Email Support.
               <br /> <br /> Get started with broadcasting emails across all
@@ -172,7 +131,7 @@ const Media = () => {
             In-Event Team Support
           </Title>
           <Contain>
-            <Text style={{ width: "80%" }} small>
+            <Text small>
               Spread the workload of organizing your event using Oasis Teams
               support within the console.
               <br /> <br /> Accept Volunteers , create a team and grant them

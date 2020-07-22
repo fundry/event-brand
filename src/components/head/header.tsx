@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
 import { FiChevronRight, FiMenu, FiArrowRight } from "react-icons/fi"
+import styled from "styled-components"
+import media from "styled-media-query"
 
 import {
   HeaderBody,
@@ -16,6 +18,19 @@ interface Props {
 }
 
 // TODO Rewrite this component to use correct UL && LI tags
+
+const Question = styled.div`
+  background: #401364;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  ${media.lessThan("medium")`
+display : none;
+    padding: 0.5rem 0.5rem; 
+`};
+  ${media.lessThan("small")`
+  display : none;
+`}
+`
 
 const Header = ({ style }: Props) => {
   const [Width, setWidth] = useState(null)
@@ -95,8 +110,8 @@ const Header = ({ style }: Props) => {
             </Flex>
           </Flex>
         )}
-      </HeaderBody>{" "}
-      <div style={{ background: "#401364", padding: "0.5rem 1rem" }}>
+      </HeaderBody>
+      <Question>
         <br />
         <br />
         <br />
@@ -123,7 +138,7 @@ const Header = ({ style }: Props) => {
             <FiArrowRight style={{ fontSize: "1.7rem", color: "#f84e06" }} />
           </Hover>
         </div>
-      </div>{" "}
+      </Question>
     </div>
   )
 }
