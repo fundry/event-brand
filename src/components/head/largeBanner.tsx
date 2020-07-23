@@ -99,6 +99,8 @@ const LargeBanner = () => {
 
   return (
     <div style={{ transition: "all 600ms" }}>
+      <br />
+      <br />
       <Grid>
         <img
           src={!Animation ? Illustration : StreamsIllustration}
@@ -161,6 +163,8 @@ const LargeBanner = () => {
           ></path>
         </svg>
       </div> */}
+      <br />
+      <br />
     </div>
   )
 }

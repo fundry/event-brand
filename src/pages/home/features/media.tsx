@@ -18,6 +18,9 @@ const Media = () => {
   return (
     <Contain>
       <br />
+
+      <h2> Oasis Provides </h2>
+
       <Grid schedule>
         <div>
           <Title heightened bold>

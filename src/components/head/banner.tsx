@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Header from "./header"
 
+import Users from "../../pages/home/features/users"
 import LargeBanner from "./largeBanner"
 import SmallBanner from "./smallBanner"
 
@@ -23,7 +24,7 @@ const Banner = (): JSX.Element => {
   return (
     <div style={{ overflow: "hidden" }}>
       <Header style={true} />
-      {Width >= 1050 ? <LargeBanner /> : <SmallBanner />}
+      {Width >= 1050 ? <Users /> : <SmallBanner />}
     </div>
   )
 }

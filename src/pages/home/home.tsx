@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { IoMdRocket } from "react-icons/io"
-import { FiArrowRight } from "react-icons/fi"
+import { IoMdRocket, IoIosContact } from "react-icons/io"
+import { FiArrowRight, FiX } from "react-icons/fi"
 import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 
@@ -12,6 +12,7 @@ import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
 
+import Users from "./features/users"
 import Integration from "./features/integrations"
 import DistributedMeetups from "./features/distributedMeetups"
 import App from "./features/app"
@@ -61,7 +62,7 @@ const RIcon = styled(IoMdRocket)`
 
 const PaddedText = styled(Text)`
     padding : 0rem 13rem;
-    ${media.lessThan("huge")`
+    ${media.lessThan("huge")`Users
     padding : 0rem 12rem;
     `}
     ${media.lessThan("large")`
@@ -79,12 +80,11 @@ const FitHover = styled(Hover)`
 `
 
 const SupportBox = styled.div`
-  width: 25rem;
+  width: 22rem;
   color: #fff;
   height: 60px;
   display: flex;
   padding-top: 20px;
-  justify-content: center;
   align-items: center;
   background: #22263d;
   color: white;
@@ -99,8 +99,28 @@ const SupportBox = styled.div`
   box-shadow: 3px 1px 3px 0px grey;
 `
 
+const FAB = styled.div`
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: blue;
+  color: white;
+  position: absolute;
+  position: -webkit-sticky;
+  bottom: 1rem;
+  float: right;
+  transition: all 800ms;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 3px 1px 3px 0px grey;
+`
+
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
+  const [Support, showSupport] = useState<Boolean>(true)
 
   setTimeout(function() {
     setWidth(window.innerWidth)
@@ -154,7 +174,6 @@ const Home = (): JSX.Element => {
           <FiArrowRight style={{ fontSize: "1.7rem" }} />
         </FitHover>
         <br />
-
         <Media />
         <br />
         <br />
@@ -163,6 +182,7 @@ const Home = (): JSX.Element => {
       </Body>
 
       <br />
+
       <br />
       <Experience />
 
@@ -191,18 +211,36 @@ const Home = (): JSX.Element => {
       <Security />
       <br />
 
-      <SupportBox>
-        <div style={{ display: "flex" }}>
-          <Hover style={{ margin: "0rem 0.2rem" }}>
-            <IoMdRocket style={{ fontSize: "1.7rem" }} />
-          </Hover>
+      {Support && (
+        <SupportBox>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex" }}>
+              <Hover style={{ margin: "0rem 0.2rem" }}>
+                <IoIosContact style={{ fontSize: "1.7rem" }} />
+              </Hover>
 
-          <Text style={{ color: "#fff" }} small>
-            {" "}
-            How can we help with your event?{" "}
-          </Text>
-        </div>
-      </SupportBox>
+              <Text style={{ fontSize: "0.9rem", color: "#fff" }} small>
+                Thinking of organizing an event?
+              </Text>
+            </div>
+
+            <Hover
+              onClick={() => showSupport(!Support)}
+              style={{ margin: "0rem 0.2rem" }}
+            >
+              <FiX style={{ fontSize: "1.3rem" }} />
+            </Hover>
+          </div>
+        </SupportBox>
+      )}
+
+      {!Support && (
+        <FAB>
+          <Hover onClick={() => {}}>
+            <IoIosContact style={{ fontSize: "1.8rem" }} />
+          </Hover>
+        </FAB>
+      )}
 
       <br />
     </Layout>
