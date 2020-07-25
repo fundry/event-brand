@@ -339,12 +339,12 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: ${(props: { schedule: any }) =>
     props.schedule ? "55% 45%" : "70% 30%"};
-  grid-gap: ${(props: { schedule: any }) => (props.schedule ? "2rem" : "4rem")};
+  margin: 2rem 0;
+  grid-gap: ${(props: { schedule: any }) =>
+    props.schedule ? "4rem 5rem" : "4rem 4rem"};
   p {
     text-align: left;
     width: 80%;
-  }
-  h4 {
   }
   ${media.lessThan("large")`
     display : flex;

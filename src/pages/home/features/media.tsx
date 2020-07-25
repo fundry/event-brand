@@ -1,16 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
 import Flex from "styled-flex-component"
-import { FiChevronRight } from "react-icons/fi"
+import { FiChevronRight, FiHeart, FiExternalLink } from "react-icons/fi"
 import styled from "styled-components"
 
-import { Text, BgTitle, Title, Contain, Grid } from "../../../styles/style"
+import { Text, Hover, Title, Contain, Grid } from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
 import Schedule from "../../../assets/svg/schedule.svg"
 
 const TextLink = styled(Text)`
   font-size: 1.1em;
 `
+
+const Cart = styled.div`
+  box-shadow: 0px 3px 6px grey;
+  height: 30vh;
+  width: 15rem;
+  padding: 0.5rem 0.5rem;
+  background: #fff;
+  img {
+    margin: 0;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+  }
+`
+
+const CartGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-gap: 1rem 2rem;
+`
+
+const Items = [{ id: 1 }, { id: 2 }, { id: 3 }]
 
 const Media = () => {
   const hooks = useWindowWidth()
@@ -54,9 +76,57 @@ const Media = () => {
         />
       </Grid>
       <br />
-      <br />
+
       <Grid schedule>
+        <CartGrid>
+          {Items.map(({ id }) => {
+            return (
+              <Cart key={id}>
+                <div
+                  style={{
+                    marginBottom: "5px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Hover style={{ display: "flex" }}>
+                    <Title style={{ fontSize: "1.2rem" }} small>
+                      Concatenate
+                    </Title>
+
+                    <div style={{ margin: "0rem 0.3rem" }}>
+                      <FiExternalLink style={{ fontSize: "1.3rem" }} />
+                    </div>
+                  </Hover>
+
+                  <Hover>
+                    <FiHeart style={{ fontSize: "1.5rem" }} />
+                  </Hover>
+                </div>
+                <div
+                  style={{
+                    marginBottom: "15px",
+                    textAlign: "center",
+                    background: "#f2f5ff",
+                  }}
+                >
+                  <img src={require("../../../assets/svg/illustration.svg")} />
+                </div>
+                <Text style={{ textAlign: "center" }}>
+                  Sneakers <br />{" "}
+                  <span style={{ color: "grey", fontSize: "1rem" }}>
+                    #Clothing , #Attendees{" "}
+                  </span>
+                </Text>
+              </Cart>
+            )
+          })}
+        </CartGrid>
+
         <div>
+          <Title heightened bold>
+            Do More With Less
+          </Title>
           <Title heightened bold>
             In - Event Attendee Marketplace
           </Title>
@@ -84,14 +154,9 @@ const Media = () => {
             </div>
           </Contain>
         </div>
-        <img
-          style={{ margin: "2rem 0.5rem" }}
-          alt="delivery sample"
-          src={Schedule}
-        />
       </Grid>
-      <br />
 
+      <br />
       <Grid schedule>
         <div>
           <Title heightened bold>
@@ -128,7 +193,16 @@ const Media = () => {
         />
       </Grid>
       <br />
+      <br />
+      <br />
+
       <Grid schedule>
+        <img
+          style={{ margin: "2rem 0.5rem" }}
+          alt="delivery sample"
+          src={Schedule}
+        />
+
         <div>
           <Title heightened bold>
             In-Event Team Support
@@ -156,11 +230,6 @@ const Media = () => {
             </div>
           </Contain>
         </div>
-        <img
-          style={{ margin: "2rem 0.5rem" }}
-          alt="delivery sample"
-          src={Schedule}
-        />
       </Grid>
     </Contain>
   )
