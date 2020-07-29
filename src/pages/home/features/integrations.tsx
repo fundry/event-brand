@@ -4,9 +4,24 @@ import { FeaturesList } from "../../../data"
 import Flex from "styled-flex-component"
 import styled from "styled-components"
 
-import { Contain, Text, Title, BgTitle } from "../../../styles/style"
-import { FiArrowRight, FiChevronRight } from "react-icons/fi"
+import {
+  Contain,
+  Body,
+  Text,
+  Title,
+  BgTitle,
+  Items,
+} from "../../../styles/style"
+import {
+  FiArrowRight,
+  FiChevronRight,
+  FiTrello,
+  FiYoutube,
+} from "react-icons/fi"
 import media from "styled-media-query"
+import { FaTwitch, FaDiscord, FaJira, FaSlack } from "react-icons/fa"
+import { DiJira } from "react-icons/di"
+import { IoLogoSlack, IoLogoVimeo } from "react-icons/io"
 
 const OpaqueButton = styled.button`
   padding: 0.8rem 1rem;
@@ -65,24 +80,18 @@ const Card = styled.div`
   `};
 `
 
-const Body = styled.div`
-  margin: 1rem 0.7rem;
-  ${media.lessThan("large")`
-    display : none;
-  `};
-`
-
-const Image = styled.img`
-  height: 90px;
-  width: 220px;
-  padding: 0.5rem;
-  margin: 0rem 0.5rem;
-  ${media.lessThan("small")`
-height: 70px;
-width: 200px;
-padding: 0rem;
-margin : 0rem 1rem;
-`};
+const Item = styled.div`
+  height: auto;
+  width: auto;
+  display: flex;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid grey;
+  border-radius: 30px;
+  margin: 0rem 1rem;
+  &: hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+  }
 `
 
 export default class Integrations extends Component {
@@ -90,111 +99,124 @@ export default class Integrations extends Component {
     opacity: 0,
   }
 
-  componentDidMount() {
-    //@ts-ignore
-    this.observer = new window.IntersectionObserver(this.observerCallback, {
-      threshold: 0.5,
-    })
+  // componentDidMount() {
+  //   //@ts-ignore
+  //   this.observer = new window.IntersectionObserver(this.observerCallback, {
+  //     threshold: 0.5,
+  //   })
 
-    //@ts-ignore
-    this.observer.observe(this.container)
-  }
+  //   //@ts-ignore
+  //   this.observer.observe(this.container)
+  // }
 
-  //@ts-ignore
-  observerCallback = entries => {
-    setTimeout(() => {
-      const entry = entries.slice(0).shift()
-      if (entry.isIntersecting) {
-        this.setState({
-          opacity: 1,
-        })
-      }
-    }, 50)
-  }
+  // //@ts-ignore
+  // observerCallback = entries => {
+  //   setTimeout(() => {
+  //     const entry = entries.slice(0).shift()
+  //     if (entry.isIntersecting) {
+  //       this.setState({
+  //         opacity: 1,
+  //       })
+  //     }
+  //   }, 50)
+  // }
 
-  componentWillUnmount() {
-    //@ts-ignore
-    this.observer.unobserve(this.container)
-  }
+  // componentWillUnmount() {
+  //   //@ts-ignore
+  //   this.observer.unobserve(this.container)
+  // }
 
   render() {
+    const d = [
+      {
+        id: 1,
+        name: "Eventbrite",
+        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 2,
+        name: "Jira",
+        icon: <FaJira style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Trello",
+        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Twitch",
+        icon: <FaTwitch style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Discord",
+        icon: <FaDiscord style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Youtube",
+        icon: <FiYoutube style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Slack",
+        icon: <IoLogoSlack style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Vimeo",
+        icon: <IoLogoVimeo style={{ fontSize: "1.6rem" }} />,
+      },
+      {
+        id: 1,
+        name: "Eventbrite",
+        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
+      },
+    ]
+
     return (
-      <Contain>
+      <Body>
         <br />
         <br />
+        <br />
+        <br />
+
+        <h2 style={{ textAlign: "center" }}>
+          Your External Tools, All In One Place. <br />A Perfect Symphony!
+        </h2>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Card
-            ref={(node: any) => (this.container = node)}
-            style={{ opacity: this.state.opacity }}
-          >
-            <br />
-            <BgTitle center>Integrate With Your External Tools</BgTitle>
-            <Text items center>
-              Bring in your external tools to manage your events better on
-              Oasis.
-            </Text>
-            <br />
-
-            <Flex justifyBetween>
-              {FeaturesList.map(({ title, id, text }) => {
-                return (
-                  <div>
-                    <Contain key={id} center>
-                      <Flex justifyCenter>
-                        <Image
-                          src={require(`../../../assets/images/${id}.png`)}
-                          alt="feature"
-                        />
-                      </Flex>
-                      <br />
-                      <Body>
-                        <Title>{title}</Title>
-
-                        <Text small center>
-                          {text}
-                        </Text>
-
-                        <Flex justifyCenter>
-                          <Link to="" style={{ textDecoration: "none" }}>
-                            <Flex>
-                              <TextLink small bold>
-                                Read More
-                              </TextLink>
-
-                              <FiChevronRight style={{ fontSize: "1.8rem" }} />
-                            </Flex>
-                          </Link>
-                        </Flex>
-                      </Body>
-                    </Contain>
-                  </div>
-                )
-              })}
-            </Flex>
-            <br />
-
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              .
-              <Link to="/docs/tools" style={{ textDecoration: "none" }}>
-                <OpaqueButton>
-                  Learn more about integrations
-                  <div style={{ margin: "0rem 0.7rem" }}>
-                    <FiArrowRight style={{ fontSize: "1.6rem" }} />
-                  </div>
-                </OpaqueButton>
-              </Link>
-            </div>
-            <br />
-          </Card>
+          <Text style={{ width: "40rem" }} center small>
+            Oasis gives you the power to sync your actions on Oasis with your
+            external workflow. So when next you create an event on Discord, you
+            can manage it on Oasis!{" "}
+          </Text>
         </div>
 
-        <br />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Link to="/docs/tools" style={{ textDecoration: "none" }}>
+            <OpaqueButton>
+              Learn more about integrations
+              <div style={{ margin: "0rem 0.7rem" }}>
+                <FiArrowRight style={{ fontSize: "1.6rem" }} />
+              </div>
+            </OpaqueButton>
+          </Link>
+        </div>
         <br />
 
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {d.map(({ id, icon, name }) => {
+            return (
+              <Item key={id}>
+                <div style={{ margin: "0rem 0.5rem" }}>{icon}</div> {name}{" "}
+              </Item>
+            )
+          })}
+        </div>
         <br />
-        <br />
-      </Contain>
+      </Body>
     )
   }
 }

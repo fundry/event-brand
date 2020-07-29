@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import {
-  Body,
-  Text,
-  Title,
-  Motto,
-  CustomButton,
-  Items,
-} from "../../../styles/style"
 import { IoIosArrowDown } from "react-icons/io"
 import { FiExternalLink } from "react-icons/fi"
+import media from "styled-media-query"
+
+import { Text, Title, Motto, CustomButton } from "../../../styles/style"
 
 const Image = styled.img`
   width: 105px;
@@ -22,47 +17,59 @@ const Image = styled.img`
 `
 
 const Card = styled.div`
-  height: 32vh;
+  height: 27vh;
   border: 2px solid #c0c0c0;
-  width: 25rem;
+  width: 20rem;
   margin-left: 33px;
   margin-top: 29px;
-  border-radius: 4px;
-  position : relative;
+  -webkit-border-radius: 15px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 15px;
+  -moz-border-radius-topleft: 0;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  position: relative;
   box-shadow: ${props => (props.grey ? "0px 3px 5px" : "0px")};
-        <br />
-        display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: all 500ms;
-  //filter: ${props => !props.grey && "grayscale(100%) blur(0.2px)"};
   :after {
-    position : absolute;
-    width : 50px;
-    height : 50px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
     box-shadow: ${props => (props.grey ? "0px 3px 5px" : "0px")};
-    background : #fff;
-    border-left : 1.5px solid; 
-    border-bottom : 1.5px solid; 
-    top :  100%;
-    left : 0rem;
-    content : '';
-    margin-top : -321px;
-    margin-left : -23px;
-    transform : rotate(46deg);
-    fill : #fff;
+    background: #fff;
+    border-left: 1.5px solid;
+    border-bottom: 1.5px solid;
+    top: 100%;
+    left: 0rem;
+    content: "";
+    margin-top: -321px;
+    margin-left: -23px;
+    transform: rotate(46deg);
+    fill: #fff;
   }
   ul {
     margin: 0.5rem 0.2rem;
     list-style: none;
-    li {
-      display: flex;
-      cursor: pointer;
-      justify-content: center;
-      align-items: center;
-      margin: 0.4rem 0rem;
-    }
   }
+  ${media.lessThan("huge")`
+  `};
+  ${media.lessThan("large")`
+  `};
+  ${media.lessThan("medium")`
+  `};
+`
+
+const List = styled.li`
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 0rem;
+  border-bottom: ${props => props.item < 4 && "1px solid #c0c0c0"};
+  padding: 0.9rem 0rem;
 `
 
 const HoverCircle = styled.div`
@@ -85,7 +92,65 @@ const Item = styled.div`
   }
 `
 
+const data = {
+  organizers: [
+    {
+      id: 1,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 2,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 3,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 4,
+      feature: "Event Data Cloud Storage",
+    },
+  ],
+  streamers: [
+    {
+      id: 1,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 2,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 3,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 4,
+      feature: "Event Data Cloud Storage",
+    },
+  ],
+  speakers: [
+    {
+      id: 1,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 2,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 3,
+      feature: "Event Data Cloud Storage",
+    },
+    {
+      id: 4,
+      feature: "Event Data Cloud Storage",
+    },
+  ],
+}
 const d = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+
+const { speakers, streamers, organizers } = data
 
 const Users = () => {
   const [currentItem, setCurrentItem] = useState<number>(0)
@@ -113,39 +178,17 @@ const Users = () => {
           <Image src={require("../../../assets/images/users/1.png")} />
           <Card grey={currentItem === 0}>
             <ul>
-              <li>
-                <img
-                  style={{ maxWidth: "19%", marginRight: "0.5rem" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
+              {organizers.map(({ id, feature }) => {
+                return (
+                  <List item={id} key={id}>
+                    <img
+                      style={{ maxWidth: "19%", marginRight: "0.5rem" }}
+                      src={require("../../../assets/svg/illustration.svg")}
+                    />
+                    <Text small> {feature} </Text>
+                  </List>
+                )
+              })}
             </ul>
           </Card>
         </div>
@@ -159,7 +202,6 @@ const Users = () => {
         >
           <div>
             <Motto style={{ textAlign: "center" }}>
-              {" "}
               Oasis Rocks For{" "}
               <span
                 style={{
@@ -170,7 +212,6 @@ const Users = () => {
                   borderBottom: "5px solid #F84E06",
                 }}
               >
-                {" "}
                 {words[currentItem]}
               </span>{" "}
             </Motto>
@@ -213,39 +254,17 @@ const Users = () => {
             <div>
               <Card style={{ width: "20rem" }} grey={currentItem === 0}>
                 <ul>
-                  <li>
-                    <img
-                      style={{ maxWidth: "19%", marginRight: "0.5rem" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> Event Data Cloud Storage </Text>
-                  </li>
-                  <hr />
-                  <li>
-                    <img
-                      style={{ maxWidth: "19%" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> Event Data Cloud Storage </Text>
-                  </li>
-                  <hr />
-
-                  <li>
-                    <img
-                      style={{ maxWidth: "19%" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> Event Data Cloud Storage </Text>
-                  </li>
-                  <hr />
-
-                  <li>
-                    <img
-                      style={{ maxWidth: "19%" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> Event Data Cloud Storage </Text>
-                  </li>
+                  {speakers.map(({ id, feature }) => {
+                    return (
+                      <List item={id} key={id}>
+                        <img
+                          style={{ maxWidth: "19%", marginRight: "0.5rem" }}
+                          src={require("../../../assets/svg/illustration.svg")}
+                        />
+                        <Text small> {feature} </Text>
+                      </List>
+                    )
+                  })}
                 </ul>
               </Card>
             </div>
@@ -256,39 +275,17 @@ const Users = () => {
           <Image src={require("../../../assets/images/users/3.jpg")} />
           <Card grey={currentItem === 2}>
             <ul>
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
-              <hr />
-
-              <li>
-                <img
-                  style={{ maxWidth: "19%" }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-                <Text small> Event Data Cloud Storage </Text>
-              </li>
+              {streamers.map(({ id, feature }) => {
+                return (
+                  <List item={id} key={id}>
+                    <img
+                      style={{ maxWidth: "19%", marginRight: "0.5rem" }}
+                      src={require("../../../assets/svg/illustration.svg")}
+                    />
+                    <Text small> {feature} </Text>
+                  </List>
+                )
+              })}
             </ul>
           </Card>
         </div>

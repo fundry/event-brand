@@ -17,6 +17,7 @@ import {
 } from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
 import Schedule from "../../../assets/svg/schedule.svg"
+import { FaPaypal, FaStripe } from "react-icons/fa"
 
 const TextLink = styled(Text)`
   font-size: 1.1em;
@@ -88,6 +89,18 @@ const CircleList = styled.li`
   `};
 `
 
+const List = styled.ul`
+  list-style: none;
+  margin: 0rem 0.5rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  li {
+    margin: 0rem 1rem;
+    cursor: pointer;
+  }
+`
+
 const Ecommerce = () => {
   const [currentItem, setCurrentItem] = useState(1)
 
@@ -143,8 +156,38 @@ const Ecommerce = () => {
             <CustomButton>Learn More</CustomButton>
           </Link>
           <br />
-          <br /> <br />
-          <br /> <br />
+          <br />
+          <div style={{ display: "flex" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ margin: "0rem 1rem" }}>Integrateable with :</Text>
+            </div>
+
+            <List>
+              <li>
+                <Hover>
+                  <FaPaypal style={{ fontSize: "3rem" }} />
+                </Hover>
+              </li>
+
+              <li>
+                <Hover>
+                  <FaStripe style={{ fontSize: "4.6rem" }} />
+                </Hover>
+              </li>
+
+              <li>
+                <Hover>
+                  <FaPaypal style={{ fontSize: "3rem" }} />
+                </Hover>
+              </li>
+            </List>
+          </div>
         </div>
 
         <div style={{ textAlign: "right", paddingRight: "15rem" }}>
@@ -252,6 +295,9 @@ const Ecommerce = () => {
                     style={{
                       objectFit: "cover",
                       backgroundSize: "cover",
+                      height: "370px",
+                      width: "370px",
+                      borderRadius: "15px 15px 0px 0px",
                     }}
                     src={require(`../../../assets/images/commerce/${id}.jpg`)}
                   />

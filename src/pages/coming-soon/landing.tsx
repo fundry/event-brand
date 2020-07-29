@@ -5,7 +5,7 @@ import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import media from "styled-media-query"
-import { IoIosMegaphone, IoLogoMarkdown } from "react-icons/io"
+import { IoMdMegaphone, IoLogoMarkdown } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
 import { BetaRelease } from "../../data"
@@ -187,7 +187,7 @@ const Landing = (): JSX.Element => {
                   }}
                 >
                   <div style={{ margin: "0rem 0.5rem" }}>
-                    <IoIosMegaphone style={{ fontSize: "1.9rem" }} />{" "}
+                    <IoMdMegaphone style={{ fontSize: "2.1rem" }} />{" "}
                   </div>
                   Stay Notified{" "}
                 </CustomButton>
