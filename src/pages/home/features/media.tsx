@@ -1,236 +1,139 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Flex from "styled-flex-component"
-import { FiChevronRight, FiHeart, FiExternalLink } from "react-icons/fi"
+import { FiMail, FiUsers, FiDatabase } from "react-icons/fi"
 import styled from "styled-components"
+import media from "styled-media-query"
+import { CSSTransition } from "react-transition-group"
 
-import { Text, Hover, Title, Contain, Grid } from "../../../styles/style"
+import Ecommerce from "./ecommerce"
+import {
+  Text,
+  Hover,
+  Title,
+  Contain,
+  Button,
+  BigTitle,
+  Grid,
+  Items,
+} from "../../../styles/style"
 import useWindowWidth from "../../../styles/resize"
 import Schedule from "../../../assets/svg/schedule.svg"
 
-const TextLink = styled(Text)`
-  font-size: 1.1em;
-`
-
-const Cart = styled.div`
-  box-shadow: 0px 3px 6px grey;
-  height: 30vh;
-  width: 15rem;
-  padding: 0.5rem 0.5rem;
-  background: #fff;
-  img {
-    margin: 0;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
+const Item = styled.div`
+  height: auto;
+  width: auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  transition: all 450ms;
+  border: 1px solid ${props => (props.active ? "#fff" : "grey")};
+  border-radius: 30px;
+  margin: 0rem 1rem;
+  &: hover {
+    cursor: pointer;
+    border: 1px solid #fff;
   }
 `
 
-const CartGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  grid-gap: 1rem 2rem;
-`
-
-const Items = [{ id: 1 }, { id: 2 }, { id: 3 }]
-
 const Media = () => {
-  const hooks = useWindowWidth()
+  const [currentItem, setCurrentItem] = useState(1)
+  const [activeView, setActiveView] = useState("cloud")
 
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentItem(currentItem => (currentItem > 4 ? 1 : currentItem + 1))
+    }, 3000)
+
+    return clearInterval(3000)
+  }, [])
   return (
-    <Contain>
+    <Contain
+      style={{
+        margin: "0rem 1rem",
+        padding: "0rem 0rem",
+        color: "#fff",
+        borderRadius: "7px",
+        background: "#2153cc",
+      }}
+    >
       <br />
 
-      <h2> Oasis Provides </h2>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Item active={currentItem === 1} onClick={() => setActiveView("cloud")}>
+          <Hover style={{ margin: "0rem 0.4rem" }}>
+            <FiDatabase style={{ fontSize: "1.4rem" }} />
+          </Hover>
+          Event Cloud Storage
+        </Item>
 
-      <Grid schedule>
-        <div>
-          <Title heightened bold>
-            Cloud Storage For Event Data
-          </Title>
-          <Contain>
-            <Text small>
-              Store every file relating to your event on the Cloud using Oasis.
-              <br /> <br /> While storing these files, you can keep them in a
-              great sync with you , your event and your attendees.
-            </Text>
+        <Item active={currentItem === 2} onClick={() => setActiveView("email")}>
+          <Hover style={{ margin: "0rem 0.4rem" }}>
+            <FiMail style={{ fontSize: "1.4rem" }} />
+          </Hover>
+          Custom Event Emails
+        </Item>
 
-            <div style={{}}>
-              <Link to="/docs/service" style={{ textDecoration: "none" }}>
-                <Flex>
-                  <Text small bold>
-                    Read More
-                  </Text>
+        <Item active={currentItem === 3} onClick={() => setActiveView("team")}>
+          <Hover style={{ margin: "0rem 0.4rem" }}>
+            <FiUsers style={{ fontSize: "1.4rem" }} />
+          </Hover>
+          Event Team Support
+        </Item>
+      </div>
 
-                  <FiChevronRight style={{ fontSize: "2rem" }} />
-                </Flex>
-              </Link>
-            </div>
-            <br />
-          </Contain>
-        </div>
-        <img
-          style={{ margin: "2rem 0.5rem" }}
-          alt="delivery sample"
-          src={Schedule}
-        />
-      </Grid>
       <br />
-
-      <Grid schedule>
-        <CartGrid>
-          {Items.map(({ id }) => {
-            return (
-              <Cart key={id}>
-                <div
-                  style={{
-                    marginBottom: "5px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Hover style={{ display: "flex" }}>
-                    <Title style={{ fontSize: "1.2rem" }} small>
-                      Concatenate
-                    </Title>
-
-                    <div style={{ margin: "0rem 0.3rem" }}>
-                      <FiExternalLink style={{ fontSize: "1.3rem" }} />
-                    </div>
-                  </Hover>
-
-                  <Hover>
-                    <FiHeart style={{ fontSize: "1.5rem" }} />
-                  </Hover>
-                </div>
-                <div
-                  style={{
-                    marginBottom: "15px",
-                    textAlign: "center",
-                    background: "#f2f5ff",
-                  }}
-                >
-                  <img src={require("../../../assets/svg/illustration.svg")} />
-                </div>
-                <Text style={{ textAlign: "center" }}>
-                  Sneakers <br />{" "}
-                  <span style={{ color: "grey", fontSize: "1rem" }}>
-                    #Clothing , #Attendees{" "}
-                  </span>
-                </Text>
-              </Cart>
-            )
-          })}
-        </CartGrid>
-
-        <div>
-          <Title heightened bold>
-            Do More With Less
-          </Title>
-          <Title heightened bold>
-            In - Event Attendee Marketplace
-          </Title>
-          <Contain>
-            <Text small>
-              Leverage your event marketplace provided to your event to create,
-              advertise and accept payment for event items and Swags.
-              <br /> <br /> Your marketplace can handle purchases bla bla bla
-              bla
-            </Text>
-            <br />
+      <div style={{ padding: "3rem 4rem" }}>
+        <CSSTransition timeout={300} in={activeView === "cloud"} unmountOnExit>
+          <Grid schedule>
             <div>
-              <Link
-                to="/docs/service"
-                style={{ textAlign: "right", textDecoration: "none" }}
-              >
-                <Flex>
-                  <TextLink small bold>
-                    Read More
-                  </TextLink>
+              <Title> Cloud Event Storage </Title>
 
-                  <FiChevronRight style={{ fontSize: "1.8rem" }} />
-                </Flex>
-              </Link>
+              <Text white small>
+                Store every file relating to your event on the Cloud using
+                Oasis.
+                <br /> <br /> While storing these files, you can keep them in a
+                great sync with you , your event and your attendees.
+              </Text>
             </div>
-          </Contain>
-        </div>
-      </Grid>
 
-      <br />
-      <Grid schedule>
-        <div>
-          <Title heightened bold>
-            In - Event Custom Email Invitations
-          </Title>
-          <Contain>
-            <Text small>
-              Composing and Sending promotional and invitation emails for your
-              event is now simplified using Oasis Email Support.
-              <br /> <br /> Get started with broadcasting emails across all
-              registered attendees within seconds using Pre-made invitation
-              templates.
-            </Text>
+            <img src={Schedule} />
+          </Grid>
+        </CSSTransition>
+
+        <CSSTransition timeout={300} in={activeView === "email"} unmountOnExit>
+          <Grid schedule>
             <div>
-              <Link
-                to="/docs/service"
-                style={{ textAlign: "right", textDecoration: "none" }}
-              >
-                <Flex>
-                  <TextLink small bold>
-                    Read More
-                  </TextLink>
+              <Title> In - Event Custom Email Invitations </Title>
 
-                  <FiChevronRight style={{ fontSize: "1.8rem" }} />
-                </Flex>
-              </Link>
+              <Text white small>
+                Composing and Sending promotional and invitation emails for your
+                event is now simplified using Oasis Email Support.
+                <br /> <br /> Get started with broadcasting emails across all
+                registered attendees within seconds using Pre-made invitation
+                templates.
+              </Text>
             </div>
-          </Contain>
-        </div>
-        <img
-          style={{ margin: "2rem 0.5rem" }}
-          alt="delivery sample"
-          src={Schedule}
-        />
-      </Grid>
-      <br />
-      <br />
-      <br />
+            <img src={Schedule} />
+          </Grid>
+        </CSSTransition>
 
-      <Grid schedule>
-        <img
-          style={{ margin: "2rem 0.5rem" }}
-          alt="delivery sample"
-          src={Schedule}
-        />
-
-        <div>
-          <Title heightened bold>
-            In-Event Team Support
-          </Title>
-          <Contain>
-            <Text small>
-              Spread the workload of organizing your event using Oasis Teams
-              support within the console.
-              <br /> <br /> Accept Volunteers , create a team and grant them
-              access to a specific part of your event console.
-            </Text>
+        <CSSTransition timeout={300} in={activeView === "team"} unmountOnExit>
+          <Grid schedule>
             <div>
-              <Link
-                to="/docs/service"
-                style={{ textAlign: "right", textDecoration: "none" }}
-              >
-                <Flex>
-                  <TextLink small bold>
-                    Read More
-                  </TextLink>
-
-                  <FiChevronRight style={{ fontSize: "1.8rem" }} />
-                </Flex>
-              </Link>
+              <Title> In-Event Team Support </Title>
+              <Text white small>
+                Spread the workload of organizing your event using Oasis Teams
+                support within the console.
+                <br /> <br /> Accept Volunteers , create a team and grant them
+                access to a specific part of your event console.
+              </Text>
             </div>
-          </Contain>
-        </div>
-      </Grid>
+            <img src={Schedule} />
+          </Grid>
+        </CSSTransition>
+      </div>
+
+      <Ecommerce />
     </Contain>
   )
 }

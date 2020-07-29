@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { Body, Text, Title, Motto, CustomButton } from "../../../styles/style"
+import {
+  Body,
+  Text,
+  Title,
+  Motto,
+  CustomButton,
+  Items,
+} from "../../../styles/style"
 import { IoIosArrowDown } from "react-icons/io"
 import { FiExternalLink } from "react-icons/fi"
 
@@ -23,7 +30,8 @@ const Card = styled.div`
   border-radius: 4px;
   position : relative;
   box-shadow: ${props => (props.grey ? "0px 3px 5px" : "0px")};
-  display: flex;
+        <br />
+        display: flex;
   justify-content: center;
   align-items: center;
   transition: all 500ms;
@@ -63,6 +71,21 @@ const HoverCircle = styled.div`
     cursor: pointer;
   }
 `
+
+const Item = styled.div`
+  height: auto;
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid grey;
+  border-radius: 20px;
+  margin: 0rem 1rem;
+  &: hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+  }
+`
+
+const d = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 const Users = () => {
   const [currentItem, setCurrentItem] = useState<number>(0)
@@ -296,8 +319,17 @@ const Users = () => {
         </div>
       </div>
 
-      <br />
-      <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "0.5rem 1rem",
+        }}
+      >
+        {d.map(() => {
+          return <Item>Organization</Item>
+        })}
+      </div>
     </div>
   )
 }

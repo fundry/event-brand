@@ -22,7 +22,7 @@ import Community from "./features/community"
 
 const SmallBouncer = keyframes`
   from {
-    height: 170px;
+    height: 170px;#363e6eeb
   }
   to {
     height: 130px;
@@ -157,23 +157,15 @@ const Home = (): JSX.Element => {
           </Rocket>
         </div>
 
+        <div style={{ display: "flex", justifyContent: "space-between" }}></div>
         <HeadTitle align="center" color="#F84E06">
           Leverage Oasis{" "}
           <span style={{ color: "#401364" }}> As A LaunchPad. </span>
         </HeadTitle>
-        <PaddedText center>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus,
-          omnis eos tenetur officia ducimus quidem totam delectus non ea saepe.
-        </PaddedText>
 
-        <FitHover style={{ display: "flex", justifyContent: "center" }}>
-          <Text style={{ margin: "0rem 0.7rem", fontWeight: "bold" }}>
-            {" "}
-            Evaluate Oasis{" "}
-          </Text>
-          <FiArrowRight style={{ fontSize: "1.7rem" }} />
-        </FitHover>
         <br />
+        <br />
+
         <Media />
         <br />
         <br />

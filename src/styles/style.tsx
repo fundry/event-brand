@@ -84,7 +84,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   `};
 `
 
-const Title = styled.h4`
+const Title = styled.h3`
   color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "400" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
@@ -160,7 +160,7 @@ const BgTitle = styled.h1`
 
 const Body = styled.div`
   padding: ${(props: { banner: any }) =>
-    props.banner ? "0rem 12em" : "0rem 8em"};
+    props.banner ? "0rem 10em" : "0rem 2em"};
   background: ${(props: { banner: any }) =>
     props.banner ? "transparent" : null};
   color: ${(props: { banner: any }) => (props.banner ? "#401364" : null)};
@@ -338,10 +338,10 @@ const Slider = styled.ul`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: ${(props: { schedule: any }) =>
-    props.schedule ? "55% 45%" : "70% 30%"};
+    props.schedule ? "50% 40%" : "70% 30%"};
   margin: 2rem 0;
   grid-gap: ${(props: { schedule: any }) =>
-    props.schedule ? "4rem 5rem" : "4rem 4rem"};
+    props.schedule ? "2rem 5rem" : "2rem 4rem"};
   p {
     text-align: left;
     width: 80%;
@@ -368,9 +368,6 @@ const Grid = styled.div`
   p {
     padding: 0rem 0.5rem;
     width: 100%;
-  }
-  h4 {
-    text-align: center;
   }
 `
 

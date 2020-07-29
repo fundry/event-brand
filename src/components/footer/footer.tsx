@@ -61,7 +61,7 @@ const Footer = (props: CustomProps): JSX.Element => {
     height: 30vh;
     flex-direction: column;
     justify-content: center;
-    background: #0e2f5a;
+    background: #2153cc;
     padding: 1rem;
     color: #fff;
     div {
