@@ -91,7 +91,7 @@ const CustomButton = styled(Button)`
 `}
 `
 
-const Image = styled.div``
+const Circle = styled.div``
 
 export default class community extends Component {
   state = {

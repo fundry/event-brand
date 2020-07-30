@@ -175,7 +175,6 @@ const App = () => {
               }}
             >
               <Text style={{ margin: "2rem 1rem" }}>
-                {" "}
                 For <b> Event Organizers </b>{" "}
               </Text>
             </div>
