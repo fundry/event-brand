@@ -1,27 +1,16 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import Flex from "styled-flex-component"
 import { FiChevronRight, FiChevronLeft, FiHeart } from "react-icons/fi"
 import styled from "styled-components"
-import media from "styled-media-query"
 
 import {
   Text,
   Hover,
   Title,
   Contain,
-  Grid,
-  Button,
-  BigTitle,
   CustomButton,
 } from "../../../styles/style"
-import useWindowWidth from "../../../styles/resize"
-import Schedule from "../../../assets/svg/schedule.svg"
 import { FaPaypal, FaStripe } from "react-icons/fa"
-
-const TextLink = styled(Text)`
-  font-size: 1.1em;
-`
 
 const CartGrid = styled.div`
   display: grid;
@@ -31,10 +20,19 @@ const CartGrid = styled.div`
 
 const Background = styled.div`
   margin: 0;
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  background-image: url(${props => props.img});
+  height: 200px;
+  width: 200px;
+  transition: all 500ms;
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+  }
+  &: hover {
+    img {
+      transform: scale(1.5);
+    }
+  }
 `
 
 const Items = [
@@ -44,50 +42,6 @@ const Items = [
   { id: 4, eventName: "Concatenate Africa", tags: "Clothing , Swags" },
   { id: 5, eventName: "Open Source  Africa", tags: "Swags , Stickers" },
 ]
-
-const CircleList = styled.li`
-  list-style: none;
-  margin: 1.3rem 0rem;
-  div {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 1px solid #f84e06;
-    background: ${(props: { active: any }) =>
-      props.active ? "#401364" : "transparent"};
-    transition: all 400ms;
-    color: ${(props: { active: any }) => (props.active ? "#fff" : "#F84E06")};
-    &: hover {
-      cursor: pointer;
-      background: #f84e06;
-      color: #fff;
-    }
-  }
-  ${media.lessThan("huge")`
-  div {
-    height: 35px;
-    width: 35px;
-  }
-  `};
-  ${media.lessThan("large")`
-  div {
-  height: 30px;
-  width: 30px;
-  }
-  `};
-  ${media.lessThan("medium")`
-  div {
-    height: 25px;
-  width: 25px;
-  }
-  `};
-  ${media.lessThan("small")`
-  div {
-    height: 20px;
-  width: 20px;
-  }
-  `};
-`
 
 const List = styled.ul`
   list-style: none;
@@ -107,9 +61,8 @@ const Ecommerce = () => {
   const Cart = styled.div`
     height: auto;
     width: 17rem;
-    padding: 1rem 0.8rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 15px 15px 0px 0px;
-    transition: all 800ms;
     background: ${props =>
       props.item === currentItem ? "#f2f5ff" : "transparent"};
   `
@@ -142,51 +95,61 @@ const Ecommerce = () => {
             color: "#2153cc",
           }}
         >
-          <br /> <br />
-          <br />
-          <h2 style={{ fontWeight: "normal", fontSize: "2.2rem" }}>
-            In - Event Attendee <br />
-            Marketplace
-          </h2>
-          <br />
-          <Link
-            to="/docs/service"
-            style={{ textAlign: "right", textDecoration: "none" }}
-          >
-            <CustomButton>Learn More</CustomButton>
-          </Link>
-          <br />
-          <br />
-          <div style={{ display: "flex" }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Text style={{ margin: "0rem 1rem" }}>Integrateable with :</Text>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ marginLeft: "2rem" }}>
+              <br /> <br />
+              <br />
+              <h2 style={{ fontWeight: "normal", fontSize: "2.2rem" }}>
+                In - Event Attendee <br />
+                Marketplace
+              </h2>
+              <br />
+              <Link
+                to="/docs/service"
+                style={{ textAlign: "right", textDecoration: "none" }}
+              >
+                <CustomButton>Learn More</CustomButton>
+              </Link>
+              <br />
+              <br />
+              <div style={{ display: "flex" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ margin: "0rem 1rem" }}>
+                    Integrateable with :
+                  </Text>
+                </div>
+
+                <List>
+                  <li>
+                    <Hover>
+                      <FaPaypal style={{ fontSize: "3rem" }} />
+                    </Hover>
+                  </li>
+
+                  <li>
+                    <Hover>
+                      <FaStripe style={{ fontSize: "4.6rem" }} />
+                    </Hover>
+                  </li>
+
+                  <li>
+                    <Hover>
+                      <FaPaypal style={{ fontSize: "3rem" }} />
+                    </Hover>
+                  </li>
+                </List>
+              </div>
             </div>
-
-            <List>
-              <li>
-                <Hover>
-                  <FaPaypal style={{ fontSize: "3rem" }} />
-                </Hover>
-              </li>
-
-              <li>
-                <Hover>
-                  <FaStripe style={{ fontSize: "4.6rem" }} />
-                </Hover>
-              </li>
-
-              <li>
-                <Hover>
-                  <FaPaypal style={{ fontSize: "3rem" }} />
-                </Hover>
-              </li>
-            </List>
+            <img
+              style={{ margin: "0.5rem", height: "400px" }}
+              src={require("../../../assets/svg/line.svg")}
+            />
           </div>
         </div>
 
@@ -239,10 +202,8 @@ const Ecommerce = () => {
               <Cart key={id} item={id}>
                 {currentItem === id ? (
                   <div>
-                    {" "}
                     <div
                       style={{
-                        marginBottom: "5px",
                         display: "flex",
                         justifyContent: "space-between",
                       }}
@@ -260,26 +221,25 @@ const Ecommerce = () => {
                         </Title>
                       </Hover>
                     </div>
-                    <Background
-                      img={require(`../../../assets/images/commerce/${id}.jpg`)}
+                    <div
                       style={{
                         display: "flex",
-                        flex: 1,
-                        width: "auto",
-                        backgroundSize: "cover",
-                        margin: "1rem 0rem",
+                        justifyContent: "center",
                       }}
                     >
-                      <Hover>
-                        <FiHeart style={{ fontSize: "1.4rem" }} />
-                      </Hover>
-                    </Background>
-                    <Text style={{ textAlign: "center" }}>
+                      <Background>
+                        <img
+                          src={require(`../../../assets/images/commerce/${id}.jpg`)}
+                        />
+                      </Background>
+                    </div>
+                    <Text small style={{ textAlign: "center" }}>
                       Sneakers <br />{" "}
                       <span style={{ color: "grey", fontSize: "1rem" }}>
                         {tags}
                       </span>
                     </Text>
+
                     <a
                       target="_blank"
                       href="/docs/service"

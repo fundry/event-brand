@@ -10,45 +10,31 @@ import "./test.css"
 const CircleList = styled.li`
   list-style: none;
   margin: 1.3rem 0rem;
-  div {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 1px solid #f84e06;
-    background: ${(props: { active: any }) =>
-      props.active ? "#401364" : "transparent"};
-    transition: all 400ms;
-    color: ${(props: { active: any }) => (props.active ? "#fff" : "#F84E06")};
-    &: hover {
-      cursor: pointer;
-      background: #f84e06;
-      color: #fff;
-    }
-  }
-  ${media.lessThan("huge")`
-  div {
-    height: 35px;
-    width: 35px;
-  }
-  `};
-  ${media.lessThan("large")`
-  div {
+`
+
+const Circle = styled.div`
   height: 30px;
   width: 30px;
-  }
-  `};
-  ${media.lessThan("medium")`
+  border-radius: 50%;
+  border: 1px solid #f84e06;
+  background: ${(props: { ActiveColumn: any }) =>
+    props.ActiveColumn ? "#f84e06" : "transparent"};
+  transition: all 400ms;
   div {
-    height: 25px;
-  width: 25px;
+    display: ${props => (props.TipState ? "flex" : "none")};
+    visibility: ${props => (props.TipState ? "visible" : "hidden")};
+    justify-content: center;
+    align-items: center;
   }
-  `};
-  ${media.lessThan("small")`
-  div {
-    height: 20px;
-  width: 20px;
+  &: hover {
+    cursor: pointer;
+    background: #f84e06;
+    color: #fff;
+    visibility: visible;
+    div {
+      visibility: visible;
+    }
   }
-  `};
 `
 
 const Grid = styled.div`
@@ -77,96 +63,177 @@ const Grid = styled.div`
 };
 `
 
+const Tooltip = styled.div`
+  height: 50px;
+  position: absolute;
+  width: 10rem;
+  transform: translate(-115%);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #000;
+  background: #22263d;
+  margin: -0.5rem 0;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+`
+
+const Tip = styled.div`
+  position: absolute;
+  transform: translate(-70%) rotate(180deg);
+  margin: -0.3rem 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 20px solid transparent;
+  border-right-color: #22263d;
+`
+
 const Experience = () => {
   const [ActiveColumn, setActiveColumn] = useState<string>("archives")
+  const [TipState, setTipState] = useState<string>("archives")
+
+  const [PrevsTipState, setPrevsTipState] = useState<string>("archives")
 
   return (
     <Body>
-      <br />
-      <Contain>
-        <HeadTitle color="#401364">
-          Event <span style={{ color: "#F84E06" }}>Long Term Support </span>
-        </HeadTitle>
+      <Body>
+        <br />
+        <Contain>
+          <HeadTitle color="#401364">
+            Event <span style={{ color: "#F84E06" }}>Long Term Support </span>
+          </HeadTitle>
 
-        <div style={{ display: "grid", gridTemplateColumns: "auto 4rem" }}>
-          <div>
-            <br />
-            <CSSTransition
-              in={ActiveColumn === "archives"}
-              timeout={300}
-              classNames={""}
-              unmountOnExit
-            >
-              <Grid>
+          <div style={{ display: "grid", gridTemplateColumns: "auto 4rem" }}>
+            <div>
+              <br />
+              <CSSTransition
+                in={ActiveColumn === "archives"}
+                timeout={300}
+                classNames={""}
+                unmountOnExit
+              >
+                <Grid>
+                  <div>
+                    <Title style={{ color: "#401364" }}>
+                      Compiled Event Archives{" "}
+                    </Title>{" "}
+                    <Text small>
+                      Give your attendees the oppurtunity to make an informed
+                      choice about your event by going through an automatically
+                      compiled archive of your event.
+                    </Text>
+                    <br />
+                  </div>
+                </Grid>
+              </CSSTransition>
+
+              <CSSTransition
+                in={ActiveColumn === "versioned"}
+                timeout={300}
+                classNames={""}
+                unmountOnExit
+              >
                 <div>
+                  <br />
                   <Title style={{ color: "#401364" }}>
-                    Compiled Event Archives{" "}
+                    Semantically Versioned Events
                   </Title>{" "}
-                  <Text small>
-                    Give your attendees the oppurtunity to make an informed
-                    choice about your event by going through an automatically
-                    compiled archive of your event.
-                  </Text>
+                  <br />
+                  <Text> See event Archive </Text>
                   <br />
                 </div>
-              </Grid>
-            </CSSTransition>
+              </CSSTransition>
 
-            <CSSTransition
-              in={ActiveColumn === "versioned"}
-              timeout={300}
-              classNames={""}
-              unmountOnExit
-            >
-              <div>
-                <br />
-                <Title style={{ color: "#401364" }}>
-                  Semantically Versioned Events
-                </Title>{" "}
-                <br />
-                <Text> See event Archive </Text>
-                <br />
-              </div>
-            </CSSTransition>
+              <CSSTransition
+                in={ActiveColumn === "templates"}
+                timeout={300}
+                classNames={""}
+                unmountOnExit
+              >
+                <div>
+                  <br />
+                  <Title style={{ color: "#401364" }}>
+                    {" "}
+                    Event Templates{" "}
+                  </Title>{" "}
+                  <br />
+                  <Text> See event Archive </Text>
+                  <br />
+                </div>
+              </CSSTransition>
+              <br />
+            </div>
 
-            <CSSTransition
-              in={ActiveColumn === "templates"}
-              timeout={300}
-              classNames={""}
-              unmountOnExit
-            >
-              <div>
-                <br />
-                <Title style={{ color: "#401364" }}>
-                  {" "}
-                  Event Templates{" "}
-                </Title>{" "}
-                <br />
-                <Text> See event Archive </Text>
-                <br />
-              </div>
-            </CSSTransition>
-            <br />
+            <div>
+              <CircleList>
+                <Circle
+                  onClick={() => setActiveColumn("archives")}
+                  ActiveColumn={ActiveColumn === "archives"}
+                  TipState={TipState === "archives"}
+                  onMouseEnter={() => {
+                    setPrevsTipState("archives")
+                    setTipState("archives")
+                  }}
+                  onMouseLeave={() => setTipState(PrevsTipState)}
+                >
+                  <Tip />
+                  <Tooltip> Event Archives </Tooltip>
+                </Circle>
+              </CircleList>
+
+              <CircleList>
+                <Circle
+                  onClick={() => setActiveColumn("Templates")}
+                  ActiveColumn={ActiveColumn === "Templates"}
+                  TipState={TipState === "Templates"}
+                  onMouseEnter={() => {
+                    setPrevsTipState("Templates")
+                    setTipState("Templates")
+                  }}
+                  onMouseLeave={() => setTipState(PrevsTipState)}
+                >
+                  <Tip />
+                  <Tooltip> Event Templates </Tooltip>
+                </Circle>
+              </CircleList>
+
+              <CircleList>
+                <Circle
+                  onClick={() => setActiveColumn("Themes")}
+                  ActiveColumn={ActiveColumn === "Themes"}
+                  TipState={TipState === "Themes"}
+                  onMouseEnter={() => {
+                    setPrevsTipState("Themes")
+                    setTipState("Themes")
+                  }}
+                  onMouseLeave={() => setTipState(PrevsTipState)}
+                >
+                  <Tip />
+                  <Tooltip> Event Themes </Tooltip>
+                </Circle>
+              </CircleList>
+
+              <CircleList>
+                <Circle
+                  onClick={() => setActiveColumn("Something")}
+                  ActiveColumn={ActiveColumn === "Something"}
+                  TipState={TipState === "Something"}
+                  onMouseEnter={() => {
+                    setPrevsTipState("Templates")
+                    setTipState("Something")
+                  }}
+                  onMouseLeave={() => setTipState(PrevsTipState)}
+                >
+                  <Tip />
+                  <Tooltip> Event Something </Tooltip>
+                </Circle>
+              </CircleList>
+            </div>
           </div>
-
-          <div>
-            <CircleList>
-              <div></div>
-            </CircleList>
-            <CircleList>
-              <div></div>
-            </CircleList>
-            <CircleList>
-              <div></div>
-            </CircleList>
-            <CircleList>
-              <div></div>
-            </CircleList>
-          </div>
-        </div>
-      </Contain>
-      <br />
-      <br />
+        </Contain>
+        <br />
+        <br />
+      </Body>
     </Body>
   )
 }

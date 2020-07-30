@@ -1,36 +1,21 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import { FeaturesList } from "../../../data"
-import Flex from "styled-flex-component"
 import styled from "styled-components"
 
-import {
-  Contain,
-  Body,
-  Text,
-  Title,
-  BgTitle,
-  Items,
-} from "../../../styles/style"
-import {
-  FiArrowRight,
-  FiChevronRight,
-  FiTrello,
-  FiYoutube,
-} from "react-icons/fi"
+import { Body, Text } from "../../../styles/style"
+import { FiArrowRight, FiTrello, FiYoutube } from "react-icons/fi"
 import media from "styled-media-query"
 import { FaTwitch, FaDiscord, FaJira, FaSlack } from "react-icons/fa"
-import { DiJira } from "react-icons/di"
 import { IoLogoSlack, IoLogoVimeo } from "react-icons/io"
 
 const OpaqueButton = styled.button`
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.5rem;
   color: #401364;
   border: 0px;
   outline: 0px;
   font-size: 1.1rem;
   display: flex;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 500ms;
   &: hover {
     background: #401364;
@@ -58,26 +43,6 @@ padding: 0.6rem 0.5rem;
   border-radius: 9px;
 }
 `};
-`
-
-const TextLink = styled(Text)`
-  font-size: 1em;
-`
-
-const Card = styled.div`
-  width: 90rem;
-  background: #fff;
-  padding: 1rem 1rem;
-  border: 6px;
-  box-shadow: 0px 2px 3px grey;
-  transition: all 500ms;
-  opacity: ${(props: { opacity: any }) => props.opacity};
-  ${media.lessThan("medium")`
-  background: transparent;
-  border: 0px;
-  padding: 0rem 0.2rem;
-  box-shadow: 0px 0px 0px transparent;
-  `};
 `
 
 const Item = styled.div`
@@ -198,7 +163,7 @@ export default class Integrations extends Component {
           <Link to="/docs/tools" style={{ textDecoration: "none" }}>
             <OpaqueButton>
               Learn more about integrations
-              <div style={{ margin: "0rem 0.7rem" }}>
+              <div style={{ margin: "0rem 0.1rem" }}>
                 <FiArrowRight style={{ fontSize: "1.6rem" }} />
               </div>
             </OpaqueButton>
