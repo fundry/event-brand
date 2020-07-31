@@ -120,7 +120,7 @@ const FAB = styled.div`
 
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
-  const [Support, showSupport] = useState<Boolean>(true)
+  const [Support, showSupport] = useState<Boolean>(false)
 
   setTimeout(function() {
     setWidth(window.innerWidth)
@@ -203,7 +203,7 @@ const Home = (): JSX.Element => {
       <Security />
       <br />
 
-      {Support && (
+      {/* {Support && (
         <SupportBox>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ display: "flex" }}>
@@ -232,7 +232,7 @@ const Home = (): JSX.Element => {
             <IoIosContact style={{ fontSize: "1.8rem" }} />
           </Hover>
         </FAB>
-      )}
+      )} */}
 
       <br />
     </Layout>
