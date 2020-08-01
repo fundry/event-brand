@@ -7,6 +7,7 @@ import Ipad from "../../../assets/svg/ipad.svg"
 import { Text, Title } from "../../../styles/style"
 
 import "./test.css"
+import { FiDatabase } from "react-icons/fi"
 
 const CircleList = styled.li`
   list-style: none;
@@ -90,8 +91,7 @@ const Tip = styled.div`
 `
 
 const Body = styled.div`
-  padding: 8rem 4rem;
-  color: #fff;
+  padding: 5rem 4rem;
   overflow: hidden;
   ${media.lessThan("large")`
     padding: 2rem 3rem;25rem
@@ -99,6 +99,28 @@ const Body = styled.div`
   ${media.lessThan("medium")`
     padding: 2rem 1.5rem;
   `};
+`
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    margin: 1.5rem 1rem;
+  }
+`
+
+const Box = styled.div`
+  background: ${props => props.background};
+  border: 1px solid ${props => props.background};
+  height: 60px;
+  box-shadow: 0 2px 3px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  border-radius: 7px;
+  color: ${props => props.color};
 `
 
 const Experience = () => {
@@ -109,130 +131,123 @@ const Experience = () => {
 
   return (
     <Body>
-      <div style={{ display: "grid", gridTemplateColumns: "auto 4rem" }}>
-        <div>
-          <br />
-          <CSSTransition
-            in={ActiveColumn === "archives"}
-            timeout={300}
-            classNames={""}
-            unmountOnExit
-          >
-            <Grid>
-              <div>
-                <Title style={{ color: "#401364" }}>
-                  Compiled Event Archives{" "}
-                </Title>{" "}
-                <Text small>
-                  Give your attendees the oppurtunity to make an informed choice
-                  about your event by going through an automatically compiled
-                  archive of your event.
-                </Text>
-                <br />
+      <h1 style={{ margin: "0 2rem", color: "#22263d", fontSize: "2.2rem" }}>
+        {" "}
+        Now, You Can <br />
+        Bootstrap An Event Page{" "}
+      </h1>
+      <br />
+      <div style={{ display: "grid", gridTemplateColumns: "60% 40%" }}>
+        <img src={Ipad} alt="Console" />
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <List>
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#22263d">
+                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                </Box>
+
+                <div
+                  style={{
+                    paddingTop: "1rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title small>Using Stored Event Data </Title>
+                </div>
               </div>
 
-              <img src={Ipad} style={{ maxWidth: "45%" }} />
-            </Grid>
-          </CSSTransition>
+              <Text small heightened style={{ width: "35rem" }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium dolorem voluptates ullam aliquid eos fugit
+              </Text>
+            </li>
 
-          <CSSTransition
-            in={ActiveColumn === "versioned"}
-            timeout={300}
-            classNames={""}
-            unmountOnExit
-          >
-            <div>
-              <br />
-              <Title style={{ color: "#401364" }}>
-                Semantically Versioned Events
-              </Title>{" "}
-              <br />
-              <Text> See event Archive </Text>
-              <br />
-            </div>
-          </CSSTransition>
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#22263d">
+                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                </Box>
 
-          <CSSTransition
-            in={ActiveColumn === "templates"}
-            timeout={300}
-            classNames={""}
-            unmountOnExit
-          >
-            <div>
-              <br />
-              <Title style={{ color: "#401364" }}> Event Templates </Title>{" "}
-              <br />
-              <Text> See event Archive </Text>
-              <br />
-            </div>
-          </CSSTransition>
-          <br />
-        </div>
+                <div
+                  style={{
+                    paddingTop: "1rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title small> Engaging Event Forms </Title>
+                </div>
+              </div>
 
-        <div>
-          <CircleList>
-            <Circle
-              onClick={() => setActiveColumn("archives")}
-              ActiveColumn={ActiveColumn === "archives"}
-              TipState={TipState === "archives"}
-              onMouseEnter={() => {
-                setPrevsTipState("archives")
-                setTipState("archives")
-              }}
-              onMouseLeave={() => setTipState(PrevsTipState)}
-            >
-              <Tip />
-              <Tooltip> Event Archives </Tooltip>
-            </Circle>
-          </CircleList>
+              <Text heightened small style={{ width: "35rem" }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium dolorem voluptates ullam aliquid eos fugit
+              </Text>
+            </li>
 
-          <CircleList>
-            <Circle
-              onClick={() => setActiveColumn("Templates")}
-              ActiveColumn={ActiveColumn === "Templates"}
-              TipState={TipState === "Templates"}
-              onMouseEnter={() => {
-                setPrevsTipState("Templates")
-                setTipState("Templates")
-              }}
-              onMouseLeave={() => setTipState(PrevsTipState)}
-            >
-              <Tip />
-              <Tooltip> Event Templates </Tooltip>
-            </Circle>
-          </CircleList>
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#22263d">
+                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                </Box>
 
-          <CircleList>
-            <Circle
-              onClick={() => setActiveColumn("Themes")}
-              ActiveColumn={ActiveColumn === "Themes"}
-              TipState={TipState === "Themes"}
-              onMouseEnter={() => {
-                setPrevsTipState("Themes")
-                setTipState("Themes")
-              }}
-              onMouseLeave={() => setTipState(PrevsTipState)}
-            >
-              <Tip />
-              <Tooltip> Event Themes </Tooltip>
-            </Circle>
-          </CircleList>
+                <div
+                  style={{
+                    paddingTop: "1rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title small> Reflective Event Design and Layout </Title>
+                </div>
+              </div>
 
-          <CircleList>
-            <Circle
-              onClick={() => setActiveColumn("Something")}
-              ActiveColumn={ActiveColumn === "Something"}
-              TipState={TipState === "Something"}
-              onMouseEnter={() => {
-                setPrevsTipState("Templates")
-                setTipState("Something")
-              }}
-              onMouseLeave={() => setTipState(PrevsTipState)}
-            >
-              <Tip />
-              <Tooltip> Event Something </Tooltip>
-            </Circle>
-          </CircleList>
+              <Text heightened small style={{ width: "35rem" }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium dolorem voluptates ullam aliquid eos fugit
+              </Text>
+            </li>
+
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#22263d">
+                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                </Box>
+
+                <div
+                  style={{
+                    paddingTop: "1rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title small> Event Template Marketplace </Title>
+                </div>
+              </div>
+
+              <Text heightened small style={{ width: "35rem" }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium dolorem voluptates ullam aliquid eos fugit
+              </Text>
+            </li>
+          </List>
         </div>
       </div>
     </Body>

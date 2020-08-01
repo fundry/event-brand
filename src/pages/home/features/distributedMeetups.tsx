@@ -133,6 +133,7 @@ const DistributedMeetups = (props: { isInView: boolean }) => {
   return (
     <div>
       <br />
+      <h1 style={{ margin: "0 5rem", color: "white" }}> While having : </h1>
       <BigTitle style={{ color: "#fff", textAlign: "center" }}>
         Regionally{" "}
         <span

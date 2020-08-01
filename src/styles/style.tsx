@@ -61,7 +61,7 @@ const Text = styled.p`
   font-size: ${(props: { small: any }) =>
     props.small ? "1.10rem " : "1.2rem"};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
-  line-height: ${props => (props.heightened ? "2.5rem" : "1.8rem")};
+  line-height: ${props => (props.heightened ? "2.2rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")};
   ${media.lessThan("large")`
   letter-spacing: 0.04rem;
@@ -84,7 +84,7 @@ text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   `};
 `
 
-const Title = styled.h3`
+const Title = styled.h4`
   color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "400" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};

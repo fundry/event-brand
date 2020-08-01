@@ -5,7 +5,7 @@ import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import media from "styled-media-query"
-import { IoMdMegaphone, IoLogoMarkdown } from "react-icons/io"
+import { IoMdMegaphone } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
 import { BetaRelease } from "../../data"
@@ -23,26 +23,46 @@ const Grid = styled.div`
   `};
 `
 
-const Input = styled.input`
-  width: 35rem;
-  padding: 0.5rem 1rem;
+const InputBox = styled.div`
+  width: auto;
+  height: auto;
   border-radius: 7px;
-  outline: 0px;
-  border-style: dashed;
-  font-size: 1.1rem;
-  transition: all 450ms;
-  font-weight: 600;
-  color: #401364;
-  &: hover {
-    border: 5px solid #0b33a2;
+  border: 0;
+  display: flex;
+  padding: 0;
+  input {
+    width: 27rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0px;
+    border: 0px;
+    outline: 0px;
+    font-size: 1.1rem;
+    transition: all 450ms;
+    font-weight: 600;
+    color: #401364;
+  }
+  button {
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    background: #22263d;
+    border: 0px;
+    border-radius: 0 10px 10px 0;
   }
   ${media.lessThan("medium")`
-  width: 30rem;
-  `}
+    input {
+      width: 30rem;
+    }
+    `}
   ${media.lessThan("small")`
+input {
   width: 25rem;
-  `}
 }
+    `}
+    &: hover {
+    button {
+      cursor: pointer;
+    }
+  }
 `
 
 const Landing = (): JSX.Element => {
@@ -147,7 +167,7 @@ const Landing = (): JSX.Element => {
         </Text>
       </div>
 
-      <Body style={{ padding: "5rem 1rem" }}>
+      <Body style={{ padding: "3rem 1rem" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <BgTitle white center>
             Oasis For Events
@@ -174,37 +194,35 @@ const Landing = (): JSX.Element => {
         {!Submit ? (
           <Flex justifyCenter>
             <Flex column>
-              <Input
-                type="email"
-                required
-                style={{ fontWeight: "normal", textAlign: "center" }}
-                value={Email}
-                onChange={(e: any) => {
-                  e.preventDefault()
-                  setEmail(e.target.value)
-                }}
-                placeholder="Your Email Address"
-              />
-              <br />
-              <Flex justifyCenter>
-                <CustomButton
+              <InputBox>
+                <input
+                  type="email"
+                  required
+                  style={{ fontWeight: "normal", textAlign: "center" }}
+                  value={Email}
+                  onChange={(e: any) => {
+                    e.preventDefault()
+                    setEmail(e.target.value)
+                  }}
+                  placeholder="Your Email Address"
+                />
+                <button
                   disabled={Email.length < 8}
                   onClick={() => {
                     SubmitData()
                   }}
                   style={{
-                    background: Email.length < 8 && "transparent",
                     display: "flex",
                     color: "#fff",
                     textAlign: "center",
                   }}
                 >
                   <div style={{ margin: "0rem 0.5rem" }}>
-                    <IoMdMegaphone style={{ fontSize: "2.1rem" }} />{" "}
+                    <IoMdMegaphone style={{ fontSize: "1.9rem" }} />{" "}
                   </div>
                   Stay Notified{" "}
-                </CustomButton>
-              </Flex>
+                </button>
+              </InputBox>
             </Flex>
           </Flex>
         ) : (
@@ -276,7 +294,7 @@ const Landing = (): JSX.Element => {
             <img
               alt="Visual Explanation"
               src={Ipad}
-              style={{ height: "auto", maxWidth: "90%" }}
+              style={{ height: "auto", maxWidth: "100%" }}
             />
           ) : (
             <img
