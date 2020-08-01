@@ -36,11 +36,6 @@ const Meetups = [
     name: "Open Source Community Delta",
     summary: "Open Source Community for Delta State",
   },
-  {
-    id: 4,
-    name: "Open Source Community Uyo",
-    summary: "Open Source Community for Uyo State",
-  },
 ]
 
 const Circle = styled.div`

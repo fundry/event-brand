@@ -349,7 +349,6 @@ const App = () => {
           </Contain>
         </div>
       </Grid>
-      <br />
     </Body>
   )
 }

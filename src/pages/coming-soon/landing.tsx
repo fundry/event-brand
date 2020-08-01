@@ -97,6 +97,19 @@ const Landing = (): JSX.Element => {
       })
   }
 
+  const debouncer = (func: any, timer: number) => {
+    let timeId: any = null
+
+    return (...args: any) => {
+      if (timeId) {
+        clearTimeout(timeId)
+      }
+      timeId = setTimeout(() => {
+        func(...args)
+      }, timer)
+    }
+  }
+
   return (
     <div style={{ background: "#401364" }}>
       <Helmet>

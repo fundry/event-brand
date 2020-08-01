@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { FiChevronRight, FiChevronLeft, FiHeart } from "react-icons/fi"
+import { FiEye, FiChevronRight, FiChevronLeft, FiHeart } from "react-icons/fi"
 import styled from "styled-components"
 
 import {
@@ -14,6 +14,7 @@ import { FaPaypal, FaStripe } from "react-icons/fa"
 
 const CartGrid = styled.div`
   display: grid;
+  transition all 500ms;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 1rem 2rem;
 `
@@ -63,6 +64,7 @@ const Ecommerce = () => {
     width: 17rem;
     padding: 0.3rem 0.8rem;
     border-radius: 15px 15px 0px 0px;
+    transition all 500ms;
     background: ${props =>
       props.item === currentItem ? "#f2f5ff" : "transparent"};
   `
@@ -96,7 +98,7 @@ const Ecommerce = () => {
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div style={{ marginLeft: "2rem" }}>
+            <div style={{ marginLeft: "1rem" }}>
               <br /> <br />
               <br />
               <h2 style={{ fontWeight: "normal", fontSize: "2.2rem" }}>
@@ -221,6 +223,7 @@ const Ecommerce = () => {
                         </Title>
                       </Hover>
                     </div>
+                    <br />
                     <div
                       style={{
                         display: "flex",
@@ -233,11 +236,8 @@ const Ecommerce = () => {
                         />
                       </Background>
                     </div>
-                    <Text small style={{ textAlign: "center" }}>
-                      Sneakers <br />{" "}
-                      <span style={{ color: "grey", fontSize: "1rem" }}>
-                        {tags}
-                      </span>
+                    <Text bold small style={{ textAlign: "center" }}>
+                      Sneakers
                     </Text>
 
                     <a
@@ -245,7 +245,7 @@ const Ecommerce = () => {
                       href="/docs/service"
                       style={{ textDecoration: "none" }}
                     >
-                      <Text small bold>
+                      <Text center small bold>
                         View Event
                       </Text>
                     </a>

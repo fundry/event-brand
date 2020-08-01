@@ -9,12 +9,12 @@ import { FiArrowRight } from "react-icons/fi"
 
 const Grid = styled.div`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0rem 1rem;
   grid-template-columns: 50% 50%;
   p {
     margin: 0rem 0.5rem;
     text-indent: 30px;
-    width: 40rem;
+    width: 45rem;
     text-align: center;
   }
   img {
@@ -123,7 +123,7 @@ const Security = () => {
                 secured How within eventful are secured How data within
               </Text>
               <br />
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 .
                 <Link to="/docs/service" style={{ textDecoration: "none" }}>
                   <OpaqueButton>
@@ -167,8 +167,7 @@ const Security = () => {
             How within eventful are secured How data within
           </Text>
           <br />
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            .
+          <div style={{ display: "flex", justifyContent: "center" }}>
             <Link to="/docs/service" style={{ textDecoration: "none" }}>
               <OpaqueButton>
                 Try Oasis For Developers

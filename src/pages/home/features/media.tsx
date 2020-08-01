@@ -50,12 +50,13 @@ const Media = () => {
     <Contain
       style={{
         margin: "0rem 1rem",
-        padding: "0rem 0rem",
+        padding: "0",
         color: "#fff",
-        borderRadius: "7px",
+        borderRadius: "8px",
         background: "#2153cc",
       }}
     >
+      <br />
       <br />
 
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -88,7 +89,7 @@ const Media = () => {
             <div>
               <Title> Cloud Event Storage </Title>
 
-              <Text white small>
+              <Text style={{ maxWidth: "40rem" }} white small>
                 Store every file relating to your event on the Cloud using
                 Oasis.
                 <br /> <br /> While storing these files, you can keep them in a

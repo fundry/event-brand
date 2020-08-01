@@ -22,7 +22,7 @@ import Community from "./features/community"
 
 const SmallBouncer = keyframes`
   from {
-    height: 170px;#363e6eeb
+    height: 170px; #363e6eeb
   }
   to {
     height: 130px;
@@ -196,9 +196,8 @@ const Home = (): JSX.Element => {
         <br />
         <br />
         <App />
-        <br />
-        <br />
       </div>
+      <img alt="wave" src={require("../../assets/svg/bottomWave.svg")} />
 
       <Security />
       <br />

@@ -54,6 +54,9 @@ const Card = styled.div`
     margin: 0.5rem 0.2rem;
     list-style: none;
   }
+  @media (max-width: 1000px) {
+    background: red;
+  }
   ${media.lessThan("huge")`
   `};
   ${media.lessThan("large")`
@@ -231,7 +234,7 @@ const Users = () => {
                   target="_blank"
                 >
                   <div style={{ display: "flex" }}>
-                    Launch An Event
+                    Open Oasis Web Console
                     <div style={{ margin: "0rem 0.7rem" }}>
                       <FiExternalLink style={{ fontSize: "1.5rem" }} />
                     </div>
