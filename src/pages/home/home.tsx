@@ -181,7 +181,7 @@ const Home = (): JSX.Element => {
 
       <div
         style={{
-          background: "linear-gradient(to top,#22263d, #F84E06)",
+          background: "#22263d",
           padding: "1rem",
           color: "#fff",
         }}
@@ -192,7 +192,9 @@ const Home = (): JSX.Element => {
         <br />
         <br />
       </div>
+
       <Community />
+
       <div style={{ color: "#401364", background: "#f2f5ff" }}>
         <br />
         <br />

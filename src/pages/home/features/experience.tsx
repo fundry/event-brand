@@ -9,62 +9,6 @@ import { Text, Title } from "../../../styles/style"
 import "./test.css"
 import { FiDatabase } from "react-icons/fi"
 
-const CircleList = styled.li`
-  list-style: none;
-  margin: 1.3rem 0rem;
-`
-
-const Circle = styled.div`
-  height: 27px;
-  width: 27px;
-  border-radius: 50%;
-  border: 1px solid #f84e06;
-  background: ${(props: { ActiveColumn: any }) =>
-    props.ActiveColumn ? "#f84e06" : "transparent"};
-  transition: all 400ms;
-  div {
-    display: ${props => (props.TipState ? "flex" : "none")};
-    visibility: ${props => (props.TipState ? "visible" : "hidden")};
-    justify-content: center;
-    align-items: center;
-  }
-  &: hover {
-    cursor: pointer;
-    background: #f84e06;
-    color: #fff;
-    visibility: visible;
-    div {
-      visibility: visible;
-    }
-  }
-`
-
-const Grid = styled.div`
-  display: grid;
-  grid-gap: 0rem 2rem;
-  grid-template-columns: 40rem auto; 
-  p {
-    width : 80%;
-    padding : 0rem 0.5rem
-  }
-  ${media.lessThan("large")`
-      grid-gap: 0rem 0rem;
-      grid-template-columns: auto 25rem; 
-      p {
-        padding : 0rem 0rem
-      }
-  `};
-  ${media.lessThan("medium")`
-  display : flex;
-  flex-direction : column;
-  align-items: center;
-  p {
-    padding : 0.4rem 0rem
-  }
-    `};
-};
-`
-
 const Tooltip = styled.div`
   height: 50px;
   position: absolute;
@@ -79,20 +23,12 @@ const Tooltip = styled.div`
   color: #fff;
 `
 
-const Tip = styled.div`
-  position: absolute;
-  transform: translate(-70%) rotate(180deg);
-  margin: -0.3rem 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  border: 20px solid transparent;
-  border-right-color: #22263d;
-`
-
 const Body = styled.div`
   padding: 5rem 4rem;
   overflow: hidden;
+  @media (max-width: 1700px) {
+    padding: 5rem 2rem;
+  }
   ${media.lessThan("large")`
     padding: 2rem 3rem;25rem
   `}
@@ -123,6 +59,15 @@ const Box = styled.div`
   color: ${props => props.color};
 `
 
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 2rem 2rem;
+  @media (max-width: 1700px) {
+    grid-template-columns: 50% 50%;
+  }
+`
+
 const Experience = () => {
   const [ActiveColumn, setActiveColumn] = useState<string>("archives")
   const [TipState, setTipState] = useState<string>("archives")
@@ -132,12 +77,11 @@ const Experience = () => {
   return (
     <Body>
       <h1 style={{ margin: "0 2rem", color: "#22263d", fontSize: "2.2rem" }}>
-        {" "}
         Now, You Can <br />
         Bootstrap An Event Page{" "}
       </h1>
       <br />
-      <div style={{ display: "grid", gridTemplateColumns: "60% 40%" }}>
+      <Grid>
         <img src={Ipad} alt="Console" />
 
         <div
@@ -222,34 +166,9 @@ const Experience = () => {
                 Laudantium dolorem voluptates ullam aliquid eos fugit
               </Text>
             </li>
-
-            <li>
-              <div style={{ display: "flex" }}>
-                <Box color="#fff" background="#401364">
-                  <FiDatabase style={{ fontSize: "1.6rem" }} />
-                </Box>
-
-                <div
-                  style={{
-                    paddingTop: "1rem",
-                    margin: "0.4rem 1rem",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Title small> Event Template Marketplace </Title>
-                </div>
-              </div>
-
-              <Text heightened small style={{ width: "35rem" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium dolorem voluptates ullam aliquid eos fugit
-              </Text>
-            </li>
           </List>
         </div>
-      </div>
+      </Grid>
     </Body>
   )
 }

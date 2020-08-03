@@ -9,53 +9,38 @@ import { Text, Title, Motto, CustomButton } from "../../../styles/style"
 const Image = styled.img`
   width: 105px;
   height: 105px;
-  margin-top: 15px;
+  margin-top: 10px;
   border: 1px solid #000;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0px 3px 5px;
+  @media (max-width: 1700px) {
+    width: 90px;
+    height: 90px;
+  }
 `
 
 const Card = styled.div`
   height: 27vh;
-  border: 2px solid #c0c0c0;
+  border: ${props => !props.grey && "2px solid #c0c0c0"};
   width: 20rem;
-  margin-left: 33px;
+  margin-left: 15px;
   margin-top: 29px;
-  -webkit-border-radius: 15px;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius: 15px;
-  -moz-border-radius-topleft: 0;
-  border-radius: 15px;
-  border-top-left-radius: 0;
+  border-radius: ${props => props.borderRadius};
   position: relative;
   box-shadow: ${props => (props.grey ? "0px 3px 5px" : "0px")};
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 500ms;
-  :after {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    box-shadow: ${props => (props.grey ? "0px 3px 5px" : "0px")};
-    background: #fff;
-    border-left: 1.5px solid;
-    border-bottom: 1.5px solid;
-    top: 100%;
-    left: 0rem;
-    content: "";
-    margin-top: -321px;
-    margin-left: -23px;
-    transform: rotate(46deg);
-    fill: #fff;
-  }
   ul {
     margin: 0.5rem 0.2rem;
     list-style: none;
   }
-  @media (max-width: 1000px) {
-    background: red;
+  @media (max-width: 1700px) {
+    height: 33.5vh;
+    width: 14.5rem;
+    margin-top: 26px;
   }
   ${media.lessThan("huge")`
   `};
@@ -65,14 +50,26 @@ const Card = styled.div`
   `};
 `
 
+const Circle = styled.div`
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: ${props => props.background};
+`
+
 const List = styled.li`
   display: flex;
+  flex: 1;
+  width: 100%;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  margin: 0rem 0rem;
+  justify-content: space-between;
+  margin: 0;
   border-bottom: ${props => props.item < 4 && "1px solid #c0c0c0"};
-  padding: 0.9rem 0rem;
+  padding: 0.7rem 0;
+  p {
+    margin: 0 12px;
+    font-size: 1rem;
+  }
 `
 
 const HoverCircle = styled.div`
@@ -99,7 +96,7 @@ const data = {
   organizers: [
     {
       id: 1,
-      feature: "Custom event brand page",
+      feature: "Custom event pages",
     },
     {
       id: 2,
@@ -111,25 +108,25 @@ const data = {
     },
     {
       id: 4,
-      feature: "In App  Event Marketplace",
+      feature: "In Event Marketplace",
     },
   ],
   streamers: [
     {
       id: 1,
-      feature: "Stream timeline history",
+      feature: "Stream data history",
     },
     {
       id: 2,
-      feature: "Event Data Cloud Storage",
+      feature: "Event Cloud Storage",
     },
     {
       id: 3,
-      feature: "Event Data Cloud Storage",
+      feature: "Event Cloud Storage",
     },
     {
       id: 4,
-      feature: "Event Data Cloud Storage",
+      feature: "Event Cloud Storage",
     },
   ],
   speakers: [
@@ -139,7 +136,7 @@ const data = {
     },
     {
       id: 2,
-      feature: "Talk drafts and review",
+      feature: "Talk drafts, review",
     },
     {
       id: 3,
@@ -147,12 +144,11 @@ const data = {
     },
     {
       id: 4,
-      feature: "Event Data Cloud Storage",
+      feature: "Event Cloud Storage",
     },
   ],
 }
-const d = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
-
+const d = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
 const { speakers, streamers, organizers } = data
 
 const Users = () => {
@@ -177,18 +173,17 @@ const Users = () => {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex" }}>
-          <Image src={require("../../../assets/images/users/1.png")} />
-          <Card grey={currentItem === 0}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ textAlign: "left" }}>
+            <Image src={require("../../../assets/images/users/1.png")} />
+          </div>
+          <Card borderRadius="0 15px 15px 15px" grey={currentItem === 0}>
             <ul>
               {organizers.map(({ id, feature }) => {
                 return (
                   <List item={id} key={id}>
-                    <img
-                      style={{ maxWidth: "19%", marginRight: "0.5rem" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> {feature} </Text>
+                    <Circle background="violet" />
+                    <p> {feature} </p>
                   </List>
                 )
               })}
@@ -204,12 +199,12 @@ const Users = () => {
           }}
         >
           <div>
-            <Motto style={{ textAlign: "center" }}>
+            <Motto style={{ fontWeight: "lighter", textAlign: "center" }}>
               A Sustainable Launchpad for
               <span
                 style={{
                   color: "#F84E06",
-                  padding: "0.3rem 1rem",
+                  padding: "0.3rem 2rem",
                   margin: "0.3rem 0.5rem",
                   background: "#401364d4",
                   borderBottom: "5px solid #F84E06",
@@ -227,7 +222,7 @@ const Users = () => {
             </div>
 
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <CustomButton style={{ fontSize: "1.05rem" }}>
+              <CustomButton style={{ fontSize: "1rem" }}>
                 <a
                   href="/"
                   style={{ textDecoration: "none", color: "#fff" }}
@@ -236,7 +231,7 @@ const Users = () => {
                   <div style={{ display: "flex" }}>
                     Open Oasis Web Console
                     <div style={{ margin: "0rem 0.7rem" }}>
-                      <FiExternalLink style={{ fontSize: "1.5rem" }} />
+                      <FiExternalLink style={{ fontSize: "1.3rem" }} />
                     </div>
                   </div>
                 </a>
@@ -247,24 +242,26 @@ const Users = () => {
           <div
             style={{
               display: "flex",
+              flexDirection: "row",
               marginTop: "2rem",
-              marginRight: "5rem",
+              marginRight: "2rem",
               justifyContent: "center",
             }}
           >
             <Image src={require("../../../assets/images/users/2.jpg")} />
 
             <div>
-              <Card style={{ width: "20rem" }} grey={currentItem === 0}>
+              <Card
+                borderRadius="0 15px 15px 15px"
+                style={{ width: "15rem" }}
+                grey={currentItem === 0}
+              >
                 <ul>
                   {speakers.map(({ id, feature }) => {
                     return (
                       <List item={id} key={id}>
-                        <img
-                          style={{ maxWidth: "19%", marginRight: "0.5rem" }}
-                          src={require("../../../assets/svg/illustration.svg")}
-                        />
-                        <Text small> {feature} </Text>
+                        <Circle background="violet" />
+                        <p> {feature} </p>
                       </List>
                     )
                   })}
@@ -274,18 +271,17 @@ const Users = () => {
           </div>
         </div>
 
-        <div style={{ display: "flex" }}>
-          <Image src={require("../../../assets/images/users/3.jpg")} />
-          <Card grey={currentItem === 2}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ textAlign: "right" }}>
+            <Image src={require("../../../assets/images/users/3.jpg")} />
+          </div>
+          <Card borderRadius="15px 0 15px 15px" grey={currentItem === 2}>
             <ul>
               {streamers.map(({ id, feature }) => {
                 return (
                   <List item={id} key={id}>
-                    <img
-                      style={{ maxWidth: "19%", marginRight: "0.5rem" }}
-                      src={require("../../../assets/svg/illustration.svg")}
-                    />
-                    <Text small> {feature} </Text>
+                    <Circle background="violet" />
+                    <p> {feature} </p>
                   </List>
                 )
               })}
@@ -321,9 +317,12 @@ const Users = () => {
 
       <div
         style={{
+          width: "100%",
           display: "flex",
+          margin: "0 1.8rem",
+          padding: "0.7rem 5rem",
+          overflowX: "scroll",
           justifyContent: "center",
-          padding: "0.5rem 1rem",
         }}
       >
         {d.map(() => {

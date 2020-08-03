@@ -15,8 +15,7 @@ import useWindowWidth from "../../../styles/resize"
 
 const Body = styled.div`
   padding: 5rem 4rem;
-  color: #fff;
-  background: #22263d;
+  color: #22263d;
   overflow: hidden;
   ${media.lessThan("large")`
     padding: 2rem 3rem;
@@ -27,10 +26,17 @@ const Body = styled.div`
 `
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
+  display: flex;
   justify-content: center;
-  grid-gap: 1rem 2rem;
+`
+
+const Card = styled.div`
+  margin: 1rem 1rem;
+  height: 60vh;
+  padding: 1rem 1rem;
+  border: 1px solid #c0c0c0;
+  width: 30rem;
+  border-radius: 5px;
 `
 
 export default class community extends Component {
@@ -42,55 +48,52 @@ export default class community extends Component {
   render() {
     return (
       <Body img={CommunityBckg}>
-        <HeadTitle align="center">
-          Oasis Extends Beyond
+        <HeadTitle style={{ fontWeight: "lighter" }} align="center">
+          Take Advantage Of Oasis <br />
           <span
             style={{
               color: "#F84E06",
               margin: "0rem 1rem",
             }}
           >
-            Organizing Events.
+            When Not Organizing Events.
           </span>
         </HeadTitle>
         <br />
 
         <div>
           <Grid>
-            <div style={{ marginTop: "5rem" }}>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src={Ipad} style={{ maxWidth: "80%" }} />
-              </div>
-              <br />
-              <Title small center>
+            <Card>
+              <Title style={{ fontWeight: "lighter" }} small center>
                 {" "}
                 Volunteer For All Events{" "}
               </Title>
-            </div>
 
-            <div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src={Ipad} style={{ maxWidth: "80%" }} />
+              <div style={{ textAlign: "center" }}>
+                <a href="/">Apply To An Event</a>
               </div>
-              <br />
+            </Card>
 
-              <Title small center>
+            <Card>
+              <Title style={{ fontWeight: "lighter" }} small center>
                 {" "}
                 Create Your Talk Drafts{" "}
               </Title>
-            </div>
 
-            <div style={{ marginTop: "5rem" }}>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <img src={Ipad} style={{ maxWidth: "80%" }} />
+              <div style={{ textAlign: "center" }}>
+                <a href="/">Start A Talk Draft</a>
               </div>
-              <br />
+            </Card>
 
-              <Title small center>
-                {" "}
+            <Card>
+              <Title style={{ fontWeight: "lighter" }} small center>
                 Inclusive Talk Approval Process{" "}
               </Title>
-            </div>
+
+              <div style={{ textAlign: "center" }}>
+                <a href="/">Submit A Talk Draft</a>
+              </div>
+            </Card>
           </Grid>
         </div>
         <br />

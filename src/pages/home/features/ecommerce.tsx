@@ -17,6 +17,10 @@ const CartGrid = styled.div`
   transition all 500ms;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 1rem 2rem;
+  @media (max-width: 1700px) {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+     padding: 0.3rem 0.5rem;
+ }
 `
 
 const Background = styled.div`
@@ -56,6 +60,18 @@ const List = styled.ul`
   }
 `
 
+const Image = styled.img`
+  object-fit: cover;
+  background-size: cover;
+  height: 370px;
+  width: 370px;
+  border-radius: 15px 15px 0px 0px;
+  @media (max-width: 1700px) {
+    height: 250px;
+    width: 250px;
+  }
+`
+
 const Ecommerce = () => {
   const [currentItem, setCurrentItem] = useState(1)
 
@@ -67,6 +83,11 @@ const Ecommerce = () => {
     transition all 500ms;
     background: ${props =>
       props.item === currentItem ? "#f2f5ff" : "transparent"};
+      @media (max-width: 1700px) {
+         width: 14rem;
+      padding: 0.3rem 0.5rem;
+
+      }
   `
 
   useEffect(() => {
@@ -91,20 +112,20 @@ const Ecommerce = () => {
         <div
           style={{
             textAlign: "left",
-            paddingLeft: "5rem",
+            paddingLeft: "1rem",
             marginRight: "8rem",
             background: "#f2f5ff",
             color: "#2153cc",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div style={{ marginLeft: "1rem" }}>
+            <div>
               <br /> <br />
               <br />
-              <h2 style={{ fontWeight: "normal", fontSize: "2.2rem" }}>
+              <Title style={{ fontWeight: "normal", fontSize: "2rem" }}>
                 In - Event Attendee <br />
                 Marketplace
-              </h2>
+              </Title>
               <br />
               <Link
                 to="/docs/service"
@@ -155,7 +176,7 @@ const Ecommerce = () => {
           </div>
         </div>
 
-        <div style={{ textAlign: "right", paddingRight: "15rem" }}>
+        <div style={{ textAlign: "right", paddingRight: "7rem" }}>
           <br />
           <br />
           <Title heightened bold>
@@ -180,103 +201,59 @@ const Ecommerce = () => {
       <br />
       <br />
       <br />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "2rem auto 2rem",
-          gridGap: "0rem 1rem",
-          padding: "0rem 1rem",
-        }}
-      >
-        <Hover
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <FiChevronLeft style={{ fontSize: "4rem", color: "#fff" }} />
-        </Hover>
 
-        <CartGrid>
-          {Items.map(({ id, eventName, tags }) => {
-            return (
-              <Cart key={id} item={id}>
-                {currentItem === id ? (
-                  <div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <Hover style={{ display: "flex" }}>
-                        <Title
-                          style={{
-                            color: " #22263d",
-                            fontSize: "1.2rem",
-                            textAlign: "center",
-                          }}
-                          small
-                        >
-                          {eventName}
-                        </Title>
-                      </Hover>
-                    </div>
-                    <br />
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Background>
-                        <img
-                          src={require(`../../../assets/images/commerce/${id}.jpg`)}
-                        />
-                      </Background>
-                    </div>
-                    <Text bold small style={{ textAlign: "center" }}>
-                      Sneakers
-                    </Text>
-
-                    <a
-                      target="_blank"
-                      href="/docs/service"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Text center small bold>
-                        View Event
-                      </Text>
-                    </a>
-                  </div>
-                ) : (
-                  <img
+      <CartGrid>
+        {Items.map(({ id, eventName, tags }) => {
+          return (
+            <Cart key={id} item={id}>
+              {currentItem === id ? (
+                <div>
+                  <div
                     style={{
-                      objectFit: "cover",
-                      backgroundSize: "cover",
-                      height: "370px",
-                      width: "370px",
-                      borderRadius: "15px 15px 0px 0px",
+                      display: "flex",
+                      justifyContent: "space-between",
                     }}
-                    src={require(`../../../assets/images/commerce/${id}.jpg`)}
-                  />
-                )}
-              </Cart>
-            )
-          })}
-        </CartGrid>
+                  >
+                    <Hover style={{ display: "flex" }}>
+                      <Title
+                        style={{
+                          color: " #22263d",
+                          fontSize: "1.2rem",
+                          textAlign: "center",
+                          marginBottom: "15px",
+                        }}
+                        small
+                      >
+                        {eventName}
+                      </Title>
+                    </Hover>
+                  </div>
 
-        <Hover
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <FiChevronRight style={{ fontSize: "4rem", color: "#fff" }} />
-        </Hover>
-      </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Background>
+                      <img
+                        src={require(`../../../assets/images/commerce/${id}.jpg`)}
+                      />
+                    </Background>
+                  </div>
+                  <Text bold small style={{ textAlign: "center" }}>
+                    Sneaker
+                  </Text>
+                </div>
+              ) : (
+                <Image
+                  src={require(`../../../assets/images/commerce/${id}.jpg`)}
+                />
+              )}
+            </Cart>
+          )
+        })}
+      </CartGrid>
     </div>
   )
 }

@@ -143,18 +143,17 @@ const App = () => {
 
   return (
     <Body>
+      <br />
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <HeadTitle center style={{ textAlign: "center", margin: "0rem 1rem" }}>
+        <HeadTitle
+          center
+          style={{
+            fontWeight: "lighter",
+            textAlign: "center",
+            margin: "0rem 1rem",
+          }}
+        >
           A Mobile First Tool <br /> For Event Participants.
-          <span
-            style={{
-              margin: "0rem 0.5rem",
-              color: "#F84E06",
-              fontWeight: "bold",
-            }}
-          >
-            Wield It!{" "}
-          </span>{" "}
         </HeadTitle>
       </div>
 

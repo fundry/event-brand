@@ -23,7 +23,7 @@ import Schedule from "../../../assets/svg/schedule.svg"
 const Item = styled.div`
   height: auto;
   width: auto;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   transition: all 450ms;
   border: 1px solid ${props => (props.active ? "#fff" : "grey")};
@@ -83,13 +83,13 @@ const Media = () => {
       </div>
 
       <br />
-      <div style={{ padding: "3rem 4rem" }}>
+      <div style={{ padding: "3rem 1.5rem" }}>
         <CSSTransition timeout={300} in={activeView === "cloud"} unmountOnExit>
           <Grid schedule>
             <div>
               <Title> Cloud Event Storage </Title>
 
-              <Text style={{ maxWidth: "40rem" }} white small>
+              <Text style={{ maxWidth: "35rem" }} white small>
                 Store every file relating to your event on the Cloud using
                 Oasis.
                 <br /> <br /> While storing these files, you can keep them in a
