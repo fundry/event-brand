@@ -99,25 +99,25 @@ const data = {
   organizers: [
     {
       id: 1,
-      feature: "Event Data Cloud Storage",
+      feature: "Custom event brand page",
     },
     {
       id: 2,
-      feature: "Event Data Cloud Storage",
+      feature: "Event Cloud Storage",
     },
     {
       id: 3,
-      feature: "Event Data Cloud Storage",
+      feature: "Inclusive Talk Process ",
     },
     {
       id: 4,
-      feature: "Event Data Cloud Storage",
+      feature: "In App  Event Marketplace",
     },
   ],
   streamers: [
     {
       id: 1,
-      feature: "Event Data Cloud Storage",
+      feature: "Stream timeline history",
     },
     {
       id: 2,
@@ -135,15 +135,15 @@ const data = {
   speakers: [
     {
       id: 1,
-      feature: "Event Data Cloud Storage",
+      feature: "Store  Talk Drafts",
     },
     {
       id: 2,
-      feature: "Event Data Cloud Storage",
+      feature: "Talk drafts and review",
     },
     {
       id: 3,
-      feature: "Event Data Cloud Storage",
+      feature: "Talk draft templates",
     },
     {
       id: 4,
@@ -205,7 +205,7 @@ const Users = () => {
         >
           <div>
             <Motto style={{ textAlign: "center" }}>
-              Oasis Rocks For{" "}
+              A Sustainable Launchpad for
               <span
                 style={{
                   color: "#F84E06",

@@ -148,7 +148,7 @@ export default class Integrations extends Component {
         <br />
 
         <h2 style={{ textAlign: "center" }}>
-          Your External Tools, All In One Place. <br />A Perfect Symphony!
+          Your External Tools, Pulled Into Your Event. <br />A Perfect Symphony!
         </h2>
 
         <div style={{ display: "flex", justifyContent: "center" }}>

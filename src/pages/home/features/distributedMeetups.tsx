@@ -100,7 +100,25 @@ export default class DistributedMeetupsObserver extends Component {
   }
 }
 
-const DistributedMeetups = (props: { isInView: boolean }) => {
+const Card = styled.div`
+  height: 40vh;
+  width: 25rem;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3rem;
+  border-radius: 0 15px 15px 0;
+  border: 1px sold #fff;
+  background: #fff;
+  transition: all 400ms;
+  box-shadow: 0 2px 3px grey;
+  &: hover {
+    transform: translateY(-10%);
+  }
+`
+
+const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
   const { isInView } = props
   const [currentWindow, setCurrentWindow] = useState(0)
 
@@ -156,16 +174,12 @@ const DistributedMeetups = (props: { isInView: boolean }) => {
       </Text>
       <br />
       <BigTitle style={{ color: "#fff", textAlign: "center" }}>{name}</BigTitle>
-      <Grid>
-        <Hover
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <IoIosArrowBack style={{ fontSize: "3rem" }} />
-        </Hover>
+      <br />
+
+      <div style={{ display: "flex" }}>
+        <Card>
+          <Text center> Open Source Community Delta </Text>
+        </Card>
 
         <div
           style={{
@@ -174,56 +188,35 @@ const DistributedMeetups = (props: { isInView: boolean }) => {
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
-              style={{
-                display: "flex",
-                overflow: "auto",
-                width: "auto",
-              }}
-            >
-              {Meetups.map(({ id, name, summary }) => {
-                return (
-                  <MeetupWindow active={id === currentWindow} key={id}>
-                    <div>
-                      <Title style={{ cursor: "pointer" }} center>
-                        {" "}
-                        <a
-                          style={{ textDecoration: "none" }}
-                          href="https://opensourcecommunity.com"
-                        >
-                          {" "}
-                          {name}{" "}
-                        </a>{" "}
-                      </Title>
-                      <Text white center>
-                        {" "}
-                        {summary}{" "}
-                      </Text>
-                    </div>
-                  </MeetupWindow>
-                )
-              })}
-            </div>
-          </div>
+          <Card style={{ height: "35vh" }}>
+            <Text center> Open Source Community Delta </Text>
+          </Card>
         </div>
 
-        <Hover
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <IoIosArrowForward style={{ fontSize: "3rem" }} />
-        </Hover>
-      </Grid>
+          <Card style={{ height: "35vh" }}>
+            <Text center> Open Source Community Delta </Text>
+          </Card>
+        </div>
 
-      <CircleGrid>
-        {Meetups.map(() => {
-          return <Circle></Circle>
-        })}
-      </CircleGrid>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Card style={{ height: "35vh" }}>
+            <Text center> Open Source Community Delta </Text>
+          </Card>
+        </div>
+      </div>
     </div>
   )
 }

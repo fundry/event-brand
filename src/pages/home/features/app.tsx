@@ -123,7 +123,7 @@ const Description = styled.div`
 `
 
 const Body = styled.div`
-  padding: 1rem 4rem;
+  padding: 0rem 4rem;
   ${media.lessThan("large")`
     padding: 1rem 1rem;
   `};
@@ -145,7 +145,7 @@ const App = () => {
     <Body>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <HeadTitle center style={{ textAlign: "center", margin: "0rem 1rem" }}>
-          Oasis is a Media Tool.
+          A Mobile First Tool <br /> For Event Participants.
           <span
             style={{
               margin: "0rem 0.5rem",

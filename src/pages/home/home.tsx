@@ -144,6 +144,7 @@ const Home = (): JSX.Element => {
         style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
       >
         <br />
+        <br />
 
         <div
           style={{

@@ -200,7 +200,7 @@ const Experience = () => {
 
             <li>
               <div style={{ display: "flex" }}>
-                <Box color="#fff" background="#22263d">
+                <Box color="#fff" background="#401364">
                   <FiDatabase style={{ fontSize: "1.6rem" }} />
                 </Box>
 
@@ -225,7 +225,7 @@ const Experience = () => {
 
             <li>
               <div style={{ display: "flex" }}>
-                <Box color="#fff" background="#22263d">
+                <Box color="#fff" background="#401364">
                   <FiDatabase style={{ fontSize: "1.6rem" }} />
                 </Box>
 
