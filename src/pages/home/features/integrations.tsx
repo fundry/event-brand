@@ -128,16 +128,6 @@ export default class Integrations extends Component {
         name: "Slack",
         icon: <IoLogoSlack style={{ fontSize: "1.6rem" }} />,
       },
-      {
-        id: 1,
-        name: "Vimeo",
-        icon: <IoLogoVimeo style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Eventbrite",
-        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
-      },
     ]
 
     return (

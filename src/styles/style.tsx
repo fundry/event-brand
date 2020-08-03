@@ -21,7 +21,7 @@ export const CustomButton = styled.button`
 
 export const HeadTitle = styled.h1`
   color: ${(props: { color: any }) => props.color};
-  font-size: ${(props: { app: any }) => (props.app ? null : "2.2em")};
+  font-size: ${(props: { app: any }) => (props.app ? null : "2em")};
   text-align: ${(props: { align: any }) => props.align};
   ${media.lessThan("huge")`
   font-size: ${(props: { app: any }) => (props.app ? null : "2em")};
@@ -92,8 +92,9 @@ const Title = styled.h4`
   color: ${(props: { colored: any }) => (props.colored ? "#401364" : "#000")}
   font-weight: ${(props: { bold: any }) => (props.bold ? "400" : "normal")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
+  font-size :  1.4rem;
   ${media.lessThan("medium")`
-    font-size :  1.5rem;
+    font-size :  1.4rem;
   `};
   ${media.lessThan("large")`
       font-size :  1.4rem;

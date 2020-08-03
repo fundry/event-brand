@@ -5,55 +5,7 @@ import media from "styled-media-query"
 
 import { Title, Text, Hover, BgTitle, BigTitle } from "../../../styles/style"
 
-const Grid = styled.div`
-  height: 35vh;
-  display: grid;
-  grid-gap: 3rem 1rem;
-  grid-template-columns: 3rem auto 3rem;
-  ${media.lessThan("large")`
-      display: none;
-  `}
-  ${media.lessThan("medium")`
-  display: none;
-  `}
-`
-
 const name = "Open Source Community Africa"
-
-const Meetups = [
-  {
-    id: 1,
-    name: "Open Source Community Lagos",
-    summary: "Open Source Community for Lagos State",
-  },
-  {
-    id: 2,
-    name: "Open Source Community Benin",
-    summary: "Open Source Community for Benin State",
-  },
-  {
-    id: 3,
-    name: "Open Source Community Delta",
-    summary: "Open Source Community for Delta State",
-  },
-]
-
-const Circle = styled.div`
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background: #fff;
-  ${media.greaterThan("large")`
-      display: none;
-  `}
-`
-
-const CircleGrid = styled.div`
-  display: grid;
-  grid-gap: 2rem 2rem;
-  margin: 1rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-`
 
 export default class DistributedMeetupsObserver extends Component {
   state = {
@@ -101,8 +53,8 @@ export default class DistributedMeetupsObserver extends Component {
 }
 
 const Card = styled.div`
-  height: 40vh;
-  width: 25rem;
+  height: 45vh;
+  width: 20rem;
   padding: 1rem 1rem;
   display: flex;
   justify-content: center;
@@ -132,21 +84,6 @@ const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
     }
     return clearInterval(3000)
   }, [isInView])
-
-  const MeetupWindow = styled.div`
-    margin: 0rem 0.5rem;
-    padding: 3rem 0.5rem;
-    border-right: 1px solid #fff;
-    width: ${(props: any) => (props.active ? "26rem" : "20rem")};
-    height: auto;
-    transition: all 600ms;
-    filter: ${(props: any) =>
-      props.active ? "grayscale(0%) blur(0px)" : "grayscale(90%) blur(0.9px)"};
-    &: hover {
-      width: 26rem;
-      filter: grayscale(0%) blur(0px);
-    }
-  `
 
   return (
     <div>
@@ -179,30 +116,6 @@ const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
         <Card>
           <Text center> Open Source Community Delta </Text>
         </Card>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Card style={{ height: "35vh" }}>
-            <Text center> Open Source Community Delta </Text>
-          </Card>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Card style={{ height: "35vh" }}>
-            <Text center> Open Source Community Delta </Text>
-          </Card>
-        </div>
 
         <div
           style={{
