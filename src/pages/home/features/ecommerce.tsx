@@ -63,6 +63,7 @@ const List = styled.ul`
 const Image = styled.img`
   object-fit: cover;
   background-size: cover;
+  filter: drop-shadow(3px 6px 10px hsla(0deg, 0%, 0%, 0.5));
   height: 370px;
   width: 370px;
   border-radius: 15px 15px 0px 0px;
@@ -183,7 +184,7 @@ const Ecommerce = () => {
             More Value For Just Less
           </Title>
           <Contain>
-            <Text small white>
+            <Text style={{ textAlign: "justify" }} small white>
               Leverage your event marketplace provided to your event to create,
               advertise and accept payment for event items and Swags.
               <br />

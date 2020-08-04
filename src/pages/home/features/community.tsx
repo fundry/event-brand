@@ -14,7 +14,7 @@ import CommunityBckg from "../../../assets/svg/community.svg"
 import useWindowWidth from "../../../styles/resize"
 
 const Body = styled.div`
-  padding: 5rem 4rem;
+  padding: 5rem 2rem;
   color: #22263d;
   overflow: hidden;
   ${media.lessThan("large")`
@@ -27,15 +27,15 @@ const Body = styled.div`
 
 const Grid = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 `
 
 const Card = styled.div`
-  margin: 1rem 1rem;
-  height: 60vh;
+  margin: 2rem 1rem;
+  height: 55vh;
   padding: 1rem 1rem;
   border: 1px solid #c0c0c0;
-  width: 30rem;
+  width: 25rem;
   border-radius: 5px;
 `
 

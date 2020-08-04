@@ -23,7 +23,7 @@ const Image = styled.img`
 const Card = styled.div`
   height: 27vh;
   border: ${props => !props.grey && "2px solid #c0c0c0"};
-  width: 20rem;
+  width: 17rem;
   margin-left: 15px;
   margin-top: 29px;
   border-radius: ${props => props.borderRadius};

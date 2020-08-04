@@ -65,8 +65,8 @@ const Circle = styled.div`
 `
 
 const TypeCircle = styled.div`
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   border: 1px solid ${props => props.background};
   background: ${props => props.background};
   border-radius: 50%;
