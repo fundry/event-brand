@@ -1,30 +1,16 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { CSSTransition } from "react-transition-group"
 import media from "styled-media-query"
 
 import Ipad from "../../../assets/svg/ipad.svg"
-import { Text, Title } from "../../../styles/style"
+import { Title } from "../../../styles/style"
 
 import "./test.css"
 import { FiDatabase } from "react-icons/fi"
-
-const Tooltip = styled.div`
-  height: 50px;
-  position: absolute;
-  width: 10rem;
-  transform: translate(-115%);
-  padding: 0.5rem 0.5rem;
-  border: 1px solid #000;
-  background: #22263d;
-  margin: -0.5rem 0;
-  text-align: center;
-  border-radius: 5px;
-  color: #fff;
-`
+import { IoIosChatboxes, IoIosColorPalette, IoIosPaper } from "react-icons/io"
 
 const Body = styled.div`
-  padding: 5rem 4rem;
+  padding: 5rem 10rem;
   overflow: hidden;
   @media (max-width: 1700px) {
     padding: 5rem 2rem;
@@ -49,13 +35,13 @@ const List = styled.ul`
 const Box = styled.div`
   background: ${props => props.background};
   border: 1px solid ${props => props.background};
-  height: 60px;
+  height: 55px;
   box-shadow: 0 2px 3px grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 63px;
-  border-radius: 7px;
+  width: 55px;
+  border-radius: 50%;
   color: ${props => props.color};
 `
 
@@ -69,20 +55,15 @@ const Grid = styled.div`
 `
 
 const Experience = () => {
-  const [ActiveColumn, setActiveColumn] = useState<string>("archives")
-  const [TipState, setTipState] = useState<string>("archives")
-
-  const [PrevsTipState, setPrevsTipState] = useState<string>("archives")
-
   return (
     <Body>
-      <h1 style={{ margin: "0 2rem", color: "#22263d", fontSize: "2.2rem" }}>
+      <h1 style={{ margin: "0 2rem", color: "#22263d", fontSize: "2rem" }}>
         Now, You Can <br />
-        Bootstrap An Event Page{" "}
+        Bootstrap An Event Website
       </h1>
       <br />
       <Grid>
-        <img src={Ipad} alt="Console" />
+        <img style={{ maxWidth: "90%" }} src={Ipad} alt="Console" />
 
         <div
           style={{
@@ -95,76 +76,115 @@ const Experience = () => {
             <li>
               <div style={{ display: "flex" }}>
                 <Box color="#fff" background="#22263d">
-                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                  <FiDatabase style={{ fontSize: "1.4rem" }} />
                 </Box>
 
                 <div
                   style={{
-                    paddingTop: "1rem",
+                    paddingTop: "0.5rem",
                     margin: "0.4rem 1rem",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
-                  <Title small>Using Stored Event Data </Title>
+                  <Title style={{ fontWeight: "normal" }} small>
+                    Using Stored Event Data{" "}
+                  </Title>
                 </div>
               </div>
-
-              <Text small heightened style={{ width: "35rem" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium dolorem voluptates ullam aliquid eos fugit
-              </Text>
             </li>
 
             <li>
               <div style={{ display: "flex" }}>
                 <Box color="#fff" background="#22263d">
-                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                  <IoIosPaper style={{ fontSize: "1.4rem" }} />
                 </Box>
 
                 <div
                   style={{
-                    paddingTop: "1rem",
+                    paddingTop: "0.5rem",
                     margin: "0.4rem 1rem",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
-                  <Title small> Engaging Event Forms </Title>
+                  <Title style={{ fontWeight: "normal" }} small>
+                    {" "}
+                    Engaging Event Forms{" "}
+                  </Title>
                 </div>
               </div>
-
-              <Text heightened small style={{ width: "35rem" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium dolorem voluptates ullam aliquid eos fugit
-              </Text>
             </li>
 
             <li>
               <div style={{ display: "flex" }}>
                 <Box color="#fff" background="#401364">
-                  <FiDatabase style={{ fontSize: "1.6rem" }} />
+                  <IoIosColorPalette style={{ fontSize: "1.4rem" }} />
                 </Box>
 
                 <div
                   style={{
-                    paddingTop: "1rem",
+                    paddingTop: "0.3rem",
                     margin: "0.4rem 1rem",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
-                  <Title small> Reflective Event Design and Layout </Title>
+                  <Title style={{ fontWeight: "normal" }} small>
+                    {" "}
+                    Reflective Event Design and Layout{" "}
+                  </Title>
                 </div>
               </div>
+            </li>
 
-              <Text heightened small style={{ width: "35rem" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium dolorem voluptates ullam aliquid eos fugit
-              </Text>
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#401364">
+                  <IoIosChatboxes style={{ fontSize: "1.4rem" }} />
+                </Box>
+
+                <div
+                  style={{
+                    paddingTop: "0.5rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title style={{ fontWeight: "normal" }} small>
+                    {" "}
+                    SSO authentication wihout an Oasis account.{" "}
+                  </Title>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div style={{ display: "flex" }}>
+                <Box color="#fff" background="#401364">
+                  <IoIosChatboxes style={{ fontSize: "1.4rem" }} />
+                </Box>
+
+                <div
+                  style={{
+                    paddingTop: "0.5rem",
+                    margin: "0.4rem 1rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Title style={{ fontWeight: "normal" }} small>
+                    {" "}
+                    Webhook connected event chat services{" "}
+                  </Title>
+                </div>
+              </div>
             </li>
           </List>
         </div>

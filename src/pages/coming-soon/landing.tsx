@@ -12,7 +12,8 @@ import { BetaRelease } from "../../data"
 import Ipad from "../../assets/svg/ipad.svg"
 import Iphone from "../../assets/svg/iphone.svg"
 import Features from "../../assets/svg/features.svg"
-import { FiEye } from "react-icons/fi"
+import { FiEye, FiDatabase } from "react-icons/fi"
+import { IoIosChatboxes, IoIosColorPalette, IoIosPaper } from "react-icons/io"
 
 const Grid = styled.div`
   display: grid;
@@ -42,6 +43,7 @@ const InputBox = styled.div`
     color: #401364;
   }
   button {
+    text-align: center;
     padding: 0.7rem 1.5rem;
     display: flex;
     background: #22263d;
@@ -49,13 +51,29 @@ const InputBox = styled.div`
     border-radius: 0 10px 10px 0;
   }
   ${media.lessThan("medium")`
+  flex-direction : column;  
     input {
-      width: 30rem;
+      width: 27rem;
+      font-size : 0.9rem;
+    }
+    div {
+      display : flex;
+      justify-content : center;
+    }
+    button {
+      text-align : center;
+      margin : 1rem;
+      width : 13rem;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      background: #22263d;
+      border: 0px;
+      border-radius: 0 10px 10px 0;
     }
     `}
   ${media.lessThan("small")`
 input {
-  width: 25rem;
+  width: 23rem;
 }
     `}
     &: hover {
@@ -63,6 +81,28 @@ input {
       cursor: pointer;
     }
   }
+`
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    margin: 1.5rem 1rem;
+  }
+`
+
+const Box = styled.div`
+  background: ${props => props.background};
+  border: 1px solid ${props => props.background};
+  height: 55px;
+  box-shadow: 0 2px 3px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  border-radius: 50%;
+  color: ${props => props.color};
 `
 
 const Landing = (): JSX.Element => {
@@ -130,6 +170,39 @@ const Landing = (): JSX.Element => {
     }
   }
 
+  const Features = [
+    {
+      id: 1,
+      title: "Centralized Cloud Storage",
+      color: "#22263d",
+      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+    },
+    {
+      id: 2,
+      title: "Centralized Cloud Storage",
+      color: "#22263d",
+      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+    },
+    {
+      id: 3,
+      title: "Centralized Cloud Storage",
+      color: "#22263d",
+      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+    },
+    {
+      id: 4,
+      title: "Centralized Cloud Storage",
+      color: "#22263d",
+      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+    },
+    {
+      id: 5,
+      title: "Centralized Cloud Storage",
+      color: "#22263d",
+      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+    },
+  ]
+
   return (
     <div style={{ background: "#401364" }}>
       <Helmet>
@@ -154,7 +227,6 @@ const Landing = (): JSX.Element => {
           borderBottomStyle: "dashed",
         }}
       >
-        <br />
         <Text white small center>
           What do you think would be the future of events? <br />
           <a
@@ -189,7 +261,7 @@ const Landing = (): JSX.Element => {
           </div>
         </div>
         <Text white center>
-          Powering Modern Events For a Redefined Experience!
+          Providing a Sustainable launchpad for Events
         </Text>
         {!Submit ? (
           <Flex justifyCenter>
@@ -206,22 +278,25 @@ const Landing = (): JSX.Element => {
                   }}
                   placeholder="Your Email Address"
                 />
-                <button
-                  disabled={Email.length < 8}
-                  onClick={() => {
-                    SubmitData()
-                  }}
-                  style={{
-                    display: "flex",
-                    color: "#fff",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{ margin: "0rem 0.5rem" }}>
-                    <IoMdMegaphone style={{ fontSize: "1.9rem" }} />{" "}
-                  </div>
-                  Stay Notified{" "}
-                </button>
+
+                <div>
+                  <button
+                    disabled={Email.length < 8}
+                    onClick={() => {
+                      SubmitData()
+                    }}
+                    style={{
+                      display: "flex",
+                      color: "#fff",
+                      textAlign: "center",
+                    }}
+                  >
+                    <span style={{ margin: "0rem 0.7rem" }}>
+                      <IoMdMegaphone style={{ fontSize: "1.7rem" }} />{" "}
+                    </span>
+                    Stay Notified{" "}
+                  </button>
+                </div>
               </InputBox>
             </Flex>
           </Flex>
@@ -282,20 +357,56 @@ const Landing = (): JSX.Element => {
         <Link to="/home/home" style={{ textDecoration: "none" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ margin: "0rem 1rem" }}>
-              <FiEye style={{ fontSize: "1.8rem" }} />
+              <FiEye style={{ fontSize: "1.7rem" }} />
             </div>
             <Text small white>
-              Peep on what Oasis really is.
+              See what Oasis really is.
             </Text>
           </div>
         </Link>
         <Flex justifyCenter>
           {Width >= 800 ? (
-            <img
-              alt="Visual Explanation"
-              src={Ipad}
-              style={{ height: "auto", maxWidth: "100%" }}
-            />
+            <div style={{ display: "grid", gridTemplateColumns: "auto 30rem" }}>
+              <img
+                alt="Visual Explanation"
+                src={Ipad}
+                style={{ height: "auto", maxWidth: "100%" }}
+              />
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <List>
+                  {Features.map(({ id, title, icon }) => {
+                    return (
+                      <li key={id}>
+                        <div style={{ display: "flex" }}>
+                          <Box color="#fff" background="#22263d">
+                            {icon}
+                          </Box>
+
+                          <div
+                            style={{
+                              paddingTop: "0.5rem",
+                              margin: "0.4rem 1rem",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Text white>{title}</Text>
+                          </div>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </List>
+              </div>
+            </div>
           ) : (
             <img
               alt="Visual Explanation"
@@ -305,36 +416,6 @@ const Landing = (): JSX.Element => {
           )}
         </Flex>
         <br />
-        <br />{" "}
-        <Grid>
-          {BetaRelease.map(({ id, title }) => {
-            return (
-              <ItemsWrapper>
-                <Flex justifyCenter>
-                  <div key={id} style={{ width: "20rem" }}>
-                    <Flex justifyCenter>
-                      <img
-                        alt={"Feature Illustration"}
-                        src={Features}
-                        style={{
-                          alignItems: "center",
-                          height: "auto",
-                          width: "10rem",
-                        }}
-                      />
-                    </Flex>
-                    <br />
-                    <br />
-                    <Title bold style={{ color: "white" }} center>
-                      {" "}
-                      {title}{" "}
-                    </Title>{" "}
-                  </div>
-                </Flex>{" "}
-              </ItemsWrapper>
-            )
-          })}
-        </Grid>
       </Body>
     </div>
   )

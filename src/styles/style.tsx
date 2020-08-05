@@ -58,8 +58,7 @@ const Text = styled.p`
   letter-spacing: 0.05rem;
   color: ${props => (props.white ? "#fff" : "#22263d")};
   font-weight: lighter;
-  font-size: ${(props: { small: any }) =>
-    props.small ? "1.10rem " : "1.2rem"};
+  font-size: ${(props: { small: any }) => (props.small ? "1.1rem " : "1.1rem")};
   text-align: ${(props: { center: any }) => (props.center ? "center" : null)};
   line-height: ${props => (props.heightened ? "2.2rem" : "1.8rem")};
   padding: ${props => (props.padded ? "0rem 3rem" : "0rem")};
