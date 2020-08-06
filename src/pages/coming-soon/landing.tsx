@@ -8,21 +8,10 @@ import media from "styled-media-query"
 import { IoMdMegaphone } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
-import { BetaRelease } from "../../data"
 import Ipad from "../../assets/svg/ipad.svg"
 import Iphone from "../../assets/svg/iphone.svg"
-import Features from "../../assets/svg/features.svg"
-import { FiEye, FiDatabase } from "react-icons/fi"
-import { IoIosChatboxes, IoIosColorPalette, IoIosPaper } from "react-icons/io"
-
-const Grid = styled.div`
-  display: grid;
-  grid-gap: 3rem 0rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  ${media.lessThan("large")`
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  `};
-`
+import { FiEye, FiDatabase, FiChevronRight } from "react-icons/fi"
+import { IoIosCart, IoIosPaper } from "react-icons/io"
 
 const InputBox = styled.div`
   width: auto;
@@ -32,22 +21,21 @@ const InputBox = styled.div`
   display: flex;
   padding: 0;
   input {
-    width: 27rem;
-    padding: 0.7rem 1rem;
+    width: 25rem;
+    padding: 0.5rem 1rem;
     border-radius: 0px;
     border: 0px;
     outline: 0px;
-    font-size: 1.1rem;
+    font-size: 1.03rem;
     transition: all 450ms;
-    font-weight: 600;
     color: #401364;
   }
   button {
     text-align: center;
-    padding: 0.7rem 1.5rem;
+    padding: 0.4rem 1.5rem;
     display: flex;
     background: #22263d;
-    border: 0px;
+    border: 0;
     border-radius: 0 10px 10px 0;
   }
   ${media.lessThan("medium")`
@@ -67,16 +55,16 @@ const InputBox = styled.div`
       padding: 0.7rem 1.5rem;
       display: flex;
       background: #22263d;
-      border: 0px;
+      border: 0;
       border-radius: 0 10px 10px 0;
     }
-    `}
+    `};
   ${media.lessThan("small")`
 input {
   width: 23rem;
 }
-    `}
-    &: hover {
+    `};
+  &: hover {
     button {
       cursor: pointer;
     }
@@ -96,7 +84,6 @@ const Box = styled.div`
   background: ${props => props.background};
   border: 1px solid ${props => props.background};
   height: 55px;
-  box-shadow: 0 2px 3px grey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,11 +104,6 @@ const Landing = (): JSX.Element => {
 
   //@ts-ignore
   const ENDPOINT: string = process.env.GATSBY_BETA_ENDPOINT
-
-  const ItemsWrapper = styled.div`
-    opacity: 1;
-    transition: opacity 450ms;
-  `
 
   const handleErr = (e: { statusText: React.SetStateAction<string> }) => {
     setLoading(false)
@@ -179,27 +161,27 @@ const Landing = (): JSX.Element => {
     },
     {
       id: 2,
-      title: "Centralized Cloud Storage",
+      title: "Custom Event Brand Page",
       color: "#22263d",
       icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
     },
     {
       id: 3,
-      title: "Centralized Cloud Storage",
+      title: "Versioned Event Iterations",
       color: "#22263d",
       icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
     },
     {
       id: 4,
-      title: "Centralized Cloud Storage",
+      title: "Distributed events support",
       color: "#22263d",
       icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
     },
     {
       id: 5,
-      title: "Centralized Cloud Storage",
+      title: "In  - Event Marketplace",
       color: "#22263d",
-      icon: <FiDatabase style={{ fontSize: "1.4rem" }} />,
+      icon: <IoIosCart style={{ fontSize: "1.4rem" }} />,
     },
   ]
 
@@ -227,7 +209,7 @@ const Landing = (): JSX.Element => {
           borderBottomStyle: "dashed",
         }}
       >
-        <Text white small center>
+        <Text style={{ margin: "0.5rem" }} white small center>
           What do you think would be the future of events? <br />
           <a
             href="/"
@@ -238,10 +220,35 @@ const Landing = (): JSX.Element => {
           </a>
         </Text>
       </div>
+      <br />
 
-      <Body style={{ padding: "3rem 1rem" }}>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <BgTitle white center>
+      <div
+        style={{
+          margin: "0 1rem",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        .
+        <Link to="/home/home" style={{ textDecoration: "none" }}>
+          <div style={{ display: "flex" }}>
+            <Text style={{ margin: "0" }} small white>
+              See what Oasis is about
+            </Text>
+
+            <div style={{ margin: "0rem 0.5rem" }}>
+              <FiChevronRight
+                style={{ fontSize: "1.7rem", color: "#f84e06" }}
+              />
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      <br />
+      <Body style={{ padding: "2rem 1rem" }}>
+        <div style={{ margin: 0, display: "flex", justifyContent: "center" }}>
+          <BgTitle style={{ margin: 0 }} white center>
             Oasis For Events
           </BgTitle>
           <div>
@@ -260,7 +267,7 @@ const Landing = (): JSX.Element => {
             </span>
           </div>
         </div>
-        <Text white center>
+        <Text style={{}} white center>
           Providing a Sustainable launchpad for Events
         </Text>
         {!Submit ? (
@@ -354,16 +361,7 @@ const Landing = (): JSX.Element => {
         <br />
         <br />
         <br />
-        <Link to="/home/home" style={{ textDecoration: "none" }}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ margin: "0rem 1rem" }}>
-              <FiEye style={{ fontSize: "1.7rem" }} />
-            </div>
-            <Text small white>
-              See what Oasis really is.
-            </Text>
-          </div>
-        </Link>
+
         <Flex justifyCenter>
           {Width >= 800 ? (
             <div style={{ display: "grid", gridTemplateColumns: "auto 30rem" }}>

@@ -11,6 +11,8 @@ h5,
 h6,
 label,
 body,
+input,
+button,
 p {
   font-family: "Open Sans", sans-serif;
 }
