@@ -22,10 +22,10 @@ import Community from "./features/community"
 
 const SmallBouncer = keyframes`
   from {
-    height: 170px; #363e6eeb
+    transform:  translateY(0%)
   }
   to {
-    height: 130px;
+    transform:  translateY(-20%)
   }
 `
 

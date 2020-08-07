@@ -32,12 +32,39 @@ const Grid = styled.div`
 
 const Card = styled.div`
   margin: 2rem 1rem;
-  height: 55vh;
+  height: 46vh;
   padding: 1rem 1rem;
   border: 1px solid #c0c0c0;
   width: 25rem;
   border-radius: 5px;
 `
+
+const Data = [
+  {
+    id: 1,
+    title: "Volunteer For All Events",
+    text:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
+    link: "/service",
+    linkText: "",
+  },
+  {
+    id: 2,
+    title: "Create Your Talk Drafts",
+    text:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
+    link: "/service",
+    linkText: "",
+  },
+  {
+    id: 3,
+    title: "Inclusive Talk Approval Process",
+    text:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
+    link: "/service",
+    linkText: "",
+  },
+]
 
 export default class community extends Component {
   state = {
@@ -63,37 +90,30 @@ export default class community extends Component {
 
         <div>
           <Grid>
-            <Card>
-              <Title style={{ fontWeight: "lighter" }} small center>
-                {" "}
-                Volunteer For All Events{" "}
-              </Title>
+            {Data.map(({ id, title, text, link }) => {
+              return (
+                <Card key={id}>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      style={{ maxWidth: "30%" }}
+                      src={require("../../../assets/svg/illustration.svg")}
+                    />
+                  </div>
+                  <br />
 
-              <div style={{ textAlign: "center" }}>
-                <a href="/">Apply To An Event</a>
-              </div>
-            </Card>
+                  <Title style={{ fontWeight: "lighter" }} small center>
+                    {title}
+                  </Title>
+                  <Text style={{ padding: "0.7rem 0" }} small center>
+                    {text}
+                  </Text>
 
-            <Card>
-              <Title style={{ fontWeight: "lighter" }} small center>
-                {" "}
-                Create Your Talk Drafts{" "}
-              </Title>
-
-              <div style={{ textAlign: "center" }}>
-                <a href="/">Start A Talk Draft</a>
-              </div>
-            </Card>
-
-            <Card>
-              <Title style={{ fontWeight: "lighter" }} small center>
-                Inclusive Talk Approval Process{" "}
-              </Title>
-
-              <div style={{ textAlign: "center" }}>
-                <a href="/">Submit A Talk Draft</a>
-              </div>
-            </Card>
+                  <div style={{ textAlign: "center" }}>
+                    <a href={`${link}`}>Apply To An Event</a>
+                  </div>
+                </Card>
+              )
+            })}
           </Grid>
         </div>
         <br />
