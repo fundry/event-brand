@@ -32,8 +32,8 @@ const Grid = styled.div`
 
 const Card = styled.div`
   margin: 2rem 1rem;
-  height: 46vh;
-  padding: 1rem 1rem;
+  height: auto;
+  padding: 1.5rem 1rem;
   border: 1px solid #c0c0c0;
   width: 25rem;
   border-radius: 5px;

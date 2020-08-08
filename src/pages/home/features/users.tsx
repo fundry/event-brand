@@ -21,7 +21,7 @@ const Image = styled.img`
 `
 
 const Card = styled.div`
-  height: 27vh;
+  height: auto;
   border: ${props => !props.grey && "2px solid #c0c0c0"};
   width: 17rem;
   margin-left: 15px;
