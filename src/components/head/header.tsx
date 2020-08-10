@@ -23,7 +23,7 @@ const Question = styled.div`
   background: #401364;
   padding: 0.5rem 1rem;
   width: 100%;
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
 display : none;
     padding: 0.5rem 0.5rem; 
 `};

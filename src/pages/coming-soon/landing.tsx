@@ -3,14 +3,19 @@ import { Body, Title, BgTitle, Text, CustomButton } from "../../styles/style"
 import { Link } from "gatsby"
 import Flex from "styled-flex-component"
 import { Helmet } from "react-helmet"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
 import { IoMdMegaphone } from "react-icons/io"
 
 import useWindowWidth from "../../styles/resize"
 import Ipad from "../../assets/svg/ipad.svg"
 import Iphone from "../../assets/svg/iphone.svg"
-import { FiEye, FiDatabase, FiChevronRight } from "react-icons/fi"
+import {
+  FiEye,
+  FiDatabase,
+  FiChevronRight,
+  FiChevronsRight,
+} from "react-icons/fi"
 import { IoIosCart, IoIosPaper } from "react-icons/io"
 
 const InputBox = styled.div`
@@ -32,11 +37,13 @@ const InputBox = styled.div`
   }
   button {
     text-align: center;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     display: flex;
-    background: #22263d;
+    font-size: 1rem;
+    background: ##f84e06;
+    color: #22263d;
     border: 0;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 5px 5px 0;
   }
   ${media.lessThan("medium")`
   flex-direction : column;  
@@ -90,6 +97,31 @@ const Box = styled.div`
   width: 55px;
   border-radius: 50%;
   color: ${props => props.color};
+`
+
+const Grid = styled.div`
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto 30rem;
+  ${media.lessThan("large")`
+  margin-top : 2rem;
+      display : flex; 
+      flex-direction : column;
+      align-items : center;
+  `};
+`
+
+const Keyframe = keyframes`
+from {
+  transform:  translateX(-10%)
+}
+to {
+  transform:  translateX(20%)
+}
+`
+
+const KeyframedArrow = styled.div`
+  animation: ${Keyframe} 2000ms ease-in-out 0s infinite;
 `
 
 const Landing = (): JSX.Element => {
@@ -233,14 +265,16 @@ const Landing = (): JSX.Element => {
         <Link to="/home/home" style={{ textDecoration: "none" }}>
           <div style={{ display: "flex" }}>
             <Text style={{ margin: "0" }} small white>
-              See what Oasis is about
+              Explore <b> Oasis </b>
             </Text>
 
-            <div style={{ margin: "0rem 0.5rem" }}>
-              <FiChevronRight
-                style={{ fontSize: "1.7rem", color: "#f84e06" }}
+            <KeyframedArrow
+              style={{ transistion: "all 400ms", margin: "0rem 0.5rem" }}
+            >
+              <FiChevronsRight
+                style={{ fontSize: "1.8rem", color: "#f84e06" }}
               />
-            </div>
+            </KeyframedArrow>
           </div>
         </Link>
       </div>
@@ -259,7 +293,7 @@ const Landing = (): JSX.Element => {
                 background: "#f84e06",
                 borderRadius: "15px",
                 padding: "0.2rem 0.5rem",
-                fontSize: "1rem",
+                fontSize: "0.9rem",
                 boxShadow: "0px 2px 4px solid #f84e06",
               }}
             >
@@ -358,13 +392,10 @@ const Landing = (): JSX.Element => {
             )}
           </Flex>
         )}
-        <br />
-        <br />
-        <br />
 
         <Flex justifyCenter>
           {Width >= 800 ? (
-            <div style={{ display: "grid", gridTemplateColumns: "auto 30rem" }}>
+            <Grid>
               <img
                 alt="Visual Explanation"
                 src={Ipad}
@@ -404,7 +435,7 @@ const Landing = (): JSX.Element => {
                   })}
                 </List>
               </div>
-            </div>
+            </Grid>
           ) : (
             <img
               alt="Visual Explanation"
