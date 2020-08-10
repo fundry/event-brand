@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { Body, Text } from "../../../styles/style"
+import { Body, Text, BigTitle } from "../../../styles/style"
 import { FiArrowRight, FiTrello, FiYoutube } from "react-icons/fi"
 import media from "styled-media-query"
 import { FaTwitch, FaDiscord, FaJira, FaSlack } from "react-icons/fa"
@@ -137,9 +137,9 @@ export default class Integrations extends Component {
         <br />
         <br />
 
-        <h2 style={{ textAlign: "center" }}>
+        <BigTitle style={{ textAlign: "center" }}>
           Your External Tools, Pulled Into Your Event. <br />A Perfect Symphony!
-        </h2>
+        </BigTitle>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Text style={{ width: "40rem" }} center small>

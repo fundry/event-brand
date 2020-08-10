@@ -70,6 +70,13 @@ const Card = styled.div`
   }
 `
 
+const CardContainer = styled.div`
+  display: flex;
+  ${media.lessThan("large")`
+        display : none;
+    `};
+`
+
 const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
   const { isInView } = props
   const [currentWindow, setCurrentWindow] = useState(0)
@@ -109,10 +116,9 @@ const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
         features of the parent event.
       </Text>
       <br />
-      <BigTitle style={{ color: "#fff", textAlign: "center" }}>{name}</BigTitle>
       <br />
 
-      <div style={{ display: "flex" }}>
+      <CardContainer>
         <Card>
           <Text center> Open Source Community Delta </Text>
         </Card>
@@ -128,7 +134,7 @@ const DistributedMeetups = (props: { isInView: boolean }): JSX.Element => {
             <Text center> Open Source Community Delta </Text>
           </Card>
         </div>
-      </div>
+      </CardContainer>
     </div>
   )
 }

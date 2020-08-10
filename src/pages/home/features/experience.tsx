@@ -3,7 +3,7 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 import Ipad from "../../../assets/svg/ipad.svg"
-import { Title } from "../../../styles/style"
+import { Title, Text } from "../../../styles/style"
 
 import "./test.css"
 import { FiDatabase } from "react-icons/fi"
@@ -35,12 +35,12 @@ const List = styled.ul`
 const Box = styled.div`
   background: ${props => props.background};
   border: 1px solid ${props => props.background};
-  height: 55px;
+  height: 50px;
   box-shadow: 0 2px 3px grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
+  width: 50px;
   border-radius: 50%;
   color: ${props => props.color};
 `
@@ -52,6 +52,11 @@ const Grid = styled.div`
   @media (max-width: 1700px) {
     grid-template-columns: 50% 50%;
   }
+  ${media.lessThan("large")`
+      display: flex;
+      flex-direction : column;
+      align-items : center;
+  `}
 `
 
 const Experience = () => {
@@ -88,9 +93,9 @@ const Experience = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Title style={{ fontWeight: "normal" }} small>
+                  <Text style={{ fontWeight: "normal" }} small>
                     Using Stored Event Data{" "}
-                  </Title>
+                  </Text>
                 </div>
               </div>
             </li>
@@ -110,10 +115,10 @@ const Experience = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Title style={{ fontWeight: "normal" }} small>
+                  <Text style={{ fontWeight: "normal" }} small>
                     {" "}
                     Engaging Event Forms{" "}
-                  </Title>
+                  </Text>
                 </div>
               </div>
             </li>
@@ -133,10 +138,10 @@ const Experience = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Title style={{ fontWeight: "normal" }} small>
+                  <Text style={{ fontWeight: "normal" }}>
                     {" "}
                     Reflective Event Design and Layout{" "}
-                  </Title>
+                  </Text>
                 </div>
               </div>
             </li>
@@ -156,10 +161,10 @@ const Experience = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Title style={{ fontWeight: "normal" }} small>
+                  <Text style={{ fontWeight: "normal" }} small>
                     {" "}
                     SSO authentication wihout an Oasis account.{" "}
-                  </Title>
+                  </Text>
                 </div>
               </div>
             </li>
@@ -179,10 +184,10 @@ const Experience = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Title style={{ fontWeight: "normal" }} small>
+                  <Text style={{ fontWeight: "normal" }} small>
                     {" "}
                     Webhook connected event chat services{" "}
-                  </Title>
+                  </Text>
                 </div>
               </div>
             </li>

@@ -18,7 +18,7 @@ const Body = styled.div`
   color: #22263d;
   overflow: hidden;
   ${media.lessThan("large")`
-    padding: 2rem 3rem;
+    padding: 2rem 1.5rem;
   `}
   ${media.lessThan("medium")`
     padding: 2rem 1.5rem;
@@ -26,8 +26,11 @@ const Body = styled.div`
 `
 
 const Grid = styled.div`
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  ${media.lessThan("large")`
+   grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+  `};
 `
 
 const Card = styled.div`
@@ -37,6 +40,10 @@ const Card = styled.div`
   border: 1px solid #c0c0c0;
   width: 25rem;
   border-radius: 5px;
+  ${media.lessThan("large")`
+    width: 23rem;
+    padding: 1rem 1rem;
+  `};
 `
 
 const Data = [
@@ -46,7 +53,7 @@ const Data = [
     text:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
     link: "/service",
-    linkText: "",
+    linkText: "View Open Events",
   },
   {
     id: 2,
@@ -54,7 +61,7 @@ const Data = [
     text:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
     link: "/service",
-    linkText: "",
+    linkText: "Create Talk Draft",
   },
   {
     id: 3,
@@ -62,7 +69,7 @@ const Data = [
     text:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta autem unde et blanditiis velit aliquam adipisci, at esse velfugiat, debitis animi illum molestiae. Excepturi nam quo id esse officia?",
     link: "/service",
-    linkText: "",
+    linkText: "Start Draft Submission",
   },
 ]
 
@@ -90,7 +97,7 @@ export default class community extends Component {
 
         <div>
           <Grid>
-            {Data.map(({ id, title, text, link }) => {
+            {Data.map(({ id, title, text, link, linkText }) => {
               return (
                 <Card key={id}>
                   <div style={{ display: "flex", justifyContent: "center" }}>
@@ -109,7 +116,7 @@ export default class community extends Component {
                   </Text>
 
                   <div style={{ textAlign: "center" }}>
-                    <a href={`${link}`}>Apply To An Event</a>
+                    <a href={`${link}`}> {linkText} </a>
                   </div>
                 </Card>
               )

@@ -204,8 +204,11 @@ const BigTitle = styled.h1`
   color: ${(props: { app: any }) => (props.app ? "blue" : "black")};
   font-size: ${(props: { app: any }) => (props.app ? null : "1.7rem")};
   text-align: ${(props: { app: any }) => (props.app ? "center" : null)};
+  ${media.lessThan("large")`
+       font-size: 1.6rem;
+    `};
   ${media.lessThan("medium")`
-  font-size : ${(props: { app: any }) => (props.app ? "2.5rem" : null)}
+  font-size : 1.5rem;
 `};
   ${media.lessThan("small")`
     font-size : ${(props: { app: any }) => (props.app ? "2.2rem" : null)}
