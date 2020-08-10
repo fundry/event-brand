@@ -22,7 +22,7 @@ const InputBox = styled.div`
   padding: 0;
   input {
     width: 25rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     border-radius: 0px;
     border: 0px;
     outline: 0px;
@@ -32,7 +32,7 @@ const InputBox = styled.div`
   }
   button {
     text-align: center;
-    padding: 0.4rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     display: flex;
     background: #22263d;
     border: 0;
