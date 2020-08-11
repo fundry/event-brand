@@ -3,6 +3,7 @@ import { IoMdRocket, IoIosContact } from "react-icons/io"
 import { FiArrowRight, FiX } from "react-icons/fi"
 import styled, { keyframes } from "styled-components"
 import media from "styled-media-query"
+import FreeTrial from "./free-trial"
 
 import { HeadTitle, Body, Text, Hover } from "../../styles/style"
 import Splash from "../../assets/svg/illustration.svg"
@@ -104,6 +105,13 @@ const FAB = styled.div`
   box-shadow: 3px 1px 3px 0px grey;
 `
 
+const StyledBody = styled(Body)`
+  ${media.lessThan("huge")`
+      margin : 0;
+      padding : 0;
+  `}
+`
+
 const Home = (): JSX.Element => {
   const [Width, setWidth] = useState(null)
   const [Support, showSupport] = useState<Boolean>(false)
@@ -152,8 +160,18 @@ const Home = (): JSX.Element => {
 
         <br />
         <br />
+      </Body>
 
+      <StyledBody
+        style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
+      >
         <Media />
+      </StyledBody>
+
+      <Body
+        style={{ color: "#401364", background: "#f2f5ff", overflow: "hidden" }}
+        y
+      >
         <br />
         <br />
 
@@ -223,6 +241,7 @@ const Home = (): JSX.Element => {
       )} */}
 
       <br />
+      <FreeTrial />
     </Layout>
   )
 }

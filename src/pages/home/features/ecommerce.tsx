@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { FiEye, FiChevronRight, FiChevronLeft, FiHeart } from "react-icons/fi"
 import styled from "styled-components"
+import media from "styled-media-query"
 
 import {
   Text,
@@ -73,6 +74,27 @@ const Image = styled.img`
   }
 `
 
+const MerketPlaceContainer = styled.div`
+  text-align: left;
+  padding-left: 2rem;
+  margin-right: 10rem;
+  background: #f2f5ff;
+  color: #2153cc;
+  button {
+    font-size: 1.1rem;
+    width: 15rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  ${media.lessThan("huge")`
+margin-right: 5rem;
+h4 {
+  font-size : 1.8rem;
+}
+`}
+`
+
 const Ecommerce = () => {
   const [currentItem, setCurrentItem] = useState(1)
 
@@ -110,20 +132,12 @@ const Ecommerce = () => {
           padding: "0rem 0rem",
         }}
       >
-        <div
-          style={{
-            textAlign: "left",
-            paddingLeft: "1rem",
-            marginRight: "8rem",
-            background: "#f2f5ff",
-            color: "#2153cc",
-          }}
-        >
+        <MerketPlaceContainer>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
               <br /> <br />
               <br />
-              <Title style={{ fontWeight: "normal", fontSize: "2rem" }}>
+              <Title style={{ fontWeight: "lighter" }}>
                 In - Event Attendee <br />
                 Marketplace
               </Title>
@@ -144,9 +158,7 @@ const Ecommerce = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Text style={{ margin: "0rem 1rem" }}>
-                    Integrateable with :
-                  </Text>
+                  <Text style={{ margin: "0rem 0.5rem" }}>Together with :</Text>
                 </div>
 
                 <List>
@@ -175,7 +187,7 @@ const Ecommerce = () => {
               src={require("../../../assets/svg/line.svg")}
             />
           </div>
-        </div>
+        </MerketPlaceContainer>
 
         <div style={{ textAlign: "right", paddingRight: "7rem" }}>
           <br />

@@ -78,6 +78,21 @@ const Data = [
   },
 ]
 
+const Features = styled.div`
+  display: grid;
+  padding: 7rem 1rem;
+  grid-gap: 1rem 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+`
+
+const Circle = styled.div`
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  background: violet;
+  border: 1px solid violet;
+`
+
 const Media = () => {
   const [currentItem, setCurrentItem] = useState(1)
   const [activeView, setActiveView] = useState("cloud")
@@ -91,30 +106,6 @@ const Media = () => {
   }, [])
   return (
     <div>
-      <SmallScreenGrid>
-        {Data.map(({ id, name, text }) => {
-          return (
-            <div key={id}>
-              <div style={{ textAlign: "center", margin: "1rem 0" }}>
-                <img
-                  style={{
-                    height: "150px",
-                    width: "150px",
-                  }}
-                  src={require("../../../assets/svg/illustration.svg")}
-                />
-              </div>
-              <Title small center>
-                {name}
-              </Title>
-              <Text small center>
-                {text}
-              </Text>
-            </div>
-          )
-        })}
-      </SmallScreenGrid>
-
       <Container>
         <Contain
           style={{
@@ -125,104 +116,29 @@ const Media = () => {
             background: "#2153cc",
           }}
         >
-          <br />
-          <br />
-
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Item
-              active={currentItem === 1}
-              onClick={() => setActiveView("cloud")}
-            >
-              <Hover style={{ margin: "0rem 0.4rem" }}>
-                <FiDatabase style={{ fontSize: "1.4rem" }} />
-              </Hover>
-              Event Cloud Storage
-            </Item>
-
-            <Item
-              active={currentItem === 2}
-              onClick={() => setActiveView("email")}
-            >
-              <Hover style={{ margin: "0rem 0.4rem" }}>
-                <FiMail style={{ fontSize: "1.4rem" }} />
-              </Hover>
-              Custom Event Emails
-            </Item>
-
-            <Item
-              active={currentItem === 3}
-              onClick={() => setActiveView("team")}
-            >
-              <Hover style={{ margin: "0rem 0.4rem" }}>
-                <FiUsers style={{ fontSize: "1.4rem" }} />
-              </Hover>
-              Event Team Support
-            </Item>
-          </div>
-
-          <br />
-          <div style={{ padding: "3rem 1.5rem" }}>
-            <CSSTransition
-              timeout={300}
-              in={activeView === "cloud"}
-              unmountOnExit
-            >
-              <Grid schedule>
-                <div>
-                  <Title> Cloud Event Storage </Title>
-
-                  <Text style={{ maxWidth: "35rem" }} white small>
-                    Store every file relating to your event on the Cloud using
-                    Oasis.
-                    <br /> <br /> While storing these files, you can keep them
-                    in a great sync with you , your event and your attendees.
+          <Features>
+            {Data.map(({ id, name, text }) => {
+              return (
+                <div style={{ padding: "0 1rem" }}>
+                  <div
+                    style={{
+                      padding: "1rem 0",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Circle />
+                  </div>
+                  <Title small center>
+                    {name}{" "}
+                  </Title>
+                  <Text center white>
+                    {text}{" "}
                   </Text>
                 </div>
-
-                <img src={Schedule} />
-              </Grid>
-            </CSSTransition>
-
-            <CSSTransition
-              timeout={300}
-              in={activeView === "email"}
-              unmountOnExit
-            >
-              <Grid schedule>
-                <div>
-                  <Title> In - Event Custom Email Invitations </Title>
-
-                  <Text white small>
-                    Composing and Sending promotional and invitation emails for
-                    your event is now simplified using Oasis Email Support.
-                    <br /> <br /> Get started with broadcasting emails across
-                    all registered attendees within seconds using Pre-made
-                    invitation templates.
-                  </Text>
-                </div>
-                <img src={Schedule} />
-              </Grid>
-            </CSSTransition>
-
-            <CSSTransition
-              timeout={300}
-              in={activeView === "team"}
-              unmountOnExit
-            >
-              <Grid schedule>
-                <div>
-                  <Title> In-Event Team Support </Title>
-                  <Text white small>
-                    Spread the workload of organizing your event using Oasis
-                    Teams support within the console.
-                    <br /> <br /> Accept Volunteers , create a team and grant
-                    them access to a specific part of your event console.
-                  </Text>
-                </div>
-                <img src={Schedule} />
-              </Grid>
-            </CSSTransition>
-          </div>
+              )
+            })}
+          </Features>
 
           <Ecommerce />
         </Contain>

@@ -68,63 +68,6 @@ const Footer = (props: CustomProps): JSX.Element => {
       text-align: center;
     }
   `
-  const InputBox = styled.div`
-    display: flex;
-    width: 35rem;
-    background: #fff;
-    input {
-      display: flex;
-      flex: 1;
-      width: auto;
-      color: #0e2f5a;
-      font-size: 1.1rem;
-      padding: 0.7rem 1rem;
-      border: 1px solid #fff;
-      background: transparent;
-      outline: 1px solid #0e2f5a;
-    }
-    div {
-      height: auto;
-      width: 4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f84e06;
-      cursor: pointer;
-    }
-    ${media.lessThan("large")`
-        width: 32rem;
-        input {
-          display: flex;
-          flex: 1;
-          width: auto;
-          color: #0e2f5a;
-          font-size: 1rem;
-          paddif84e06ng: 0.6rem 0.7rem;
-          border: 1px solid #fff;
-        }
-        div {
-          width: 3rem;
-          background: #f84e06;
-        }
-    `}
-    ${media.lessThan("medium")`
-    width: 28rem;
-    input {
-      display: flex;
-      flex: 1;
-      width: auto;
-      color: #0e2f5a;
-      font-size: 0.9rem;
-      padding: 0.6rem 0.7rem;
-      border: 1px solid #fff;
-    }
-    div {
-      width: 2.7rem;
-      background: #f84e06;
-    }
-`}
-  `
 
   const FooterText = styled(Text)`
     ${media.lessThan("large")`
@@ -165,31 +108,6 @@ const Footer = (props: CustomProps): JSX.Element => {
 
   return (
     <div>
-      {showLaunchEvent ? null : (
-        <Testing>
-          <div>
-            <Text small white>
-              Thinking of Organizing an event? <br />
-              Oasis is flexible enough to upscale and downscale automatically to
-              fit your event needs.
-            </Text>
-            <br />
-            <Text small white>
-              Lets have a chat about your event.
-            </Text>
-            <span style={{ display: "flex", justifyContent: "center" }}>
-              <InputBox>
-                <input placeholder="Let's contact you via an email." />
-                <div>
-                  <IoIosSend
-                    style={{ transform: "rotate(42deg)", fontSize: "2rem" }}
-                  />
-                </div>
-              </InputBox>
-            </span>
-          </div>
-        </Testing>
-      )}
       <FooterBody>
         <br />
 

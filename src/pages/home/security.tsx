@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import media from "styled-media-query"
-import Cloud from "../../assets/svg/ipad.svg"
+
 import { Link } from "gatsby"
 
 import { Text, Title, Contain, Body, HeadTitle } from "../../styles/style"
@@ -87,6 +87,50 @@ const OpaqueButton = styled.button`
 `};
 `
 
+const Items = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 0 5rem;
+  padding: 0 2rem;
+  img {
+    height: 150px;
+    width: 150px;
+    margin: 0.5rem 0;
+  }
+`
+
+const Data = [
+  {
+    id: 1,
+    name: "Data Exports",
+    text:
+      "  Events on Oasis are the most flexible. You can personalize and make changes to your data and your console.",
+    // img: "../../assets/svg/ipad.svg",
+  },
+  {
+    id: 1,
+    name: "Data Exports",
+    text:
+      "  Events on Oasis are the most flexible. You can personalize and make changes to your data and your console.",
+    // img: "../../assets/svg/ipad.svg",
+  },
+  {
+    id: 1,
+    name: "Data Exports",
+    text:
+      "  Events on Oasis are the most flexible. You can personalize and make changes to your data and your console.",
+    // img: "../../assets/svg/ipad.svg",
+  },
+]
+
+const Circle = styled.div`
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  background: violet;
+  border: 1px solid violet;
+`
+
 const Security = () => {
   return (
     <Body>
@@ -103,82 +147,34 @@ const Security = () => {
           can ;{" "}
         </Text>
         <br />
-
-        <br />
         <Contain>
-          <Grid>
-            <img src={Cloud} alt="Cloud illustration" />
+          <Items>
+            {Data.map(({ img, id, text, name }) => {
+              return (
+                <div key={id}>
+                  <div
+                    style={{
+                      padding: "1rem 0",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={require(`../../assets/images/security/1.png`)} />
+                  </div>
+                  <Title center small>
+                    {name}
+                  </Title>
 
-            <div>
-              <Title colored center>
-                <span style={{ color: "#F84E06" }}> Mutate </span> Your Data
-              </Title>
-              <Text center small>
-                Events on Oasis are the most flexible. You can personalize and
-                make changes to your data and your console. <br />
-              </Text>
-              <br />
-              <Text center small>
-                How data within eventful are secured How within eventful are
-                secured How within eventful are secured How data within
-              </Text>
-              <br />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                .
-                <Link to="/docs/service" style={{ textDecoration: "none" }}>
-                  <OpaqueButton>
-                    {" "}
-                    Tour The Oasis Web Console
-                    <div style={{ margin: "0rem 0.6rem" }}>
-                      <FiArrowRight style={{ fontSize: "1.7rem" }} />
-                    </div>
-                  </OpaqueButton>
-                </Link>
-              </div>
-            </div>
-          </Grid>
+                  <Text center> {text} </Text>
+                </div>
+              )
+            })}
+          </Items>
         </Contain>
 
         <br />
-        <br />
-        <br />
-
-        <br />
       </Contain>
-      <Grid>
-        <img
-          src={require("../../assets/images/graphql.png")}
-          alt="graphql api"
-          style={{ maxWidth: "100%", marginLeft: "7rem" }}
-        />
 
-        <div>
-          <Title center colored>
-            <span style={{ color: "#F84E06" }}> Consume </span> Your Data
-          </Title>
-          <Text center small>
-            Consume your event data and statistics stored on Oasis into your
-            event blogs and webpages. Our Graphql Api is customer centered and
-            easy to consume. <br />
-          </Text>
-          <br />
-          <Text center small>
-            How data within eventful are secured How within eventful are secured
-            How within eventful are secured How data within
-          </Text>
-          <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Link to="/docs/service" style={{ textDecoration: "none" }}>
-              <OpaqueButton>
-                Try Oasis For Developers
-                <div style={{ margin: "0rem 0.6rem" }}>
-                  <FiArrowRight style={{ fontSize: "1.7rem" }} />
-                </div>
-              </OpaqueButton>
-            </Link>
-          </div>
-        </div>
-      </Grid>
       <br />
     </Body>
   )
