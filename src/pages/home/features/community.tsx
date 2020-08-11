@@ -7,6 +7,7 @@ import {
   CustomButton as Button,
   Title,
   HeadTitle,
+  BigTitle,
 } from "../../../styles/style"
 import Sample from "../../../assets/svg/illustration.svg"
 import Ipad from "../../../assets/svg/ipad.svg"
@@ -82,7 +83,9 @@ export default class community extends Component {
   render() {
     return (
       <Body img={CommunityBckg}>
-        <HeadTitle style={{ fontWeight: "lighter" }} align="center">
+        <br />
+        <br />
+        <BigTitle style={{ fontWeight: "lighter", textAlign: "center" }} center>
           Take Advantage Of Oasis <br />
           <span
             style={{
@@ -92,7 +95,7 @@ export default class community extends Component {
           >
             When Not Organizing Events.
           </span>
-        </HeadTitle>
+        </BigTitle>
         <br />
 
         <div>
@@ -100,23 +103,31 @@ export default class community extends Component {
             {Data.map(({ id, title, text, link, linkText }) => {
               return (
                 <Card key={id}>
-                  <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      marginBottom: "1.5rem",
+                    }}
+                  >
                     <img
                       style={{ maxWidth: "30%" }}
                       src={require("../../../assets/svg/illustration.svg")}
                     />
                   </div>
-                  <br />
 
                   <Title style={{ fontWeight: "lighter" }} small center>
                     {title}
                   </Title>
-                  <Text style={{ padding: "0.7rem 0" }} small center>
+
+                  <Text style={{ padding: "0.4rem 0" }} small center>
                     {text}
                   </Text>
 
                   <div style={{ textAlign: "center" }}>
-                    <a href={`${link}`}> {linkText} </a>
+                    <a href={`${link}`} style={{ textDecoration: "none" }}>
+                      {linkText}
+                    </a>
                   </div>
                 </Card>
               )

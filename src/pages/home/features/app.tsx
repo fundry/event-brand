@@ -14,6 +14,7 @@ import {
   Title,
   CustomButton,
   HeadTitle,
+  BigTitle,
 } from "../../../styles/style"
 import media from "styled-media-query"
 
@@ -22,26 +23,21 @@ import media from "styled-media-query"
 const Grid = styled.div`
   display: grid;
   grid-gap: 0rem 2rem;
-  grid-template-columns: 5rem auto 25rem; 
+  grid-template-columns: 5rem auto 25rem;
   p {
-    padding : 0rem 5rem
+    padding: 0rem 5rem;
   }
-  ${media.lessThan("large")`
-      grid-gap: 0rem 0rem;
-      grid-template-columns: auto 25rem; 
-      p {
-        padding : 0rem 0rem
-      }
+  ${media.lessThan("huge")`
+  display : none;
   `};
-  ${media.lessThan("medium")`
-  display : flex;
-  flex-direction : column;
-  align-items: center;
-  p {
-    padding : 1rem 0rem
-  }
+`
+
+const SmallGrid = styled.div`
+  display: none;
+  ${media.lessThan("large")`
+      display : grid;
+      grid-template-columns : 35rem auto;
     `};
-};
 `
 
 const Circle = styled.div`
@@ -65,8 +61,8 @@ const Circle = styled.div`
 `
 
 const TypeCircle = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 1px solid ${props => props.background};
   background: ${props => props.background};
   border-radius: 50%;
@@ -133,9 +129,17 @@ const Users = styled.div`
   margin: 0.5rem 0rem;
   display: flex;
   justify-content: center;
-  ${media.lessThan("small")`  
+  ${media.lessThan("medium")`  
   display : none;
 `}
+`
+
+const List = styled.ul`
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 2rem 1rem;
+  }
 `
 
 const App = () => {
@@ -145,16 +149,17 @@ const App = () => {
     <Body>
       <br />
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <HeadTitle
+        <BigTitle
           center
           style={{
             fontWeight: "lighter",
             textAlign: "center",
             margin: "0rem 1rem",
+            color: "#401364",
           }}
         >
           A Mobile First Tool <br /> For Event Participants.
-        </HeadTitle>
+        </BigTitle>
       </div>
 
       <Users>
@@ -162,8 +167,7 @@ const App = () => {
           <div style={{ display: "flex", margin: "0rem 0.7rem" }}>
             <div>
               <TypeCircle background="violet">
-                {" "}
-                <IoIosDesktop style={{ fontSize: "1.8rem" }} />
+                <IoIosDesktop style={{ fontSize: "1.6rem" }} />
               </TypeCircle>
             </div>
             <div
@@ -173,7 +177,7 @@ const App = () => {
                 alignItems: "center",
               }}
             >
-              <Text style={{ margin: "2rem 1rem" }}>
+              <Text style={{ margin: "1rem 0.7rem" }}>
                 For <b> Event Organizers </b>{" "}
               </Text>
             </div>
@@ -183,7 +187,7 @@ const App = () => {
             <div>
               <TypeCircle background="#f84e06">
                 {" "}
-                <IoIosDesktop style={{ fontSize: "1.8rem" }} />{" "}
+                <IoIosDesktop style={{ fontSize: "1.6rem" }} />{" "}
               </TypeCircle>
             </div>
             <div
@@ -194,7 +198,6 @@ const App = () => {
               }}
             >
               <Text>
-                {" "}
                 For <b> Event Speakers </b>{" "}
               </Text>
             </div>
@@ -203,8 +206,7 @@ const App = () => {
           <div style={{ display: "flex", margin: "0rem 0.7rem" }}>
             <div>
               <TypeCircle background="#22263d">
-                {" "}
-                <IoIosPhonePortrait style={{ fontSize: "1.8rem" }} />{" "}
+                <IoIosPhonePortrait style={{ fontSize: "1.6rem" }} />{" "}
               </TypeCircle>
             </div>
             <div
@@ -215,7 +217,6 @@ const App = () => {
               }}
             >
               <Text>
-                {" "}
                 For <b> Event Attendees </b>{" "}
               </Text>
             </div>
@@ -233,7 +234,7 @@ const App = () => {
               }}
               active={ActiveColumn === "first"}
             >
-              <FiCalendar style={{ fontSize: "1.7rem" }} />{" "}
+              <FiCalendar style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Divider />
@@ -247,7 +248,7 @@ const App = () => {
               }}
               active={ActiveColumn === "second"}
             >
-              <IoIosAlarm style={{ fontSize: "1.7rem" }} />{" "}
+              <IoIosAlarm style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Divider />
@@ -261,7 +262,7 @@ const App = () => {
               }}
               active={ActiveColumn === "third"}
             >
-              <FiImage style={{ fontSize: "1.7rem" }} />{" "}
+              <FiImage style={{ fontSize: "1.5rem" }} />{" "}
             </Circle>
           </div>
         </Switches>
@@ -320,7 +321,7 @@ const App = () => {
           <Flex justifyCenter>
             <img
               alt="android"
-              style={{ maxHeight: "30%", maxWidth: "46%" }}
+              style={{ maxHeight: "35%", maxWidth: "50%" }}
               src={Iphone}
             />
           </Flex>
@@ -348,6 +349,56 @@ const App = () => {
           </Contain>
         </div>
       </Grid>
+
+      <SmallGrid>
+        <div>
+          <Flex justifyCenter>
+            <img
+              alt="android"
+              style={{ maxHeight: "30%", maxWidth: "47%" }}
+              src={Iphone}
+            />
+          </Flex>
+          <br />
+          <br />
+          <Contain>
+            <Title center>Get the App! </Title>
+            <br />
+
+            <div style={{ display: "flex ", justifyContent: "center" }}>
+              <Button background="#401364" style={{ margin: "0rem 2rem" }}>
+                <div style={{ margin: "0rem 0.7rem" }}>
+                  <DiAppstore style={{ fontSize: "1.5em" }} />
+                </div>
+                Apple Store
+              </Button>
+
+              <Button>
+                <div style={{ margin: "0rem 0.7rem" }}>
+                  <FaGooglePlay style={{ fontSize: "1.4em" }} />{" "}
+                </div>
+                Play Store
+              </Button>
+            </div>
+          </Contain>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <List>
+            <li> One crazy feature of this stuff </li>
+            <li> One crazy feature of this stuff </li>
+            <li> One crazy feature of this stuff </li>
+            <li> One crazy feature of this stuff </li>
+            <li> One crazy feature of this stuff </li>
+          </List>
+        </div>
+      </SmallGrid>
     </Body>
   )
 }

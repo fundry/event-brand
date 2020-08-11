@@ -301,15 +301,15 @@ const HeaderBody = styled.nav`
 const HBtn = styled.button`
   background: ${(props: { login: any }) =>
     props.login ? "#401364" : "#F84E06"};
-  border-radius: 20rem;
-  height: 47px;
-  width: ${(props: { login: any }) => (props.login ? "8rem" : "10rem")};
+  border-radius: 7px;
+  height: 44px;
+  width: ${(props: { login: any }) => (props.login ? "8rem" : "9rem")};
   border: ${(props: { login: any }) =>
     props.login ? "1px solid #fff" : " 1.5px solid #F84E06 "};
   color: #fff;
   margin: 0rem 0.5rem;
   outline: none;
-  padding: 0.25rem 1rem;
+  padding: 0.15rem 0.8rem;
   font-size: 1rem;
   transition: all 400ms;
   &:hover {

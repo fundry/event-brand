@@ -12,7 +12,6 @@ import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import Security from "./security"
 
-import Users from "./features/users"
 import Integration from "./features/integrations"
 import DistributedMeetups from "./features/distributedMeetups"
 import App from "./features/app"
@@ -58,19 +57,6 @@ const Rocket = styled.div`
 
 const RIcon = styled(IoMdRocket)`
   animation: ${SmallBouncer} 2500ms ease-in-out 0s infinite;
-`
-
-const PaddedText = styled(Text)`
-    padding : 0rem 13rem;
-    ${media.lessThan("huge")`Users
-    padding : 0rem 12rem;
-    `}
-    ${media.lessThan("large")`
-    padding : 0rem 2rem;
-    `}
-    ${media.lessThan("medium")`
-    padding : 0rem 1rem;
-    `}
 `
 
 const FitHover = styled(Hover)`

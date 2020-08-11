@@ -3,7 +3,7 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 import Ipad from "../../../assets/svg/ipad.svg"
-import { Title, Text } from "../../../styles/style"
+import { Title, Text, BigTitle } from "../../../styles/style"
 
 import "./test.css"
 import { FiDatabase } from "react-icons/fi"
@@ -62,10 +62,10 @@ const Grid = styled.div`
 const Experience = () => {
   return (
     <Body>
-      <h1 style={{ margin: "0 2rem", color: "#22263d", fontSize: "2rem" }}>
-        Now, You Can <br />
+      <BigTitle style={{ margin: "0 2rem", color: "#22263d" }}>
+        Reach more people, <br />
         Bootstrap An Event Website
-      </h1>
+      </BigTitle>
       <br />
       <Grid>
         <img style={{ maxWidth: "90%" }} src={Ipad} alt="Console" />
@@ -88,7 +88,6 @@ const Experience = () => {
                   style={{
                     paddingTop: "0.5rem",
                     margin: "0.4rem 1rem",
-                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}

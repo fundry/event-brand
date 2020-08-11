@@ -50,8 +50,6 @@ const Item = styled.div`
   width: auto;
   display: flex;
   padding: 0.4rem 1.2rem;
-  border: 1px solid grey;
-  border-radius: 30px;
   margin: 0rem 1rem;
   &: hover {
     cursor: pointer;
@@ -59,119 +57,100 @@ const Item = styled.div`
   }
 `
 
-export default class Integrations extends Component {
-  state = {
-    opacity: 0,
-  }
+const IntegrationsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  ${media.lessThan("large")`
+        display : grid;
+        grid-gap: 2rem 0.5rem;
+        padding : 0 1rem;
+        grid-template-columns : repeat(auto-fit, minmax(8rem, 1fr))
+     `};
+`
 
-  // componentDidMount() {
-  //   //@ts-ignore
-  //   this.observer = new window.IntersectionObserver(this.observerCallback, {
-  //     threshold: 0.5,
-  //   })
+const Integrations = () => {
+  const d = [
+    {
+      id: 1,
+      name: "Eventbrite",
+      icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 2,
+      name: "Jira",
+      icon: <FaJira style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 1,
+      name: "Trello",
+      icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 1,
+      name: "Twitch",
+      icon: <FaTwitch style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 1,
+      name: "Discord",
+      icon: <FaDiscord style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 1,
+      name: "Youtube",
+      icon: <FiYoutube style={{ fontSize: "1.6rem" }} />,
+    },
+    {
+      id: 1,
+      name: "Slack",
+      icon: <IoLogoSlack style={{ fontSize: "1.6rem" }} />,
+    },
+  ]
 
-  //   //@ts-ignore
-  //   this.observer.observe(this.container)
-  // }
+  return (
+    <Body>
+      <br />
+      <br />
+      <br />
+      <br />
 
-  // //@ts-ignore
-  // observerCallback = entries => {
-  //   setTimeout(() => {
-  //     const entry = entries.slice(0).shift()
-  //     if (entry.isIntersecting) {
-  //       this.setState({
-  //         opacity: 1,
-  //       })
-  //     }
-  //   }, 50)
-  // }
+      <BigTitle style={{ textAlign: "center", color: "#401364" }}>
+        Your External Tools, Pulled Into Your Event. <br />A Perfect Symphony!
+      </BigTitle>
 
-  // componentWillUnmount() {
-  //   //@ts-ignore
-  //   this.observer.unobserve(this.container)
-  // }
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Text style={{ width: "40rem" }} center small>
+          Oasis gives you the power to sync your actions on Oasis with your
+          external workflow. So when next you create an event on Discord, you
+          can manage it on Oasis!{" "}
+        </Text>
+      </div>
 
-  render() {
-    const d = [
-      {
-        id: 1,
-        name: "Eventbrite",
-        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 2,
-        name: "Jira",
-        icon: <FaJira style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Trello",
-        icon: <FiTrello style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Twitch",
-        icon: <FaTwitch style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Discord",
-        icon: <FaDiscord style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Youtube",
-        icon: <FiYoutube style={{ fontSize: "1.6rem" }} />,
-      },
-      {
-        id: 1,
-        name: "Slack",
-        icon: <IoLogoSlack style={{ fontSize: "1.6rem" }} />,
-      },
-    ]
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Link to="/docs/tools" style={{ textDecoration: "none" }}>
+          <OpaqueButton>
+            Learn more about integrations
+            <div style={{ margin: "0rem 0.1rem" }}>
+              <FiArrowRight style={{ fontSize: "1.6rem" }} />
+            </div>
+          </OpaqueButton>
+        </Link>
+      </div>
+      <br />
 
-    return (
-      <Body>
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <BigTitle style={{ textAlign: "center" }}>
-          Your External Tools, Pulled Into Your Event. <br />A Perfect Symphony!
-        </BigTitle>
-
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Text style={{ width: "40rem" }} center small>
-            Oasis gives you the power to sync your actions on Oasis with your
-            external workflow. So when next you create an event on Discord, you
-            can manage it on Oasis!{" "}
-          </Text>
-        </div>
-
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/docs/tools" style={{ textDecoration: "none" }}>
-            <OpaqueButton>
-              Learn more about integrations
-              <div style={{ margin: "0rem 0.1rem" }}>
-                <FiArrowRight style={{ fontSize: "1.6rem" }} />
-              </div>
-            </OpaqueButton>
-          </Link>
-        </div>
-        <br />
-
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          {d.map(({ id, icon, name }) => {
-            return (
-              <Item key={id}>
-                <div style={{ margin: "0rem 0.5rem" }}>{icon}</div> {name}{" "}
-              </Item>
-            )
-          })}
-        </div>
-        <br />
-      </Body>
-    )
-  }
+      <IntegrationsContainer>
+        {d.map(({ id, icon, name }) => {
+          return (
+            <Item key={id}>
+              <div style={{ margin: "0rem 0.5rem" }}>{icon}</div> {name}{" "}
+            </Item>
+          )
+        })}
+      </IntegrationsContainer>
+      <br />
+    </Body>
+  )
 }
+
+export default Integrations

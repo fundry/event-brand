@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import Flex from "styled-flex-component"
-import { FiChevronRight, FiMenu, FiArrowRight } from "react-icons/fi"
+import { FiChevronRight, FiMenu, FiArrowRight, FiLogIn } from "react-icons/fi"
 import styled from "styled-components"
 import media from "styled-media-query"
 
@@ -64,7 +64,7 @@ const Header = ({ style }: Props) => {
   return (
     <div>
       <HeaderBody>
-        {Width >= 1200 ? (
+        {Width >= 1000 ? (
           <div>
             <Flex justifyBetween>
               <Link to="/" style={{ textDecoration: "none" }}>
@@ -78,11 +78,15 @@ const Header = ({ style }: Props) => {
               </Flex>
 
               <Flex>
-                <a href={"https://event-console.netlify.com"} target={"_blank"}>
-                  <Button small login>
-                    Login
-                  </Button>
-                </a>
+                <Hover style={{ display: "flex" }}>
+                  <Text small white>
+                    {" "}
+                    Login{" "}
+                  </Text>
+                  <div style={{ margin: "0.1rem 0.5rem" }}>
+                    <FiLogIn style={{ fontSize: "1.6rem" }} />
+                  </div>
+                </Hover>
 
                 <a href={"https://event-console.netlify.com"} target={"_blank"}>
                   <Button small> Create Account </Button>

@@ -6,71 +6,64 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 import Wave from "../../assets/svg/wave.svg"
-import { Text, Button as Butt, CustomImage, Motto } from "../../styles/style"
+import {
+  Text,
+  Button as Butt,
+  Body,
+  CustomImage,
+  Motto,
+  CustomButton,
+} from "../../styles/style"
 
-const Button = styled(Butt)`
+const BannerText = styled(Text)`
+  padding: 0 5rem;
   ${media.lessThan("medium")`
-    font-size : 1rem;
- `};
+    padding  : 0 0rem;
+    `}
+  ${media.lessThan("small")`
+      padding  : 0 1rem;
+    `};
 `
 
 const SmallBanner = () => {
   return (
     <div>
-      <br />
-      <br />
-      <div style={{ textAlign: "center" }}>
-        <img
-          alt="illustration"
-          style={{ height: "180px", width: "250px" }}
-          src={require("../../assets/svg/illustration.svg")}
-        />
-      </div>
-      <div></div>
-      <Flex justifyCenter>
-        <div style={{ padding: "0rem 1em" }}>
-          <Motto style={{ textAlign: "center", padding: "0.5em 0.5rem" }}>
-            Create, Manage and Organize <br /> your events.
-          </Motto>
-
-          <Text style={{ textAlign: "center", width: "auto" }} small>
-            Create your conferences and let's do the management!
-          </Text>
-
-          <Flex justifyCenter>
-            <Flex column>
-              <br />
-              <Flex>
-                <div style={{ fontWeight: "bold" }}>
-                  <Button download two>
-                    <Flex justifyCenter>
-                      <div style={{ paddingRight: "7px" }}>
-                        <DiAppstore style={{ fontSize: "1.7em" }} />
-                      </div>
-                      Apple Store
-                    </Flex>
-                  </Button>
-                </div>
-                <br />
-                <div style={{ textAlign: "center", fontWeight: "bold" }}>
-                  <Button
-                    download
-                    two
-                    style={{ width: "12em", marginLeft: "1em" }}
-                  >
-                    <Flex justifyCenter>
-                      <div style={{ paddingRight: "7px" }}>
-                        <FaGooglePlay style={{ fontSize: "1.5em" }} />
-                      </div>
-                      Play Store
-                    </Flex>
-                  </Button>
-                </div>
-              </Flex>
-            </Flex>
-          </Flex>
+      <Body>
+        <br />
+        <br />
+        <br />
+        <div style={{ textAlign: "center" }}>
+          <img
+            alt="illustration"
+            style={{ height: "260px", width: "300px" }}
+            src={require("../../assets/svg/illustration.svg")}
+          />
         </div>
-      </Flex>
+        <Flex justifyCenter>
+          <div style={{ padding: "0rem 1em" }}>
+            <Motto
+              style={{
+                textAlign: "center",
+                fontWeight: "normal",
+                padding: "0.5em 0.5rem",
+              }}
+            >
+              A Sustainable Launcpad for <br /> your events.
+            </Motto>
+
+            <BannerText center>
+              Leverage tools built within Oasis to redefine the regular event
+              experience for your event team and your attendees !
+            </BannerText>
+            <br />
+            <Flex justifyCenter>
+              <CustomButton style={{ fontSize: "1rem", width: "14rem" }}>
+                Get Started
+              </CustomButton>
+            </Flex>
+          </div>
+        </Flex>
+      </Body>
       <img src={Wave} style={{ width: "100%" }} />
     </div>
   )
